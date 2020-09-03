@@ -1,0 +1,20 @@
+.modal .modal-dialog {max-width: 1000px;min-width: 650px;width: 60%;}
+.modal .modal-dialog .modal-header {padding: 10px;}
+.modal .modal-dialog .modal-header .close {padding: 0;margin: 0 1rem;}
+.modal .modal-dialog .modal-header .modal-title {margin-left: 12px;}
+.modal .modal-dialog .modal-header .modal-title .modal-tab {margin: 2px 10px 0px 5px;padding-bottom: 13px;cursor: pointer;font-size: 13px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: 500;}
+.modal .modal-dialog .modal-header .modal-title .modal-tab:hover, .modal .modal-dialog .modal-header .modal-title .modal-active-tab {border-bottom: 1px solid var(--main-dark-blue);}
+.modal .modal-dialog .modal-header .modal-title .modal-active-tab {font-weight: bold;}
+.modal .modal-dialog .modal-body {display: flex;}
+.modal .modal-dialog .modal-body .dialog-menu {text-align: center;font-size: 11px;font-weight: 500;}
+.modal .modal-dialog .modal-body .dialog-menu ul {list-style: none;padding: 0;margin: 0;}
+.modal .modal-dialog .modal-body .dialog-menu ul li {min-height: 30px;cursor: pointer;padding: 6px 8px;margin-bottom: 5px;background-color: #eee;border-radius: 5px;border: 1px solid #ddd;user-select: none;}
+.modal .modal-dialog .modal-body .dialog-menu .active {background-color: var(--main-bright-blue); color: #fff;}
+.modal .modal-dialog .modal-body .dialog-form {width: 70%;margin: auto;}
+.modal .modal-dialog .modal-body .dialog-form .dialog-form-item {background-color: #eee;border: 1px solid #ddd;border-radius: 5px;padding: 20px;}
+.modal .modal-dialog .modal-body .dialog-form .dialog-form-item label {margin-top: .5rem;width: 100%;}
+.modal .modal-dialog .modal-body .dialog-form .dialog-form-item label span {font-size: 12px;font-weight: bold;}
+.modal .modal-dialog .modal-body .dialog-form .dialog-form-item .row {padding-bottom: 15px;}
+.modal .modal-dialog .modal-body .dialog-form .dialog-form-item .modal-required::after {content: "*";color: red;}
+.modal .modal-dialog .modal-body .dialog-form .dialog-form-item .modal-edit-main label {padding: 0 8px;}
+.modal .modal-dialog .modal-body .dialog-form .dialog-form-item .modal-edit-details > .col:nth-child(1) {border-right: 1px solid #ddd}

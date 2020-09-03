@@ -1,0 +1,266 @@
+{
+    "d": {
+        "results": [
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(1)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(1)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 1,
+                "Title": "Women and youth",
+                "Position": 1,
+                "Code": "wo",
+                "Color": "Grey",
+                "Range1": "Monthly",
+                "Range2": "Monthly",
+                "Target1": 60,
+                "Target2": 70,
+                "Value1": "% of ongoing projects rated 5 or more in gender",
+                "Value2": "% of ongoing projects rated 5 or more in targeting ",
+                "ID": 1
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(9)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(9)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 9,
+                "Title": "Climate change and nutrition",
+                "Position": 2,
+                "Code": "cl",
+                "Color": "Grey",
+                "Range1": null,
+                "Range2": null,
+                "Target1": 90,
+                "Target2": 50,
+                "Value1": "Climate and NRM (ratings 4 and above), %",
+                "Value2": "Nutrition (ratings 4 and above), %",
+                "ID": 9
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(3)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(3)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 3,
+                "Title": "Approvals",
+                "Position": 3,
+                "Code": "ap",
+                "Color": "Blue",
+                "Range1": null,
+                "Range2": null,
+                "Target1": null,
+                "Target2": null,
+                "Value1": "POLG approved, US$ million",
+                "Value2": "Number of operations approved",
+                "ID": 3
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(4)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(4)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 4,
+                "Title": "Strategy and visibility",
+                "Position": 4,
+                "Code": "st",
+                "Color": "Blue",
+                "Range1": null,
+                "Range2": null,
+                "Target1": null,
+                "Target2": null,
+                "Value1": "COSOPs/CSNs approved",
+                "Value2": "% of IFAD news in WCA",
+                "ID": 4
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(2)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(2)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 2,
+                "Title": "Cofinancing",
+                "Position": 5,
+                "Code": "co",
+                "Color": "Blue",
+                "Range1": "Yearly",
+                "Range2": "Yearly",
+                "Target1": null,
+                "Target2": null,
+                "Value1": "Domestic ratio\n(3-year rolling)",
+                "Value2": "International ratio\n(3-year rolling)",
+                "ID": 2
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(6)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(6)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 6,
+                "Title": "Obligations",
+                "Position": 6,
+                "Code": "ob",
+                "Color": "Grey",
+                "Range1": "Yearly",
+                "Range2": "Yearly",
+                "Target1": 300,
+                "Target2": null,
+                "Value1": "US$ amount of ineligibles, thousands",
+                "Value2": "US$ amount of outstanding balance, million",
+                "ID": 6
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(7)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(7)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 7,
+                "Title": "Risks",
+                "Position": 7,
+                "Code": "ri",
+                "Color": "Grey",
+                "Range1": "Quarterly",
+                "Range2": "Yearly",
+                "Target1": 10,
+                "Target2": 20,
+                "Value1": "% of problem projects (APP and PPP)",
+                "Value2": "% projects with high financial risk",
+                "ID": 7
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(8)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(8)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 8,
+                "Title": "Efficiency",
+                "Position": 8,
+                "Code": "ef",
+                "Color": "Grey",
+                "Range1": null,
+                "Range2": "Yearly",
+                "Target1": 200,
+                "Target2": 40,
+                "Value1": "US$ cost per design (average), thousand",
+                "Value2": "US$ cost per mission (average), thousand",
+                "ID": 8
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(5)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(5)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 5,
+                "Title": "Completion",
+                "Position": 9,
+                "Code": "cm",
+                "Color": "Grey",
+                "Range1": null,
+                "Range2": null,
+                "Target1": 85,
+                "Target2": 90,
+                "Value1": "% PCR submitted within 6 months ",
+                "Value2": "% PCR submitted publicly disclosed",
+                "ID": 5
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(10)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(10)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 10,
+                "Title": "Agility",
+                "Position": 10,
+                "Code": "ag",
+                "Color": "Grey",
+                "Range1": "Yearly",
+                "Range2": "Yearly",
+                "Target1": 8,
+                "Target2": 100,
+                "Value1": "Time from CA to EB, months",
+                "Value2": "Start-up progress, %",
+                "ID": 10
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(11)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(11)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 11,
+                "Title": "Results",
+                "Position": 11,
+                "Code": "re",
+                "Color": "Orange",
+                "Range1": "RIDE",
+                "Range2": null,
+                "Target1": null,
+                "Target2": null,
+                "Value1": "Outreach, million",
+                "Value2": "Extreme poverty, million",
+                "ID": 11
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(12)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(12)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 12,
+                "Title": "Disburse",
+                "Position": 12,
+                "Code": "di",
+                "Color": "Blue",
+                "Range1": "Last Three Years",
+                "Range2": "Last Three Years",
+                "Target1": null,
+                "Target2": 12,
+                "Value1": "Disbursement ratio",
+                "Value2": "Time from EB to 1st disbursement, months",
+                "ID": 12
+            },
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(13)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'6164b70e-33a5-4593-a1fb-04fe732c466c')/Items(13)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardssettingsv2ListItem"
+                },
+                "Id": 13,
+                "Title": "Supervision",
+                "Position": 13,
+                "Code": "su",
+                "Color": "Grey",
+                "Range1": "Yearly",
+                "Range2": "Yearly",
+                "Target1": 30,
+                "Target2": 100,
+                "Value1": "Time for disclosure, days (median)",
+                "Value2": "% disclosed or finalised for disclosure",
+                "ID": 13
+            }
+        ]
+    }
+}

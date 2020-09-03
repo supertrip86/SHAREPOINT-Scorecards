@@ -1,0 +1,91 @@
+<div class="dialog-menu">
+    <ul class="dialog-menu-list">
+        {{#each this}}
+        <li class="dialog-menu-item" data-order="{{Position}}" data-id="{{Id}}">{{Title}}</li>
+        {{/each}}
+    </ul>
+</div>
+<div class="dialog-form">
+    {{#each this}}
+    <div class="dialog-form-item container vanish" data-id="{{Id}}">
+        <div class="row modal-edit-main">
+            <div class="col">
+                <label>
+                    <span class="modal-required">ScoreCard Title</span>
+                    <input class="form-control modal-edit-title" type="text" placeholder="ScoreCard title" value="{{Title}}">
+                </label>
+            </div>
+            <div class="col">
+                <label>
+                    <span class="modal-required">ScoreCard Color</span>
+                    <select class="form-control modal-edit-color">
+                        <option value="Grey" {{{selectOption Color 'Grey'}}}>Grey</option>
+                        <option value="Blue" {{{selectOption Color 'Blue'}}}>Blue</option>
+                        <option value="Orange" {{{selectOption Color 'Orange'}}}>Orange</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="row modal-edit-details">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <textarea class="form-control modal-edit-indicator" placeholder="ScoreCard indicator">{{Value1}}</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control modal-edit-target" type="text" placeholder="ScoreCard target" value="{{Target1}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>
+                                <span class="modal-required">Time Range</span>
+                                <select class="form-control modal-edit-time">
+                                    <option value="Monthly" {{{selectOption Range1 'Monthly'}}}>Monthly</option>
+                                    <option value="Quarterly" {{{selectOption Range1 'Quarterly'}}}>Quarterly</option>
+                                    <option value="Yearly" {{{selectOption Range1 'Yearly'}}}>Yearly</option>
+                                    <option value="All Previous Year" {{{selectOption Range1 'All Previous Year'}}}>All Previous Year</option>
+                                    <option value="Last Three Years" {{{selectOption Range1 'Last Three Years'}}}>Last Three Years</option>
+                                    <option value="RIDE" {{{selectOption Range1 'RIDE'}}}>RIDE</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <textarea class="form-control modal-edit-indicator" placeholder="ScoreCard indicator">{{Value2}}</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control modal-edit-target" type="text" placeholder="ScoreCard target" value="{{Target2}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>
+                                <span class="modal-required">Time Range</span>
+                                <select class="form-control modal-edit-time">
+                                    <option value="Monthly" {{{selectOption Range2 'Monthly'}}}>Monthly</option>
+                                    <option value="Quarterly" {{{selectOption Range2 'Quarterly'}}}>Quarterly</option>
+                                    <option value="Yearly" {{{selectOption Range2 'Yearly'}}}>Yearly</option>
+                                    <option value="All Previous Year" {{{selectOption Range2 'All Previous Year'}}}>All Previous Year</option>
+                                    <option value="Last Three Years" {{{selectOption Range2 'Last Three Years'}}}>Last Three Years</option>
+                                    <option value="RIDE" {{{selectOption Range2 'RIDE'}}}>RIDE</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
