@@ -3,7 +3,7 @@ import Modal from "../hbs/settings.hbs";
 import Settings from "../hbs/partials/settingsComponents.hbs";
 import $ from "jquery";
 import Sortable from 'sortablejs';
-import { receiveData } from "../js/requests.js";
+import { receiveData, modifySettings } from "../js/requests.js";
 import utilities from "./utilities";
 
 const switchCard = (e) => {
@@ -39,17 +39,13 @@ const updateTitle = (e) => {
     target.innerText = e.target.value;
 };
 
-const validateSettings = () => {
-
-};
-
 const modalListeners = () => {
     $('#settingsMenu').on('show.bs.modal', callSettings);
     $('#settingsMenu').on('hidden.bs.modal', resetSettings);
 
     utilities.on('#scorecards-dialog', 'input', '.modal-edit-title', updateTitle);
     utilities.on('#scorecards-dialog', 'click', '.dialog-menu-item', switchCard);
-    utilities.on('#scorecards-dialog', 'click', '#save-settings', validateSettings);
+    utilities.on('#scorecards-dialog', 'click', '#save-settings', modifySettings);
 };
 
 export { Modal, modalListeners };

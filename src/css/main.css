@@ -4,6 +4,8 @@ textarea {resize: none;}
 .vanish {display: none;}
 .hidden {opacity: 0;}
 
+#wca-content {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
 /* bootstrap 4.5 custom */
 .btn {font-size: 12px;}
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {color:#fff;background-color: var(--main-bright-blue);border-color: var(--main-bright-blue);}

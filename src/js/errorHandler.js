@@ -2,7 +2,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.min.js';
 import "sweetalert2/dist/sweetalert2.min.css";
 
 const errorList = {
-    // setup
+    dataNotFound: 'Data not found in SharePoint List',
     invalidFile: 'You can only upload Word, Powerpoint, Excel or PDF documents',
     invalidFilename: 'The selected file has any of the following invalid characters:<br>~, #, %, & , *, {, }, \, :, <, >, ?, /, |, \', "',
     invalidFileSize: 'The selected file exceeds the maximum limit of 20 Megabytes',

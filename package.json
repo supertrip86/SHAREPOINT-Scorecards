@@ -25,7 +25,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@chenfengyuan/datepicker": "^1.0.9",
     "bootstrap": "^4.5.2",
     "jbox": "^1.2.0",
     "jquery": "^3.5.1",

@@ -17,16 +17,14 @@ const receiveData = async (url) => {
     return await response.json();
 };
 
-const saveData = (id) => {
-    const scorecardsList = app.storage.scorecardsList;
-    const url = `${_spPageContextInfo.webAbsoluteUrl}/_api/web/lists/GetByTitle('${scorecardsList}')/items${id ? `(${id})` : ``}`;
-
-    const item = new ScoreCard();
+const saveData = (context, item, index, id) => {
+    const list = (context == "Scorecard") ? app.storage.scorecardsList : app.storage.settingsList;
+    const url = `${_spPageContextInfo.webAbsoluteUrl}/_api/web/lists/GetByTitle('${list}')/items${id ? `(${id})` : ``}`;
 
     const options = {
         method: "POST",
         credentials: "same-origin",
-        headers: { 
+        headers: {
             "Accept": "application/json;odata=verbose",
             "Content-Type": "application/json;odata=verbose",
             "X-RequestDigest": document.getElementById('__REQUESTDIGEST').value
@@ -41,48 +39,25 @@ const saveData = (id) => {
 
     utilities.startLoader();
 
-    fetch(url, options).then( () => location.reload() );
-};
+    fetch(url, options).then( () => {
+        if (context == "Settings") {
+            const threshold = document.querySelectorAll('.dialog-menu-item').length -1;
+            index == threshold && location.reload();
 
-const deleteData = (id) => {
-    const scorecardsList = app.storage.scorecardsList;
-    const url = `${_spPageContextInfo.webAbsoluteUrl}/_api/web/lists/getbytitle('${scorecardsList}')/items(${id})/recycle()`;
-
-    const options = {
-        method: "DELETE",
-        credentials: "same-origin",
-        headers: {
-            "X-RequestDigest": document.getElementById('__REQUESTDIGEST').value
+        } else {
+            location.reload();
         }
-    };
-
-    utilities.startLoader();
-
-    fetch(url, options).then( () => location.reload() );
+    });
 };
 
-const modifySettings = (id) => {
-    const settingsList = app.storage.settingsList;
-    const url = `${_spPageContextInfo.webAbsoluteUrl}/_api/web/lists/GetByTitle('${settingsList}')/items(${id})`;
+const modifySettings = () => {
+    utilities.getNodes('.dialog-menu-item').forEach( (i, index) => {
+        const id = i.dataset.id;
+        const form = document.querySelector(`.dialog-form-item[data-id="${id}"]`);
+        const item = new SettingsItem(form, index);
 
-    const item = new SettingsItem();
-
-    const options = {
-        method: "POST",
-        credentials: "same-origin",
-        headers: { 
-            "Accept": "application/json;odata=verbose",
-            "Content-Type": "application/json;odata=verbose",
-            "X-Http-Method": "MERGE",
-            "IF-MATCH": "*",
-            "X-RequestDigest": document.getElementById('__REQUESTDIGEST').value
-        },
-        body: JSON.stringify(item)
-    };
-
-    utilities.startLoader();
-
-    fetch(url, options).then( () => location.reload() );
+        saveData("Settings", item, index, id);
+    });
 };
 
 class ScoreCard {
@@ -130,27 +105,18 @@ class ScoreCard {
 }
 
 class SettingsItem {
-    // setup
-    constructor() {
-        this.interventions = this.getInterventions();
-        this.outcomes = this.getOutcomes();
-        this.__metadata = { type: this.getMetadataType() };
-    }
-    getInterventions() {
-        const DOMelements = Array.from(document.querySelectorAll('.modal-intervention-title input'));
-        const items = DOMelements.map( (i, j) => { return {Title: i.value, Id: (j + 1), Color: i.dataset.color} } );
-
-        return JSON.stringify(items);
-    }
-    getOutcomes() {
-        const DOMelements = Array.from(document.querySelectorAll('.modal-outcome-title input'));
-        const items = DOMelements.map( (i, j) => { return {Title: i.value, Id: (j + 1)} } );
-
-        return JSON.stringify(items);
-    }
-    getMetadataType() {
-        return gapmap.data.storage.settingsMetadata;
+    constructor(form, index) {
+        this.Title = form.querySelector('.modal-edit-title').value.trim();
+        this.Position = parseInt(index);
+        this.Color = form.querySelector('.modal-edit-color').value.trim();
+        this.Value1 = form.querySelector('.modal-edit-indicator1').value.trim();
+        this.Target1 = parseInt(form.querySelector('.modal-edit-target1').value.trim());
+        this.Range1 = form.querySelector('.modal-edit-time1').value.trim();
+        this.Value2 = form.querySelector('.modal-edit-indicator2').value.trim();
+        this.Target2 = parseInt(form.querySelector('.modal-edit-target2').value.trim());
+        this.Range2 = form.querySelector('.modal-edit-time2').value.trim();
+        this.__metadata = { type: app.storage.settingsType };
     }
 }
 
-export { receiveData, saveData, deleteData, modifySettings };
+export { receiveData, saveData, modifySettings };

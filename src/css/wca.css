@@ -1,0 +1,20 @@
+.scorecard-label {height: 30px;background-color: #333;margin-bottom: 6px;}
+.scorecard-main-comment {margin-bottom: 6px;}
+.scorecard-main-comment > div {background-color: #eee;min-height: 135px;}
+
+.scorecard-row {display: flex;justify-content: center;margin-bottom: 6px;font-size: 12px;}
+.scorecard-row > div {height: 135px;padding: 5px;text-align: center;}
+.scorecard-row > div:not(:first-child) {border: none;background-color: #F8F9FA;background-image: linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede);background-position: top,right,bottom,left;background-size: 1px 1px,1px 1px;background-repeat: repeat-x,repeat-y;}
+.scorecard-row > div:not(:last-child) {margin-right: 4px;}
+.scorecard-row .grey-square {background-color: #7F7F7F;}
+.scorecard-row .blue-square {background-color: #003870;}
+.scorecard-row .orange-square {background-color: #EA6B14;}
+.scorecard-row .title-square {width: 150px;display: flex;color: #fff;}
+.scorecard-row .title-square div {align-self: center;margin: -10px auto 0 auto;}
+.scorecard-row .title-square span:first-child {font-size: 32px;}
+.scorecard-row .title-square span {font-style: italic;font-size: 16px;}
+.scorecard-row .value-square {width: 180px;}
+.scorecard-row .value-square > div:not(:first-child) {margin-top: 10px;display: flex;justify-content: center;}
+.scorecard-row .scorecard-indicator-title {height: 40px;font-size: 13px;font-weight: 700;color: #003870;font-style: italic;margin: 0;}
+.scorecard-row .scorecard-indicator-likelihood {width: 100px;margin-left: 10px;}
+.scorecard-row .comment-square {flex-grow: 1;}
