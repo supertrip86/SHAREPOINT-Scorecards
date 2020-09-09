@@ -1,60 +1,75 @@
 <div class="scorecard-label">
     <h3 class="scorecard-title"></h3>
-    <span class="scorecard-motto"></span>
+    <input class="form-control scorecard-motto" type="text" placeholder="Enter ScoreCard motto">
 </div>
-<div class="scorecard-main-comment">
-    <div></div>
+<div class="scorecard-main-comment comment-wrapper">
+    <div class="scorecard-main-summary comment-inner"></div>
+    <div class="toggle-dashboard toggle-dashboard-off"></div>
 </div>
 {{#each this}}
-{{log this}}
 <div class="scorecard-row">
     <div class="title-square {{getSquareColor Color}}">
         <div>
-            {{{getRowTitle Title}}}
+            <textarea class="form-control scorecard-edit-title" placeholder="Insert a ScoreCard title">{{Title}}</textarea>
         </div>
     </div>
     <div class="value-square">
         <div>
-            <p class="scorecard-indicator-title">{{Value1}}</p>
+            <textarea class="form-control scorecard-indicator-title" placeholder="Insert a title for this indicator">{{Value1}}</textarea>
         </div>
         <div>
-            <span class="scorecard-indicator-value"></span>
+            <input class="form-control scorecard-indicator-value input-number" type="text" maxlength="5">
             <span class="scorecard-separator">/</span>
-            <span class="scorecard-indicator-target"></span>
-            <span class="scorecard-indicator-arrow"></span>
+            <input class="form-control scorecard-indicator-target input-number" type="text" maxlength="5">
+            <i class="scorecard-indicator-arrow"></i>
         </div>
         <div>
-            <span class="scorecard-indicator-value"></span>
+            <input class="form-control scorecard-indicator-date" type="text">
             <span class="scorecard-separator">=</span>
-            <span class="scorecard-indicator-target"></span>
+            <input class="form-control scorecard-indicator-old input-number" type="text" maxlength="5">
         </div>
         <div>
             <span>Likelihood</span>
-            <span class="scorecard-indicator-likelihood"></span>
+            <ul class="scorecard-indicator-likelihood">
+                <li class="scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood orange-line"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood red-line"></div></li>
+            </ul>
         </div>
     </div>
     <div class="value-square">
         <div>
-            <p class="scorecard-indicator-title">{{Value2}}</p>
+            <textarea class="form-control scorecard-indicator-title" placeholder="Insert a title for this indicator">{{Value2}}</textarea>
         </div>
         <div>
-            <span class="scorecard-indicator-value"></span>
+            <input class="form-control scorecard-indicator-value input-number" type="text" maxlength="5">
             <span class="scorecard-separator">/</span>
-            <span class="scorecard-indicator-target"></span>
-            <span class="scorecard-indicator-arrow"></span>
+            <input class="form-control scorecard-indicator-target input-number" type="text" maxlength="5">
+            <i class="scorecard-indicator-arrow"></i>
         </div>
         <div>
-            <span class="scorecard-indicator-value"></span>
+            <input class="form-control scorecard-indicator-date" type="text">
             <span class="scorecard-separator">=</span>
-            <span class="scorecard-indicator-target"></span>
+            <input class="form-control scorecard-indicator-old input-number" type="text" maxlength="5">
         </div>
         <div>
             <span>Likelihood</span>
-            <span class="scorecard-indicator-likelihood"></span>
+            <ul class="scorecard-indicator-likelihood">
+                <li class="scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood orange-line"></div></li>
+                <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood red-line"></div></li>
+            </ul>
         </div>
     </div>
-    <div class="comment-square">
-        <div class="scorecard-comment"></div>
+    <div class="comment-square comment-wrapper">
+        <div class="scorecard-comment comment-inner"></div>
+        <div class="toggle-dashboard toggle-dashboard-off"></div>
     </div>
 </div>
 {{/each}}

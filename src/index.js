@@ -2,7 +2,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/main.css";
 import { receiveData } from "./js/requests.js";
-import { App, Admin } from "./js/scorecards.js";
+import { App, Admin, scorecardsListeners } from "./js/scorecards.js";
 import { Modal, modalListeners } from "./js/settings.js";
 import { Header, headerListeners } from "./js/header.js";
 
@@ -16,16 +16,17 @@ const data = {
     // userData: `${site}/_api/web/currentuser/?$expand=groups`,
     // settingsData: `${site}/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=${settingsListColumns.join()}&$orderby=Position asc`,
     // scorecardsData: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=${scorecardsListColumns.join()}&$orderby=scoredate desc`,
-    // scorecardsMetadata: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')`,
+    // scorecardsMetadata: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')`
     userData: '/api/user.json',
     settingsData: '/api/settings.json',
     scorecardsData: '/api/scorecards.json',
-    scorecardsMetadata: '/api/scorecardsList.json',
+    scorecardsMetadata: '/api/scorecardsList.json'
 };
 
 const initApp = () => {
     document.getElementById("scorecards-header").innerHTML = Header(data.scorecards);
     headerListeners();
+    scorecardsListeners();
 
     if (data.isAdmin) {
         window.app = new Admin(data);

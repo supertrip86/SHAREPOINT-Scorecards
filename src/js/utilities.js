@@ -1,7 +1,9 @@
 module.exports = {
 	on: on,
+	preventDefault: preventDefault,
 	getNodes: getNodes,
-	startLoader: startLoader
+	startLoader: startLoader,
+	editorOptions: editorOptions
 };
 
 function on(selector, eventType, childSelector, eventHandler) {
@@ -32,4 +34,23 @@ function startLoader() {
 	settingsIcon.setAttribute('style', 'display: none;');
 	body.setAttribute('style', 'user-select: none; overflow: hidden;')
 	body.insertAdjacentHTML('beforeend', spinner);
+}
+
+function preventDefault(e) {
+	e.preventDefault();
+}
+
+function editorOptions() {
+	return {
+		modules: {
+			'toolbar': [ 
+				[ 'bold', 'italic', 'underline' ], 
+				[{ 'color': [] }, { 'background': [] }, { 'script': 'sub'}, { 'script': 'super' }], 
+				[{ 'list': 'ordered' }, { 'list': 'bullet'}, { 'indent': '-1' }, { 'indent': '+1' }], 
+				[{ 'align': [] }], [ 'link'] 
+			]
+		},
+		placeholder: 'Insert a description',
+		theme: 'snow'
+	};
 }

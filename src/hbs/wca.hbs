@@ -1,0 +1,59 @@
+<div class="scorecard-label">
+    <h3 class="scorecard-title"></h3>
+    <span class="scorecard-motto"></span>
+</div>
+<div class="scorecard-main-comment">
+    <div></div>
+</div>
+{{#each this}}
+<div class="scorecard-row">
+    <div class="title-square {{getSquareColor Color}}">
+        <div>
+            {{{getRowTitle Title}}}
+        </div>
+    </div>
+    <div class="value-square">
+        <div>
+            <p class="scorecard-indicator-title">{{Value1}}</p>
+        </div>
+        <div>
+            <span class="scorecard-indicator-value"></span>
+            <span class="scorecard-separator">/</span>
+            <span class="scorecard-indicator-target"></span>
+            <i class="scorecard-indicator-arrow"></i>
+        </div>
+        <div>
+            <span class="scorecard-indicator-value"></span>
+            <span class="scorecard-separator">=</span>
+            <span class="scorecard-indicator-target"></span>
+        </div>
+        <div>
+            <span>Likelihood</span>
+            <span class="scorecard-indicator-likelihood"></span>
+        </div>
+    </div>
+    <div class="value-square">
+        <div>
+            <p class="scorecard-indicator-title">{{Value2}}</p>
+        </div>
+        <div>
+            <span class="scorecard-indicator-value"></span>
+            <span class="scorecard-separator">/</span>
+            <span class="scorecard-indicator-target"></span>
+            <i class="scorecard-indicator-arrow"></i>
+        </div>
+        <div>
+            <span class="scorecard-indicator-value"></span>
+            <span class="scorecard-separator">=</span>
+            <span class="scorecard-indicator-target"></span>
+        </div>
+        <div>
+            <span>Likelihood</span>
+            <span class="scorecard-indicator-likelihood"></span>
+        </div>
+    </div>
+    <div class="comment-square">
+        <div class="scorecard-comment"></div>
+    </div>
+</div>
+{{/each}}

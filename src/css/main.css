@@ -1,13 +1,14 @@
 :root {--main-bright-blue: #003870; --main-dark-blue: #1C4269; --main-nav-height: 60px;}
-body {color: #333;margin: 0;background-color: #f8f8f8;}
+body {color: #333;margin: 0;background-color: #f8f8f8;overflow-y: scroll;}
 textarea {resize: none;}
-.vanish {display: none;}
+.vanish {display: none!important;}
 .hidden {opacity: 0;}
 
+#scorecards-content {margin-bottom: 100px;}
 #wca-content {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 /* bootstrap 4.5 custom */
-.btn {font-size: 12px;}
+.btn {font-size: 12px;border-radius: 0;}
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {color:#fff;background-color: var(--main-bright-blue);border-color: var(--main-bright-blue);}
 .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {background-color: var(--main-dark-blue);border-color: var(--main-dark-blue);}
 .btn-secondary, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle, .btn-secondary:hover {color: #333;background-color: #fff;border-color: #fff;border: 1px solid #ccc;}
@@ -17,7 +18,7 @@ textarea {resize: none;}
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {background: linear-gradient(#ffffff, #f0f8ff);}
 .form-control:focus {border-color: #ccc;box-shadow: none;}
-.form-control {height: 30px;padding: 4px 6px;font-size: 12px;}
+.form-control {height: 22px;padding: 4px 6px;font-size: 12px;border-radius: 0;background-clip: initial;overflow: hidden;}
 select.form-control {text-overflow: ellipsis;}
 
 /* SelectPure dependency style */
