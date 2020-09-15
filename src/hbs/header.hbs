@@ -17,7 +17,7 @@
                     <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">WCA SCORECARDS</a>
                     <div class="dropdown-menu">
                         {{#each this}}
-                        <span class="dropdown-item dropdown-item-element" data-id="{{Id}}">{{renderDropdownItem Title}}</span>
+                        <span class="dropdown-item dropdown-item-element" data-id="{{Id}}" data-date="{{scoredate}}">{{renderDropdownItem Title}}</span>
                         {{/each}}
                     </div>
                 </li>

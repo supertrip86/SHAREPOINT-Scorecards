@@ -2,13 +2,13 @@
     <h3 class="scorecard-title"></h3>
     <input class="form-control scorecard-motto" type="text" placeholder="Enter ScoreCard motto">
 </div>
-<div class="scorecard-main-comment comment-wrapper">
+<div class="scorecard-main-comment scorecard-comment-box comment-wrapper">
     <div class="scorecard-main-summary comment-inner"></div>
     <div class="toggle-dashboard toggle-dashboard-off"></div>
 </div>
 {{#each this}}
 <div class="scorecard-row">
-    <div class="title-square {{getSquareColor Color}}">
+    <div class="title-square {{getSquareColorEdit Color}}">
         <div>
             <textarea class="form-control scorecard-edit-title" placeholder="Insert a ScoreCard title">{{Title}}</textarea>
         </div>
@@ -67,7 +67,7 @@
             </ul>
         </div>
     </div>
-    <div class="comment-square comment-wrapper">
+    <div class="comment-square scorecard-comment-box comment-wrapper">
         <div class="scorecard-comment comment-inner"></div>
         <div class="toggle-dashboard toggle-dashboard-off"></div>
     </div>

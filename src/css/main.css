@@ -1,11 +1,13 @@
 :root {--main-bright-blue: #003870; --main-dark-blue: #1C4269; --main-nav-height: 60px;}
 body {color: #333;margin: 0;background-color: #f8f8f8;overflow-y: scroll;}
 textarea {resize: none;}
+button > * {pointer-events: none;}
 .vanish {display: none!important;}
 .hidden {opacity: 0;}
 
-#scorecards-content {margin-bottom: 100px;}
-#wca-content {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#scorecards-content {margin-bottom: 100px;padding: 0;}
+#scorecards-content input.form-control {height: 22px;overflow: hidden;}
+#scorecards-content #wca-content {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 /* bootstrap 4.5 custom */
 .btn {font-size: 12px;border-radius: 0;}
@@ -13,12 +15,10 @@ textarea {resize: none;}
 .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {background-color: var(--main-dark-blue);border-color: var(--main-dark-blue);}
 .btn-secondary, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle, .btn-secondary:hover {color: #333;background-color: #fff;border-color: #fff;border: 1px solid #ccc;}
 .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto {padding-right: 8px;padding-left: 8px;}
-.col-14 {-ms-flex: 0 0 14%;flex: 0 0 14%;max-width: 14%;}
-.col-40 {-ms-flex: 0 0 40%;flex: 0 0 40%;max-width: 40%;}
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {background: linear-gradient(#ffffff, #f0f8ff);}
 .form-control:focus {border-color: #ccc;box-shadow: none;}
-.form-control {height: 22px;padding: 4px 6px;font-size: 12px;border-radius: 0;background-clip: initial;overflow: hidden;}
+.form-control {padding: 4px 6px;font-size: 12px;border-radius: 0;background-clip: initial;}
 select.form-control {text-overflow: ellipsis;}
 
 /* SelectPure dependency style */

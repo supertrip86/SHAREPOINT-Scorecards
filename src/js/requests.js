@@ -60,6 +60,18 @@ const modifySettings = () => {
     });
 };
 
+const modifyScorecards = () => {
+    const target = document.querySelector('.active-content');
+
+    if (target.classList.contains('create-mode')) {
+        console.log('create')
+    } else {
+        const context = target.id;
+        const id = target.dataset.id;
+        console.log(context, id)
+    }
+};
+
 class ScoreCard {
     // setup
     constructor() {
@@ -119,4 +131,4 @@ class SettingsItem {
     }
 }
 
-export { receiveData, saveData, modifySettings };
+export { receiveData, modifySettings, modifyScorecards };

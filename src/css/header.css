@@ -8,7 +8,7 @@
 .navbar .nav-title {cursor: default;font-family: Arial;font-size: 1.2rem;text-align: center;margin-right: 40px;}
 .navbar .nav-title .nav-link {color: #fff;}
 .navbar .navbar-options {padding-top: 5px;}
-.navbar .dropdown-item {font-size: 0.8rem;user-select: none;-webkit-user-select: none;-moz-user-select: none;-khtml-user-select: none;-ms-user-select: none;font-weight: 600;text-transform: uppercase;}
+.navbar .dropdown-item {font-size: 0.8rem;padding: .15rem 1.5rem;user-select: none;-webkit-user-select: none;-moz-user-select: none;-khtml-user-select: none;-ms-user-select: none;font-weight: 600;text-transform: uppercase;}
 .navbar .dropdown-item.active, .navbar .dropdown-item:active {background-color: var(--main-dark-blue);color: #fff;}
 .navbar .nav-item {margin: auto 10px;}
 .navbar .nav-item .nav-link {color: #005ebd;font-size: 12px;font-weight: 700;text-transform: uppercase;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
