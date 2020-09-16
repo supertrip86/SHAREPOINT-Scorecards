@@ -43,6 +43,8 @@ const modalListeners = () => {
     $('#settingsMenu').on('show.bs.modal', callSettings);
     $('#settingsMenu').on('hidden.bs.modal', resetSettings);
 
+    utilities.on('#scorecards-dialog', 'paste', '.input-number', utilities.preventDefault);
+    utilities.on('#scorecards-dialog', 'keypress', '.input-number', utilities.limitIndicatorValues);
     utilities.on('#scorecards-dialog', 'input', '.modal-edit-title', updateTitle);
     utilities.on('#scorecards-dialog', 'click', '.dialog-menu-item', switchCard);
     utilities.on('#scorecards-dialog', 'click', '#save-settings', modifySettings);

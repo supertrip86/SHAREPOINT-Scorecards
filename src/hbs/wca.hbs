@@ -5,8 +5,7 @@
 <div class="scorecard-main-comment scorecard-comment-box">
     <div class="scorecard-main-summary comment-inner">{{{comment}}}</div>
 </div>
-{{log this}}
-{{#each wca}}
+{{#each wcadata}}
 <div class="scorecard-row">
     <div class="title-square {{getSquareColor this}}">
         <div>
@@ -17,13 +16,13 @@
         <div>
             <p class="scorecard-indicator-title">{{lookup this 11}}</p>
         </div>
-        <div>
+        <div class="value-square-indicators">
             <span class="scorecard-indicator-value">{{lookup this 1}}</span>
             <span class="scorecard-separator">/</span>
             <span class="scorecard-indicator-target">{{lookup this 3}}</span>
             <i class="scorecard-indicator-arrow"></i>
         </div>
-        <div>
+        <div class="value-square-indicators">
             <span class="scorecard-indicator-value"></span>
             <span class="scorecard-separator">=</span>
             <span class="scorecard-indicator-target"></span>
@@ -37,13 +36,13 @@
         <div>
             <p class="scorecard-indicator-title">{{lookup this 11}}</p>
         </div>
-        <div>
+        <div class="value-square-indicators">
             <span class="scorecard-indicator-value">{{lookup this 6}}</span>
             <span class="scorecard-separator">/</span>
             <span class="scorecard-indicator-target">{{lookup this 8}}</span>
             <i class="scorecard-indicator-arrow"></i>
         </div>
-        <div>
+        <div class="value-square-indicators">
             <span class="scorecard-indicator-value"></span>
             <span class="scorecard-separator">=</span>
             <span class="scorecard-indicator-target"></span>

@@ -18,7 +18,7 @@ button > * {pointer-events: none;}
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {background: linear-gradient(#ffffff, #f0f8ff);}
 .form-control:focus {border-color: #ccc;box-shadow: none;}
-.form-control {padding: 4px 6px;font-size: 12px;border-radius: 0;background-clip: initial;}
+.form-control {padding: 4px;font-size: 12px;border-radius: 0;background-clip: initial;}
 select.form-control {text-overflow: ellipsis;}
 
 /* SelectPure dependency style */

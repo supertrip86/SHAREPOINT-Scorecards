@@ -64,56 +64,58 @@ const modifyScorecards = () => {
     const target = document.querySelector('.active-content');
 
     if (target.classList.contains('create-mode')) {
-        console.log('create')
+        const form = document.getElementById('wca-content');
+        const context = form.id;
+        const item = new ScoreCardItem(form, context);
+        console.log(item)
+        // saveData('Scorecard', item);
+
     } else {
+        // receiveData + check (set context so that it only modifies menaningful columns)
         const context = target.id;
         const id = target.dataset.id;
         console.log(context, id)
     }
 };
 
-class ScoreCard {
-    // setup
-    constructor() {
-        this.Title = utilities.get.getValue(`.attachment-title`, this.getContext());
-        this.label = utilities.get.getValue(`.attachment-title`, this.getContext());
-        this.value = utilities.get.getValue(`.attachment-title`, this.getContext());
-        this.Evidence = utilities.get.getValue(`.modal-evidence select option:checked`, this.getContext());
-        this.Language = utilities.get.getValue(`.modal-language option:checked`, this.getContext());
-        this.Date = utilities.get.getDate(`.modal-datepicker`, this.getContext());
-        this.Author0 = utilities.get.getValue(`.modal-author`, this.getContext());
-        this.Study = utilities.get.getValue(`.modal-study`, this.getContext());
-        this.Data = this.getData();
-        this.__metadata = { type: this.getMetadataType() };
+class ScoreCardItem {
+    constructor(form, context) {
+        (context == "wca-content") && (this.wcadata = this.getWca());
+        (context == "hubs-content") && (this.westdata = this.getWest());
+        (context == "hubs-content") && (this.coastaldata = this.getCoastal());
+        (context == "hubs-content") && (this.centraldata = this.getCentral());
+        this.comment = form.querySelector('.scorecard-main-summary .ql-editor').innerHTML;
+        this.motto = form.querySelector('.scorecard-motto').value;
+        this.__metadata = { type: app.storage.scorecardsType };
     }
-    getContext() {
-        return utilities.currentContext();
-    }
-    getData() {
-        const data = [];
-        const context = `#${this.getContext().id} .card-resource`;
 
-        utilities.get.getNodeList(context).forEach( (i) => {
-            const item = {
-                Region: utilities.get.getOptions('.modal-region', i),
-                Country: utilities.get.getOptions('.modal-country', i),
-                Impact: utilities.get.getValue(`.modal-impact option:checked`, i),
-                Population: utilities.get.getValue(`.modal-population`, i),
-                Metrics: utilities.get.getValue(`.modal-metrics`, i),
-                Paragraphs: utilities.get.getValue(`.modal-paragraphs`, i),
-                Intervention: utilities.get.getValue(`.modal-intervention select option:checked`, i),
-                Outcome: utilities.get.getValue(`.modal-outcome select option:checked`, i),
-                Description: utilities.get.getHTML(`.editor .ql-editor`, i)
-            };
+    getWca() {
+        let wca = {};
 
-            data.push(item);
+        utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
+            wca[i.dataset.code] = {};
+
+            wca[i.dataset.code]['description'] = i.querySelector('.ql-editor').innerHTML;
+            wca[i.dataset.code]['title'] = i.querySelector('.scorecard-edit-title').value;
+            wca[i.dataset.code]['indicator1'] = i.querySelector('.scorecard-indicator-title-1').value;
+            wca[i.dataset.code]['indicator2'] = i.querySelector('.scorecard-indicator-title-2').value;
+            wca[i.dataset.code]['value1'] = i.querySelector('.scorecard-indicator-value-1').value;
+            wca[i.dataset.code]['value2'] = i.querySelector('.scorecard-indicator-value-2').value;
+            wca[i.dataset.code]['target1'] = i.querySelector('.scorecard-indicator-target-1').value;
+            wca[i.dataset.code]['target2'] = i.querySelector('.scorecard-indicator-target-2').value;
+            wca[i.dataset.code]['date1'] = i.querySelector('.scorecard-indicator-date-1').value;
+            wca[i.dataset.code]['date2'] = i.querySelector('.scorecard-indicator-date-2').value;
+            wca[i.dataset.code]['old1'] = i.querySelector('.scorecard-indicator-old-1').value;
+            wca[i.dataset.code]['old2'] = i.querySelector('.scorecard-indicator-old-2').value;
+            wca[i.dataset.code]['arrow1'] = utilities.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1'));
+            wca[i.dataset.code]['arrow2'] = utilities.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2'));
+            wca[i.dataset.code]['likelihood1'] = utilities.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line'));
+            wca[i.dataset.code]['likelihood2'] = utilities.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line'));
         });
 
-        return JSON.stringify(data);
+        return wca;
     }
-    getMetadataType() {
-        return gapmap.data.storage.resourceMetadata;
-    }
+
 }
 
 class SettingsItem {

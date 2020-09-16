@@ -7,7 +7,7 @@
     <div class="toggle-dashboard toggle-dashboard-off"></div>
 </div>
 {{#each this}}
-<div class="scorecard-row">
+<div class="scorecard-row" data-code="{{Code}}">
     <div class="title-square {{getSquareColorEdit Color}}">
         <div>
             <textarea class="form-control scorecard-edit-title" placeholder="Insert a ScoreCard title">{{Title}}</textarea>
@@ -15,23 +15,23 @@
     </div>
     <div class="value-square">
         <div>
-            <textarea class="form-control scorecard-indicator-title" placeholder="Insert a title for this indicator">{{Value1}}</textarea>
+            <textarea class="form-control scorecard-indicator-title scorecard-indicator-title-1" placeholder="Insert a title for this indicator">{{getValue Value1}}</textarea>
         </div>
-        <div>
-            <input class="form-control scorecard-indicator-value input-number" type="text" maxlength="5">
+        <div class="value-square-indicators-edit">
+            <input class="form-control scorecard-indicator-value scorecard-indicator-value-1 input-number input-control" type="text" maxlength="5">
             <span class="scorecard-separator">/</span>
-            <input class="form-control scorecard-indicator-target input-number" type="text" maxlength="5">
-            <i class="scorecard-indicator-arrow"></i>
+            <input class="form-control scorecard-indicator-target-1 input-number" type="text" maxlength="5" value="{{getValue Target1}}">
+            <i class="scorecard-indicator-arrow scorecard-indicator-arrow-1"></i>
         </div>
-        <div>
-            <input class="form-control scorecard-indicator-date" type="text">
+        <div class="value-square-indicators-edit">
+            <input class="form-control scorecard-indicator-date scorecard-indicator-date-1" data-date="{{Range1}}" type="text" value="{{getDate Range1}}">
             <span class="scorecard-separator">=</span>
-            <input class="form-control scorecard-indicator-old input-number" type="text" maxlength="5">
+            <input class="form-control scorecard-indicator-old scorecard-indicator-old-1 input-number input-control" type="text" maxlength="5">
         </div>
         <div>
             <span>Likelihood</span>
             <ul class="scorecard-indicator-likelihood">
-                <li class="scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+                <li class="scorecard-likelihood-1 scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
                 <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
                 <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
                 <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>
@@ -42,23 +42,23 @@
     </div>
     <div class="value-square">
         <div>
-            <textarea class="form-control scorecard-indicator-title" placeholder="Insert a title for this indicator">{{Value2}}</textarea>
+            <textarea class="form-control scorecard-indicator-title scorecard-indicator-title-2" placeholder="Insert a title for this indicator">{{getValue Value2}}</textarea>
         </div>
-        <div>
-            <input class="form-control scorecard-indicator-value input-number" type="text" maxlength="5">
+        <div class="value-square-indicators-edit">
+            <input class="form-control scorecard-indicator-value scorecard-indicator-value-2 input-number" type="text" maxlength="5">
             <span class="scorecard-separator">/</span>
-            <input class="form-control scorecard-indicator-target input-number" type="text" maxlength="5">
-            <i class="scorecard-indicator-arrow"></i>
+            <input class="form-control scorecard-indicator-target-2 input-number input-control" type="text" maxlength="5" value="{{getValue Target2}}">
+            <i class="scorecard-indicator-arrow scorecard-indicator-arrow-2"></i>
         </div>
-        <div>
-            <input class="form-control scorecard-indicator-date" type="text">
+        <div class="value-square-indicators-edit">
+            <input class="form-control scorecard-indicator-date scorecard-indicator-date-2" data-date="{{Range2}}" type="text" value="{{getDate Range2}}">
             <span class="scorecard-separator">=</span>
-            <input class="form-control scorecard-indicator-old input-number" type="text" maxlength="5">
+            <input class="form-control scorecard-indicator-old scorecard-indicator-old-2 input-number input-control" type="text" maxlength="5">
         </div>
         <div>
             <span>Likelihood</span>
             <ul class="scorecard-indicator-likelihood">
-                <li class="scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+                <li class="scorecard-likelihood-2 scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
                 <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
                 <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
                 <li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>

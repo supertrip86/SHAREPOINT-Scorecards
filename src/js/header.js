@@ -3,11 +3,12 @@ import "../css/header.css";
 import "../css/wca.css";
 import Header from "../hbs/header.hbs";
 import Wca from "../hbs/wca.hbs";
-import WcaEdit from "../hbs/wcaEdit.hbs";
+import wcaCreate from "../hbs/wcaCreate.hbs";
 import CancelButton from "../hbs/partials/cancelButton.hbs";
 import EditButton from "../hbs/partials/editButton.hbs";
 import Quill from 'quill';
 import utilities from "./utilities.js";
+import dateUpdater from "../hbs/helpers/getDate.js";
 import { receiveData, modifyScorecards } from "./requests.js";
 
 const getPreviousDate = (date) => {
@@ -18,9 +19,21 @@ const getPreviousDate = (date) => {
     return `${previousYear}-${formattedMonth}-15T00:00:00Z`;
 };
 
+const updateDates = () => {
+    const wcaView = document.getElementById('wca-content');
+
+    if (wcaView.classList.contains('create-mode')) {
+        utilities.getNodes('.active-content .scorecard-indicator-date').forEach( (i) => {
+            const date = i.dataset.date;
+
+            i.value = dateUpdater(date);
+        });
+    }
+};
+
 const createScorecard = (e) => {
     receiveData(app.storage.settingsURL).then( (result) => {
-        document.getElementById('wca-content').innerHTML = WcaEdit(result.d.results);
+        document.getElementById('wca-content').innerHTML = wcaCreate(result.d.results);
         document.getElementById('toggle-button').innerHTML = CancelButton();
 
         document.getElementById('wca-content').classList.add('create-mode', 'active-content');
@@ -49,20 +62,23 @@ const loadScorecard = (e) => {
     const selectedDate = e.target.dataset.date;
     const previousDate = getPreviousDate(selectedDate);
 
-    // const site = _spPageContextInfo.webServerRelativeUrl;
-    // const url = `${site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=((scoredate eq '${selectedDate}') or (scoredate eq '${previousDate}'))&$orderby=scoredate desc`;
+    const site = _spPageContextInfo.webServerRelativeUrl;
+    const url = `${site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=((scoredate eq '${selectedDate}') or (scoredate eq '${previousDate}'))&$orderby=scoredate desc`;
 
-    const url = '/api/selectedScorecards.json';
+    // const url = '/api/selectedScorecards.json';
 
     receiveData(url).then( (result) => {
         const selectedScorecard = new ScoreCards(result.d.results[0]);
-        console.log(selectedScorecard)
+
+        app.current = selectedScorecard;
+
         document.getElementById('wca-content').innerHTML = Wca(selectedScorecard);
         document.getElementById('wca-content').setAttribute('data-id', selectedScorecard.Id);
     });
 };
 
 const headerListeners = () => {
+    utilities.on('#scorecards-header', 'change', '#date-button', updateDates);
     utilities.on('#scorecards-header', 'click', '#save-button', modifyScorecards);
     utilities.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
     utilities.on('#scorecards-header', 'click', '.create-scorecard', createScorecard);
@@ -76,13 +92,13 @@ class ScoreCards {
 		this.comment = sharepointItem.comment;
 		this.motto = sharepointItem.motto;
 		this.scoredate = sharepointItem.scoredate;
-		this.wca = this.formatJSON(sharepointItem.wcadata);
-		this.west = this.formatJSON(sharepointItem.westdata);
-		this.coast = this.formatJSON(sharepointItem.coastaldata);
-		this.central = this.formatJSON(sharepointItem.centraldata);
-		this.westAction = this.formatJSON(sharepointItem.westaction);
-		this.coastAction = this.formatJSON(sharepointItem.coastalaction);
-		this.centralAction = this.formatJSON(sharepointItem.centralaction);
+		this.wcadata = this.formatJSON(sharepointItem.wcadata);
+		this.westdata = this.formatJSON(sharepointItem.westdata);
+		this.coastaldata = this.formatJSON(sharepointItem.coastaldata);
+		this.centraldata = this.formatJSON(sharepointItem.centraldata);
+		this.westaction = this.formatJSON(sharepointItem.westaction);
+		this.coastalaction = this.formatJSON(sharepointItem.coastalaction);
+		this.centralaction = this.formatJSON(sharepointItem.centralaction);
     }
 
     formatJSON(item) {

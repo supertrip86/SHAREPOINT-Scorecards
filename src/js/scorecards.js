@@ -25,12 +25,6 @@ class Admin extends App {
     }
 };
 
-const limitIndicatorValues = (e) => {
-    if (((e.charCode < 46 || e.charCode > 57) || e.charCode === 47) || (e.charCode === 46 && e.target.value.indexOf('.') !== -1)) {
-        e.preventDefault();
-    }
-};
-
 const toggleDashboard = (e) => {
     if (e.target.classList.contains('toggle-dashboard-off')) {
         e.target.classList.remove('toggle-dashboard-off');
@@ -41,6 +35,20 @@ const toggleDashboard = (e) => {
         e.target.classList.remove('toggle-dashboard-on');
         e.target.classList.add('toggle-dashboard-off');
         e.target.closest('.comment-wrapper').querySelector('.ql-toolbar').classList.add('vanish');
+    }
+};
+
+const updateArrow = (e) => {
+    const currentValue = parseInt(e.target.closest('.value-square').querySelector('.scorecard-indicator-value').value);
+    const pastValue = parseInt(e.target.closest('.value-square').querySelector('.scorecard-indicator-old').value);
+    const arrow = e.target.closest('.value-square').querySelector('.scorecard-indicator-arrow');
+
+    arrow.classList.remove('scorecard-indicator-arrow-up', 'scorecard-indicator-arrow-right', 'scorecard-indicator-arrow-down');
+
+    if (!isNaN(currentValue) && !isNaN(pastValue)) {
+        (currentValue > pastValue) && arrow.classList.add("scorecard-indicator-arrow-up");
+        (currentValue == pastValue) && arrow.classList.add("scorecard-indicator-arrow-right");
+        (currentValue < pastValue) && arrow.classList.add("scorecard-indicator-arrow-down");
     }
 };
 
@@ -82,7 +90,8 @@ const scorecardsListeners = () => {
     document.addEventListener('click', closeLikelihood);
 
     utilities.on('#wca-content', 'paste', '.input-number', utilities.preventDefault);
-    utilities.on('#wca-content', 'keypress', '.input-number', limitIndicatorValues);
+    utilities.on('#wca-content', 'keypress', '.input-number', utilities.limitIndicatorValues);
+    utilities.on('#wca-content', 'input', '.input-control', updateArrow);
     utilities.on('#wca-content', 'click', '.toggle-dashboard', toggleDashboard);
     utilities.on('#wca-content', 'click', '.open-likelihood-dropdown', expandLikelihood);
     utilities.on('#wca-content', 'click', '.select-likelihood', selectLikelihood);

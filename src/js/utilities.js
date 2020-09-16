@@ -3,7 +3,11 @@ module.exports = {
 	preventDefault: preventDefault,
 	getNodes: getNodes,
 	startLoader: startLoader,
-	editorOptions: editorOptions
+	editorOptions: editorOptions,
+	limitIndicatorValues: limitIndicatorValues,
+	// fromSPtoArrow: fromSPtoArrow,
+	fromArrowToSP: fromArrowToSP,
+	fromLikelihoodToSP: fromLikelihoodToSP
 };
 
 function on(selector, eventType, childSelector, eventHandler) {
@@ -53,4 +57,43 @@ function editorOptions() {
 		placeholder: 'Insert a description',
 		theme: 'snow'
 	};
+}
+
+function limitIndicatorValues(e) {
+    if (((e.charCode < 46 || e.charCode > 57) || e.charCode === 47) || (e.charCode === 46 && e.target.value.indexOf('.') !== -1)) {
+        e.preventDefault();
+    }
+}
+
+function fromArrowToSP(element) {
+	if (element.classList.contains('scorecard-indicator-arrow-down')) {
+		return 1;
+
+	} else if (element.classList.contains('scorecard-indicator-arrow-right')) {
+		return 2;
+
+	} else if (element.classList.contains('scorecard-indicator-arrow-up')) {
+		return 3;
+
+	} else {
+		return 0;
+	}
+}
+
+function fromLikelihoodToSP(element) {
+	if (element.classList.contains('green-line')) {
+		return 1;
+
+	} else if (element.classList.contains('yellow-line')) {
+		return 2;
+
+	} else if (element.classList.contains('orange-line')) {
+		return 3;
+
+	} else if (element.classList.contains('red-line')) {
+		return 4;
+
+	} else {
+		return 0;
+	}
 }
