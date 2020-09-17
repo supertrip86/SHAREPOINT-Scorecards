@@ -1,5 +1,5 @@
 module.exports = function(item) {
-    const color = item[17];
+    const color = item.color;
 
     switch (color) {
         case "Grey":

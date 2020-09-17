@@ -5,9 +5,11 @@ module.exports = {
 	startLoader: startLoader,
 	editorOptions: editorOptions,
 	limitIndicatorValues: limitIndicatorValues,
+	createScorecardTitle: createScorecardTitle,
 	// fromSPtoArrow: fromSPtoArrow,
 	fromArrowToSP: fromArrowToSP,
-	fromLikelihoodToSP: fromLikelihoodToSP
+	fromLikelihoodToSP: fromLikelihoodToSP,
+	fromDateToSP: fromDateToSP,
 };
 
 function on(selector, eventType, childSelector, eventHandler) {
@@ -65,6 +67,15 @@ function limitIndicatorValues(e) {
     }
 }
 
+function createScorecardTitle() {
+	const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+	const startDate = document.getElementById('date-button').value.split('-').map( (i) => parseInt(i) );
+	const month = startDate[1] -1;
+	const year = startDate[0];
+
+	return `${months[month]} ${year}`;
+}
+
 function fromArrowToSP(element) {
 	if (element.classList.contains('scorecard-indicator-arrow-down')) {
 		return 1;
@@ -96,4 +107,10 @@ function fromLikelihoodToSP(element) {
 	} else {
 		return 0;
 	}
+}
+
+function fromDateToSP() {
+	const date = document.getElementById('date-button').value.split('-');
+
+	return `${date[0]}-${date[1]}-15T00:00:00Z`;
 }

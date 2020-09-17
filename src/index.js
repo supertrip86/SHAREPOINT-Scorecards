@@ -6,21 +6,21 @@ import { App, Admin, scorecardsListeners } from "./js/scorecards.js";
 import { Modal, modalListeners } from "./js/settings.js";
 import { Header, headerListeners } from "./js/header.js";
 
-const site = _spPageContextInfo.webServerRelativeUrl;
+// const site = _spPageContextInfo.webServerRelativeUrl;
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 const scorecardsListColumns = ["scoredate", "Id", "Title"];
 
 const data = {
     settingsList: 'scorecards-settings-v2',
     scorecardsList: 'scorecards-data-v2',
-    userData: `${site}/_api/web/currentuser/?$expand=groups`,
-    settingsData: `${site}/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=${settingsListColumns.join()}&$orderby=Position asc`,
-    scorecardsData: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=${scorecardsListColumns.join()}&$orderby=scoredate desc`,
-    scorecardsMetadata: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')`
-    // userData: '/api/user.json',
-    // settingsData: '/api/settings.json',
-    // scorecardsData: '/api/scorecards.json',
-    // scorecardsMetadata: '/api/scorecardsList.json'
+    // userData: `${site}/_api/web/currentuser/?$expand=groups`,
+    // settingsData: `${site}/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=${settingsListColumns.join()}&$orderby=Position asc`,
+    // scorecardsData: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=${scorecardsListColumns.join()}&$orderby=scoredate desc`,
+    // scorecardsMetadata: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')`
+    userData: '/api/user.json',
+    settingsData: '/api/settings.json',
+    scorecardsData: '/api/scorecards.json',
+    scorecardsMetadata: '/api/scorecardsList.json'
 };
 
 const initApp = () => {
@@ -40,9 +40,9 @@ const initApp = () => {
         document.querySelector('.navbar-collapse').remove();
     }
 
-    setInterval( () => {
-        UpdateFormDigest(site, _spFormDigestRefreshInterval);
-    }, 15 * 60000);
+    // setInterval( () => {
+    //     UpdateFormDigest(site, _spFormDigestRefreshInterval);
+    // }, 15 * 60000);
 };
 
 receiveData(data.userData).then( (user) => {

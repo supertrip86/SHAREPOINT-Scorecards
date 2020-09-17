@@ -62,34 +62,32 @@ const modifySettings = () => {
 
 const modifyScorecards = () => {
     const target = document.querySelector('.active-content');
+    const context = target.id;
 
     if (target.classList.contains('create-mode')) {
-        const form = document.getElementById('wca-content');
-        const context = form.id;
-        const item = new ScoreCardItem(form, context);
-        console.log(item)
-        // saveData('Scorecard', item);
+        const item = new ScoreCardItem(target, context);
+
+        saveData('Scorecard', item);
 
     } else {
         // receiveData + check (set context so that it only modifies menaningful columns)
-        const context = target.id;
-        const id = target.dataset.id;
-        console.log(context, id)
     }
 };
 
 class ScoreCardItem {
     constructor(form, context) {
-        (context == "wca-content") && (this.wcadata = this.getWca());
-        (context == "hubs-content") && (this.westdata = this.getWest());
-        (context == "hubs-content") && (this.coastaldata = this.getCoastal());
-        (context == "hubs-content") && (this.centraldata = this.getCentral());
+        this.Title = utilities.createScorecardTitle();
+        this.scoredate = utilities.fromDateToSP();
         this.comment = form.querySelector('.scorecard-main-summary .ql-editor').innerHTML;
         this.motto = form.querySelector('.scorecard-motto').value;
         this.__metadata = { type: app.storage.scorecardsType };
+
+        (context == "wca-content") && (this.wcadata = this.getWca());
     }
 
     getWca() {
+        const filterOut = (value) => isNaN(parseInt(value)) ? "" : value;
+
         let wca = {};
 
         utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
@@ -99,21 +97,22 @@ class ScoreCardItem {
             wca[i.dataset.code]['title'] = i.querySelector('.scorecard-edit-title').value;
             wca[i.dataset.code]['indicator1'] = i.querySelector('.scorecard-indicator-title-1').value;
             wca[i.dataset.code]['indicator2'] = i.querySelector('.scorecard-indicator-title-2').value;
-            wca[i.dataset.code]['value1'] = i.querySelector('.scorecard-indicator-value-1').value;
-            wca[i.dataset.code]['value2'] = i.querySelector('.scorecard-indicator-value-2').value;
-            wca[i.dataset.code]['target1'] = i.querySelector('.scorecard-indicator-target-1').value;
-            wca[i.dataset.code]['target2'] = i.querySelector('.scorecard-indicator-target-2').value;
+            wca[i.dataset.code]['value1'] = filterOut(i.querySelector('.scorecard-indicator-value-1').value);
+            wca[i.dataset.code]['value2'] = filterOut(i.querySelector('.scorecard-indicator-value-2').value);
+            wca[i.dataset.code]['target1'] = filterOut(i.querySelector('.scorecard-indicator-target-1').value);
+            wca[i.dataset.code]['target2'] = filterOut(i.querySelector('.scorecard-indicator-target-2').value);
             wca[i.dataset.code]['date1'] = i.querySelector('.scorecard-indicator-date-1').value;
             wca[i.dataset.code]['date2'] = i.querySelector('.scorecard-indicator-date-2').value;
-            wca[i.dataset.code]['old1'] = i.querySelector('.scorecard-indicator-old-1').value;
-            wca[i.dataset.code]['old2'] = i.querySelector('.scorecard-indicator-old-2').value;
+            wca[i.dataset.code]['old1'] = filterOut(i.querySelector('.scorecard-indicator-old-1').value);
+            wca[i.dataset.code]['old2'] = filterOut(i.querySelector('.scorecard-indicator-old-2').value);
             wca[i.dataset.code]['arrow1'] = utilities.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1'));
             wca[i.dataset.code]['arrow2'] = utilities.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2'));
             wca[i.dataset.code]['likelihood1'] = utilities.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line'));
             wca[i.dataset.code]['likelihood2'] = utilities.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line'));
+            wca[i.dataset.code]['color'] = i.dataset.color;
         });
 
-        return wca;
+        return JSON.stringify(wca);
     }
 
 }

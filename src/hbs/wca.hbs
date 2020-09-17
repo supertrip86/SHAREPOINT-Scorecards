@@ -1,6 +1,6 @@
 <div class="scorecard-label">
-    <h3 class="scorecard-title"></h3>
-    <span class="scorecard-motto"></span>
+    <h3 class="scorecard-title">WCA SCORECARDS, {{Title}}</h3>
+    <span class="scorecard-motto">{{motto}}</span>
 </div>
 <div class="scorecard-main-comment scorecard-comment-box">
     <div class="scorecard-main-summary comment-inner">{{{comment}}}</div>
@@ -14,46 +14,50 @@
     </div>
     <div class="value-square">
         <div>
-            <p class="scorecard-indicator-title">{{lookup this 11}}</p>
+            <p class="scorecard-indicator-title">{{indicator1}}</p>
         </div>
         <div class="value-square-indicators">
-            <span class="scorecard-indicator-value">{{lookup this 1}}</span>
+            <span class="scorecard-indicator-value">{{value1}}</span>
             <span class="scorecard-separator">/</span>
-            <span class="scorecard-indicator-target">{{lookup this 3}}</span>
-            <i class="scorecard-indicator-arrow"></i>
+            <span class="scorecard-indicator-target">{{target1}}</span>
+            <i class="scorecard-indicator-arrow {{getArrow arrow1}}"></i>
         </div>
         <div class="value-square-indicators">
-            <span class="scorecard-indicator-value"></span>
+            <span class="scorecard-indicator-date">{{date1}}</span>
             <span class="scorecard-separator">=</span>
-            <span class="scorecard-indicator-target"></span>
+            <span class="scorecard-indicator-old">{{old1}}</span>
         </div>
         <div>
             <span>Likelihood</span>
-            <span class="scorecard-indicator-likelihood"></span>
+            <span class="scorecard-indicator-likelihood">
+                <div class="line {{getLikelihood likelihood1}}"></div>
+            </span>
         </div>
     </div>
     <div class="value-square">
         <div>
-            <p class="scorecard-indicator-title">{{lookup this 11}}</p>
+            <p class="scorecard-indicator-title">{{indicator2}}</p>
         </div>
         <div class="value-square-indicators">
-            <span class="scorecard-indicator-value">{{lookup this 6}}</span>
+            <span class="scorecard-indicator-value">{{value2}}</span>
             <span class="scorecard-separator">/</span>
-            <span class="scorecard-indicator-target">{{lookup this 8}}</span>
-            <i class="scorecard-indicator-arrow"></i>
+            <span class="scorecard-indicator-target">{{target2}}</span>
+            <i class="scorecard-indicator-arrow {{getArrow arrow2}}"></i>
         </div>
         <div class="value-square-indicators">
-            <span class="scorecard-indicator-value"></span>
+            <span class="scorecard-indicator-date">{{date2}}</span>
             <span class="scorecard-separator">=</span>
-            <span class="scorecard-indicator-target"></span>
+            <span class="scorecard-indicator-old">{{old2}}</span>
         </div>
         <div>
             <span>Likelihood</span>
-            <span class="scorecard-indicator-likelihood"></span>
+            <span class="scorecard-indicator-likelihood">
+                <div class="line {{getLikelihood likelihood2}}"></div>
+            </span>
         </div>
     </div>
     <div class="comment-square scorecard-comment-box">
-        <div class="scorecard-comment">{{{lookup this 0}}}</div>
+        <div class="scorecard-comment">{{{description}}}</div>
     </div>
 </div>
 {{/each}}

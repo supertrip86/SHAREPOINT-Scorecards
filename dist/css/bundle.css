@@ -1062,7 +1062,9 @@ button svg {margin-top: -1px;}
     }
 }
 .scorecard-label {height: 30px;background-color: #333;display: flex;}
+.scorecard-label .scorecard-title {color: #fff;margin: auto 0 auto 200px;flex-grow: 1;text-align: center;font-size: 18px;}
 .scorecard-label .scorecard-motto {width: 200px;margin: auto 15px auto auto;font-style: italic;}
+.scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
 .scorecard-main-comment {margin-bottom: 6px;position: relative;}
 .scorecard-main-comment .scorecard-main-summary {background-color: #eee;min-height: 135px;padding: 5px;font-size: 12px;}
 .scorecard-main-comment .ql-container {height: auto;}
@@ -1087,7 +1089,7 @@ button svg {margin-top: -1px;}
 .scorecard-row .title-square span {font-style: italic;font-size: 16px;}
 .scorecard-row .value-square {-ms-flex: 0 0 180px;flex: 0 0 180px;max-width: 180px;position: relative;}
 .scorecard-row .value-square > div:not(:first-child):not(:last-child) {height: 22px;margin-top: 6px;display: flex;align-items: center;}
-.scorecard-row .value-square > div:last-child {display: flex;margin-top: 8px;justify-content: space-around;}
+.scorecard-row .value-square > div:last-child {display: flex;margin-top: 8px;justify-content: space-evenly;}
 .scorecard-row .value-square > div:last-child i {margin: auto 4px auto auto;}
 .scorecard-row .value-square > div:last-child i::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMC42ZW0iIGhlaWdodD0iMC42ZW0iIHZpZXdCb3g9IjAgMCAxNiAxNiIgY2xhc3M9ImJpIGJpLWNoZXZyb24tZG93biIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjY0NiA0LjY0NmEuNS41IDAgMCAxIC43MDggMEw4IDEwLjI5M2w1LjY0Ni01LjY0N2EuNS41IDAgMCAxIC43MDguNzA4bC02IDZhLjUuNSAwIDAgMS0uNzA4IDBsLTYtNmEuNS41IDAgMCAxIDAtLjcwOHoiLz4NCjwvc3ZnPg==');}
 .scorecard-row .value-square .value-square-indicators {justify-content: center;}
@@ -1102,6 +1104,7 @@ button svg {margin-top: -1px;}
 .scorecard-row .value-square .scorecard-indicator-arrow-up::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktY2FyZXQtdXAtZmlsbCIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNNy4yNDcgNC44NmwtNC43OTYgNS40ODFjLS41NjYuNjQ3LS4xMDYgMS42NTkuNzUzIDEuNjU5aDkuNTkyYTEgMSAwIDAgMCAuNzUzLTEuNjU5bC00Ljc5Ni01LjQ4YTEgMSAwIDAgMC0xLjUwNiAweiIvPg0KPC9zdmc+');}
 .scorecard-row .scorecard-indicator-title {height: 40px;font-size: 12px;font-weight: 700;color: var(--main-bright-blue);font-style: italic;margin: 0;line-height: 1;padding: 5px 0 0 0;text-align: center;}
 .scorecard-row .scorecard-indicator-likelihood {width: 75px;margin: 0;padding: 0;list-style: none;}
+.scorecard-row span.scorecard-indicator-likelihood {display: flex;}
 .scorecard-row .scorecard-indicator-likelihood li {background-color: #fff;box-shadow: 0 1px 0 #fff, 0 -1px 0 #fff;-webkit-box-shadow: 0 1px 0 #fff, 0 -1px 0 #fff;-moz-box-shadow: 0 1px 0 #fff,0 -1px 0 #fff;border: 1px solid #ced4da;z-index: 1;height: 20px;cursor: default;position: relative;display: flex;}
 .scorecard-row .scorecard-indicator-likelihood li:not(:first-child):not(:last-child) {border-bottom: none;border-top: none;}
 .scorecard-row .scorecard-indicator-likelihood li:last-child {border-top: none;}
