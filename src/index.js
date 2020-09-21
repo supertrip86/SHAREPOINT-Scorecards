@@ -2,47 +2,26 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/main.css";
 import { receiveData } from "./js/requests.js";
-import { App, Admin, scorecardsListeners } from "./js/scorecards.js";
+import { App, Admin } from "./js/app.js";
+import { scorecardsListeners } from "./js/scorecards.js";
 import { Modal, modalListeners } from "./js/settings.js";
 import { Header, headerListeners } from "./js/header.js";
 
-// const site = _spPageContextInfo.webServerRelativeUrl;
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 const scorecardsListColumns = ["scoredate", "Id", "Title"];
 
 const data = {
     settingsList: 'scorecards-settings-v2',
     scorecardsList: 'scorecards-data-v2',
-    // userData: `${site}/_api/web/currentuser/?$expand=groups`,
-    // settingsData: `${site}/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=${settingsListColumns.join()}&$orderby=Position asc`,
-    // scorecardsData: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=${scorecardsListColumns.join()}&$orderby=scoredate desc`,
-    // scorecardsMetadata: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')`
-    userData: '/api/user.json',
-    settingsData: '/api/settings.json',
-    scorecardsData: '/api/scorecards.json',
-    scorecardsMetadata: '/api/scorecardsList.json'
-};
-
-const initApp = () => {
-    document.getElementById("scorecards-header").innerHTML = Header(data.scorecards);
-    headerListeners();
-    scorecardsListeners();
-
-    if (data.isAdmin) {
-        window.app = new Admin(data);
-
-        document.getElementById("scorecards-dialog").innerHTML = Modal(data.settings);
-        modalListeners();
-
-    } else {
-        window.app = new App(data);
-
-        document.querySelector('.navbar-collapse').remove();
-    }
-
-    // setInterval( () => {
-    //     UpdateFormDigest(site, _spFormDigestRefreshInterval);
-    // }, 15 * 60000);
+    site: _spPageContextInfo.webServerRelativeUrl,
+    userData: `${_spPageContextInfo.webServerRelativeUrl}/_api/web/currentuser/?$expand=groups`,
+    settingsData: `${_spPageContextInfo.webServerRelativeUrl}/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=${settingsListColumns.join()}&$orderby=Position asc`,
+    scorecardsData: `${_spPageContextInfo.webServerRelativeUrl}/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=${scorecardsListColumns.join()}&$orderby=scoredate desc`,
+    scorecardsMetadata: `${_spPageContextInfo.webServerRelativeUrl}/_api/web/lists/getbytitle('scorecards-data-v2')`
+    // userData: '/api/user.json',
+    // settingsData: '/api/settings.json',
+    // scorecardsData: '/api/scorecards.json',
+    // scorecardsMetadata: '/api/scorecardsList.json'
 };
 
 receiveData(data.userData).then( (user) => {
@@ -69,3 +48,41 @@ receiveData(data.userData).then( (user) => {
         });
     });
 });
+
+function headerData(data) {
+    const date = data[0].scoredate.split('-');
+    const year = date[0];
+    const month = parseInt(date[1]) + 1;
+    const updatedMonth = month > 9 ?  month : `0${month}`;
+
+    return {
+        scorecards: data,
+        minDate: `${year}-${updatedMonth}`
+    };
+};
+
+function updateSPToken () {
+    setInterval( () => {
+        UpdateFormDigest(_spPageContextInfo.webServerRelativeUrl, _spFormDigestRefreshInterval);
+    }, 15 * 60000);
+};
+
+function initApp() {
+    document.getElementById("scorecards-header").innerHTML = Header( headerData(data.scorecards) );
+
+    headerListeners();
+    scorecardsListeners();
+    updateSPToken();
+
+    if (data.isAdmin) {
+        window.app = new Admin(data);
+
+        document.getElementById("scorecards-dialog").innerHTML = Modal(data.settings);
+        modalListeners();
+
+    } else {
+        window.app = new App(data);
+
+        document.querySelector('.navbar-collapse').remove();
+    }
+};

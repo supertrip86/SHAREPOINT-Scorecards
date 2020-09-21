@@ -1,30 +1,5 @@
 import utilities from "./utilities";
 
-class App {
-    constructor(data) {
-        this.settings = data.settings;
-        this.scorecards = data.scorecards;
-        this.storage = this.createStorage(data);
-    }
-
-    createStorage(data) {
-        return {
-            settingsList: data.settingsList,
-            settingsType: data.settings[0].__metadata.type,
-            settingsURL: data.settingsData,
-            scorecardsList: data.scorecardsList,
-            scorecardsType: data.scorecardsType,
-            scorecardsURL: data.scorecardsData
-        };
-    }
-};
-
-class Admin extends App {
-    constructor(data) {
-        super(data);
-    }
-};
-
 const toggleDashboard = (e) => {
     if (e.target.classList.contains('toggle-dashboard-off')) {
         e.target.classList.remove('toggle-dashboard-off');
@@ -97,4 +72,4 @@ const scorecardsListeners = () => {
     utilities.on('#wca-content', 'click', '.select-likelihood', selectLikelihood);
 };
 
-export { App, Admin, scorecardsListeners }
+export { scorecardsListeners };

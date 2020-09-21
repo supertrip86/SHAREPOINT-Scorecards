@@ -37129,7 +37129,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(__default(__webpack_require__(/*! ./helpers/renderDropdownItem.js */ "./src/hbs/helpers/renderDropdownItem.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Title") : depth0),{"name":"renderDropdownItem","hash":{},"data":data,"loc":{"start":{"line":20,"column":117},"end":{"line":20,"column":145}}}))
     + "</span>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
@@ -37137,12 +37137,14 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "<nav class=\"navbar navbar-expand-lg main-nav\">\r\n    <div class=\"container-fluid\">\r\n        <a class=\"navbar-brand collapse\">\r\n            <img class=\"logo horizontal-logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii04MCAzMCA1MDAgMjgwIj4NCiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTAsMjgwKSBzY2FsZSgwLjEsLTAuMSkiIGZpbGw9IiNmZmYiIHN0cm9rZT0ibm9uZSI+DQogICAgICAgIDxwYXRoIGQ9Ik0zOTAgMjA2OCBjMCAtMjU2IC0zIC0zMzEgLTE1IC0zNjMgLTUwIC0xNDAgMTUgLTI2NiAxNzkgLTM0NSA3Nw0KICAgICAgICAtMzcgMTIwIC03MSAxNDQgLTExNSA2IC0xMSAxMiAtMTUgMTIgLTggMCAyOSA2NyA4NiAxNDQgMTIzIDE2NiA3OSAyMzEgMjA0DQogICAgICAgIDE4MSAzNDUgLTEyIDMyIC0xNSAxMDcgLTE1IDM2MyAwIDIwOCAtNCAzMjIgLTEwIDMyMiAtNiAwIC0xMCAtMTIxIC0xMCAtMzQyDQogICAgICAgIDAgLTQxNSA2IC0zOTMgLTExOCAtNDU0IC00OCAtMjQgLTEwMyAtNjEgLTEzMCAtODcgbC00NyAtNDcgLTQ3IDQ2IGMtMjYgMjcNCiAgICAgICAgLTgwIDY0IC0xMjggODggLTEyNiA2MiAtMTIwIDQwIC0xMjAgNDUzIDAgMjIyIC00IDM0MyAtMTAgMzQzIC02IDAgLTEwIC0xMTQNCiAgICAgICAgLTEwIC0zMjJ6Ii8+DQogICAgICAgIDxwYXRoIGQ9Ik00NTAgMjE3OSBjMCAtMTM0IC00IC0yMTggLTExIC0yMzEgLTE2IC0zMCAtMTMgLTEzMCA1IC0xODUgMjIgLTY1DQogICAgICAgIDYzIC0xMTMgMTQ0IC0xNjYgMzcgLTI1IDc4IC02MCA5MSAtNzcgbDIzIC0zMiAzNyAzOSBjMjAgMjIgNjEgNTYgOTIgNzYgNzANCiAgICAgICAgNDUgMTE0IDk3IDEzNSAxNjAgMTggNTUgMjEgMTU1IDUgMTg1IC03IDEzIC0xMSA5NyAtMTEgMjMxIDAgMTM0IC00IDIxMSAtMTANCiAgICAgICAgMjExIC02IDAgLTEwIC04NyAtMTAgLTI0MSAwIC0xNDYgLTQgLTI0OCAtMTAgLTI2MCAtNiAtMTAgLTI4IC0yOCAtNDkgLTM4DQogICAgICAgIC01MiAtMjcgLTk2IC02NSAtMTQyIC0xMjQgLTIyIC0yNyAtMzkgLTQ1IC0zOSAtNDAgMCAyMSAtMTA3IDEyNyAtMTU3IDE1NQ0KICAgICAgICAtMjkgMTcgLTU4IDM4IC02MyA0OCAtNiAxMSAtMTAgMTIyIC0xMCAyNTkgMCAxNTQgLTQgMjQxIC0xMCAyNDEgLTYgMCAtMTANCiAgICAgICAgLTc3IC0xMCAtMjExeiIvPg0KICAgICAgICA8cGF0aCBkPSJNNTMwIDIyNDYgYzAgLTEwOSAtNCAtMTUzIC0xNiAtMTgyIC0zMyAtNzkgNiAtMTkzIDc5IC0yMzIgMTcgLTEwDQogICAgICAgIDQ5IC0zMyA3MSAtNTQgbDQxIC0zNiA0MSAzNiBjMjIgMjEgNTQgNDQgNzEgNTQgNzMgMzggMTEyIDE1MyA3OSAyMzIgLTEyIDI5DQogICAgICAgIC0xNiA3MyAtMTYgMTgyIDAgMjEwIC0xOCAxODAgLTIyIC0zNSAtMyAtMTc0IC00IC0xODAgLTI3IC0yMDUgLTM0IC0zNiAtNDgNCiAgICAgICAgLTMzIC00NyAxMiAyIDE2MiAtNiAzNzIgLTE0IDM3MiAtNiAwIC0xMCAtNTMgLTEwIC0xNDAgbDAgLTE0MCAtMjYgMTcgYy0yNQ0KICAgICAgICAxNiAtMjggMTYgLTU1IDAgbC0yOSAtMTYgMCAxMzkgYzAgODcgLTQgMTQwIC0xMCAxNDAgLTggMCAtMTcgLTIzNSAtMTMgLTM3Nw0KICAgICAgICAwIC00MCAtMTUgLTQyIC00OCAtNyAtMjMgMjUgLTI0IDMxIC0yNyAyMDUgLTQgMjE1IC0yMiAyNDUgLTIyIDM1eiIvPg0KICAgICAgICA8cGF0aCBkPSJNMzk4IDg4MiBsLTMgLTMxOSAtMjcgLTQwIGMtNDEgLTYyIC03NSAtNzMgLTIyMiAtNzMgbC0xMjYgMCAwIC05Ng0KICAgICAgICAwIC05NiAxNDggNCBjMTQzIDMgMTQ5IDQgMjE0IDM2IDgwIDM5IDEzOCAxMDEgMTcwIDE4MSAyMiA1NCAyMyA2NiAyMyAzODYgbDANCiAgICAgICAgMzMwIC04NyAzIC04NyAzIC0zIC0zMTl6Ii8+DQogICAgICAgIDxwYXRoIGQ9Ik02MTcgMTE5NCBjLTQgLTQgLTcgLTE1NCAtNyAtMzM0IDAgLTI5OSAtMiAtMzMyIC0yMCAtMzg0IC0zNiAtMTA3DQogICAgICAgIC0xMDQgLTE3OCAtMjE1IC0yMjcgLTQzIC0xOSAtNzIgLTIzIC0yMDMgLTI3IGwtMTUyIC00IDAgLTg5IDAgLTg5IDE0OCAwDQogICAgICAgIGMxNjcgMCAyMzAgMTIgMzI2IDYzIDc5IDQxIDE5MiAxNTQgMjM0IDIzMyA2MiAxMjAgNjcgMTUzIDY3IDUyNCBsMCAzMzUgLTg1DQogICAgICAgIDMgYy00NyAxIC04OSAwIC05MyAtNHoiLz4NCiAgICAgICAgPHBhdGggZD0iTTgzNyAxMTkzIGMtMTEgLTEwIC04IC01NzEgMyAtNjM3IDE5IC0xMTkgODMgLTIwNyAxODggLTI1OCA2NSAtMzINCiAgICAgICAgNzEgLTMzIDIxNCAtMzYgbDE0OCAtNCAwIDk1IDAgOTUgLTEzNyA0IGMtMTI0IDMgLTE0MSA1IC0xNjkgMjUgLTY2IDQ3IC02OQ0KICAgICAgICA2NCAtNzIgNDExIGwtMyAzMTIgLTgzIDAgYy00NSAwIC04NiAtMyAtODkgLTd6Ii8+DQogICAgICAgIDxwYXRoIGQ9Ik0xNjEwIDczMCBsMCAtNDcwIDEyMCAwIDEyMCAwIDAgNDcwIDAgNDcwIC0xMjAgMCAtMTIwIDAgMCAtNDcweiIvPg0KICAgICAgICA8cGF0aCBkPSJNMjAyMCA3MzAgbDAgLTQ3MCAxMTUgMCAxMTUgMCAwIDE4MCAwIDE4MCAxMzUgMCAxMzUgMCAwIDEwNSAwIDEwNQ0KICAgICAgICAtMTM1IDAgLTEzNSAwIDAgODAgMCA4MCAxNDAgMCAxNDAgMCAwIDEwNSAwIDEwNSAtMjU1IDAgLTI1NSAwIDAgLTQ3MHoiLz4NCiAgICAgICAgPHBhdGggZD0iTTI3MDMgNzQ4IGMtMTAwIC0yNDkgLTE4NSAtNDYxIC0xODkgLTQ3MCAtNiAtMTcgNCAtMTggMTIzIC0xOCBsMTI4DQogICAgICAgIDAgMjMgNjUgMjQgNjUgMTYzIDAgMTYzIDAgMjIgLTY1IDIyIC02NSAxMjkgMCBjNzEgMCAxMjkgMiAxMjkgNCAwIDIgLTgzIDIxMg0KICAgICAgICAtMTg0IDQ2NyBsLTE4NSA0NjQgLTkzIDMgLTkzIDMgLTE4MiAtNDUzeiBtMzI2IC0xMiBjMjMgLTc2IDQwIC0xNDAgMzggLTE0Mw0KICAgICAgICAtMyAtMiAtNDUgLTIgLTk0IC0xIGwtOTAgMyA0NSAxNTMgYzI2IDg2IDQ5IDE0NyA1MyAxNDAgNCAtNyAyNSAtNzUgNDggLTE1MnoiLz4NCiAgICAgICAgPHBhdGggZD0iTTM1MjcgMTE5MyBjLTQgLTMgLTcgLTIxNSAtNyAtNDcwIGwwIC00NjMgMjAzIDAgYzI5MiAwIDM5NSAyNyA0OTANCiAgICAgICAgMTI5IDg0IDg5IDExNyAxODcgMTE3IDM0MiAwIDE1OSAtNDMgMjY0IC0xNDUgMzU3IC02NiA2MCAtMTM3IDkwIC0yNTAgMTAzDQogICAgICAgIC05MiAxMCAtMzk4IDEyIC00MDggMnogbTQ1NyAtMjM2IGM3NSAtNDEgMTA2IC0xMTEgMTA2IC0yNDMgMCAtMTA2IC0zMCAtMTcyDQogICAgICAgIC05OCAtMjExIC0zOSAtMjMgLTYwIC0yOCAtMTM5IC0zMSBsLTkzIC00IDAgMjU0IGMwIDE0MCAzIDI1OCA4IDI2MiAxNSAxNg0KICAgICAgICAxNzQgLTQgMjE2IC0yN3oiLz4NCiAgICA8L2c+DQo8L3N2Zz4NCg==\">\r\n        </a>\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-title\">\r\n                <a class=\"nav-link\">WCA | ScoreCards</a>\r\n            </li>\r\n        </ul>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#scorecardsNavbar\" aria-controls=\"scorecardsNavbar\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"scorecardsNavbar\">\r\n            <ul class=\"navbar-nav mr-auto navbar-options\">\r\n                <li class=\"nav-item dropdown\">\r\n                    <a class=\"nav-link dropdown-toggle\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">WCA SCORECARDS</a>\r\n                    <div class=\"dropdown-menu\">\r\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(alias1,depth0,{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":19,"column":24},"end":{"line":21,"column":33}}})) != null ? stack1 : "")
-    + "                    </div>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link create-scorecard\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">CREATE ScoreCards\r\n                        <svg width=\"14px\" height=\"17px\" viewBox=\"2 2 17 17\" class=\"bi bi-file-earmark-text\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path d=\"M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z\"/>\r\n                            <path d=\"M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z\"/>\r\n                            <path fill-rule=\"evenodd\" d=\"M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z\"/>\r\n                        </svg>\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n            <ul class=\"navbar-nav ml-auto collapse settings-container\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link settings-link\" data-toggle=\"modal\" data-target=\"#settingsMenu\"><img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIiBmaWxsPSIjZmZmIj48cGF0aCBkPSJNNTEyLjEgMTkxbC04LjIgMTQuM2MtMyA1LjMtOS40IDcuNS0xNS4xIDUuNC0xMS44LTQuNC0yMi42LTEwLjctMzIuMS0xOC42LTQuNi0zLjgtNS44LTEwLjUtMi44LTE1LjdsOC4yLTE0LjNjLTYuOS04LTEyLjMtMTcuMy0xNS45LTI3LjRoLTE2LjVjLTYgMC0xMS4yLTQuMy0xMi4yLTEwLjMtMi0xMi0yLjEtMjQuNiAwLTM3LjEgMS02IDYuMi0xMC40IDEyLjItMTAuNGgxNi41YzMuNi0xMC4xIDktMTkuNCAxNS45LTI3LjRsLTguMi0xNC4zYy0zLTUuMi0xLjktMTEuOSAyLjgtMTUuNyA5LjUtNy45IDIwLjQtMTQuMiAzMi4xLTE4LjYgNS43LTIuMSAxMi4xLjEgMTUuMSA1LjRsOC4yIDE0LjNjMTAuNS0xLjkgMjEuMi0xLjkgMzEuNyAwTDU1MiA2LjNjMy01LjMgOS40LTcuNSAxNS4xLTUuNCAxMS44IDQuNCAyMi42IDEwLjcgMzIuMSAxOC42IDQuNiAzLjggNS44IDEwLjUgMi44IDE1LjdsLTguMiAxNC4zYzYuOSA4IDEyLjMgMTcuMyAxNS45IDI3LjRoMTYuNWM2IDAgMTEuMiA0LjMgMTIuMiAxMC4zIDIgMTIgMi4xIDI0LjYgMCAzNy4xLTEgNi02LjIgMTAuNC0xMi4yIDEwLjRoLTE2LjVjLTMuNiAxMC4xLTkgMTkuNC0xNS45IDI3LjRsOC4yIDE0LjNjMyA1LjIgMS45IDExLjktMi44IDE1LjctOS41IDcuOS0yMC40IDE0LjItMzIuMSAxOC42LTUuNyAyLjEtMTIuMS0uMS0xNS4xLTUuNGwtOC4yLTE0LjNjLTEwLjQgMS45LTIxLjIgMS45LTMxLjcgMHptLTEwLjUtNTguOGMzOC41IDI5LjYgODIuNC0xNC4zIDUyLjgtNTIuOC0zOC41LTI5LjctODIuNCAxNC4zLTUyLjggNTIuOHpNMzg2LjMgMjg2LjFsMzMuNyAxNi44YzEwLjEgNS44IDE0LjUgMTguMSAxMC41IDI5LjEtOC45IDI0LjItMjYuNCA0Ni40LTQyLjYgNjUuOC03LjQgOC45LTIwLjIgMTEuMS0zMC4zIDUuM2wtMjkuMS0xNi44Yy0xNiAxMy43LTM0LjYgMjQuNi01NC45IDMxLjd2MzMuNmMwIDExLjYtOC4zIDIxLjYtMTkuNyAyMy42LTI0LjYgNC4yLTUwLjQgNC40LTc1LjkgMC0xMS41LTItMjAtMTEuOS0yMC0yMy42VjQxOGMtMjAuMy03LjItMzguOS0xOC01NC45LTMxLjdMNzQgNDAzYy0xMCA1LjgtMjIuOSAzLjYtMzAuMy01LjMtMTYuMi0xOS40LTMzLjMtNDEuNi00Mi4yLTY1LjctNC0xMC45LjQtMjMuMiAxMC41LTI5LjFsMzMuMy0xNi44Yy0zLjktMjAuOS0zLjktNDIuNCAwLTYzLjRMMTIgMjA1LjhjLTEwLjEtNS44LTE0LjYtMTguMS0xMC41LTI5IDguOS0yNC4yIDI2LTQ2LjQgNDIuMi02NS44IDcuNC04LjkgMjAuMi0xMS4xIDMwLjMtNS4zbDI5LjEgMTYuOGMxNi0xMy43IDM0LjYtMjQuNiA1NC45LTMxLjdWNTcuMWMwLTExLjUgOC4yLTIxLjUgMTkuNi0yMy41IDI0LjYtNC4yIDUwLjUtNC40IDc2LS4xIDExLjUgMiAyMCAxMS45IDIwIDIzLjZ2MzMuNmMyMC4zIDcuMiAzOC45IDE4IDU0LjkgMzEuN2wyOS4xLTE2LjhjMTAtNS44IDIyLjktMy42IDMwLjMgNS4zIDE2LjIgMTkuNCAzMy4yIDQxLjYgNDIuMSA2NS44IDQgMTAuOS4xIDIzLjItMTAgMjkuMWwtMzMuNyAxNi44YzMuOSAyMSAzLjkgNDIuNSAwIDYzLjV6bS0xMTcuNiAyMS4xYzU5LjItNzctMjguNy0xNjQuOS0xMDUuNy0xMDUuNy01OS4yIDc3IDI4LjcgMTY0LjkgMTA1LjcgMTA1Ljd6bTI0My40IDE4Mi43bC04LjIgMTQuM2MtMyA1LjMtOS40IDcuNS0xNS4xIDUuNC0xMS44LTQuNC0yMi42LTEwLjctMzIuMS0xOC42LTQuNi0zLjgtNS44LTEwLjUtMi44LTE1LjdsOC4yLTE0LjNjLTYuOS04LTEyLjMtMTcuMy0xNS45LTI3LjRoLTE2LjVjLTYgMC0xMS4yLTQuMy0xMi4yLTEwLjMtMi0xMi0yLjEtMjQuNiAwLTM3LjEgMS02IDYuMi0xMC40IDEyLjItMTAuNGgxNi41YzMuNi0xMC4xIDktMTkuNCAxNS45LTI3LjRsLTguMi0xNC4zYy0zLTUuMi0xLjktMTEuOSAyLjgtMTUuNyA5LjUtNy45IDIwLjQtMTQuMiAzMi4xLTE4LjYgNS43LTIuMSAxMi4xLjEgMTUuMSA1LjRsOC4yIDE0LjNjMTAuNS0xLjkgMjEuMi0xLjkgMzEuNyAwbDguMi0xNC4zYzMtNS4zIDkuNC03LjUgMTUuMS01LjQgMTEuOCA0LjQgMjIuNiAxMC43IDMyLjEgMTguNiA0LjYgMy44IDUuOCAxMC41IDIuOCAxNS43bC04LjIgMTQuM2M2LjkgOCAxMi4zIDE3LjMgMTUuOSAyNy40aDE2LjVjNiAwIDExLjIgNC4zIDEyLjIgMTAuMyAyIDEyIDIuMSAyNC42IDAgMzcuMS0xIDYtNi4yIDEwLjQtMTIuMiAxMC40aC0xNi41Yy0zLjYgMTAuMS05IDE5LjQtMTUuOSAyNy40bDguMiAxNC4zYzMgNS4yIDEuOSAxMS45LTIuOCAxNS43LTkuNSA3LjktMjAuNCAxNC4yLTMyLjEgMTguNi01LjcgMi4xLTEyLjEtLjEtMTUuMS01LjRsLTguMi0xNC4zYy0xMC40IDEuOS0yMS4yIDEuOS0zMS43IDB6TTUwMS42IDQzMWMzOC41IDI5LjYgODIuNC0xNC4zIDUyLjgtNTIuOC0zOC41LTI5LjYtODIuNCAxNC4zLTUyLjggNTIuOHoiLz48L3N2Zz4=\"></a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<div class=\"ifad-bar\">\r\n    <div class=\"ifad-bar-nen\"></div>\r\n    <div class=\"ifad-bar-lac\"></div>\r\n    <div class=\"ifad-bar-esa\"></div>\r\n    <div class=\"ifad-bar-wca\"></div>\r\n    <div class=\"ifad-bar-apr\"></div>\r\n</div>\r\n\r\n<nav id=\"scorecards-control\" class=\"navbar navbar-expand-lg\">\r\n    <div id=\"left-buttons\">\r\n        <div id=\"toggle-button\">\r\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"scorecards") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":19,"column":24},"end":{"line":21,"column":33}}})) != null ? stack1 : "")
+    + "                    </div>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link create-scorecard\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">CREATE ScoreCards\r\n                        <svg width=\"14px\" height=\"17px\" viewBox=\"2 2 17 17\" class=\"bi bi-file-earmark-text\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path d=\"M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z\"/>\r\n                            <path d=\"M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z\"/>\r\n                            <path fill-rule=\"evenodd\" d=\"M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z\"/>\r\n                        </svg>\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n            <ul class=\"navbar-nav ml-auto collapse settings-container\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link settings-link\" data-toggle=\"modal\" data-target=\"#settingsMenu\"><img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIiBmaWxsPSIjZmZmIj48cGF0aCBkPSJNNTEyLjEgMTkxbC04LjIgMTQuM2MtMyA1LjMtOS40IDcuNS0xNS4xIDUuNC0xMS44LTQuNC0yMi42LTEwLjctMzIuMS0xOC42LTQuNi0zLjgtNS44LTEwLjUtMi44LTE1LjdsOC4yLTE0LjNjLTYuOS04LTEyLjMtMTcuMy0xNS45LTI3LjRoLTE2LjVjLTYgMC0xMS4yLTQuMy0xMi4yLTEwLjMtMi0xMi0yLjEtMjQuNiAwLTM3LjEgMS02IDYuMi0xMC40IDEyLjItMTAuNGgxNi41YzMuNi0xMC4xIDktMTkuNCAxNS45LTI3LjRsLTguMi0xNC4zYy0zLTUuMi0xLjktMTEuOSAyLjgtMTUuNyA5LjUtNy45IDIwLjQtMTQuMiAzMi4xLTE4LjYgNS43LTIuMSAxMi4xLjEgMTUuMSA1LjRsOC4yIDE0LjNjMTAuNS0xLjkgMjEuMi0xLjkgMzEuNyAwTDU1MiA2LjNjMy01LjMgOS40LTcuNSAxNS4xLTUuNCAxMS44IDQuNCAyMi42IDEwLjcgMzIuMSAxOC42IDQuNiAzLjggNS44IDEwLjUgMi44IDE1LjdsLTguMiAxNC4zYzYuOSA4IDEyLjMgMTcuMyAxNS45IDI3LjRoMTYuNWM2IDAgMTEuMiA0LjMgMTIuMiAxMC4zIDIgMTIgMi4xIDI0LjYgMCAzNy4xLTEgNi02LjIgMTAuNC0xMi4yIDEwLjRoLTE2LjVjLTMuNiAxMC4xLTkgMTkuNC0xNS45IDI3LjRsOC4yIDE0LjNjMyA1LjIgMS45IDExLjktMi44IDE1LjctOS41IDcuOS0yMC40IDE0LjItMzIuMSAxOC42LTUuNyAyLjEtMTIuMS0uMS0xNS4xLTUuNGwtOC4yLTE0LjNjLTEwLjQgMS45LTIxLjIgMS45LTMxLjcgMHptLTEwLjUtNTguOGMzOC41IDI5LjYgODIuNC0xNC4zIDUyLjgtNTIuOC0zOC41LTI5LjctODIuNCAxNC4zLTUyLjggNTIuOHpNMzg2LjMgMjg2LjFsMzMuNyAxNi44YzEwLjEgNS44IDE0LjUgMTguMSAxMC41IDI5LjEtOC45IDI0LjItMjYuNCA0Ni40LTQyLjYgNjUuOC03LjQgOC45LTIwLjIgMTEuMS0zMC4zIDUuM2wtMjkuMS0xNi44Yy0xNiAxMy43LTM0LjYgMjQuNi01NC45IDMxLjd2MzMuNmMwIDExLjYtOC4zIDIxLjYtMTkuNyAyMy42LTI0LjYgNC4yLTUwLjQgNC40LTc1LjkgMC0xMS41LTItMjAtMTEuOS0yMC0yMy42VjQxOGMtMjAuMy03LjItMzguOS0xOC01NC45LTMxLjdMNzQgNDAzYy0xMCA1LjgtMjIuOSAzLjYtMzAuMy01LjMtMTYuMi0xOS40LTMzLjMtNDEuNi00Mi4yLTY1LjctNC0xMC45LjQtMjMuMiAxMC41LTI5LjFsMzMuMy0xNi44Yy0zLjktMjAuOS0zLjktNDIuNCAwLTYzLjRMMTIgMjA1LjhjLTEwLjEtNS44LTE0LjYtMTguMS0xMC41LTI5IDguOS0yNC4yIDI2LTQ2LjQgNDIuMi02NS44IDcuNC04LjkgMjAuMi0xMS4xIDMwLjMtNS4zbDI5LjEgMTYuOGMxNi0xMy43IDM0LjYtMjQuNiA1NC45LTMxLjdWNTcuMWMwLTExLjUgOC4yLTIxLjUgMTkuNi0yMy41IDI0LjYtNC4yIDUwLjUtNC40IDc2LS4xIDExLjUgMiAyMCAxMS45IDIwIDIzLjZ2MzMuNmMyMC4zIDcuMiAzOC45IDE4IDU0LjkgMzEuN2wyOS4xLTE2LjhjMTAtNS44IDIyLjktMy42IDMwLjMgNS4zIDE2LjIgMTkuNCAzMy4yIDQxLjYgNDIuMSA2NS44IDQgMTAuOS4xIDIzLjItMTAgMjkuMWwtMzMuNyAxNi44YzMuOSAyMSAzLjkgNDIuNSAwIDYzLjV6bS0xMTcuNiAyMS4xYzU5LjItNzctMjguNy0xNjQuOS0xMDUuNy0xMDUuNy01OS4yIDc3IDI4LjcgMTY0LjkgMTA1LjcgMTA1Ljd6bTI0My40IDE4Mi43bC04LjIgMTQuM2MtMyA1LjMtOS40IDcuNS0xNS4xIDUuNC0xMS44LTQuNC0yMi42LTEwLjctMzIuMS0xOC42LTQuNi0zLjgtNS44LTEwLjUtMi44LTE1LjdsOC4yLTE0LjNjLTYuOS04LTEyLjMtMTcuMy0xNS45LTI3LjRoLTE2LjVjLTYgMC0xMS4yLTQuMy0xMi4yLTEwLjMtMi0xMi0yLjEtMjQuNiAwLTM3LjEgMS02IDYuMi0xMC40IDEyLjItMTAuNGgxNi41YzMuNi0xMC4xIDktMTkuNCAxNS45LTI3LjRsLTguMi0xNC4zYy0zLTUuMi0xLjktMTEuOSAyLjgtMTUuNyA5LjUtNy45IDIwLjQtMTQuMiAzMi4xLTE4LjYgNS43LTIuMSAxMi4xLjEgMTUuMSA1LjRsOC4yIDE0LjNjMTAuNS0xLjkgMjEuMi0xLjkgMzEuNyAwbDguMi0xNC4zYzMtNS4zIDkuNC03LjUgMTUuMS01LjQgMTEuOCA0LjQgMjIuNiAxMC43IDMyLjEgMTguNiA0LjYgMy44IDUuOCAxMC41IDIuOCAxNS43bC04LjIgMTQuM2M2LjkgOCAxMi4zIDE3LjMgMTUuOSAyNy40aDE2LjVjNiAwIDExLjIgNC4zIDEyLjIgMTAuMyAyIDEyIDIuMSAyNC42IDAgMzcuMS0xIDYtNi4yIDEwLjQtMTIuMiAxMC40aC0xNi41Yy0zLjYgMTAuMS05IDE5LjQtMTUuOSAyNy40bDguMiAxNC4zYzMgNS4yIDEuOSAxMS45LTIuOCAxNS43LTkuNSA3LjktMjAuNCAxNC4yLTMyLjEgMTguNi01LjcgMi4xLTEyLjEtLjEtMTUuMS01LjRsLTguMi0xNC4zYy0xMC40IDEuOS0yMS4yIDEuOS0zMS43IDB6TTUwMS42IDQzMWMzOC41IDI5LjYgODIuNC0xNC4zIDUyLjgtNTIuOC0zOC41LTI5LjYtODIuNCAxNC4zLTUyLjggNTIuOHoiLz48L3N2Zz4=\"></a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<div class=\"ifad-bar\">\r\n    <div class=\"ifad-bar-nen\"></div>\r\n    <div class=\"ifad-bar-lac\"></div>\r\n    <div class=\"ifad-bar-esa\"></div>\r\n    <div class=\"ifad-bar-wca\"></div>\r\n    <div class=\"ifad-bar-apr\"></div>\r\n</div>\r\n<nav id=\"scorecards-control\" class=\"navbar navbar-expand-lg\">\r\n    <div id=\"left-buttons\">\r\n        <div id=\"toggle-button\">\r\n"
     + ((stack1 = container.invokePartial(__webpack_require__(/*! ./partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs"),depth0,{"name":"editButton","data":data,"indent":"            ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + "        </div>\r\n        <div>\r\n            <button id=\"save-button\" class=\"btn btn-primary control-button vanish\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"1 1 15 15\" class=\"bi bi-check2-square\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z\"/>\r\n                </svg>\r\n                <span>Save</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <input id=\"date-button\" class=\"form-control vanish\" type=\"month\" value=\""
-    + container.escapeExpression(__default(__webpack_require__(/*! ./helpers/getCurrentMonth.js */ "./src/hbs/helpers/getCurrentMonth.js")).call(alias1,{"name":"getCurrentMonth","hash":{},"data":data,"loc":{"start":{"line":65,"column":84},"end":{"line":65,"column":103}}}))
-    + "\" placeholder=\"Insert a date\">\r\n        </div>\r\n    </div>\r\n    <div id=\"right-buttons\" class=\"vanish\">\r\n        <div>\r\n            <button class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 17 17\" class=\"bi bi-columns-gap\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z\"/>\r\n                </svg>\r\n                <span>WCA View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 1 16 16\" class=\"bi bi-grid\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z\"/>\r\n                </svg>\r\n                <span>Hubs View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 18 18\" class=\"bi bi-x-diamond\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z\"/>\r\n                </svg>\r\n                <span>Actions View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 2 16 16\" class=\"bi bi-download\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z\"/>\r\n                </svg>\r\n                <span>Export</span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</nav>";
+    + alias2(__default(__webpack_require__(/*! ./helpers/getCurrentMonth.js */ "./src/hbs/helpers/getCurrentMonth.js")).call(alias1,{"name":"getCurrentMonth","hash":{},"data":data,"loc":{"start":{"line":64,"column":84},"end":{"line":64,"column":103}}}))
+    + "\" min=\""
+    + alias2(((helper = (helper = lookupProperty(helpers,"minDate") || (depth0 != null ? lookupProperty(depth0,"minDate") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"minDate","hash":{},"data":data,"loc":{"start":{"line":64,"column":110},"end":{"line":64,"column":121}}}) : helper)))
+    + "\" placeholder=\"Insert a date\">\r\n        </div>\r\n    </div>\r\n    <div id=\"right-buttons\" class=\"vanish\">\r\n        <div>\r\n            <button id=\"wca-view\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 17 17\" class=\"bi bi-columns-gap\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z\"/>\r\n                </svg>\r\n                <span>WCA View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"hubs-view\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 1 16 16\" class=\"bi bi-grid\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z\"/>\r\n                </svg>\r\n                <span>Hubs View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"actions-view\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 18 18\" class=\"bi bi-x-diamond\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z\"/>\r\n                </svg>\r\n                <span>Actions View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"export-scorecards\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 2 16 16\" class=\"bi bi-download\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z\"/>\r\n                </svg>\r\n                <span>Export</span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</nav>";
 },"usePartial":true,"useData":true});
 
 /***/ }),
@@ -37667,7 +37669,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "<div class=\"scorecard-row\" data-code=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"code") || (depth0 != null ? lookupProperty(depth0,"code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"code","hash":{},"data":data,"loc":{"start":{"line":10,"column":38},"end":{"line":10,"column":46}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":10,"column":38},"end":{"line":10,"column":46}}}) : helper)))
     + "\" data-color=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"color") || (depth0 != null ? lookupProperty(depth0,"color") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"color","hash":{},"data":data,"loc":{"start":{"line":10,"column":60},"end":{"line":10,"column":69}}}) : helper)))
     + "\">\r\n    <div class=\"title-square "
@@ -37680,7 +37682,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(((helper = (helper = lookupProperty(helpers,"value1") || (depth0 != null ? lookupProperty(depth0,"value1") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"value1","hash":{},"data":data,"loc":{"start":{"line":21,"column":154},"end":{"line":21,"column":164}}}) : helper)))
     + "\">\r\n            <span class=\"scorecard-separator\">/</span>\r\n            <input class=\"form-control scorecard-indicator-target-1 input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"target1") || (depth0 != null ? lookupProperty(depth0,"target1") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"target1","hash":{},"data":data,"loc":{"start":{"line":23,"column":115},"end":{"line":23,"column":126}}}) : helper)))
-    + "\">\r\n            <i class=\"scorecard-indicator-arrow scorecard-indicator-arrow-1\"></i>\r\n        </div>\r\n        <div class=\"value-square-indicators-edit\">\r\n            <input class=\"form-control scorecard-indicator-date scorecard-indicator-date-1\" type=\"text\" value=\""
+    + "\">\r\n            <i class=\"scorecard-indicator-arrow scorecard-indicator-arrow-1 "
+    + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow1") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":24,"column":76},"end":{"line":24,"column":95}}}))
+    + "\"></i>\r\n        </div>\r\n        <div class=\"value-square-indicators-edit\">\r\n            <input class=\"form-control scorecard-indicator-date scorecard-indicator-date-1\" type=\"text\" value=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"date1") || (depth0 != null ? lookupProperty(depth0,"date1") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date1","hash":{},"data":data,"loc":{"start":{"line":27,"column":111},"end":{"line":27,"column":120}}}) : helper)))
     + "\">\r\n            <span class=\"scorecard-separator\">=</span>\r\n            <input class=\"form-control scorecard-indicator-old scorecard-indicator-old-1 input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"old1") || (depth0 != null ? lookupProperty(depth0,"old1") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"old1","hash":{},"data":data,"loc":{"start":{"line":29,"column":150},"end":{"line":29,"column":158}}}) : helper)))
@@ -37692,7 +37696,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(((helper = (helper = lookupProperty(helpers,"value2") || (depth0 != null ? lookupProperty(depth0,"value2") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"value2","hash":{},"data":data,"loc":{"start":{"line":48,"column":154},"end":{"line":48,"column":164}}}) : helper)))
     + "\">\r\n            <span class=\"scorecard-separator\">/</span>\r\n            <input class=\"form-control scorecard-indicator-target-2 input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"target2") || (depth0 != null ? lookupProperty(depth0,"target2") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"target2","hash":{},"data":data,"loc":{"start":{"line":50,"column":115},"end":{"line":50,"column":126}}}) : helper)))
-    + "\">\r\n            <i class=\"scorecard-indicator-arrow scorecard-indicator-arrow-2\"></i>\r\n        </div>\r\n        <div class=\"value-square-indicators-edit\">\r\n            <input class=\"form-control scorecard-indicator-date scorecard-indicator-date-2\" type=\"text\" value=\""
+    + "\">\r\n            <i class=\"scorecard-indicator-arrow scorecard-indicator-arrow-2 "
+    + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow2") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":51,"column":76},"end":{"line":51,"column":95}}}))
+    + "\"></i>\r\n        </div>\r\n        <div class=\"value-square-indicators-edit\">\r\n            <input class=\"form-control scorecard-indicator-date scorecard-indicator-date-2\" type=\"text\" value=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"date2") || (depth0 != null ? lookupProperty(depth0,"date2") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date2","hash":{},"data":data,"loc":{"start":{"line":54,"column":111},"end":{"line":54,"column":120}}}) : helper)))
     + "\">\r\n            <span class=\"scorecard-separator\">=</span>\r\n            <input class=\"form-control scorecard-indicator-old scorecard-indicator-old-2 input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"old2") || (depth0 != null ? lookupProperty(depth0,"old2") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"old2","hash":{},"data":data,"loc":{"start":{"line":56,"column":150},"end":{"line":56,"column":158}}}) : helper)))
@@ -37737,50 +37743,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/main.css */ "./src/css/main.css");
 /* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_main_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _js_requests_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/requests.js */ "./src/js/requests.js");
-/* harmony import */ var _js_scorecards_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/scorecards.js */ "./src/js/scorecards.js");
-/* harmony import */ var _js_settings_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/settings.js */ "./src/js/settings.js");
-/* harmony import */ var _js_header_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/header.js */ "./src/js/header.js");
+/* harmony import */ var _js_app_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/app.js */ "./src/js/app.js");
+/* harmony import */ var _js_scorecards_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/scorecards.js */ "./src/js/scorecards.js");
+/* harmony import */ var _js_settings_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/settings.js */ "./src/js/settings.js");
+/* harmony import */ var _js_header_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/header.js */ "./src/js/header.js");
 
 
 
 
 
 
- // const site = _spPageContextInfo.webServerRelativeUrl;
+
 
 var settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 var scorecardsListColumns = ["scoredate", "Id", "Title"];
 var data = {
   settingsList: 'scorecards-settings-v2',
   scorecardsList: 'scorecards-data-v2',
-  // userData: `${site}/_api/web/currentuser/?$expand=groups`,
-  // settingsData: `${site}/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=${settingsListColumns.join()}&$orderby=Position asc`,
-  // scorecardsData: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=${scorecardsListColumns.join()}&$orderby=scoredate desc`,
-  // scorecardsMetadata: `${site}/_api/web/lists/getbytitle('scorecards-data-v2')`
-  userData: '/api/user.json',
-  settingsData: '/api/settings.json',
-  scorecardsData: '/api/scorecards.json',
-  scorecardsMetadata: '/api/scorecardsList.json'
-};
-
-var initApp = () => {
-  document.getElementById("scorecards-header").innerHTML = Object(_js_header_js__WEBPACK_IMPORTED_MODULE_6__["Header"])(data.scorecards);
-  Object(_js_header_js__WEBPACK_IMPORTED_MODULE_6__["headerListeners"])();
-  Object(_js_scorecards_js__WEBPACK_IMPORTED_MODULE_4__["scorecardsListeners"])();
-
-  if (data.isAdmin) {
-    window.app = new _js_scorecards_js__WEBPACK_IMPORTED_MODULE_4__["Admin"](data);
-    document.getElementById("scorecards-dialog").innerHTML = Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_5__["Modal"])(data.settings);
-    Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_5__["modalListeners"])();
-  } else {
-    window.app = new _js_scorecards_js__WEBPACK_IMPORTED_MODULE_4__["App"](data);
-    document.querySelector('.navbar-collapse').remove();
-  } // setInterval( () => {
-  //     UpdateFormDigest(site, _spFormDigestRefreshInterval);
-  // }, 15 * 60000);
+  site: _spPageContextInfo.webServerRelativeUrl,
+  userData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/currentuser/?$expand=groups"),
+  settingsData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=").concat(settingsListColumns.join(), "&$orderby=Position asc"),
+  scorecardsData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=").concat(scorecardsListColumns.join(), "&$orderby=scoredate desc"),
+  scorecardsMetadata: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')") // userData: '/api/user.json',
+  // settingsData: '/api/settings.json',
+  // scorecardsData: '/api/scorecards.json',
+  // scorecardsMetadata: '/api/scorecardsList.json'
 
 };
-
 Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_3__["receiveData"])(data.userData).then(user => {
   data.isAdmin = !!user.d.Groups.results.filter(i => i.Title == "Tools Owners").length;
   Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_3__["receiveData"])(data.settingsData).then(settingsResult => {
@@ -37801,12 +37790,97 @@ Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_3__["receiveData"])(data.userDat
   });
 });
 
+function headerData(data) {
+  var date = data[0].scoredate.split('-');
+  var year = date[0];
+  var month = parseInt(date[1]) + 1;
+  var updatedMonth = month > 9 ? month : "0".concat(month);
+  return {
+    scorecards: data,
+    minDate: "".concat(year, "-").concat(updatedMonth)
+  };
+}
+
+;
+
+function updateSPToken() {
+  setInterval(() => {
+    UpdateFormDigest(_spPageContextInfo.webServerRelativeUrl, _spFormDigestRefreshInterval);
+  }, 15 * 60000);
+}
+
+;
+
+function initApp() {
+  document.getElementById("scorecards-header").innerHTML = Object(_js_header_js__WEBPACK_IMPORTED_MODULE_7__["Header"])(headerData(data.scorecards));
+  Object(_js_header_js__WEBPACK_IMPORTED_MODULE_7__["headerListeners"])();
+  Object(_js_scorecards_js__WEBPACK_IMPORTED_MODULE_5__["scorecardsListeners"])();
+  updateSPToken();
+
+  if (data.isAdmin) {
+    window.app = new _js_app_js__WEBPACK_IMPORTED_MODULE_4__["Admin"](data);
+    document.getElementById("scorecards-dialog").innerHTML = Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_6__["Modal"])(data.settings);
+    Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_6__["modalListeners"])();
+  } else {
+    window.app = new _js_app_js__WEBPACK_IMPORTED_MODULE_4__["App"](data);
+    document.querySelector('.navbar-collapse').remove();
+  }
+}
+
+;
+
 /***/ }),
 
-/***/ "./src/js/errorHandler.js":
-/*!********************************!*\
-  !*** ./src/js/errorHandler.js ***!
-  \********************************/
+/***/ "./src/js/app.js":
+/*!***********************!*\
+  !*** ./src/js/app.js ***!
+  \***********************/
+/*! exports provided: App, Admin */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "App", function() { return App; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Admin", function() { return Admin; });
+class App {
+  constructor(data) {
+    this.settings = data.settings;
+    this.scorecards = data.scorecards;
+    this.storage = this.createStorage(data);
+  }
+
+  createStorage(data) {
+    return {
+      site: data.site,
+      settingsList: data.settingsList,
+      settingsType: data.settings[0].__metadata.type,
+      settingsURL: data.settingsData,
+      scorecardsList: data.scorecardsList,
+      scorecardsType: data.scorecardsType,
+      scorecardsURL: data.scorecardsData
+    };
+  }
+
+}
+
+;
+
+class Admin extends App {
+  constructor(data) {
+    super(data);
+  }
+
+}
+
+;
+
+
+/***/ }),
+
+/***/ "./src/js/errors.js":
+/*!**************************!*\
+  !*** ./src/js/errors.js ***!
+  \**************************/
 /*! exports provided: display */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37898,7 +37972,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
 /* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
 
 
 
@@ -37913,12 +37988,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var getPreviousDate = date => {
-  var previousMonth = parseInt(date.split('-')[1]) == 1 ? 12 : parseInt(date.split('-')[1]) - 1;
-  var previousYear = previousMonth == 12 ? parseInt(date.split('-')[0]) - 1 : parseInt(date.split('-')[0]);
-  var formattedMonth = previousMonth > 9 ? previousMonth : "0".concat(previousMonth);
-  return "".concat(previousYear, "-").concat(formattedMonth, "-15T00:00:00Z");
-};
 
 var updateDates = () => {
   var wcaView = document.getElementById('wca-content');
@@ -37933,7 +38002,7 @@ var updateDates = () => {
 };
 
 var createScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_12__["receiveData"])(app.storage.settingsURL).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_13__["receiveData"])(app.storage.settingsURL).then(result => {
     document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_5___default()(result.d.results);
     document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_7___default()();
     document.getElementById('wca-content').classList.add('create-mode', 'active-content');
@@ -37949,11 +38018,11 @@ var createScorecard = () => {
 };
 
 var editScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_12__["receiveData"])('/api/selectedScorecards.json').then(result => {
-    // insert URL to list item id
-    var target = document.querySelector('.active-content').id;
-    var item = new ScoreCards(result.d.results[0]); // fix, remove [0]
+  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.getItemURL(); // const url = '/api/selectedScorecards.json'; // modify!!!
 
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_13__["receiveData"])(url).then(result => {
+    var target = document.querySelector('.active-content').id;
+    var item = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_12__["ScoreCards"](result.d.results[0]);
     document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_7___default()();
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
@@ -37966,18 +38035,20 @@ var editScorecard = () => {
       });
     } else if (target == "hubs-content") {
       console.log('edit-mode');
+    } else if (target == "actions-content") {
+      console.log('actions-content');
     }
   });
 };
 
 var cancelEdit = () => {
   var target = document.querySelector('.active-content');
-  var itemId = target.dataset.id;
 
   if (target.classList.contains('create-mode')) {
     location.reload();
   } else {
-    var url = '/api/selectedScorecards.json';
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.getItemURL(); // const url = '/api/selectedScorecards.json'; // modify!!!
+
     target.classList.remove('create-mode');
     loadScorecard(url);
   }
@@ -37986,68 +38057,42 @@ var cancelEdit = () => {
 var loadScorecard = url => {
   var target = document.querySelector('.active-content');
   target.classList.remove('create-mode');
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_12__["receiveData"])(url).then(result => {
-    var selectedScorecard = new ScoreCards(result.d.results[0]);
-    var previousScorecard = new ScoreCards(result.d.results[1]);
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_13__["receiveData"])(url).then(result => {
+    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_12__["ScoreCards"](result.d.results[0]);
     app.current = selectedScorecard;
-    app.previous = previousScorecard;
     document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_8___default()();
     document.getElementById('date-button').classList.add('vanish');
     document.getElementById('right-buttons').classList.remove('vanish');
     document.getElementById('edit-button').classList.remove('vanish');
     document.getElementById('save-button').classList.remove('vanish');
     document.getElementById('save-button').setAttribute('disabled', 'disabled');
+    document.getElementById('scorecards-content').setAttribute('data-date', selectedScorecard.scoredate);
 
     if (target.id == "wca-content") {
       document.getElementById('wca-content').innerHTML = _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_4___default()(selectedScorecard);
-      document.getElementById('wca-content').setAttribute('data-id', selectedScorecard.Id);
     } else if (target.id == "hubs-content") {} else {}
   });
 };
 
 var getScorecard = e => {
-  var selectedDate = e.target.dataset.date;
-  var previousDate = getPreviousDate(selectedDate); // const site = _spPageContextInfo.webServerRelativeUrl;
-  // const url = `${site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=((scoredate eq '${selectedDate}') or (scoredate eq '${previousDate}'))&$orderby=scoredate desc`;
+  var date = e.target.dataset.date;
+  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.getItemURL(date); // const selectedDate = e.target.dataset.date;
+  // const previousDate = utilities.getPreviousDate(selectedDate);
+  // const url = `${app.storage.site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=((scoredate eq '${selectedDate}') or (scoredate eq '${previousDate}'))&$orderby=scoredate desc`;
+  // const url = '/api/selectedScorecards.json';
 
-  var url = '/api/selectedScorecards.json';
   loadScorecard(url);
 };
 
 var headerListeners = () => {
+  _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.preventDefault);
   _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_12__["modifyScorecards"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_13__["modifyScorecards"]);
   _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
   _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
   _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'click', '.create-scorecard', createScorecard);
   _utilities_js__WEBPACK_IMPORTED_MODULE_10___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
 };
-
-class ScoreCards {
-  constructor(sharepointItem) {
-    this.Title = sharepointItem.Title;
-    this.Id = sharepointItem.Id;
-    this.comment = sharepointItem.comment;
-    this.motto = sharepointItem.motto;
-    this.scoredate = sharepointItem.scoredate;
-    this.wcadata = this.formatJSON(sharepointItem.wcadata);
-    this.westdata = this.formatJSON(sharepointItem.westdata);
-    this.coastaldata = this.formatJSON(sharepointItem.coastaldata);
-    this.centraldata = this.formatJSON(sharepointItem.centraldata);
-    this.westaction = this.formatJSON(sharepointItem.westaction);
-    this.coastalaction = this.formatJSON(sharepointItem.coastalaction);
-    this.centralaction = this.formatJSON(sharepointItem.centralaction);
-  }
-
-  formatJSON(item) {
-    if (item) {
-      return Object.values(JSON.parse(item));
-    } else {
-      return null;
-    }
-  }
-
-}
 
 
 
@@ -38067,10 +38112,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modifyScorecards", function() { return modifyScorecards; });
 /* harmony import */ var _js_utilities_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/utilities.js */ "./src/js/utilities.js");
 /* harmony import */ var _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_utilities_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _js_errorHandler_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../js/errorHandler.js */ "./src/js/errorHandler.js");
+/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./errors.js */ "./src/js/errors.js");
+/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
+/* harmony import */ var _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scorecardsItemSP.js */ "./src/js/scorecardsItemSP.js");
+/* harmony import */ var _settingsItemSP_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./settingsItemSP.js */ "./src/js/settingsItemSP.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
 
 
 
@@ -38087,7 +38138,7 @@ var receiveData = /*#__PURE__*/function () {
     var response = yield fetch(url, options);
 
     if (response.status == 404) {
-      return Object(_js_errorHandler_js__WEBPACK_IMPORTED_MODULE_1__["display"])('dataNotFound', false);
+      return Object(_errors_js__WEBPACK_IMPORTED_MODULE_1__["display"])('dataNotFound', false);
     }
 
     return yield response.json();
@@ -38098,9 +38149,9 @@ var receiveData = /*#__PURE__*/function () {
   };
 }();
 
-var saveData = (context, item, index, id) => {
+var saveData = (context, item, id, index) => {
   var list = context == "Scorecard" ? app.storage.scorecardsList : app.storage.settingsList;
-  var url = "".concat(_spPageContextInfo.webAbsoluteUrl, "/_api/web/lists/GetByTitle('").concat(list, "')/items").concat(id ? "(".concat(id, ")") : "");
+  var url = "".concat(app.storage.site, "/_api/web/lists/GetByTitle('").concat(list, "')/items").concat(id ? "(".concat(id, ")") : "");
   var options = {
     method: "POST",
     credentials: "same-origin",
@@ -38122,8 +38173,7 @@ var saveData = (context, item, index, id) => {
     if (context == "Settings") {
       var threshold = document.querySelectorAll('.dialog-menu-item').length - 1;
       index == threshold && location.reload();
-    } else {
-      location.reload();
+    } else {// location.reload();
     }
   });
 };
@@ -38132,80 +38182,35 @@ var modifySettings = () => {
   _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.dialog-menu-item').forEach((i, index) => {
     var id = i.dataset.id;
     var form = document.querySelector(".dialog-form-item[data-id=\"".concat(id, "\"]"));
-    var item = new SettingsItem(form, index);
-    saveData("Settings", item, index, id);
+    var item = new _settingsItemSP_js__WEBPACK_IMPORTED_MODULE_4__["SettingsItem"](form, index);
+    saveData("Settings", item, id, index);
   });
 };
 
 var modifyScorecards = () => {
   var target = document.querySelector('.active-content');
   var context = target.id;
+  var createMode = target.classList.contains('create-mode');
 
-  if (target.classList.contains('create-mode')) {
-    var item = new ScoreCardItem(target, context);
+  if (createMode) {
+    var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardItem"](target, context, createMode);
     saveData('Scorecard', item);
-  } else {// receiveData + check (set context so that it only modifies menaningful columns)
+  } else {
+    var url = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getItemURL();
+    var start = new Date();
+    receiveData(url).then(result => {
+      var retrieved = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_2__["ScoreCards"](result.d.results[0]);
+      var previous = app.current;
+      var id = retrieved.Id;
+
+      if (context == "wca-content") {
+        var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardItem"](retrieved, previous, context, createMode);
+        console.log(data); // rethink ScoreCardItem, check what already uses ScoreCardItem, then create ScoreCardItem with "data"
+        // saveData('Scorecard', data, id);
+      } else if (context == "hubs-content") {} else if (context == "actions-content") {}
+    });
   }
 };
-
-class ScoreCardItem {
-  constructor(form, context) {
-    this.Title = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.createScorecardTitle();
-    this.scoredate = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.fromDateToSP();
-    this.comment = form.querySelector('.scorecard-main-summary .ql-editor').innerHTML;
-    this.motto = form.querySelector('.scorecard-motto').value;
-    this.__metadata = {
-      type: app.storage.scorecardsType
-    };
-    context == "wca-content" && (this.wcadata = this.getWca());
-  }
-
-  getWca() {
-    var filterOut = value => isNaN(parseInt(value)) ? "" : value;
-
-    var wca = {};
-    _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-content .scorecard-row').forEach(i => {
-      wca[i.dataset.code] = {};
-      wca[i.dataset.code]['description'] = i.querySelector('.ql-editor').innerHTML;
-      wca[i.dataset.code]['title'] = i.querySelector('.scorecard-edit-title').value;
-      wca[i.dataset.code]['indicator1'] = i.querySelector('.scorecard-indicator-title-1').value;
-      wca[i.dataset.code]['indicator2'] = i.querySelector('.scorecard-indicator-title-2').value;
-      wca[i.dataset.code]['value1'] = filterOut(i.querySelector('.scorecard-indicator-value-1').value);
-      wca[i.dataset.code]['value2'] = filterOut(i.querySelector('.scorecard-indicator-value-2').value);
-      wca[i.dataset.code]['target1'] = filterOut(i.querySelector('.scorecard-indicator-target-1').value);
-      wca[i.dataset.code]['target2'] = filterOut(i.querySelector('.scorecard-indicator-target-2').value);
-      wca[i.dataset.code]['date1'] = i.querySelector('.scorecard-indicator-date-1').value;
-      wca[i.dataset.code]['date2'] = i.querySelector('.scorecard-indicator-date-2').value;
-      wca[i.dataset.code]['old1'] = filterOut(i.querySelector('.scorecard-indicator-old-1').value);
-      wca[i.dataset.code]['old2'] = filterOut(i.querySelector('.scorecard-indicator-old-2').value);
-      wca[i.dataset.code]['arrow1'] = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1'));
-      wca[i.dataset.code]['arrow2'] = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2'));
-      wca[i.dataset.code]['likelihood1'] = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line'));
-      wca[i.dataset.code]['likelihood2'] = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line'));
-      wca[i.dataset.code]['color'] = i.dataset.color;
-    });
-    return JSON.stringify(wca);
-  }
-
-}
-
-class SettingsItem {
-  constructor(form, index) {
-    this.Title = form.querySelector('.modal-edit-title').value.trim();
-    this.Position = parseInt(index);
-    this.Color = form.querySelector('.modal-edit-color').value.trim();
-    this.Value1 = form.querySelector('.modal-edit-indicator1').value.trim();
-    this.Target1 = parseInt(form.querySelector('.modal-edit-target1').value.trim());
-    this.Range1 = form.querySelector('.modal-edit-time1').value.trim();
-    this.Value2 = form.querySelector('.modal-edit-indicator2').value.trim();
-    this.Target2 = parseInt(form.querySelector('.modal-edit-target2').value.trim());
-    this.Range2 = form.querySelector('.modal-edit-time2').value.trim();
-    this.__metadata = {
-      type: app.storage.settingsType
-    };
-  }
-
-}
 
 
 
@@ -38215,48 +38220,15 @@ class SettingsItem {
 /*!******************************!*\
   !*** ./src/js/scorecards.js ***!
   \******************************/
-/*! exports provided: App, Admin, scorecardsListeners */
+/*! exports provided: scorecardsListeners */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "App", function() { return App; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Admin", function() { return Admin; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scorecardsListeners", function() { return scorecardsListeners; });
 /* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utilities */ "./src/js/utilities.js");
 /* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utilities__WEBPACK_IMPORTED_MODULE_0__);
 
-
-class App {
-  constructor(data) {
-    this.settings = data.settings;
-    this.scorecards = data.scorecards;
-    this.storage = this.createStorage(data);
-  }
-
-  createStorage(data) {
-    return {
-      settingsList: data.settingsList,
-      settingsType: data.settings[0].__metadata.type,
-      settingsURL: data.settingsData,
-      scorecardsList: data.scorecardsList,
-      scorecardsType: data.scorecardsType,
-      scorecardsURL: data.scorecardsData
-    };
-  }
-
-}
-
-;
-
-class Admin extends App {
-  constructor(data) {
-    super(data);
-  }
-
-}
-
-;
 
 var toggleDashboard = e => {
   if (e.target.classList.contains('toggle-dashboard-off')) {
@@ -38324,6 +38296,162 @@ var scorecardsListeners = () => {
   _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'click', '.open-likelihood-dropdown', expandLikelihood);
   _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'click', '.select-likelihood', selectLikelihood);
 };
+
+
+
+/***/ }),
+
+/***/ "./src/js/scorecardsItem.js":
+/*!**********************************!*\
+  !*** ./src/js/scorecardsItem.js ***!
+  \**********************************/
+/*! exports provided: ScoreCards */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScoreCards", function() { return ScoreCards; });
+class ScoreCards {
+  constructor(sharepointItem) {
+    this.Title = sharepointItem.Title;
+    this.Id = sharepointItem.Id;
+    this.comment = sharepointItem.comment;
+    this.motto = sharepointItem.motto;
+    this.scoredate = sharepointItem.scoredate;
+    this.wcadata = this.formatJSON(sharepointItem.wcadata);
+    this.westdata = this.formatJSON(sharepointItem.westdata);
+    this.coastaldata = this.formatJSON(sharepointItem.coastaldata);
+    this.centraldata = this.formatJSON(sharepointItem.centraldata);
+    this.westaction = this.formatJSON(sharepointItem.westaction);
+    this.coastalaction = this.formatJSON(sharepointItem.coastalaction);
+    this.centralaction = this.formatJSON(sharepointItem.centralaction);
+  }
+
+  formatJSON(item) {
+    if (item) {
+      return JSON.parse(item);
+    } else {
+      return null;
+    }
+  }
+
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/scorecardsItemSP.js":
+/*!************************************!*\
+  !*** ./src/js/scorecardsItemSP.js ***!
+  \************************************/
+/*! exports provided: ScoreCardItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScoreCardItem", function() { return ScoreCardItem; });
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utilities */ "./src/js/utilities.js");
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utilities__WEBPACK_IMPORTED_MODULE_0__);
+
+
+class ScoreCardItem {
+  constructor(retrieved, previous, context, createMode) {
+    context == "wca-content" && createMode && (this.Title = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.createScorecardTitle());
+    context == "wca-content" && createMode && (this.scoredate = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromDateToSP());
+    context == "wca-content" && createMode && (this.motto = document.querySelector('.scorecard-motto').value);
+    context == "wca-content" && createMode && (this.comment = document.querySelector('.scorecard-main-summary .ql-editor').innerHTML);
+    context == "wca-content" && createMode && (this.wcadata = this.createWca());
+    context == "wca-content" && !createMode && (this.motto = this.editMotto(retrieved, previous));
+    context == "wca-content" && !createMode && (this.comment = this.editComment(retrieved, previous));
+    context == "wca-content" && !createMode && (this.wcadata = this.editWca(retrieved, previous));
+    this.__metadata = {
+      type: app.storage.scorecardsType
+    };
+  }
+
+  createWca() {
+    var wca = {};
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-content .scorecard-row').forEach(i => {
+      var code = i.dataset.code;
+      wca[code] = {};
+      wca[code]['description'] = i.querySelector('.ql-editor').innerHTML;
+      wca[code]['title'] = i.querySelector('.scorecard-edit-title').value;
+      wca[code]['indicator1'] = i.querySelector('.scorecard-indicator-title-1').value;
+      wca[code]['indicator2'] = i.querySelector('.scorecard-indicator-title-2').value;
+      wca[code]['value1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-value-1').value);
+      wca[code]['value2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-value-2').value);
+      wca[code]['target1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-target-1').value);
+      wca[code]['target2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-target-2').value);
+      wca[code]['date1'] = i.querySelector('.scorecard-indicator-date-1').value;
+      wca[code]['date2'] = i.querySelector('.scorecard-indicator-date-2').value;
+      wca[code]['old1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-1').value);
+      wca[code]['old2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-2').value);
+      wca[code]['arrow1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1'));
+      wca[code]['arrow2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2'));
+      wca[code]['likelihood1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line'));
+      wca[code]['likelihood2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line'));
+      wca[code]['color'] = i.dataset.color;
+    });
+    return JSON.stringify(wca);
+  }
+
+  editWca(retrieved, previous) {
+    var column = {};
+    getNodes('.active-content .scorecard-row').forEach(i => {
+      var code = i.dataset.code;
+      var old = previous.wcadata[code];
+      column[code] = {};
+      i.querySelector('.ql-editor').innerHTML != old.description && (column[code]['description'] = i.querySelector('.ql-editor').innerHTML);
+      i.querySelector('.scorecard-edit-title').value != old.title && (column[code]['title'] = i.querySelector('.scorecard-edit-title').value);
+      i.querySelector('.scorecard-indicator-title-1').value != old.indicator1 && (column[code]['indicator1'] = i.querySelector('.scorecard-indicator-title-1').value);
+      i.querySelector('.scorecard-indicator-title-2').value != old.indicator2 && (column[code]['indicator2'] = i.querySelector('.scorecard-indicator-title-2').value);
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-value-1').value) != old.value1 && (column[code]['value1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-value-1').value));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-value-2').value) != old.value2 && (column[code]['value2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-value-2').value));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-target-1').value) != old.target1 && (column[code]['target1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-target-1').value));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-target-2').value) != old.target2 && (column[code]['target2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-target-2').value));
+      i.querySelector('.scorecard-indicator-date-1').value != old.date1 && (column[code]['date1'] = i.querySelector('.scorecard-indicator-date-1').value);
+      i.querySelector('.scorecard-indicator-date-2').value != old.date2 && (column[code]['date2'] = i.querySelector('.scorecard-indicator-date-2').value);
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-1').value) != old.old1 && (column[code]['old1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-1').value));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-2').value) != old.old2 && (column[code]['old2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-2').value));
+      fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1')) != old.arrow1 && (column[code]['arrow1'] = fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1')));
+      fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2')) != old.arrow2 && (column[code]['arrow2'] = fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2')));
+      fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line')) != old.likelihood1 && (column[code]['likelihood1'] = fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line')));
+      fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line')) != old.likelihood2 && (column[code]['likelihood2'] = fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line')));
+    });
+
+    for (element in column) {
+      Object.keys(column[element]).forEach(i => {
+        retrieved.wcadata[element][i] = column[element][i];
+      });
+    }
+
+    return JSON.stringify(retrieved.wcadata);
+  }
+
+  editComment(retrieved, previous) {
+    var old = previous.comment;
+    var current = document.querySelector('.scorecard-main-summary .ql-editor').innerHTML;
+
+    if (current != old) {
+      retrieved.comment = current;
+    }
+
+    return retrieved.comment;
+  }
+
+  editMotto(retrieved, previous) {
+    var old = previous.motto;
+    var current = document.querySelector('.scorecard-motto').value;
+
+    if (current != old) {
+      retrieved.motto = current;
+    }
+
+    return retrieved.motto;
+  }
+
+}
 
 
 
@@ -38406,6 +38534,38 @@ var modalListeners = () => {
 
 /***/ }),
 
+/***/ "./src/js/settingsItemSP.js":
+/*!**********************************!*\
+  !*** ./src/js/settingsItemSP.js ***!
+  \**********************************/
+/*! exports provided: SettingsItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsItem", function() { return SettingsItem; });
+class SettingsItem {
+  constructor(form, index) {
+    this.Title = form.querySelector('.modal-edit-title').value.trim();
+    this.Position = parseInt(index);
+    this.Color = form.querySelector('.modal-edit-color').value.trim();
+    this.Value1 = form.querySelector('.modal-edit-indicator1').value.trim();
+    this.Target1 = parseInt(form.querySelector('.modal-edit-target1').value.trim());
+    this.Range1 = form.querySelector('.modal-edit-time1').value.trim();
+    this.Value2 = form.querySelector('.modal-edit-indicator2').value.trim();
+    this.Target2 = parseInt(form.querySelector('.modal-edit-target2').value.trim());
+    this.Range2 = form.querySelector('.modal-edit-time2').value.trim();
+    this.__metadata = {
+      type: app.storage.settingsType
+    };
+  }
+
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/utilities.js":
 /*!*****************************!*\
   !*** ./src/js/utilities.js ***!
@@ -38417,11 +38577,13 @@ module.exports = {
   on: on,
   preventDefault: preventDefault,
   getNodes: getNodes,
+  getItemURL: getItemURL,
+  getPreviousDate: getPreviousDate,
+  filterOut: filterOut,
   startLoader: startLoader,
   editorOptions: editorOptions,
   limitIndicatorValues: limitIndicatorValues,
   createScorecardTitle: createScorecardTitle,
-  // fromSPtoArrow: fromSPtoArrow,
   fromArrowToSP: fromArrowToSP,
   fromLikelihoodToSP: fromLikelihoodToSP,
   fromDateToSP: fromDateToSP
@@ -38442,6 +38604,22 @@ function on(selector, eventType, childSelector, eventHandler) {
 function getNodes(value, context) {
   var target = context ? context : document;
   return Array.from(target.querySelectorAll(value));
+}
+
+function getItemURL(date) {
+  var itemDate = date ? date : document.getElementById('scorecards-content').dataset.date;
+  return "".concat(app.storage.site, "/_api/web/lists/getbytitle('").concat(app.storage.scorecardsList, "')/items?$filter=(scoredate eq '").concat(itemDate, "')");
+}
+
+function getPreviousDate(date) {
+  var previousMonth = parseInt(date.split('-')[1]) == 1 ? 12 : parseInt(date.split('-')[1]) - 1;
+  var previousYear = previousMonth == 12 ? parseInt(date.split('-')[0]) - 1 : parseInt(date.split('-')[0]);
+  var formattedMonth = previousMonth > 9 ? previousMonth : "0".concat(previousMonth);
+  return "".concat(previousYear, "-").concat(formattedMonth, "-15T00:00:00Z");
+}
+
+function filterOut(value) {
+  return isNaN(parseInt(value)) ? "" : value;
 }
 
 function startLoader() {

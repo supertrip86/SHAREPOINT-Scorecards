@@ -7,7 +7,7 @@
     <div class="toggle-dashboard toggle-dashboard-off"></div>
 </div>
 {{#each wcadata}}
-<div class="scorecard-row" data-code="{{code}}" data-color="{{color}}">
+<div class="scorecard-row" data-code="{{@key}}" data-color="{{color}}">
     <div class="title-square {{getSquareColorEdit color}}">
         <div>
             <textarea class="form-control scorecard-edit-title" placeholder="Insert a ScoreCard title">{{title}}</textarea>
@@ -21,7 +21,7 @@
             <input class="form-control scorecard-indicator-value scorecard-indicator-value-1 input-number input-control" type="text" maxlength="5" value="{{value1}}">
             <span class="scorecard-separator">/</span>
             <input class="form-control scorecard-indicator-target-1 input-number" type="text" maxlength="5" value="{{target1}}">
-            <i class="scorecard-indicator-arrow scorecard-indicator-arrow-1"></i>
+            <i class="scorecard-indicator-arrow scorecard-indicator-arrow-1 {{getArrow arrow1}}"></i>
         </div>
         <div class="value-square-indicators-edit">
             <input class="form-control scorecard-indicator-date scorecard-indicator-date-1" type="text" value="{{date1}}">
@@ -48,7 +48,7 @@
             <input class="form-control scorecard-indicator-value scorecard-indicator-value-2 input-number input-control" type="text" maxlength="5" value="{{value2}}">
             <span class="scorecard-separator">/</span>
             <input class="form-control scorecard-indicator-target-2 input-number" type="text" maxlength="5" value="{{target2}}">
-            <i class="scorecard-indicator-arrow scorecard-indicator-arrow-2"></i>
+            <i class="scorecard-indicator-arrow scorecard-indicator-arrow-2 {{getArrow arrow2}}"></i>
         </div>
         <div class="value-square-indicators-edit">
             <input class="form-control scorecard-indicator-date scorecard-indicator-date-2" type="text" value="{{date2}}">

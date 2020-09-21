@@ -2,11 +2,13 @@ module.exports = {
 	on: on,
 	preventDefault: preventDefault,
 	getNodes: getNodes,
+	getItemURL: getItemURL,
+	getPreviousDate: getPreviousDate,
+	filterOut: filterOut,
 	startLoader: startLoader,
 	editorOptions: editorOptions,
 	limitIndicatorValues: limitIndicatorValues,
 	createScorecardTitle: createScorecardTitle,
-	// fromSPtoArrow: fromSPtoArrow,
 	fromArrowToSP: fromArrowToSP,
 	fromLikelihoodToSP: fromLikelihoodToSP,
 	fromDateToSP: fromDateToSP,
@@ -28,6 +30,24 @@ function getNodes(value, context) {
 	const target = context ? context : document;
 
 	return Array.from(target.querySelectorAll(value));
+}
+
+function getItemURL(date) {
+	const itemDate = date ? date : document.getElementById('scorecards-content').dataset.date;
+
+	return `${app.storage.site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=(scoredate eq '${itemDate}')`;
+}
+
+function getPreviousDate(date) {
+    const previousMonth = (parseInt(date.split('-')[1]) == 1) ? 12 : parseInt(date.split('-')[1]) -1;
+    const previousYear = (previousMonth == 12) ? parseInt(date.split('-')[0]) -1 : parseInt(date.split('-')[0]);
+    const formattedMonth = (previousMonth > 9) ? previousMonth : `0${previousMonth}`;
+
+    return `${previousYear}-${formattedMonth}-15T00:00:00Z`;
+}
+
+function filterOut(value) {
+	return isNaN(parseInt(value)) ? "" : value;
 }
 
 function startLoader() {

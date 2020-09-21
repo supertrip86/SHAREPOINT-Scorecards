@@ -1,0 +1,88 @@
+{
+    "d": {
+        "results": [
+            {
+                "__metadata": {
+                    "id": "Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)",
+                    "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)",
+                    "etag": "\"1\"",
+                    "type": "SP.Data.Scorecardsdatav2ListItem"
+                },
+                "FirstUniqueAncestorSecurableObject": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/FirstUniqueAncestorSecurableObject"
+                    }
+                },
+                "RoleAssignments": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/RoleAssignments"
+                    }
+                },
+                "AttachmentFiles": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/AttachmentFiles"
+                    }
+                },
+                "ContentType": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/ContentType"
+                    }
+                },
+                "FieldValuesAsHtml": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/FieldValuesAsHtml"
+                    }
+                },
+                "FieldValuesAsText": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/FieldValuesAsText"
+                    }
+                },
+                "FieldValuesForEdit": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/FieldValuesForEdit"
+                    }
+                },
+                "File": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/File"
+                    }
+                },
+                "Folder": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/Folder"
+                    }
+                },
+                "ParentList": {
+                    "__deferred": {
+                        "uri": "https://xdesk.ifad.org/sites/pa/tools/_api/Web/Lists(guid'e08c2a53-88e9-400c-99c3-dd088f3f359f')/Items(29)/ParentList"
+                    }
+                },
+                "FileSystemObjectType": 0,
+                "Id": 29,
+                "ContentTypeId": "0x010095559FE43CC8E64997BCA18E694E01B0003A503274B93EBA4694AE5CBD859BCC72",
+                "Title": "October 2020",
+                "motto": "aaaaaaaaaaaaaaaaa",
+                "centralaction": null,
+                "centraldata": null,
+                "coastalaction": null,
+                "coastaldata": null,
+                "comment": "<p>qqqqqqqqqqqqq</p>",
+                "scoredate": "2020-10-15T00:00:00Z",
+                "wcadata": "{\"wo\":{\"description\":\"<p>asdasd asdasdasdasd asd asd asd</p>\",\"title\":\"Women and youth\",\"indicator1\":\"% of ongoing projects rated 5 or more in gender\",\"indicator2\":\"% of ongoing projects rated 5 or more in targeting \",\"value1\":\"5\",\"value2\":\"3\",\"target1\":\"60\",\"target2\":\"70\",\"date1\":\"SEP 20’\",\"date2\":\"SEP 20’\",\"old1\":\"5\",\"old2\":\"9\",\"arrow1\":2,\"arrow2\":1,\"likelihood1\":3,\"likelihood2\":4,\"color\":\"Grey\"},\"cl\":{\"description\":\"<p><br></p>\",\"title\":\"Climate change and nutrition\",\"indicator1\":\"Climate and NRM (ratings 4 and above), %\",\"indicator2\":\"Nutrition (ratings 4 and above), %\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"90\",\"target2\":\"50\",\"date1\":\"N/A\",\"date2\":\"N/A\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Grey\"},\"ap\":{\"description\":\"<p><br></p>\",\"title\":\"Approvals\",\"indicator1\":\"POLG approved, US$ million\",\"indicator2\":\"Number of operations approved\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"\",\"target2\":\"\",\"date1\":\"N/A\",\"date2\":\"N/A\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Blue\"},\"st\":{\"description\":\"<p><br></p>\",\"title\":\"Strategy and visibility\",\"indicator1\":\"COSOPs/CSNs approved\",\"indicator2\":\"% of IFAD news in WCA\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"\",\"target2\":\"\",\"date1\":\"N/A\",\"date2\":\"N/A\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Blue\"},\"co\":{\"description\":\"<p><br></p>\",\"title\":\"Cofinancing\",\"indicator1\":\"Domestic ratio\\n(3-year rolling)\",\"indicator2\":\"International ratio\\n(3-year rolling)\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"\",\"target2\":\"\",\"date1\":\"OCT 19’\",\"date2\":\"OCT 19’\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Blue\"},\"ob\":{\"description\":\"<p><br></p>\",\"title\":\"Obligations\",\"indicator1\":\"US$ amount of ineligibles, thousands\",\"indicator2\":\"US$ amount of outstanding balance, million\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"300\",\"target2\":\"\",\"date1\":\"OCT 19’\",\"date2\":\"OCT 19’\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Grey\"},\"ri\":{\"description\":\"<p><br></p>\",\"title\":\"Risks\",\"indicator1\":\"% of problem projects (APP and PPP)\",\"indicator2\":\"% projects with high financial risk\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"10\",\"target2\":\"20\",\"date1\":\"JUL 20’\",\"date2\":\"OCT 19’\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Grey\"},\"ef\":{\"description\":\"<p><br></p>\",\"title\":\"Efficiency\",\"indicator1\":\"US$ cost per design (average), thousand\",\"indicator2\":\"US$ cost per mission (average), thousand\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"200\",\"target2\":\"40\",\"date1\":\"N/A\",\"date2\":\"OCT 19’\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Grey\"},\"cm\":{\"description\":\"<p><br></p>\",\"title\":\"Completion\",\"indicator1\":\"% PCR submitted within 6 months \",\"indicator2\":\"% PCR submitted publicly disclosed\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"85\",\"target2\":\"90\",\"date1\":\"N/A\",\"date2\":\"N/A\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Grey\"},\"ag\":{\"description\":\"<p><br></p>\",\"title\":\"Agility\",\"indicator1\":\"Time from CA to EB, months\",\"indicator2\":\"Start-up progress, %\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"8\",\"target2\":\"100\",\"date1\":\"OCT 19’\",\"date2\":\"OCT 19’\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Grey\"},\"re\":{\"description\":\"<p><br></p>\",\"title\":\"Results\",\"indicator1\":\"Outreach, million\",\"indicator2\":\"Extreme poverty, million\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"\",\"target2\":\"\",\"date1\":\"RIDE 19’\",\"date2\":\"N/A\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Orange\"},\"di\":{\"description\":\"<p><br></p>\",\"title\":\"Disburse\",\"indicator1\":\"Disbursement ratio\",\"indicator2\":\"Time from EB to 1st disbursement, months\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"\",\"target2\":\"12\",\"date1\":\"OCT 17’\",\"date2\":\"OCT 17’\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Blue\"},\"su\":{\"description\":\"<p><br></p>\",\"title\":\"Supervision\",\"indicator1\":\"Time for disclosure, days (median)\",\"indicator2\":\"% disclosed or finalised for disclosure\",\"value1\":\"\",\"value2\":\"\",\"target1\":\"30\",\"target2\":\"100\",\"date1\":\"OCT 19’\",\"date2\":\"OCT 19’\",\"old1\":\"\",\"old2\":\"\",\"arrow1\":0,\"arrow2\":0,\"likelihood1\":0,\"likelihood2\":0,\"color\":\"Grey\"}}",
+                "westaction": null,
+                "westdata": null,
+                "Scorecards_x0020_Date": "15/10/2020",
+                "NotificationSent": "false",
+                "ID": 29,
+                "Modified": "2020-09-17T14:44:00Z",
+                "Created": "2020-09-17T14:44:00Z",
+                "AuthorId": 1021,
+                "EditorId": 1021,
+                "OData__UIVersionString": "1.0",
+                "Attachments": false,
+                "GUID": "4d234491-8807-4083-959a-98b5ac0c546e"
+            }
+        ]
+    }
+}
