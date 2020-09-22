@@ -37129,7 +37129,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(__default(__webpack_require__(/*! ./helpers/renderDropdownItem.js */ "./src/hbs/helpers/renderDropdownItem.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Title") : depth0),{"name":"renderDropdownItem","hash":{},"data":data,"loc":{"start":{"line":20,"column":117},"end":{"line":20,"column":145}}}))
     + "</span>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
@@ -37141,9 +37141,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + "                    </div>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link create-scorecard\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">CREATE ScoreCards\r\n                        <svg width=\"14px\" height=\"17px\" viewBox=\"2 2 17 17\" class=\"bi bi-file-earmark-text\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path d=\"M4 0h5.5v1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h1V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z\"/>\r\n                            <path d=\"M9.5 3V0L14 4.5h-3A1.5 1.5 0 0 1 9.5 3z\"/>\r\n                            <path fill-rule=\"evenodd\" d=\"M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z\"/>\r\n                        </svg>\r\n                    </a>\r\n                </li>\r\n            </ul>\r\n            <ul class=\"navbar-nav ml-auto collapse settings-container\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link settings-link\" data-toggle=\"modal\" data-target=\"#settingsMenu\"><img src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIiBmaWxsPSIjZmZmIj48cGF0aCBkPSJNNTEyLjEgMTkxbC04LjIgMTQuM2MtMyA1LjMtOS40IDcuNS0xNS4xIDUuNC0xMS44LTQuNC0yMi42LTEwLjctMzIuMS0xOC42LTQuNi0zLjgtNS44LTEwLjUtMi44LTE1LjdsOC4yLTE0LjNjLTYuOS04LTEyLjMtMTcuMy0xNS45LTI3LjRoLTE2LjVjLTYgMC0xMS4yLTQuMy0xMi4yLTEwLjMtMi0xMi0yLjEtMjQuNiAwLTM3LjEgMS02IDYuMi0xMC40IDEyLjItMTAuNGgxNi41YzMuNi0xMC4xIDktMTkuNCAxNS45LTI3LjRsLTguMi0xNC4zYy0zLTUuMi0xLjktMTEuOSAyLjgtMTUuNyA5LjUtNy45IDIwLjQtMTQuMiAzMi4xLTE4LjYgNS43LTIuMSAxMi4xLjEgMTUuMSA1LjRsOC4yIDE0LjNjMTAuNS0xLjkgMjEuMi0xLjkgMzEuNyAwTDU1MiA2LjNjMy01LjMgOS40LTcuNSAxNS4xLTUuNCAxMS44IDQuNCAyMi42IDEwLjcgMzIuMSAxOC42IDQuNiAzLjggNS44IDEwLjUgMi44IDE1LjdsLTguMiAxNC4zYzYuOSA4IDEyLjMgMTcuMyAxNS45IDI3LjRoMTYuNWM2IDAgMTEuMiA0LjMgMTIuMiAxMC4zIDIgMTIgMi4xIDI0LjYgMCAzNy4xLTEgNi02LjIgMTAuNC0xMi4yIDEwLjRoLTE2LjVjLTMuNiAxMC4xLTkgMTkuNC0xNS45IDI3LjRsOC4yIDE0LjNjMyA1LjIgMS45IDExLjktMi44IDE1LjctOS41IDcuOS0yMC40IDE0LjItMzIuMSAxOC42LTUuNyAyLjEtMTIuMS0uMS0xNS4xLTUuNGwtOC4yLTE0LjNjLTEwLjQgMS45LTIxLjIgMS45LTMxLjcgMHptLTEwLjUtNTguOGMzOC41IDI5LjYgODIuNC0xNC4zIDUyLjgtNTIuOC0zOC41LTI5LjctODIuNCAxNC4zLTUyLjggNTIuOHpNMzg2LjMgMjg2LjFsMzMuNyAxNi44YzEwLjEgNS44IDE0LjUgMTguMSAxMC41IDI5LjEtOC45IDI0LjItMjYuNCA0Ni40LTQyLjYgNjUuOC03LjQgOC45LTIwLjIgMTEuMS0zMC4zIDUuM2wtMjkuMS0xNi44Yy0xNiAxMy43LTM0LjYgMjQuNi01NC45IDMxLjd2MzMuNmMwIDExLjYtOC4zIDIxLjYtMTkuNyAyMy42LTI0LjYgNC4yLTUwLjQgNC40LTc1LjkgMC0xMS41LTItMjAtMTEuOS0yMC0yMy42VjQxOGMtMjAuMy03LjItMzguOS0xOC01NC45LTMxLjdMNzQgNDAzYy0xMCA1LjgtMjIuOSAzLjYtMzAuMy01LjMtMTYuMi0xOS40LTMzLjMtNDEuNi00Mi4yLTY1LjctNC0xMC45LjQtMjMuMiAxMC41LTI5LjFsMzMuMy0xNi44Yy0zLjktMjAuOS0zLjktNDIuNCAwLTYzLjRMMTIgMjA1LjhjLTEwLjEtNS44LTE0LjYtMTguMS0xMC41LTI5IDguOS0yNC4yIDI2LTQ2LjQgNDIuMi02NS44IDcuNC04LjkgMjAuMi0xMS4xIDMwLjMtNS4zbDI5LjEgMTYuOGMxNi0xMy43IDM0LjYtMjQuNiA1NC45LTMxLjdWNTcuMWMwLTExLjUgOC4yLTIxLjUgMTkuNi0yMy41IDI0LjYtNC4yIDUwLjUtNC40IDc2LS4xIDExLjUgMiAyMCAxMS45IDIwIDIzLjZ2MzMuNmMyMC4zIDcuMiAzOC45IDE4IDU0LjkgMzEuN2wyOS4xLTE2LjhjMTAtNS44IDIyLjktMy42IDMwLjMgNS4zIDE2LjIgMTkuNCAzMy4yIDQxLjYgNDIuMSA2NS44IDQgMTAuOS4xIDIzLjItMTAgMjkuMWwtMzMuNyAxNi44YzMuOSAyMSAzLjkgNDIuNSAwIDYzLjV6bS0xMTcuNiAyMS4xYzU5LjItNzctMjguNy0xNjQuOS0xMDUuNy0xMDUuNy01OS4yIDc3IDI4LjcgMTY0LjkgMTA1LjcgMTA1Ljd6bTI0My40IDE4Mi43bC04LjIgMTQuM2MtMyA1LjMtOS40IDcuNS0xNS4xIDUuNC0xMS44LTQuNC0yMi42LTEwLjctMzIuMS0xOC42LTQuNi0zLjgtNS44LTEwLjUtMi44LTE1LjdsOC4yLTE0LjNjLTYuOS04LTEyLjMtMTcuMy0xNS45LTI3LjRoLTE2LjVjLTYgMC0xMS4yLTQuMy0xMi4yLTEwLjMtMi0xMi0yLjEtMjQuNiAwLTM3LjEgMS02IDYuMi0xMC40IDEyLjItMTAuNGgxNi41YzMuNi0xMC4xIDktMTkuNCAxNS45LTI3LjRsLTguMi0xNC4zYy0zLTUuMi0xLjktMTEuOSAyLjgtMTUuNyA5LjUtNy45IDIwLjQtMTQuMiAzMi4xLTE4LjYgNS43LTIuMSAxMi4xLjEgMTUuMSA1LjRsOC4yIDE0LjNjMTAuNS0xLjkgMjEuMi0xLjkgMzEuNyAwbDguMi0xNC4zYzMtNS4zIDkuNC03LjUgMTUuMS01LjQgMTEuOCA0LjQgMjIuNiAxMC43IDMyLjEgMTguNiA0LjYgMy44IDUuOCAxMC41IDIuOCAxNS43bC04LjIgMTQuM2M2LjkgOCAxMi4zIDE3LjMgMTUuOSAyNy40aDE2LjVjNiAwIDExLjIgNC4zIDEyLjIgMTAuMyAyIDEyIDIuMSAyNC42IDAgMzcuMS0xIDYtNi4yIDEwLjQtMTIuMiAxMC40aC0xNi41Yy0zLjYgMTAuMS05IDE5LjQtMTUuOSAyNy40bDguMiAxNC4zYzMgNS4yIDEuOSAxMS45LTIuOCAxNS43LTkuNSA3LjktMjAuNCAxNC4yLTMyLjEgMTguNi01LjcgMi4xLTEyLjEtLjEtMTUuMS01LjRsLTguMi0xNC4zYy0xMC40IDEuOS0yMS4yIDEuOS0zMS43IDB6TTUwMS42IDQzMWMzOC41IDI5LjYgODIuNC0xNC4zIDUyLjgtNTIuOC0zOC41LTI5LjYtODIuNCAxNC4zLTUyLjggNTIuOHoiLz48L3N2Zz4=\"></a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n<div class=\"ifad-bar\">\r\n    <div class=\"ifad-bar-nen\"></div>\r\n    <div class=\"ifad-bar-lac\"></div>\r\n    <div class=\"ifad-bar-esa\"></div>\r\n    <div class=\"ifad-bar-wca\"></div>\r\n    <div class=\"ifad-bar-apr\"></div>\r\n</div>\r\n<nav id=\"scorecards-control\" class=\"navbar navbar-expand-lg\">\r\n    <div id=\"left-buttons\">\r\n        <div id=\"toggle-button\">\r\n"
     + ((stack1 = container.invokePartial(__webpack_require__(/*! ./partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs"),depth0,{"name":"editButton","data":data,"indent":"            ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "")
     + "        </div>\r\n        <div>\r\n            <button id=\"save-button\" class=\"btn btn-primary control-button vanish\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"1 1 15 15\" class=\"bi bi-check2-square\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z\"/>\r\n                </svg>\r\n                <span>Save</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <input id=\"date-button\" class=\"form-control vanish\" type=\"month\" value=\""
-    + alias2(__default(__webpack_require__(/*! ./helpers/getCurrentMonth.js */ "./src/hbs/helpers/getCurrentMonth.js")).call(alias1,{"name":"getCurrentMonth","hash":{},"data":data,"loc":{"start":{"line":64,"column":84},"end":{"line":64,"column":103}}}))
+    + alias4(((helper = (helper = lookupProperty(helpers,"minDate") || (depth0 != null ? lookupProperty(depth0,"minDate") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"minDate","hash":{},"data":data,"loc":{"start":{"line":64,"column":84},"end":{"line":64,"column":95}}}) : helper)))
     + "\" min=\""
-    + alias2(((helper = (helper = lookupProperty(helpers,"minDate") || (depth0 != null ? lookupProperty(depth0,"minDate") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"minDate","hash":{},"data":data,"loc":{"start":{"line":64,"column":110},"end":{"line":64,"column":121}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"minDate") || (depth0 != null ? lookupProperty(depth0,"minDate") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"minDate","hash":{},"data":data,"loc":{"start":{"line":64,"column":102},"end":{"line":64,"column":113}}}) : helper)))
     + "\" placeholder=\"Insert a date\">\r\n        </div>\r\n    </div>\r\n    <div id=\"right-buttons\" class=\"vanish\">\r\n        <div>\r\n            <button id=\"wca-view\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 17 17\" class=\"bi bi-columns-gap\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z\"/>\r\n                </svg>\r\n                <span>WCA View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"hubs-view\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 1 16 16\" class=\"bi bi-grid\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z\"/>\r\n                </svg>\r\n                <span>Hubs View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"actions-view\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 18 18\" class=\"bi bi-x-diamond\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z\"/>\r\n                </svg>\r\n                <span>Actions View</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"export-scorecards\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 2 16 16\" class=\"bi bi-download\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z\"/>\r\n                </svg>\r\n                <span>Export</span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</nav>";
 },"usePartial":true,"useData":true});
 
@@ -37170,22 +37170,6 @@ module.exports = function (arrow) {
     case 3:
       return 'scorecard-indicator-arrow-up';
   }
-};
-
-/***/ }),
-
-/***/ "./src/hbs/helpers/getCurrentMonth.js":
-/*!********************************************!*\
-  !*** ./src/hbs/helpers/getCurrentMonth.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function () {
-  var year = new Date().getFullYear();
-  var rawMonth = new Date().getMonth() + 1;
-  var month = rawMonth < 10 ? "0".concat(rawMonth) : rawMonth;
-  return "".concat(year, "-").concat(month);
 };
 
 /***/ }),
@@ -38173,7 +38157,8 @@ var saveData = (context, item, id, index) => {
     if (context == "Settings") {
       var threshold = document.querySelectorAll('.dialog-menu-item').length - 1;
       index == threshold && location.reload();
-    } else {// location.reload();
+    } else {
+      location.reload();
     }
   });
 };
@@ -38193,11 +38178,10 @@ var modifyScorecards = () => {
   var createMode = target.classList.contains('create-mode');
 
   if (createMode) {
-    var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardItem"](target, context, createMode);
+    var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardItem"](null, null, context, createMode);
     saveData('Scorecard', item);
   } else {
     var url = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getItemURL();
-    var start = new Date();
     receiveData(url).then(result => {
       var retrieved = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_2__["ScoreCards"](result.d.results[0]);
       var previous = app.current;
@@ -38205,8 +38189,7 @@ var modifyScorecards = () => {
 
       if (context == "wca-content") {
         var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardItem"](retrieved, previous, context, createMode);
-        console.log(data); // rethink ScoreCardItem, check what already uses ScoreCardItem, then create ScoreCardItem with "data"
-        // saveData('Scorecard', data, id);
+        saveData('Scorecard', data, id);
       } else if (context == "hubs-content") {} else if (context == "actions-content") {}
     });
   }
@@ -38398,7 +38381,7 @@ class ScoreCardItem {
 
   editWca(retrieved, previous) {
     var column = {};
-    getNodes('.active-content .scorecard-row').forEach(i => {
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-content .scorecard-row').forEach(i => {
       var code = i.dataset.code;
       var old = previous.wcadata[code];
       column[code] = {};
@@ -38414,10 +38397,10 @@ class ScoreCardItem {
       i.querySelector('.scorecard-indicator-date-2').value != old.date2 && (column[code]['date2'] = i.querySelector('.scorecard-indicator-date-2').value);
       _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-1').value) != old.old1 && (column[code]['old1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-1').value));
       _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-2').value) != old.old2 && (column[code]['old2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector('.scorecard-indicator-old-2').value));
-      fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1')) != old.arrow1 && (column[code]['arrow1'] = fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1')));
-      fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2')) != old.arrow2 && (column[code]['arrow2'] = fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2')));
-      fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line')) != old.likelihood1 && (column[code]['likelihood1'] = fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line')));
-      fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line')) != old.likelihood2 && (column[code]['likelihood2'] = fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line')));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1')) != old.arrow1 && (column[code]['arrow1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-1')));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2')) != old.arrow2 && (column[code]['arrow2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromArrowToSP(i.querySelector('.scorecard-indicator-arrow-2')));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line')) != old.likelihood1 && (column[code]['likelihood1'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-1 .line')));
+      _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line')) != old.likelihood2 && (column[code]['likelihood2'] = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromLikelihoodToSP(i.querySelector('.scorecard-likelihood-2 .line')));
     });
 
     for (element in column) {

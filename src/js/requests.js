@@ -48,7 +48,7 @@ const saveData = (context, item, id, index) => {
             index == threshold && location.reload();
 
         } else {
-            // location.reload();
+            location.reload();
         }
     });
 };
@@ -69,13 +69,12 @@ const modifyScorecards = () => {
     const createMode = target.classList.contains('create-mode');
 
     if (createMode) {
-        const item = new ScoreCardItem(target, context, createMode);
+        const item = new ScoreCardItem(null, null, context, createMode);
 
         saveData('Scorecard', item);
 
     } else {
         const url = utilities.getItemURL();
-        const start = new Date();
 
         receiveData(url).then( (result) => {
             const retrieved = new ScoreCards(result.d.results[0]);
@@ -84,9 +83,8 @@ const modifyScorecards = () => {
 
             if (context == "wca-content") {
                 const data = new ScoreCardItem(retrieved, previous, context, createMode);
-                console.log(data);
-                // rethink ScoreCardItem, check what already uses ScoreCardItem, then create ScoreCardItem with "data"
-                // saveData('Scorecard', data, id);
+
+                saveData('Scorecard', data, id);
 
             } else if (context == "hubs-content") {
 
