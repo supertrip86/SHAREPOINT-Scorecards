@@ -5,9 +5,8 @@ button > * {pointer-events: none;}
 .vanish {display: none!important;}
 .hidden {opacity: 0;}
 
-#scorecards-content {margin-bottom: 100px;padding: 0;}
+#scorecards-content {margin-bottom: 100px;padding: 0;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 #scorecards-content input.form-control {height: 22px;overflow: hidden;}
-#scorecards-content #wca-content {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 /* bootstrap 4.5 custom */
 .btn {font-size: 12px;border-radius: 0;}

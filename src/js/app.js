@@ -21,6 +21,8 @@ class App {
 class Admin extends App {
     constructor(data) {
         super(data);
+
+        this.admin = true;
     }
 };
 

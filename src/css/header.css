@@ -1,4 +1,3 @@
-#scorecards-header {margin-bottom: 50px;}
 #scorecards-header .main-nav {background-color: var(--main-bright-blue);padding-top: 0;padding-bottom: 2px;}
 
 .navbar .container-fluid {padding: 0;}
@@ -25,9 +24,10 @@
 .ifad-bar .ifad-bar-wca {background-color: #eb5400;}
 .ifad-bar .ifad-bar-apr {background-color: #df0221;}
 
-#scorecards-control {margin-top: 25px;justify-content: space-between;}
+#scorecards-control {margin: 25px 0 50px 0;justify-content: space-between;}
 #scorecards-control button {min-width: 110px;margin: auto 10px;height: 30px;line-height: 1;font-size: 14px;}
-#scorecards-control > div {display: flex;justify-content: space-around;margin: auto 20px;}
+#scorecards-control #left-buttons {display: flex;margin: auto 20px;}
+#scorecards-control #right-buttons {display: flex;margin: auto 20px auto auto;}
 #scorecards-control #date-button {text-align: center;height: 32px;margin: auto 10px;}
 
 button svg {margin-top: -1px;}

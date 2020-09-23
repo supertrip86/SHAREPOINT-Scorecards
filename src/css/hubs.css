@@ -1,0 +1,15 @@
+.scorecard-label .scorecard-hubs-motto {width: 200px;margin: auto 15px auto auto;font-style: italic;text-align: center;font-size: 13px;color: #fff;}
+.scorecard-management {display: flex;align-items: center;padding: 15px;font-size: 13px;min-height: 135px;background-color: #eee;margin-bottom: 6px;}
+.scorecard-management .management-title {width: 160px;font-weight: 700;}
+.scorecard-management .management-title p {margin: 0;}
+.scorecard-management .management-element {width: 22%;display: flex;}
+.scorecard-management .management-element img {width: 60px;height: 60px;margin: auto 5px auto 0;}
+.scorecard-management .management-element div p:first-child {font-weight: 700;}
+.scorecard-management .management-element div p {margin: 5px auto 5px 0;}
+
+.scorecard-row .hub-row-main {flex: auto;padding: 0;}
+.scorecard-row .hub-row-container {display: flex;padding: 0;}
+.scorecard-row .hub-row-title {text-align: center;font-size: 12px;font-weight: 700;color: var(--main-bright-blue);background-color: #eee;margin: 1px;}
+.scorecard-row .hub-row-title p, .scorecard-row .hub-square p {margin: 0;}
+.scorecard-row .hub-square {margin: 1px;}
+.scorecard-row .wca-indicator-title {text-align: center;font-weight: 700;}

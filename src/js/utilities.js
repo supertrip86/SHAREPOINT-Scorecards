@@ -4,14 +4,20 @@ module.exports = {
 	getNodes: getNodes,
 	getItemURL: getItemURL,
 	getPreviousDate: getPreviousDate,
+	getMonths: getMonths,
+	getHeaderData: getHeaderData,
 	filterOut: filterOut,
+	updateSPToken: updateSPToken,
 	startLoader: startLoader,
+	reload: reload,
 	editorOptions: editorOptions,
 	limitIndicatorValues: limitIndicatorValues,
 	createScorecardTitle: createScorecardTitle,
 	fromArrowToSP: fromArrowToSP,
 	fromLikelihoodToSP: fromLikelihoodToSP,
 	fromDateToSP: fromDateToSP,
+	generateView: generateView,
+	generateHash: generateHash
 };
 
 function on(selector, eventType, childSelector, eventHandler) {
@@ -46,8 +52,31 @@ function getPreviousDate(date) {
     return `${previousYear}-${formattedMonth}-15T00:00:00Z`;
 }
 
+function getMonths() {
+	return [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+}
+
+function getHeaderData() {
+	const date = app.scorecards[0].scoredate.split('-');
+    const year = date[0];
+    const month = parseInt(date[1]) + 1;
+    const updatedMonth = month > 9 ?  month : `0${month}`;
+
+    return {
+        scorecards: app.scorecards,
+		minDate: `${year}-${updatedMonth}`,
+		isAdmin: app.admin
+    };
+}
+
 function filterOut(value) {
 	return isNaN(parseInt(value)) ? "" : value;
+}
+
+function updateSPToken() {
+	setInterval( () => {
+        UpdateFormDigest(_spPageContextInfo.webServerRelativeUrl, _spFormDigestRefreshInterval);
+    }, 15 * 60000);
 }
 
 function startLoader() {
@@ -60,6 +89,10 @@ function startLoader() {
 	settingsIcon.setAttribute('style', 'display: none;');
 	body.setAttribute('style', 'user-select: none; overflow: hidden;')
 	body.insertAdjacentHTML('beforeend', spinner);
+}
+
+function reload() {
+	location.href = "";
 }
 
 function preventDefault(e) {
@@ -88,7 +121,7 @@ function limitIndicatorValues(e) {
 }
 
 function createScorecardTitle() {
-	const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+	const months = getMonths();
 	const startDate = document.getElementById('date-button').value.split('-').map( (i) => parseInt(i) );
 	const month = startDate[1] -1;
 	const year = startDate[0];
@@ -133,4 +166,31 @@ function fromDateToSP() {
 	const date = document.getElementById('date-button').value.split('-');
 
 	return `${date[0]}-${date[1]}-15T00:00:00Z`;
+}
+
+function generateView(hash) {
+	const context = hash.split('-')[0];
+	const month = hash.split('-')[1];
+	const year = hash.split('-')[2];
+
+	const months = getMonths().map( (i) => i.toLowerCase().slice(0,3) );
+	const monthIndex = months.indexOf(month) + 1;
+	const spMonth = (monthIndex > 9) ? monthIndex : `0${monthIndex}`;
+
+	const view = context == "#wca" ? "wca-content" : (context == "#hubs" ? "hubs-content" : "actions-content");
+	const date = `${year}-${spMonth}-15T00:00:00Z`;
+
+	return [view, date];
+}
+
+function generateHash(date) {
+	const context = document.querySelector('.active-content').id;
+	const view = context == "wca-content" ? "wca" : (context == "hubs-content" ? "hubs" : document.querySelector('.active-action').id);
+
+	const dateSplitted = date.split('-');
+	const months = getMonths().map( (i) => i.toLowerCase().slice(0,3) );
+	const month = months[parseInt(dateSplitted[1]) - 1];
+	const year = dateSplitted[0];
+
+	return `${view}-${month}-${year}`;
 }

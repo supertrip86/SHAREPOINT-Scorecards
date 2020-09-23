@@ -1,11 +1,12 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/main.css";
+import utilities from './js/utilities';
 import { receiveData } from "./js/requests.js";
 import { App, Admin } from "./js/app.js";
 import { scorecardsListeners } from "./js/scorecards.js";
 import { Modal, modalListeners } from "./js/settings.js";
-import { Header, headerListeners } from "./js/header.js";
+import { Header, headerListeners, appController } from "./js/controller.js";
 
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 const scorecardsListColumns = ["scoredate", "Id", "Title"];
@@ -49,31 +50,7 @@ receiveData(data.userData).then( (user) => {
     });
 });
 
-function headerData(data) {
-    const date = data[0].scoredate.split('-');
-    const year = date[0];
-    const month = parseInt(date[1]) + 1;
-    const updatedMonth = month > 9 ?  month : `0${month}`;
-
-    return {
-        scorecards: data,
-        minDate: `${year}-${updatedMonth}`
-    };
-};
-
-function updateSPToken () {
-    setInterval( () => {
-        UpdateFormDigest(_spPageContextInfo.webServerRelativeUrl, _spFormDigestRefreshInterval);
-    }, 15 * 60000);
-};
-
 function initApp() {
-    document.getElementById("scorecards-header").innerHTML = Header( headerData(data.scorecards) );
-
-    headerListeners();
-    scorecardsListeners();
-    updateSPToken();
-
     if (data.isAdmin) {
         window.app = new Admin(data);
 
@@ -82,7 +59,13 @@ function initApp() {
 
     } else {
         window.app = new App(data);
-
-        document.querySelector('.navbar-collapse').remove();
     }
+
+    document.getElementById("scorecards-header").innerHTML = Header( utilities.getHeaderData() );
+
+    utilities.updateSPToken();
+
+    headerListeners();
+    scorecardsListeners();
+    appController();
 };

@@ -45,10 +45,10 @@ const saveData = (context, item, id, index) => {
     fetch(url, options).then( () => {
         if (context == "Settings") {
             const threshold = document.querySelectorAll('.dialog-menu-item').length -1;
-            index == threshold && location.reload();
+            index == threshold && utilities.reload();
 
         } else {
-            location.reload();
+            utilities.reload();
         }
     });
 };

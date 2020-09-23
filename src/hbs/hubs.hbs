@@ -1,0 +1,239 @@
+<div class="scorecard-label">
+    <h3 class="scorecard-title">WCA SCORECARDS (by Hub), {{Title}}</h3>
+    <span class="scorecard-motto">{{motto}}</span>
+</div>
+<div class="scorecard-management container">
+    <div class="management-title">
+        <p>MANAGEMENT TEAM:</p>
+    </div>
+    <div class="management-element">
+        <img src="/sites/pa/tools/v2/img/hubs/director.jpg">
+        <div>
+            <p>Lisandro Martin</p>
+            <p>Regional Director</p>
+        </div>
+    </div>
+    <div class="management-element">
+        <img src="/sites/pa/tools/v2/img/hubs/west.jpg">
+        <div>
+            <p>Benoit Thierry</p>
+            <p>Hub Head, West Africa</p>
+        </div>
+    </div>
+    <div class="management-element">
+        <img src="/sites/pa/tools/v2/img/hubs/coastal.jpg">
+        <div>
+            <p>Abdul Wahab Barry</p>
+            <p>Hub Head, Coastal Africa</p>
+        </div>
+    </div>
+    <div class="management-element">
+        <img src="/sites/pa/tools/v2/img/hubs/central.jpg">
+        <div>
+            <p>Abdelhaq Hanafi</p>
+            <p>Hub Head, Central Africa</p>
+        </div>
+    </div>
+</div>
+{{log this}}
+{{#each data}}
+{{log wca}}
+
+<div class="scorecard-row">
+    <div class="title-square {{getSquareColor wca}}">
+        <div>
+            {{{getRowTitle wca}}}
+        </div>
+    </div>
+	<div class="hub-row-main hub-row-left">
+		<div class="hub-row-title">
+			<p>{{wca.indicator1}}</p>
+		</div>
+		<div class="hub-row-container container" id="{{@key}}-hub-row-left">
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="wca-indicator-title">WCA</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="wca-indicator-value">{{value1}}</span>
+					<span class="wca-separator">/</span>
+					<span class="wca-indicator-target">{{target1}}</span>
+					<i class="wca-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="wca-indicator-date">{{date1}}</span>
+					<span class="wca-separator">=</span>
+					<span class="wca-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="wca-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="west-indicator-title">Dakar</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="west-indicator-value">{{value1}}</span>
+					<span class="west-separator">/</span>
+					<span class="west-indicator-target">{{target1}}</span>
+					<i class="west-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="west-indicator-date">{{date1}}</span>
+					<span class="west-separator">=</span>
+					<span class="west-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="west-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="coastal-indicator-title">Abidjan</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="coastal-indicator-value">{{value1}}</span>
+					<span class="coastal-separator">/</span>
+					<span class="coastal-indicator-target">{{target1}}</span>
+					<i class="coastal-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="coastal-indicator-date">{{date1}}</span>
+					<span class="coastal-separator">=</span>
+					<span class="coastal-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="coastal-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="central-indicator-title">Yaoundé</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="central-indicator-value">{{value1}}</span>
+					<span class="central-separator">/</span>
+					<span class="central-indicator-target">{{target1}}</span>
+					<i class="central-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="central-indicator-date">{{date1}}</span>
+					<span class="central-separator">=</span>
+					<span class="central-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="central-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hub-row-main hub-row-right">
+		<div class="hub-row-title">
+			<p>{{wca.indicator2}}</p>
+		</div>
+		<div class="hub-row-container container" id="{{@key}}-hub-row-right">
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="wca-indicator-title">WCA</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="wca-indicator-value">{{value2}}</span>
+					<span class="wca-separator">/</span>
+					<span class="wca-indicator-target">{{target2}}</span>
+					<i class="wca-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="wca-indicator-date">{{date1}}</span>
+					<span class="wca-separator">=</span>
+					<span class="wca-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="wca-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="west-indicator-title">Dakar</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="west-indicator-value">{{value1}}</span>
+					<span class="west-separator">/</span>
+					<span class="west-indicator-target">{{target1}}</span>
+					<i class="west-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="west-indicator-date">{{date1}}</span>
+					<span class="west-separator">=</span>
+					<span class="west-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="west-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="coastal-indicator-title">Abidjan</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="coastal-indicator-value">{{value1}}</span>
+					<span class="coastal-separator">/</span>
+					<span class="coastal-indicator-target">{{target1}}</span>
+					<i class="coastal-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="coastal-indicator-date">{{date1}}</span>
+					<span class="coastal-separator">=</span>
+					<span class="coastal-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="coastal-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+			<div class="hub-square bordered-square col">
+				<div>
+					<p class="central-indicator-title">Yaoundé</p>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="central-indicator-value">{{value1}}</span>
+					<span class="central-separator">/</span>
+					<span class="central-indicator-target">{{target1}}</span>
+					<i class="central-indicator-arrow {{getArrow arrow1}}"></i>
+				</div>
+				<div class="hub-square-indicators">
+					<span class="central-indicator-date">{{date1}}</span>
+					<span class="central-separator">=</span>
+					<span class="central-indicator-old">{{old1}}</span>
+				</div>
+				<div>
+					<span>Likelihood</span>
+					<span class="central-indicator-likelihood">
+						<div class="line {{getLikelihood likelihood1}}"></div>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{/each}}

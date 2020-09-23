@@ -15,11 +15,11 @@
 .scorecard-row *::placeholder {font-weight: 400;color: grey;text-align: center;}
 .scorecard-row textarea, .scorecard-row input, .scorecard-motto {text-align: center;}
 .scorecard-row > div {height: 135px;padding: 5px;}
-.scorecard-row > div:not(:first-child) {border: none;background-color: #F8F9FA;background-image: linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede);background-position: top,right,bottom,left;background-size: 1px 1px,1px 1px;background-repeat: repeat-x,repeat-y;}
-.scorecard-row > div:not(:last-child) {margin-right: 4px;}
+.scorecard-row > div:not(:last-child) {margin-right: 5px;}
 .scorecard-row .grey-square {background-color: #7F7F7F;}
 .scorecard-row .blue-square {background-color: #003870;}
 .scorecard-row .orange-square {background-color: #EA6B14;}
+.scorecard-row .bordered-square {border: none;background-color: #F8F9FA;background-image: linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede);background-position: top,right,bottom,left;background-size: 1px 1px,1px 1px;background-repeat: repeat-x,repeat-y;}
 .scorecard-row .title-square {-ms-flex: 0 0 150px;flex: 0 0 150px;max-width: 150px;display: flex;color: #fff;}
 .scorecard-row .title-square div {align-self: center;margin: -10px auto 0 auto;text-align: center;}
 .scorecard-row .title-square span:first-child {font-size: 32px;}

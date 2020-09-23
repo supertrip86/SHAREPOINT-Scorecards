@@ -12,9 +12,8 @@ button > * {pointer-events: none;}
 .vanish {display: none!important;}
 .hidden {opacity: 0;}
 
-#scorecards-content {margin-bottom: 100px;padding: 0;}
+#scorecards-content {margin-bottom: 100px;padding: 0;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 #scorecards-content input.form-control {height: 22px;overflow: hidden;}
-#scorecards-content #wca-content {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 
 /* bootstrap 4.5 custom */
 .btn {font-size: 12px;border-radius: 0;}
@@ -1019,7 +1018,6 @@ select.form-control {text-overflow: ellipsis;}
   border: 1px solid #ccc;
 }
 
-#scorecards-header {margin-bottom: 50px;}
 #scorecards-header .main-nav {background-color: var(--main-bright-blue);padding-top: 0;padding-bottom: 2px;}
 
 .navbar .container-fluid {padding: 0;}
@@ -1046,9 +1044,10 @@ select.form-control {text-overflow: ellipsis;}
 .ifad-bar .ifad-bar-wca {background-color: #eb5400;}
 .ifad-bar .ifad-bar-apr {background-color: #df0221;}
 
-#scorecards-control {margin-top: 25px;justify-content: space-between;}
+#scorecards-control {margin: 25px 0 50px 0;justify-content: space-between;}
 #scorecards-control button {min-width: 110px;margin: auto 10px;height: 30px;line-height: 1;font-size: 14px;}
-#scorecards-control > div {display: flex;justify-content: space-around;margin: auto 20px;}
+#scorecards-control #left-buttons {display: flex;margin: auto 20px;}
+#scorecards-control #right-buttons {display: flex;margin: auto 20px auto auto;}
 #scorecards-control #date-button {text-align: center;height: 32px;margin: auto 10px;}
 
 button svg {margin-top: -1px;}
@@ -1078,11 +1077,11 @@ button svg {margin-top: -1px;}
 .scorecard-row *::placeholder {font-weight: 400;color: grey;text-align: center;}
 .scorecard-row textarea, .scorecard-row input, .scorecard-motto {text-align: center;}
 .scorecard-row > div {height: 135px;padding: 5px;}
-.scorecard-row > div:not(:first-child) {border: none;background-color: #F8F9FA;background-image: linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede);background-position: top,right,bottom,left;background-size: 1px 1px,1px 1px;background-repeat: repeat-x,repeat-y;}
-.scorecard-row > div:not(:last-child) {margin-right: 4px;}
+.scorecard-row > div:not(:last-child) {margin-right: 5px;}
 .scorecard-row .grey-square {background-color: #7F7F7F;}
 .scorecard-row .blue-square {background-color: #003870;}
 .scorecard-row .orange-square {background-color: #EA6B14;}
+.scorecard-row .bordered-square {border: none;background-color: #F8F9FA;background-image: linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede),linear-gradient(#dedede,#dedede);background-position: top,right,bottom,left;background-size: 1px 1px,1px 1px;background-repeat: repeat-x,repeat-y;}
 .scorecard-row .title-square {-ms-flex: 0 0 150px;flex: 0 0 150px;max-width: 150px;display: flex;color: #fff;}
 .scorecard-row .title-square div {align-self: center;margin: -10px auto 0 auto;text-align: center;}
 .scorecard-row .title-square span:first-child {font-size: 32px;}
@@ -1123,5 +1122,19 @@ button svg {margin-top: -1px;}
 .toggle-dashboard {position: absolute;top: 5px;left: 100%;cursor: pointer;}
 .toggle-dashboard-off::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktdG9nZ2xlLW9mZiIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMSA0YTQgNCAwIDAgMSAwIDhIOGE0Ljk5MiA0Ljk5MiAwIDAgMCAyLTQgNC45OTIgNC45OTIgMCAwIDAtMi00aDN6bS02IDhhNCA0IDAgMSAxIDAtOCA0IDQgMCAwIDEgMCA4ek0wIDhhNSA1IDAgMCAwIDUgNWg2YTUgNSAwIDAgMCAwLTEwSDVhNSA1IDAgMCAwLTUgNXoiLz4NCjwvc3ZnPg==');}
 .toggle-dashboard-on::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktdG9nZ2xlLW9uIiBmaWxsPSJjdXJyZW50Q29sb3IiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTUgM2E1IDUgMCAwIDAgMCAxMGg2YTUgNSAwIDAgMCAwLTEwSDV6bTYgOWE0IDQgMCAxIDAgMC04IDQgNCAwIDAgMCAwIDh6Ii8+DQo8L3N2Zz4=')}
+.scorecard-label .scorecard-hubs-motto {width: 200px;margin: auto 15px auto auto;font-style: italic;text-align: center;font-size: 13px;color: #fff;}
+.scorecard-management {display: flex;align-items: center;padding: 15px;font-size: 13px;min-height: 135px;background-color: #eee;margin-bottom: 6px;}
+.scorecard-management .management-title {width: 160px;font-weight: 700;}
+.scorecard-management .management-title p {margin: 0;}
+.scorecard-management .management-element {width: 22%;display: flex;}
+.scorecard-management .management-element img {width: 60px;height: 60px;margin: auto 5px auto 0;}
+.scorecard-management .management-element div p:first-child {font-weight: 700;}
+.scorecard-management .management-element div p {margin: 5px auto 5px 0;}
+
+.scorecard-row .hub-row-main {flex: auto;padding: 0;}
+.scorecard-row .hub-row-container {display: flex;padding: 0;}
+.scorecard-row .hub-row-title {text-align: center;font-size: 12px;font-weight: 700;color: var(--main-bright-blue);background-color: #eee;margin: 1px;}
+.scorecard-row .hub-row-title p, .scorecard-row .hub-square p {margin: 0;}
+.scorecard-row .hub-square {margin: 1px;}
 
 /*# sourceMappingURL=bundle.css.map*/

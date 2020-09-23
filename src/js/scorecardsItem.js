@@ -1,4 +1,4 @@
-class ScoreCards {
+class ScoreCardsItem {
     constructor(sharepointItem) {
 		this.Title = sharepointItem.Title;
 		this.Id = sharepointItem.Id;
@@ -25,4 +25,4 @@ class ScoreCards {
     };
 }
 
-export { ScoreCards };
+export { ScoreCardsItem };
