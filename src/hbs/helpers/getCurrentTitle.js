@@ -4,5 +4,5 @@ module.exports = function() {
 	const month = startDate[1] -1;
 	const year = startDate[0];
 
-	return `WCA SCORECARDS, ${months[month]} ${year}`;
+	return `${months[month]} ${year}`;
 };

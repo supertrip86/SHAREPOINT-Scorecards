@@ -26,11 +26,9 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
-    "jbox": "^1.2.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "quill": "^1.3.7",
-    "select-pure": "^0.6.0-alpha.0",
     "sortablejs": "^1.10.2",
     "sweetalert2": "^9.17.1"
   }

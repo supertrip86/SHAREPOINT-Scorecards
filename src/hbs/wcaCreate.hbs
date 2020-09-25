@@ -1,5 +1,5 @@
 <div class="scorecard-label">
-    <h3 class="scorecard-title">{{getCurrentTitle}}</h3>
+    <h5 class="scorecard-title">{{getCurrentTitle}}</h5>
     <input class="form-control scorecard-motto" type="text" placeholder="Enter ScoreCard motto">
 </div>
 <div class="scorecard-main-comment scorecard-comment-box comment-wrapper">
@@ -7,7 +7,7 @@
     <div class="toggle-dashboard toggle-dashboard-off"></div>
 </div>
 {{#each this}}
-<div class="scorecard-row" data-code="{{Code}}" data-color="{{Color}}">
+<div class="scorecard-row d-flex justify-content-center" data-code="{{Code}}" data-color="{{Color}}">
     <div class="title-square {{getSquareColorEdit Color}}">
         <div>
             <textarea class="form-control scorecard-edit-title" placeholder="Insert a ScoreCard title">{{Title}}</textarea>

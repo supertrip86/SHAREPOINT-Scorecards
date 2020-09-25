@@ -1,12 +1,12 @@
 <div class="scorecard-label">
-    <h3 class="scorecard-title">WCA SCORECARDS, {{Title}}</h3>
-    <span class="scorecard-motto">{{motto}}</span>
+    <h5 class="scorecard-title">{{Title}}</h5>
+    <span class="scorecard-motto d-none d-lg-block">{{motto}}</span>
 </div>
 <div class="scorecard-main-comment scorecard-comment-box">
     <div class="scorecard-main-summary comment-inner">{{{comment}}}</div>
 </div>
 {{#each wcadata}}
-<div class="scorecard-row">
+<div class="scorecard-row d-lg-flex justify-content-lg-center">
     <div class="title-square {{getSquareColor this}}">
         <div>
             {{{getRowTitle this}}}

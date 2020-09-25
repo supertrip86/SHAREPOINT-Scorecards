@@ -25,12 +25,13 @@
 .ifad-bar .ifad-bar-apr {background-color: #df0221;}
 
 #scorecards-control {margin: 25px 0 50px 0;justify-content: space-between;}
-#scorecards-control button {min-width: 110px;margin: auto 10px;height: 30px;line-height: 1;font-size: 14px;}
-#scorecards-control #left-buttons {display: flex;margin: auto 20px;}
-#scorecards-control #right-buttons {display: flex;margin: auto 20px auto auto;}
+#scorecards-control button {line-height: 1;font-size: 14px;display: flex;align-items: center;}
+#scorecards-control #left-buttons {width: 66%;margin-left: 20px;margin-bottom: 20px;}
+#scorecards-control #left-buttons > div {margin-right: 20px;}
+#scorecards-control #right-buttons {display: flex;flex-grow: 1;justify-content: space-around;}
 #scorecards-control #date-button {text-align: center;height: 32px;margin: auto 10px;}
 
-button svg {margin-top: -1px;}
+button span {margin-left: 2px;}
 
 @media (min-width: 992px) {
     .settings-container, .navbar-brand {
