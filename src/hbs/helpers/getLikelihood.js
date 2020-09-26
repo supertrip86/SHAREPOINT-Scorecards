@@ -1,4 +1,6 @@
-module.exports = function(likelihood) {
+module.exports = function(value) {
+    const likelihood = value ? value : 0;
+
     switch (likelihood) {
         case 0:
             return '';

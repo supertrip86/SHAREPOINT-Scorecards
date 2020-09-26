@@ -1,7 +1,5 @@
-#hubs-content {padding: 0;}
-
 .scorecard-label .scorecard-hubs-motto {width: 200px;margin: auto 15px auto auto;font-style: italic;text-align: center;font-size: 13px;color: #fff;}
-.scorecard-management {display: flex;justify-content: space-between;align-items: center;padding: 15px;font-size: 13px;min-height: 135px;background-color: #eee;margin-bottom: 6px;text-align: center;}
+.scorecard-management {display: flex;justify-content: space-between;align-items: center;padding: 15px;font-size: 13px;min-height: 100px;background-color: #eee;margin-bottom: 6px;text-align: center;}
 .scorecard-management .management-title {font-weight: 700;}
 .scorecard-management .management-title p {margin: 0;}
 .scorecard-management .management-element {width: 22%;}
@@ -13,11 +11,20 @@
 .scorecard-row .hub-row-container {display: flex;padding: 0;}
 .scorecard-row .hub-row-container .row {margin: auto;justify-content: center;}
 .scorecard-row .hub-row-title {text-align: center;font-size: 12px;font-weight: 700;color: var(--main-bright-blue);background-color: #eee;margin: 1px;}
-.scorecard-row .hub-row-title p, .scorecard-row .hub-square p {margin: 0;}
-.scorecard-row .hub-square {margin: 1px;position: relative;padding: 0 8px;max-width: 120px;}
-.scorecard-row .hub-indicator-title {text-align: center;font-weight: 700;height: 30px;}
-.scorecard-row .hub-square-indicators {display: flex;align-items: center;justify-content: center;height: 26px;font-size: 13px;}
-.scorecard-row .hub-indicator-value {font-size: 18px;font-weight: 700;}
+.scorecard-row .hub-row-title p {margin: 0;}
+.scorecard-row .hub-square {margin: 0 1px;position: relative;padding: 0 4px;width: 128px;max-width: 128px;height: 115px;}
+.scorecard-row .hub-square:first-child {background-color: #f5f5dc;}
+.scorecard-row .hub-indicator-title {text-align: center;font-weight: 700;margin: 6px 0;}
+.scorecard-row .hub-square-indicators {display: flex;align-items: center;justify-content: center;height: 27px;}
+.scorecard-row .hub-square-indicators input.form-control {padding: 0;height: 18px;width: 42px;font-size: 11px;}
+.scorecard-row .hub-indicator-value {font-size: 18px;font-weight: 700;text-align: right;}
+.scorecard-row .hub-indicator-date {text-align: right;}
 .scorecard-row .hub-separator {width: 20px;text-align: center;}
+.scorecard-row .hub-separator-edit {width: 12px;text-align: center;}
 .scorecard-row .hub-indicator-target {font-size: 15px;}
-.scorecard-row .hub-square-likelihood {display: flex;justify-content: space-evenly;margin: 7px 0;}
+.scorecard-row .hub-square-likelihood {display: flex;justify-content: space-between;margin: 7px 0;}
+.scorecard-row .hub-square-likelihood .scorecard-indicator-likelihood {width: 60px;}
+.scorecard-row .hub-square-likelihood .scorecard-indicator-likelihood li {height: 18px;}
+.scorecard-row .hub-square-likelihood .scorecard-indicator-likelihood li .line {width: 30px;}
+.scorecard-row .hub-arrow {width: 12px;}
+.scorecard-row .hub-arrow-edit {position: static;width: 12px;}

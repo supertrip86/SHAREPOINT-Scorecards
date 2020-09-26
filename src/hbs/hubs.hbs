@@ -1,5 +1,5 @@
 <div class="scorecard-label">
-    <h5 class="scorecard-title">(by Hub), {{Title}}</h5>
+    <h5 class="scorecard-title">{{Title}}</h5>
     <span class="scorecard-motto d-none d-lg-block">{{motto}}</span>
 </div>
 <div class="scorecard-management">
@@ -35,10 +35,7 @@
         </div>
     </div>
 </div>
-{{log this}}
 {{#each data}}
-{{log wca}}
-
 <div class="scorecard-row d-lg-flex justify-content-lg-center">
     <div class="title-square {{getSquareColor wca}}">
         <div>
@@ -50,7 +47,6 @@
 			<p>{{wca.indicator1}}</p>
 		</div>
 		<div class="hub-row-container container" id="{{@key}}-hub-row-left">
-
 			<div class="row">
 				<div class="hub-square bordered-square col">
 					<div>
@@ -60,10 +56,10 @@
 						<span class="wca-indicator-value hub-indicator-value">{{wca.value1}}</span>
 						<span class="hub-separator">/</span>
 						<span class="wca-indicator-target hub-indicator-target">{{wca.target1}}</span>
-						<i class="wca-indicator-arrow scorecard-indicator-arrow {{getArrow wca.arrow1}}"></i>
+						<i class="wca-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow wca.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="wca-indicator-date">{{wca.date1}}</span>
+						<span class="wca-indicator-date hub-indicator-date">{{wca.date1}}</span>
 						<span class="hub-separator">=</span>
 						<span class="wca-indicator-old">{{wca.old1}}</span>
 					</div>
@@ -79,20 +75,20 @@
 						<p class="hub-indicator-title">Dakar</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="west-indicator-value hub-indicator-value">{{value1}}</span>
+						<span class="west-indicator-value hub-indicator-value">{{west.value1}}</span>
 						<span class="hub-separator">/</span>
-						<span class="west-indicator-target hub-indicator-target">{{target1}}</span>
-						<i class="west-indicator-arrow scorecard-indicator-arrow {{getArrow arrow1}}"></i>
+						<span class="west-indicator-target hub-indicator-target">{{west.target1}}</span>
+						<i class="west-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow west.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="west-indicator-date">{{date1}}</span>
+						<span class="west-indicator-date hub-indicator-date">{{west.date1}}</span>
 						<span class="hub-separator">=</span>
-						<span class="west-indicator-old">{{old1}}</span>
+						<span class="west-indicator-old">{{west.old1}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<span class="west-indicator-likelihood scorecard-indicator-likelihood">
-							<div class="line {{getLikelihood likelihood1}}"></div>
+							<div class="line {{getLikelihood west.likelihood1}}"></div>
 						</span>
 					</div>
 				</div>
@@ -101,20 +97,20 @@
 						<p class="hub-indicator-title">Abidjan</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="coastal-indicator-value hub-indicator-value">{{value1}}</span>
+						<span class="coastal-indicator-value hub-indicator-value">{{coastal.value1}}</span>
 						<span class="hub-separator">/</span>
-						<span class="coastal-indicator-target hub-indicator-target">{{target1}}</span>
-						<i class="coastal-indicator-arrow scorecard-indicator-arrow {{getArrow arrow1}}"></i>
+						<span class="coastal-indicator-target hub-indicator-target">{{coastal.target1}}</span>
+						<i class="coastal-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow coastal.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="coastal-indicator-date">{{date1}}</span>
+						<span class="coastal-indicator-date hub-indicator-date">{{coastal.date1}}</span>
 						<span class="hub-separator">=</span>
-						<span class="coastal-indicator-old">{{old1}}</span>
+						<span class="coastal-indicator-old">{{coastal.old1}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<span class="coastal-indicator-likelihood scorecard-indicator-likelihood">
-							<div class="line {{getLikelihood likelihood1}}"></div>
+							<div class="line {{getLikelihood coastal.likelihood1}}"></div>
 						</span>
 					</div>
 				</div>
@@ -123,25 +119,24 @@
 						<p class="hub-indicator-title">Yaoundé</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="central-indicator-value hub-indicator-value">{{value1}}</span>
+						<span class="central-indicator-value hub-indicator-value">{{central.value1}}</span>
 						<span class="hub-separator">/</span>
-						<span class="central-indicator-target hub-indicator-target">{{target1}}</span>
-						<i class="central-indicator-arrow scorecard-indicator-arrow {{getArrow arrow1}}"></i>
+						<span class="central-indicator-target hub-indicator-target">{{central.target1}}</span>
+						<i class="central-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow central.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="central-indicator-date">{{date1}}</span>
+						<span class="central-indicator-date hub-indicator-date">{{central.date1}}</span>
 						<span class="hub-separator">=</span>
-						<span class="central-indicator-old">{{old1}}</span>
+						<span class="central-indicator-old">{{central.old1}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<span class="central-indicator-likelihood scorecard-indicator-likelihood">
-							<div class="line {{getLikelihood likelihood1}}"></div>
+							<div class="line {{getLikelihood central.likelihood1}}"></div>
 						</span>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	<div class="hub-row-main hub-row-right">
@@ -149,7 +144,6 @@
 			<p>{{wca.indicator2}}</p>
 		</div>
 		<div class="hub-row-container container" id="{{@key}}-hub-row-right">
-
 			<div class="row">
 				<div class="hub-square bordered-square col">
 					<div>
@@ -159,10 +153,10 @@
 						<span class="wca-indicator-value hub-indicator-value">{{wca.value2}}</span>
 						<span class="hub-separator">/</span>
 						<span class="wca-indicator-target hub-indicator-target">{{wca.target2}}</span>
-						<i class="wca-indicator-arrow scorecard-indicator-arrow {{getArrow wca.arrow2}}"></i>
+						<i class="wca-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow wca.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="wca-indicator-date">{{wca.date2}}</span>
+						<span class="wca-indicator-date hub-indicator-date">{{wca.date2}}</span>
 						<span class="hub-separator">=</span>
 						<span class="wca-indicator-old">{{wca.old2}}</span>
 					</div>
@@ -178,20 +172,20 @@
 						<p class="hub-indicator-title">Dakar</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="west-indicator-value hub-indicator-value">{{value2}}</span>
+						<span class="west-indicator-value hub-indicator-value">{{west.value2}}</span>
 						<span class="hub-separator">/</span>
-						<span class="west-indicator-target hub-indicator-target">{{target2}}</span>
-						<i class="west-indicator-arrow scorecard-indicator-arrow {{getArrow arrow2}}"></i>
+						<span class="west-indicator-target hub-indicator-target">{{west.target2}}</span>
+						<i class="west-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow west.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="west-indicator-date">{{date2}}</span>
+						<span class="west-indicator-date hub-indicator-date">{{west.date2}}</span>
 						<span class="hub-separator">=</span>
-						<span class="west-indicator-old">{{old2}}</span>
+						<span class="west-indicator-old">{{west.old2}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<span class="west-indicator-likelihood scorecard-indicator-likelihood">
-							<div class="line {{getLikelihood likelihood2}}"></div>
+							<div class="line {{getLikelihood west.likelihood2}}"></div>
 						</span>
 					</div>
 				</div>
@@ -200,20 +194,20 @@
 						<p class="hub-indicator-title">Abidjan</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="coastal-indicator-value hub-indicator-value">{{value2}}</span>
+						<span class="coastal-indicator-value hub-indicator-value">{{coastal.value2}}</span>
 						<span class="hub-separator">/</span>
-						<span class="coastal-indicator-target hub-indicator-target">{{target2}}</span>
-						<i class="coastal-indicator-arrow scorecard-indicator-arrow {{getArrow arrow2}}"></i>
+						<span class="coastal-indicator-target hub-indicator-target">{{coastal.target2}}</span>
+						<i class="coastal-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow coastal.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="coastal-indicator-date">{{date2}}</span>
+						<span class="coastal-indicator-date hub-indicator-date">{{coastal.date2}}</span>
 						<span class="hub-separator">=</span>
-						<span class="coastal-indicator-old">{{old2}}</span>
+						<span class="coastal-indicator-old">{{coastal.old2}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<span class="coastal-indicator-likelihood scorecard-indicator-likelihood">
-							<div class="line {{getLikelihood likelihood2}}"></div>
+							<div class="line {{getLikelihood coastal.likelihood2}}"></div>
 						</span>
 					</div>
 				</div>
@@ -222,25 +216,24 @@
 						<p class="hub-indicator-title">Yaoundé</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="central-indicator-value hub-indicator-value">{{value2}}</span>
+						<span class="central-indicator-value hub-indicator-value">{{central.value2}}</span>
 						<span class="hub-separator">/</span>
-						<span class="central-indicator-target hub-indicator-target">{{target2}}</span>
-						<i class="central-indicator-arrow scorecard-indicator-arrow {{getArrow arrow2}}"></i>
+						<span class="central-indicator-target hub-indicator-target">{{central.target2}}</span>
+						<i class="central-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow central.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="central-indicator-date">{{date2}}</span>
+						<span class="central-indicator-date hub-indicator-date">{{central.date2}}</span>
 						<span class="hub-separator">=</span>
-						<span class="central-indicator-old">{{old2}}</span>
+						<span class="central-indicator-old">{{central.old2}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<span class="central-indicator-likelihood scorecard-indicator-likelihood">
-							<div class="line {{getLikelihood likelihood2}}"></div>
+							<div class="line {{getLikelihood central.likelihood2}}"></div>
 						</span>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

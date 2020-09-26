@@ -37186,7 +37186,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = function (arrow) {
+module.exports = function (value) {
+  var arrow = value ? value : 0;
+
   switch (arrow) {
     case 0:
       return '';
@@ -37274,7 +37276,9 @@ module.exports = function (date) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = function (likelihood) {
+module.exports = function (value) {
+  var likelihood = value ? value : 0;
+
   switch (likelihood) {
     case 0:
       return '';
@@ -37415,116 +37419,259 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return alias2(lookupProperty(helpers,"log").call(alias1,(depth0 != null ? lookupProperty(depth0,"wca") : depth0),{"name":"log","hash":{},"data":data,"loc":{"start":{"line":40,"column":0},"end":{"line":40,"column":11}}}))
-    + "\r\n\r\n<div class=\"scorecard-row d-lg-flex justify-content-lg-center\">\r\n    <div class=\"title-square "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getSquareColor.js */ "./src/hbs/helpers/getSquareColor.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"wca") : depth0),{"name":"getSquareColor","hash":{},"data":data,"loc":{"start":{"line":43,"column":29},"end":{"line":43,"column":51}}}))
+  return "<div class=\"scorecard-row d-lg-flex justify-content-lg-center\">\r\n    <div class=\"title-square "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getSquareColor.js */ "./src/hbs/helpers/getSquareColor.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"wca") : depth0),{"name":"getSquareColor","hash":{},"data":data,"loc":{"start":{"line":40,"column":29},"end":{"line":40,"column":51}}}))
     + "\">\r\n        <div>\r\n            "
-    + ((stack1 = __default(__webpack_require__(/*! ./helpers/getRowTitle.js */ "./src/hbs/helpers/getRowTitle.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"wca") : depth0),{"name":"getRowTitle","hash":{},"data":data,"loc":{"start":{"line":45,"column":12},"end":{"line":45,"column":33}}})) != null ? stack1 : "")
+    + ((stack1 = __default(__webpack_require__(/*! ./helpers/getRowTitle.js */ "./src/hbs/helpers/getRowTitle.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"wca") : depth0),{"name":"getRowTitle","hash":{},"data":data,"loc":{"start":{"line":42,"column":12},"end":{"line":42,"column":33}}})) != null ? stack1 : "")
     + "\r\n        </div>\r\n    </div>\r\n	<div class=\"hub-row-main hub-row-left\">\r\n		<div class=\"hub-row-title\">\r\n			<p>"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"indicator1") : stack1), depth0))
     + "</p>\r\n		</div>\r\n		<div class=\"hub-row-container container\" id=\""
-    + alias2(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":52,"column":47},"end":{"line":52,"column":55}}}) : helper)))
-    + "-hub-row-left\">\r\n\r\n			<div class=\"row\">\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">WCA</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-value hub-indicator-value\">"
+    + alias2(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":49,"column":47},"end":{"line":49,"column":55}}}) : helper)))
+    + "-hub-row-left\">\r\n			<div class=\"row\">\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">WCA</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-value hub-indicator-value\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"wca-indicator-target hub-indicator-target\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
-    + "</span>\r\n						<i class=\"wca-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":63,"column":62},"end":{"line":63,"column":85}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-date\">"
+    + "</span>\r\n						<i class=\"wca-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":59,"column":72},"end":{"line":59,"column":95}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-date hub-indicator-date\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"wca-indicator-old\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"wca-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":73,"column":24},"end":{"line":73,"column":57}}}))
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":69,"column":24},"end":{"line":69,"column":57}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Dakar</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"west-indicator-value hub-indicator-value\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"value1") || (depth0 != null ? lookupProperty(depth0,"value1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"value1","hash":{},"data":data,"loc":{"start":{"line":82,"column":61},"end":{"line":82,"column":71}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"west-indicator-target hub-indicator-target\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"target1") || (depth0 != null ? lookupProperty(depth0,"target1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"target1","hash":{},"data":data,"loc":{"start":{"line":84,"column":63},"end":{"line":84,"column":74}}}) : helper)))
-    + "</span>\r\n						<i class=\"west-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow1") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":85,"column":63},"end":{"line":85,"column":82}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"west-indicator-date\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"date1") || (depth0 != null ? lookupProperty(depth0,"date1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date1","hash":{},"data":data,"loc":{"start":{"line":88,"column":40},"end":{"line":88,"column":49}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
+    + "</span>\r\n						<i class=\"west-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":81,"column":73},"end":{"line":81,"column":97}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"west-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"west-indicator-old\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"old1") || (depth0 != null ? lookupProperty(depth0,"old1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"old1","hash":{},"data":data,"loc":{"start":{"line":90,"column":39},"end":{"line":90,"column":47}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"west-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"likelihood1") : depth0),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":95,"column":24},"end":{"line":95,"column":53}}}))
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":91,"column":24},"end":{"line":91,"column":58}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Abidjan</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"coastal-indicator-value hub-indicator-value\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"value1") || (depth0 != null ? lookupProperty(depth0,"value1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"value1","hash":{},"data":data,"loc":{"start":{"line":104,"column":64},"end":{"line":104,"column":74}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"coastal-indicator-target hub-indicator-target\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"target1") || (depth0 != null ? lookupProperty(depth0,"target1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"target1","hash":{},"data":data,"loc":{"start":{"line":106,"column":66},"end":{"line":106,"column":77}}}) : helper)))
-    + "</span>\r\n						<i class=\"coastal-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow1") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":107,"column":66},"end":{"line":107,"column":85}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"coastal-indicator-date\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"date1") || (depth0 != null ? lookupProperty(depth0,"date1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date1","hash":{},"data":data,"loc":{"start":{"line":110,"column":43},"end":{"line":110,"column":52}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
+    + "</span>\r\n						<i class=\"coastal-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":103,"column":76},"end":{"line":103,"column":103}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"coastal-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"coastal-indicator-old\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"old1") || (depth0 != null ? lookupProperty(depth0,"old1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"old1","hash":{},"data":data,"loc":{"start":{"line":112,"column":42},"end":{"line":112,"column":50}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"coastal-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"likelihood1") : depth0),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":117,"column":24},"end":{"line":117,"column":53}}}))
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":113,"column":24},"end":{"line":113,"column":61}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Yaoundé</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"central-indicator-value hub-indicator-value\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"value1") || (depth0 != null ? lookupProperty(depth0,"value1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"value1","hash":{},"data":data,"loc":{"start":{"line":126,"column":64},"end":{"line":126,"column":74}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"central-indicator-target hub-indicator-target\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"target1") || (depth0 != null ? lookupProperty(depth0,"target1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"target1","hash":{},"data":data,"loc":{"start":{"line":128,"column":66},"end":{"line":128,"column":77}}}) : helper)))
-    + "</span>\r\n						<i class=\"central-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow1") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":129,"column":66},"end":{"line":129,"column":85}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"central-indicator-date\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"date1") || (depth0 != null ? lookupProperty(depth0,"date1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date1","hash":{},"data":data,"loc":{"start":{"line":132,"column":43},"end":{"line":132,"column":52}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
+    + "</span>\r\n						<i class=\"central-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":125,"column":76},"end":{"line":125,"column":103}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"central-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"central-indicator-old\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"old1") || (depth0 != null ? lookupProperty(depth0,"old1") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"old1","hash":{},"data":data,"loc":{"start":{"line":134,"column":42},"end":{"line":134,"column":50}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"central-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"likelihood1") : depth0),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":139,"column":24},"end":{"line":139,"column":53}}}))
-    + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n			</div>\r\n\r\n		</div>\r\n	</div>\r\n	<div class=\"hub-row-main hub-row-right\">\r\n		<div class=\"hub-row-title\">\r\n			<p>"
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":135,"column":24},"end":{"line":135,"column":61}}}))
+    + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div class=\"hub-row-main hub-row-right\">\r\n		<div class=\"hub-row-title\">\r\n			<p>"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"indicator2") : stack1), depth0))
     + "</p>\r\n		</div>\r\n		<div class=\"hub-row-container container\" id=\""
-    + alias2(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":151,"column":47},"end":{"line":151,"column":55}}}) : helper)))
-    + "-hub-row-right\">\r\n\r\n			<div class=\"row\">\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">WCA</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-value hub-indicator-value\">"
+    + alias2(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":146,"column":47},"end":{"line":146,"column":55}}}) : helper)))
+    + "-hub-row-right\">\r\n			<div class=\"row\">\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">WCA</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-value hub-indicator-value\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"wca-indicator-target hub-indicator-target\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
-    + "</span>\r\n						<i class=\"wca-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":162,"column":62},"end":{"line":162,"column":85}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-date\">"
+    + "</span>\r\n						<i class=\"wca-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":156,"column":72},"end":{"line":156,"column":95}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-date hub-indicator-date\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"wca-indicator-old\">"
     + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"wca-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":172,"column":24},"end":{"line":172,"column":57}}}))
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":166,"column":24},"end":{"line":166,"column":57}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Dakar</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"west-indicator-value hub-indicator-value\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"value2") || (depth0 != null ? lookupProperty(depth0,"value2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"value2","hash":{},"data":data,"loc":{"start":{"line":181,"column":61},"end":{"line":181,"column":71}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"west-indicator-target hub-indicator-target\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"target2") || (depth0 != null ? lookupProperty(depth0,"target2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"target2","hash":{},"data":data,"loc":{"start":{"line":183,"column":63},"end":{"line":183,"column":74}}}) : helper)))
-    + "</span>\r\n						<i class=\"west-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow2") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":184,"column":63},"end":{"line":184,"column":82}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"west-indicator-date\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"date2") || (depth0 != null ? lookupProperty(depth0,"date2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date2","hash":{},"data":data,"loc":{"start":{"line":187,"column":40},"end":{"line":187,"column":49}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
+    + "</span>\r\n						<i class=\"west-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":178,"column":73},"end":{"line":178,"column":97}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"west-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"west-indicator-old\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"old2") || (depth0 != null ? lookupProperty(depth0,"old2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"old2","hash":{},"data":data,"loc":{"start":{"line":189,"column":39},"end":{"line":189,"column":47}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"west-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"likelihood2") : depth0),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":194,"column":24},"end":{"line":194,"column":53}}}))
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":188,"column":24},"end":{"line":188,"column":58}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Abidjan</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"coastal-indicator-value hub-indicator-value\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"value2") || (depth0 != null ? lookupProperty(depth0,"value2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"value2","hash":{},"data":data,"loc":{"start":{"line":203,"column":64},"end":{"line":203,"column":74}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"coastal-indicator-target hub-indicator-target\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"target2") || (depth0 != null ? lookupProperty(depth0,"target2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"target2","hash":{},"data":data,"loc":{"start":{"line":205,"column":66},"end":{"line":205,"column":77}}}) : helper)))
-    + "</span>\r\n						<i class=\"coastal-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow2") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":206,"column":66},"end":{"line":206,"column":85}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"coastal-indicator-date\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"date2") || (depth0 != null ? lookupProperty(depth0,"date2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date2","hash":{},"data":data,"loc":{"start":{"line":209,"column":43},"end":{"line":209,"column":52}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
+    + "</span>\r\n						<i class=\"coastal-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":200,"column":76},"end":{"line":200,"column":103}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"coastal-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"coastal-indicator-old\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"old2") || (depth0 != null ? lookupProperty(depth0,"old2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"old2","hash":{},"data":data,"loc":{"start":{"line":211,"column":42},"end":{"line":211,"column":50}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"coastal-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"likelihood2") : depth0),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":216,"column":24},"end":{"line":216,"column":53}}}))
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":210,"column":24},"end":{"line":210,"column":61}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Yaoundé</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"central-indicator-value hub-indicator-value\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"value2") || (depth0 != null ? lookupProperty(depth0,"value2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"value2","hash":{},"data":data,"loc":{"start":{"line":225,"column":64},"end":{"line":225,"column":74}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"central-indicator-target hub-indicator-target\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"target2") || (depth0 != null ? lookupProperty(depth0,"target2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"target2","hash":{},"data":data,"loc":{"start":{"line":227,"column":66},"end":{"line":227,"column":77}}}) : helper)))
-    + "</span>\r\n						<i class=\"central-indicator-arrow scorecard-indicator-arrow "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"arrow2") : depth0),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":228,"column":66},"end":{"line":228,"column":85}}}))
-    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"central-indicator-date\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"date2") || (depth0 != null ? lookupProperty(depth0,"date2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date2","hash":{},"data":data,"loc":{"start":{"line":231,"column":43},"end":{"line":231,"column":52}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
+    + "</span>\r\n						<i class=\"central-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":222,"column":76},"end":{"line":222,"column":103}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"central-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
     + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"central-indicator-old\">"
-    + alias2(((helper = (helper = lookupProperty(helpers,"old2") || (depth0 != null ? lookupProperty(depth0,"old2") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"old2","hash":{},"data":data,"loc":{"start":{"line":233,"column":42},"end":{"line":233,"column":50}}}) : helper)))
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
     + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"central-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
-    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"likelihood2") : depth0),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":238,"column":24},"end":{"line":238,"column":53}}}))
-    + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n			</div>\r\n\r\n		</div>\r\n	</div>\r\n</div>\r\n";
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":232,"column":24},"end":{"line":232,"column":61}}}))
+    + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>\r\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"scorecard-label\">\r\n    <h5 class=\"scorecard-title\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":2,"column":32},"end":{"line":2,"column":41}}}) : helper)))
+    + "</h5>\r\n    <span class=\"scorecard-motto d-none d-lg-block\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"motto") || (depth0 != null ? lookupProperty(depth0,"motto") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"motto","hash":{},"data":data,"loc":{"start":{"line":3,"column":52},"end":{"line":3,"column":61}}}) : helper)))
+    + "</span>\r\n</div>\r\n<div class=\"scorecard-management\">\r\n    <div class=\"management-title d-none d-lg-block\">\r\n        <p>MANAGEMENT TEAM:</p>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/director.jpg\">\r\n        <div>\r\n            <p>Lisandro Martin</p>\r\n            <p>Regional Director</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/west.jpg\">\r\n        <div>\r\n            <p>Benoit Thierry</p>\r\n            <p>Hub Head, West Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/coastal.jpg\">\r\n        <div>\r\n            <p>Abdul Barry</p>\r\n            <p>Hub Head, Coastal Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/central.jpg\">\r\n        <div>\r\n            <p>Abdelhaq Hanafi</p>\r\n            <p>Hub Head, Central Africa</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"data") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":38,"column":0},"end":{"line":240,"column":9}}})) != null ? stack1 : "");
+},"useData":true});
+
+/***/ }),
+
+/***/ "./src/hbs/hubsEdit.hbs":
+/*!******************************!*\
+  !*** ./src/hbs/hubsEdit.hbs ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.escapeExpression, alias3=container.lambda, alias4=container.hooks.helperMissing, alias5="function", lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"scorecard-row d-lg-flex justify-content-lg-center\">\r\n    <div class=\"title-square "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getSquareColor.js */ "./src/hbs/helpers/getSquareColor.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"wca") : depth0),{"name":"getSquareColor","hash":{},"data":data,"loc":{"start":{"line":40,"column":29},"end":{"line":40,"column":51}}}))
+    + "\">\r\n        <div>\r\n            "
+    + ((stack1 = __default(__webpack_require__(/*! ./helpers/getRowTitle.js */ "./src/hbs/helpers/getRowTitle.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"wca") : depth0),{"name":"getRowTitle","hash":{},"data":data,"loc":{"start":{"line":42,"column":12},"end":{"line":42,"column":33}}})) != null ? stack1 : "")
+    + "\r\n        </div>\r\n    </div>\r\n	<div class=\"hub-row-main hub-row-left\">\r\n		<div class=\"hub-row-title\">\r\n			<p>"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"indicator1") : stack1), depth0))
+    + "</p>\r\n		</div>\r\n		<div class=\"hub-row-container container\" id=\""
+    + alias2(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":49,"column":47},"end":{"line":49,"column":55}}}) : helper)))
+    + "-hub-row-left\">\r\n			<div class=\"row\">\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">WCA</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-value hub-indicator-value\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
+    + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"wca-indicator-target hub-indicator-target\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
+    + "</span>\r\n						<i class=\"wca-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":59,"column":72},"end":{"line":59,"column":95}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
+    + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"wca-indicator-old\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
+    + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"wca-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":69,"column":24},"end":{"line":69,"column":57}}}))
+    + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Dakar</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
+    + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":81,"column":78},"end":{"line":81,"column":102}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
+    + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":91,"column":143},"end":{"line":91,"column":177}}}))
+    + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Abidjan</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
+    + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":108,"column":78},"end":{"line":108,"column":105}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
+    + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":118,"column":143},"end":{"line":118,"column":180}}}))
+    + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Yaoundé</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
+    + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":135,"column":78},"end":{"line":135,"column":105}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
+    + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":145,"column":143},"end":{"line":145,"column":180}}}))
+    + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n			</div>\r\n		</div>\r\n	</div>\r\n	<div class=\"hub-row-main hub-row-right\">\r\n		<div class=\"hub-row-title\">\r\n			<p>"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"indicator2") : stack1), depth0))
+    + "</p>\r\n		</div>\r\n		<div class=\"hub-row-container container\" id=\""
+    + alias2(((helper = (helper = lookupProperty(helpers,"key") || (data && lookupProperty(data,"key"))) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"key","hash":{},"data":data,"loc":{"start":{"line":161,"column":47},"end":{"line":161,"column":55}}}) : helper)))
+    + "-hub-row-right\">\r\n			<div class=\"row\">\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">WCA</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-value hub-indicator-value\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
+    + "</span>\r\n						<span class=\"hub-separator\">/</span>\r\n						<span class=\"wca-indicator-target hub-indicator-target\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
+    + "</span>\r\n						<i class=\"wca-indicator-arrow hub-arrow scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":171,"column":72},"end":{"line":171,"column":95}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<span class=\"wca-indicator-date hub-indicator-date\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
+    + "</span>\r\n						<span class=\"hub-separator\">=</span>\r\n						<span class=\"wca-indicator-old\">"
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
+    + "</span>\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<span class=\"wca-indicator-likelihood scorecard-indicator-likelihood\">\r\n							<div class=\"line "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":181,"column":24},"end":{"line":181,"column":57}}}))
+    + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Dakar</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
+    + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":193,"column":78},"end":{"line":193,"column":102}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
+    + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":203,"column":143},"end":{"line":203,"column":177}}}))
+    + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Abidjan</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
+    + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":220,"column":78},"end":{"line":220,"column":105}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
+    + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":230,"column":143},"end":{"line":230,"column":180}}}))
+    + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Yaoundé</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
+    + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":247,"column":78},"end":{"line":247,"column":105}}}))
+    + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
+    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + alias2(alias3(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
+    + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
+    + alias2(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":257,"column":143},"end":{"line":257,"column":180}}}))
+    + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -37538,9 +37685,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + "</h5>\r\n    <span class=\"scorecard-motto d-none d-lg-block\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"motto") || (depth0 != null ? lookupProperty(depth0,"motto") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"motto","hash":{},"data":data,"loc":{"start":{"line":3,"column":52},"end":{"line":3,"column":61}}}) : helper)))
     + "</span>\r\n</div>\r\n<div class=\"scorecard-management\">\r\n    <div class=\"management-title d-none d-lg-block\">\r\n        <p>MANAGEMENT TEAM:</p>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/director.jpg\">\r\n        <div>\r\n            <p>Lisandro Martin</p>\r\n            <p>Regional Director</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/west.jpg\">\r\n        <div>\r\n            <p>Benoit Thierry</p>\r\n            <p>Hub Head, West Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/coastal.jpg\">\r\n        <div>\r\n            <p>Abdul Barry</p>\r\n            <p>Hub Head, Coastal Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/central.jpg\">\r\n        <div>\r\n            <p>Abdelhaq Hanafi</p>\r\n            <p>Hub Head, Central Africa</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
-    + alias4(lookupProperty(helpers,"log").call(alias1,depth0,{"name":"log","hash":{},"data":data,"loc":{"start":{"line":38,"column":0},"end":{"line":38,"column":12}}}))
-    + "\r\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"data") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":39,"column":0},"end":{"line":247,"column":9}}})) != null ? stack1 : "");
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"data") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":38,"column":0},"end":{"line":270,"column":9}}})) != null ? stack1 : "");
 },"useData":true});
 
 /***/ }),
@@ -38051,19 +38196,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hbs/hubs.hbs */ "./src/hbs/hubs.hbs");
 /* harmony import */ var _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
-/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
-/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+/* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../hbs/hubsEdit.hbs */ "./src/hbs/hubsEdit.hbs");
+/* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
+/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+
 
 
 
@@ -38086,10 +38234,10 @@ var updateDates = () => {
   var wcaView = document.getElementById('wca-content');
 
   if (wcaView.classList.contains('create-mode')) {
-    wcaView.querySelector('.scorecard-title').innerText = "WCA SCORECARDS, ".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.createScorecardTitle());
-    _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
+    wcaView.querySelector('.scorecard-title').innerText = "WCA SCORECARDS, ".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.createScorecardTitle());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
       var date = i.dataset.date;
-      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_13___default()(date);
+      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_14___default()(date);
     });
   }
 };
@@ -38101,23 +38249,23 @@ var toggleView = e => {
 };
 
 var editScorecard = () => {
-  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getItemURL(); // const url = '/api/selectedScorecards.json'; // modify!!!
-
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_16__["receiveData"])(url).then(result => {
+  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getItemURL();
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_17__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content').id;
-    var item = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_14__["ScoreCardsItem"](result.d.results[0]);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_9___default()();
+    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_15__["ScoreCardsItem"](result.d.results[0]);
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10___default()();
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
 
     if (target == "wca-content") {
-      document.getElementById('wca-content').innerHTML = _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7___default()(item);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getNodes('.comment-wrapper').forEach(i => {
-        new quill__WEBPACK_IMPORTED_MODULE_11___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.editorOptions());
+      document.getElementById('wca-content').innerHTML = _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7___default()(scorecards);
+      _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getNodes('.comment-wrapper').forEach(i => {
+        new quill__WEBPACK_IMPORTED_MODULE_12___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.editorOptions());
         i.querySelector('.ql-toolbar').classList.add('vanish');
       });
     } else if (target == "hubs-content") {
-      console.log('edit-mode');
+      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_16__["HubsItem"](scorecards);
+      document.getElementById('hubs-content').innerHTML = _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default()(item);
     } else if (target == "actions-content") {
       console.log('actions-content');
     }
@@ -38128,10 +38276,9 @@ var cancelEdit = () => {
   var target = document.querySelector('.active-content');
 
   if (target.classList.contains('create-mode')) {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.reload();
   } else {
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getItemURL(); // const url = '/api/selectedScorecards.json'; // modify!!!
-
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getItemURL();
     target.classList.remove('create-mode');
     loadScorecard(url);
   }
@@ -38143,7 +38290,7 @@ var startCreateMode = () => {
 
 var getScorecard = e => {
   var date = e.target.dataset.date;
-  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.generateHash(date);
+  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.generateHash(date);
   location.hash = newHash;
 };
 
@@ -38151,25 +38298,25 @@ var loadScorecard = url => {
   var target = document.querySelector('.active-content');
   var main = document.getElementById('scorecards-content');
   target.classList.remove('create-mode');
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_16__["receiveData"])(url).then(result => {
-    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_14__["ScoreCardsItem"](result.d.results[0]);
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_17__["receiveData"])(url).then(result => {
+    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_15__["ScoreCardsItem"](result.d.results[0]);
     app.current = selectedScorecard;
     main.setAttribute('data-date', selectedScorecard.scoredate);
     main.classList.remove('welcome');
     document.getElementById('right-buttons').classList.remove('vanish');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
+    _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
 
     if (target.id == "wca-content") {
       document.getElementById('wca-view').setAttribute('disabled', 'disabled');
       document.getElementById('wca-content').innerHTML = _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_5___default()(selectedScorecard);
     } else if (target.id == "hubs-content") {
-      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_15__["HubsItem"](selectedScorecard);
+      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_16__["HubsItem"](selectedScorecard);
       document.getElementById('hubs-view').setAttribute('disabled', 'disabled');
       document.getElementById('hubs-content').innerHTML = _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8___default()(hubsData);
     } else {}
 
     if (app.admin) {
-      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_10___default()();
+      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11___default()();
       document.getElementById('date-button').classList.add('vanish');
       document.getElementById('edit-button').classList.remove('vanish');
       document.getElementById('save-button').classList.remove('vanish');
@@ -38179,17 +38326,17 @@ var loadScorecard = url => {
 };
 
 var createScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_16__["receiveData"])(app.storage.settingsURL).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_17__["receiveData"])(app.storage.settingsURL).then(result => {
     document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_6___default()(result.d.results);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_9___default()();
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10___default()();
     document.getElementById('scorecards-content').classList.remove('welcome');
     document.getElementById('wca-content').classList.add('create-mode', 'active-content');
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('save-button').classList.remove('vanish');
     document.getElementById('date-button').classList.remove('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getNodes('.comment-wrapper').forEach(i => {
-      new quill__WEBPACK_IMPORTED_MODULE_11___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.editorOptions());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getNodes('.comment-wrapper').forEach(i => {
+      new quill__WEBPACK_IMPORTED_MODULE_12___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.editorOptions());
       i.querySelector('.ql-toolbar').classList.add('vanish');
     });
   });
@@ -38197,39 +38344,45 @@ var createScorecard = () => {
 
 var appController = () => {
   var hash = location.hash;
+  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.validateHash();
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getNodes('.scorecards-container').forEach(i => {
+    i.classList.remove('active-content');
+    i.classList.add('vanish');
+  }); // utilities.getNodes('.context-button').forEach( (i) => i.classList.remove('') ); // specify action-button's class
 
   if (hash == "#create-mode") {
+    document.getElementById('wca-content').classList.add('active-content');
+    document.getElementById('wca-content').classList.remove('vanish');
     app.admin ? createScorecard() : location.href = "";
-  } else if (hash == "") {// document.getElementById('scorecards-content').classList.add('welcome');
-  } else {
+  } else if (validateHash) {
     var target = hash.split('-')[0];
-    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.generateView(hash)[0];
-    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.generateView(hash)[1];
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getItemURL(date);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.getNodes('.scorecards-container').forEach(i => {
-      i.classList.remove('active-content');
-      i.classList.add('vanish');
-    }); // utilities.getNodes('.context-button').forEach( (i) => i.classList.remove('') ); // specify action-button's class
-
+    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.generateView(hash)[0];
+    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.generateView(hash)[1];
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.getItemURL(date);
     document.getElementById(view).classList.add('active-content');
     document.getElementById(view).classList.remove('vanish'); // if (view == "actions-content") {
     //     document.getElementById(target).classList.add('active-action');
     // }
 
     loadScorecard(url);
+  } else if (hash == "") {
+    document.getElementById('wca-content').classList.add('active-content');
+    document.getElementById('wca-content').classList.remove('vanish'); // set back landing page
+  } else {
+    location.href = "";
   }
 };
 
 var headerListeners = () => {
   window.addEventListener('hashchange', appController);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.preventDefault);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_16__["modifyScorecards"]);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_12___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.preventDefault);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_17__["modifyScorecards"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_13___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
 };
 
 
@@ -38318,9 +38471,9 @@ class HubsItem {
     Object.keys(item.wcadata).forEach(i => {
       data[i] = {};
       data[i]["wca"] = item.wcadata[i];
-      item.westdata && (data[i]["west"] = item.westdata[i]);
-      item.coastaldata && (data[i]["coastal"] = item.coastaldata[i]);
-      item.centraldata && (data[i]["central"] = item.centraldata[i]);
+      data[i]["west"] = item.westdata ? item.westdata[i] : {};
+      data[i]["coastal"] = item.coastaldata ? item.coastaldata[i] : {};
+      data[i]["central"] = item.centraldata ? item.centraldata[i] : {};
     });
     return data;
   }
@@ -38475,9 +38628,9 @@ var toggleDashboard = e => {
 };
 
 var updateArrow = e => {
-  var currentValue = parseInt(e.target.closest('.value-square').querySelector('.scorecard-indicator-value').value);
-  var pastValue = parseInt(e.target.closest('.value-square').querySelector('.scorecard-indicator-old').value);
-  var arrow = e.target.closest('.value-square').querySelector('.scorecard-indicator-arrow');
+  var currentValue = parseInt(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-value').value);
+  var pastValue = parseInt(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-old').value);
+  var arrow = e.target.closest('.bordered-square').querySelector('.scorecard-indicator-arrow');
   arrow.classList.remove('scorecard-indicator-arrow-up', 'scorecard-indicator-arrow-right', 'scorecard-indicator-arrow-down');
 
   if (!isNaN(currentValue) && !isNaN(pastValue)) {
@@ -38521,12 +38674,12 @@ var selectLikelihood = e => {
 
 var scorecardsListeners = () => {
   document.addEventListener('click', closeLikelihood);
-  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'paste', '.input-number', _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.preventDefault);
-  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'keypress', '.input-number', _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.limitIndicatorValues);
-  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'input', '.input-control', updateArrow);
-  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'click', '.toggle-dashboard', toggleDashboard);
-  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'click', '.open-likelihood-dropdown', expandLikelihood);
-  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#wca-content', 'click', '.select-likelihood', selectLikelihood);
+  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#scorecards-content', 'paste', '.input-number', _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.preventDefault);
+  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#scorecards-content', 'keypress', '.input-number', _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.limitIndicatorValues);
+  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#scorecards-content', 'input', '.input-control', updateArrow);
+  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#scorecards-content', 'click', '.toggle-dashboard', toggleDashboard);
+  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#scorecards-content', 'click', '.open-likelihood-dropdown', expandLikelihood);
+  _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.on('#scorecards-content', 'click', '.select-likelihood', selectLikelihood);
 };
 
 
@@ -38824,7 +38977,8 @@ module.exports = {
   fromLikelihoodToSP: fromLikelihoodToSP,
   fromDateToSP: fromDateToSP,
   generateView: generateView,
-  generateHash: generateHash
+  generateHash: generateHash,
+  validateHash: validateHash
 };
 
 function on(selector, eventType, childSelector, eventHandler) {
@@ -38994,6 +39148,54 @@ function generateHash(date) {
   var month = months[parseInt(dateSplitted[1]) - 1];
   var year = dateSplitted[0];
   return "".concat(view, "-").concat(month, "-").concat(year);
+}
+
+function validateHash() {
+  var hash = location.hash;
+
+  if (hash) {
+    var split = hash.split('-');
+
+    if (split.length == 3) {
+      var view = split[0];
+      var month = getMonths().map(i => i.toLowerCase().slice(0, 3)).indexOf(split[1]);
+      var year = split[2];
+      var date = [year, month];
+
+      if (validateView(view) && validateDate(date)) {
+        return true;
+      }
+    }
+  }
+
+  function validateView(view) {
+    switch (view) {
+      case "#wca":
+        return true;
+
+      case "#hubs":
+        return true;
+
+      case "#west":
+        return true;
+
+      case "#coastal":
+        return true;
+
+      case "#central":
+        return true;
+
+      default:
+        return false;
+    }
+  }
+
+  function validateDate(date) {
+    var nodes = getNodes('.dropdown-item-element');
+    var maxDate = nodes[0].dataset.date.split('-');
+    var minDate = nodes[nodes.length - 1].dataset.date.split('-');
+    return new Date(maxDate[0], maxDate[1], 1) <= new Date(date[0], date[1], 1) <= new Date(minDate[0], minDate[1], 1);
+  }
 }
 
 /***/ })

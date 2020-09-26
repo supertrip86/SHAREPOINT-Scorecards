@@ -11,10 +11,9 @@ class HubsItem {
         Object.keys(item.wcadata).forEach( (i) => {
             data[i] = {};
             data[i]["wca"] = item.wcadata[i];
-
-            item.westdata && (data[i]["west"] = item.westdata[i]);
-            item.coastaldata && (data[i]["coastal"] = item.coastaldata[i]);
-            item.centraldata && (data[i]["central"] = item.centraldata[i]);
+            data[i]["west"] = item.westdata ? item.westdata[i] : {};
+            data[i]["coastal"] = item.coastaldata ? item.coastaldata[i] : {};
+            data[i]["central"] = item.centraldata ? item.centraldata[i] : {};
         });
 
         return data;

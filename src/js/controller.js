@@ -7,6 +7,7 @@ import Wca from "../hbs/wca.hbs";
 import wcaCreate from "../hbs/wcaCreate.hbs";
 import wcaEdit from "../hbs/wcaEdit.hbs";
 import Hubs from "../hbs/hubs.hbs";
+import HubsEdit from "../hbs/hubsEdit.hbs";
 import CancelButton from "../hbs/partials/cancelButton.hbs";
 import EditButton from "../hbs/partials/editButton.hbs";
 import Quill from 'quill';
@@ -39,18 +40,17 @@ const toggleView = (e) => {
 
 const editScorecard = () => {
     const url = utilities.getItemURL();
-    // const url = '/api/selectedScorecards.json'; // modify!!!
 
     receiveData(url).then( (result) => {
         const target = document.querySelector('.active-content').id;
-        const item = new ScoreCardsItem(result.d.results[0]);
+        const scorecards = new ScoreCardsItem(result.d.results[0]);
 
         document.getElementById('toggle-button').innerHTML = CancelButton();
         document.getElementById('right-buttons').classList.add('vanish');
         document.getElementById('save-button').removeAttribute('disabled');
 
         if (target == "wca-content") {
-            document.getElementById('wca-content').innerHTML = wcaEdit(item);
+            document.getElementById('wca-content').innerHTML = wcaEdit(scorecards);
 
             utilities.getNodes('.comment-wrapper').forEach( (i) => {
                 new Quill(i.querySelector('.comment-inner'), utilities.editorOptions());
@@ -58,7 +58,9 @@ const editScorecard = () => {
             });
 
         } else if (target == "hubs-content") {
-            console.log('edit-mode');
+            const item = new HubsItem(scorecards);
+
+            document.getElementById('hubs-content').innerHTML = HubsEdit(item);
 
         } else if (target == "actions-content") {
             console.log('actions-content');
@@ -75,7 +77,6 @@ const cancelEdit = () => {
 
     } else {
         const url = utilities.getItemURL();
-        // const url = '/api/selectedScorecards.json'; // modify!!!
 
         target.classList.remove('create-mode');
         loadScorecard(url);
@@ -157,24 +158,25 @@ const createScorecard = () => {
 
 const appController = () => {
     const hash = location.hash;
+    const validateHash = utilities.validateHash();
+
+    utilities.getNodes('.scorecards-container').forEach( (i) => {
+        i.classList.remove('active-content');
+        i.classList.add('vanish');
+    });
+    // utilities.getNodes('.context-button').forEach( (i) => i.classList.remove('') ); // specify action-button's class
 
     if (hash == "#create-mode") {
+        document.getElementById('wca-content').classList.add('active-content');
+        document.getElementById('wca-content').classList.remove('vanish');
+
         app.admin ? createScorecard() : ( location.href = "" );
 
-    } else if (hash == "") {
-        // document.getElementById('scorecards-content').classList.add('welcome');
-
-    } else {
+    } else if (validateHash) {
         const target = hash.split('-')[0];
         const view = utilities.generateView(hash)[0];
         const date = utilities.generateView(hash)[1];
         const url = utilities.getItemURL(date);
-
-        utilities.getNodes('.scorecards-container').forEach( (i) => {
-            i.classList.remove('active-content');
-            i.classList.add('vanish');
-        });
-        // utilities.getNodes('.context-button').forEach( (i) => i.classList.remove('') ); // specify action-button's class
 
         document.getElementById(view).classList.add('active-content');
         document.getElementById(view).classList.remove('vanish');
@@ -184,6 +186,15 @@ const appController = () => {
         // }
 
         loadScorecard(url);
+
+    } else if (hash == "") {
+        document.getElementById('wca-content').classList.add('active-content');
+        document.getElementById('wca-content').classList.remove('vanish');
+
+        // set back landing page
+
+    } else {
+        location.href = "";
     }
 };
 

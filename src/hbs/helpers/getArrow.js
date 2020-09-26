@@ -1,4 +1,6 @@
-module.exports = function(arrow) {
+module.exports = function(value) {
+    const arrow = value ? value : 0;
+
     switch (arrow) {
         case 0:
             return '';

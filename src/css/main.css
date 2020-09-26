@@ -5,8 +5,9 @@ button > * {pointer-events: none;}
 .vanish {display: none!important;}
 .hidden {opacity: 0;}
 
-#scorecards-content {margin-bottom: 100px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
-#scorecards-content input.form-control {height: 22px;overflow: hidden;}
+#scorecards-content {margin-bottom: 5rem;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#scorecards-content .scorecards-container {max-width: 1160px;margin: auto;}
+#scorecards-content input.form-control {overflow: hidden;}
 
 /* bootstrap 4.5 custom */
 .btn {font-size: 12px;border-radius: 0;}
@@ -44,3 +45,9 @@ select.form-control {text-overflow: ellipsis;}
 @-moz-keyframes rotation {from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(359deg);}}
 @-o-keyframes rotation {from {-o-transform: rotate(0deg);} to {-o-transform: rotate(359deg);}}
 @keyframes rotation {from {transform: rotate(0deg);} to {transform: rotate(359deg);}}
+
+@media (min-width: 992px) {
+    #scorecards-content > section {
+        padding: 0;
+    }
+}

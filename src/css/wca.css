@@ -1,9 +1,9 @@
 .scorecard-label {background-color: #333;display: flex;align-items: center;}
 .scorecard-label .scorecard-title {color: #fff;margin: 0;text-align: center;width: 100%;}
-.scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;}
+.scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}
 .scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
 .scorecard-main-comment {margin-bottom: 6px;position: relative;}
-.scorecard-main-comment .scorecard-main-summary {background-color: #eee;min-height: 135px;padding: 5px;font-size: 12px;}
+.scorecard-main-comment .scorecard-main-summary {background-color: #eee;min-height: 100px;padding: 5px;font-size: 12px;}
 .scorecard-main-comment .ql-container {height: auto;}
 .scorecard-main-comment .ql-editor.ql-blank::before {left: 11px;font-style: normal;}
 
@@ -11,7 +11,7 @@
 .scorecard-comment-box .ql-editor ul, .scorecard-comment-box .ql-editor ol {padding-left: 0;}
 .scorecard-comment-box p {margin-bottom: .5rem;}
 
-.scorecard-row {margin-bottom: 6px;font-size: 12px;}
+.scorecard-row {margin-bottom: 6px;font-size: 12px;padding: 0;}
 .scorecard-row *::placeholder {font-weight: 400;color: grey;text-align: center;}
 .scorecard-row textarea, .scorecard-row input, .scorecard-motto {text-align: center;}
 .scorecard-row > div {padding: 5px;}
@@ -28,11 +28,9 @@
 .scorecard-row .value-square {-ms-flex: 0 0 170px;flex: 0 0 170px;max-width: 170px;position: relative;height: 135px;}
 .scorecard-row .value-square > div:not(:first-child):not(:last-child) {height: 22px;margin-top: 6px;display: flex;align-items: center;}
 .scorecard-row .value-square > div:last-child {display: flex;margin-top: 8px;justify-content: space-evenly;}
-.scorecard-row .value-square > div:last-child i {margin: auto 4px auto auto;}
-.scorecard-row .value-square > div:last-child i::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMC42ZW0iIGhlaWdodD0iMC42ZW0iIHZpZXdCb3g9IjAgMCAxNiAxNiIgY2xhc3M9ImJpIGJpLWNoZXZyb24tZG93biIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjY0NiA0LjY0NmEuNS41IDAgMCAxIC43MDggMEw4IDEwLjI5M2w1LjY0Ni01LjY0N2EuNS41IDAgMCAxIC43MDguNzA4bC02IDZhLjUuNSAwIDAgMS0uNzA4IDBsLTYtNmEuNS41IDAgMCAxIDAtLjcwOHoiLz4NCjwvc3ZnPg==');}
 .scorecard-row .value-square .value-square-indicators {justify-content: center;}
 .scorecard-row .value-square .value-square-indicators-edit {margin-left: 5px;}
-.scorecard-row .value-square input {width: 55px;}
+.scorecard-row .value-square input {width: 55px;height: 22px;}
 .scorecard-row .value-square span.scorecard-indicator-value {font-size: 20px;font-weight: 700;}
 .scorecard-row .value-square span.scorecard-indicator-target {font-size: 14px;}
 .scorecard-row .value-square .scorecard-separator {width: 20px;text-align: center;}
@@ -52,6 +50,8 @@ span.scorecard-indicator-likelihood {display: flex;}
 .scorecard-indicator-likelihood .yellow-line {border: 2px solid #d9d900;}
 .scorecard-indicator-likelihood .orange-line {border: 2px solid #EA6B14;}
 .scorecard-indicator-likelihood .red-line {border: 2px solid red;}
+.scorecard-indicator-likelihood .likelihood-dropdown-icon {margin: auto 4px auto auto;}
+.scorecard-indicator-likelihood .likelihood-dropdown-icon::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMC42ZW0iIGhlaWdodD0iMC42ZW0iIHZpZXdCb3g9IjAgMCAxNiAxNiIgY2xhc3M9ImJpIGJpLWNoZXZyb24tZG93biIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjY0NiA0LjY0NmEuNS41IDAgMCAxIC43MDggMEw4IDEwLjI5M2w1LjY0Ni01LjY0N2EuNS41IDAgMCAxIC43MDguNzA4bC02IDZhLjUuNSAwIDAgMS0uNzA4IDBsLTYtNmEuNS41IDAgMCAxIDAtLjcwOHoiLz4NCjwvc3ZnPg==');}
 .comment-square {flex-grow: 1;min-height: 135px;position: relative;}
 .comment-square .ql-toolbar.ql-snow {background-color: #eee;padding: 4px;}
 .comment-square .ql-container.ql-snow {border: none;}
@@ -73,10 +73,10 @@ span.scorecard-indicator-likelihood {display: flex;}
 
 @media (max-width: 991px) {
     .scorecard-row > div {
-        max-width: 100%!important;
         margin: 8px auto!important;
     }
     .scorecard-row .title-square {
         height: 80px!important;
+        max-width: 100%!important;
     }
 }

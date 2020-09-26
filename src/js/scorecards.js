@@ -14,9 +14,9 @@ const toggleDashboard = (e) => {
 };
 
 const updateArrow = (e) => {
-    const currentValue = parseInt(e.target.closest('.value-square').querySelector('.scorecard-indicator-value').value);
-    const pastValue = parseInt(e.target.closest('.value-square').querySelector('.scorecard-indicator-old').value);
-    const arrow = e.target.closest('.value-square').querySelector('.scorecard-indicator-arrow');
+    const currentValue = parseInt(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-value').value);
+    const pastValue = parseInt(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-old').value);
+    const arrow = e.target.closest('.bordered-square').querySelector('.scorecard-indicator-arrow');
 
     arrow.classList.remove('scorecard-indicator-arrow-up', 'scorecard-indicator-arrow-right', 'scorecard-indicator-arrow-down');
 
@@ -64,12 +64,12 @@ const selectLikelihood = (e) => {
 const scorecardsListeners = () => {
     document.addEventListener('click', closeLikelihood);
 
-    utilities.on('#wca-content', 'paste', '.input-number', utilities.preventDefault);
-    utilities.on('#wca-content', 'keypress', '.input-number', utilities.limitIndicatorValues);
-    utilities.on('#wca-content', 'input', '.input-control', updateArrow);
-    utilities.on('#wca-content', 'click', '.toggle-dashboard', toggleDashboard);
-    utilities.on('#wca-content', 'click', '.open-likelihood-dropdown', expandLikelihood);
-    utilities.on('#wca-content', 'click', '.select-likelihood', selectLikelihood);
+    utilities.on('#scorecards-content', 'paste', '.input-number', utilities.preventDefault);
+    utilities.on('#scorecards-content', 'keypress', '.input-number', utilities.limitIndicatorValues);
+    utilities.on('#scorecards-content', 'input', '.input-control', updateArrow);
+    utilities.on('#scorecards-content', 'click', '.toggle-dashboard', toggleDashboard);
+    utilities.on('#scorecards-content', 'click', '.open-likelihood-dropdown', expandLikelihood);
+    utilities.on('#scorecards-content', 'click', '.select-likelihood', selectLikelihood);
 };
 
 export { scorecardsListeners };

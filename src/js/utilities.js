@@ -17,7 +17,8 @@ module.exports = {
 	fromLikelihoodToSP: fromLikelihoodToSP,
 	fromDateToSP: fromDateToSP,
 	generateView: generateView,
-	generateHash: generateHash
+	generateHash: generateHash,
+	validateHash: validateHash
 };
 
 function on(selector, eventType, childSelector, eventHandler) {
@@ -193,4 +194,48 @@ function generateHash(date) {
 	const year = dateSplitted[0];
 
 	return `${view}-${month}-${year}`;
+}
+
+function validateHash() {
+	const hash = location.hash;
+
+	if (hash) {
+		const split = hash.split('-');
+
+		if (split.length == 3) {
+			const view = split[0];
+			const month = getMonths().map( (i) => i.toLowerCase().slice(0,3) ).indexOf(split[1]);
+			const year = split[2];
+			const date = [year, month];
+
+			if ( validateView(view) && validateDate(date) ) {
+				return true;
+			}
+		}
+	}
+
+	function validateView(view) {
+		switch (view) {
+			case "#wca":
+				return true;
+			case "#hubs":
+				return true;
+			case "#west":
+				return true;
+			case "#coastal":
+				return true;
+			case "#central":
+				return true;
+			default:
+				return false;
+		}
+	}
+
+	function validateDate(date) {
+		const nodes = getNodes('.dropdown-item-element');
+		const maxDate = nodes[0].dataset.date.split('-');
+		const minDate = nodes[nodes.length -1].dataset.date.split('-');
+
+		return new Date(maxDate[0], maxDate[1], 1) <= new Date(date[0], date[1], 1) <= new Date(minDate[0], minDate[1], 1);
+	}
 }
