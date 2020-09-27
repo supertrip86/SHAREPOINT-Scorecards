@@ -17,15 +17,15 @@
             <p class="scorecard-indicator-title">{{indicator1}}</p>
         </div>
         <div class="value-square-indicators">
-            <span class="scorecard-indicator-value">{{value1}}</span>
+            <span class="scorecard-indicator-value">{{getDash value1}}</span>
             <span class="scorecard-separator">/</span>
-            <span class="scorecard-indicator-target">{{target1}}</span>
+            <span class="scorecard-indicator-target">{{getValue target1}}</span>
             <i class="scorecard-indicator-arrow {{getArrow arrow1}}"></i>
         </div>
         <div class="value-square-indicators">
             <span class="scorecard-indicator-date">{{date1}}</span>
             <span class="scorecard-separator">=</span>
-            <span class="scorecard-indicator-old">{{old1}}</span>
+            <span class="scorecard-indicator-old">{{getNA old1}}</span>
         </div>
         <div>
             <span>Likelihood</span>
@@ -39,15 +39,15 @@
             <p class="scorecard-indicator-title">{{indicator2}}</p>
         </div>
         <div class="value-square-indicators">
-            <span class="scorecard-indicator-value">{{value2}}</span>
+            <span class="scorecard-indicator-value">{{getDash value2}}</span>
             <span class="scorecard-separator">/</span>
-            <span class="scorecard-indicator-target">{{target2}}</span>
+            <span class="scorecard-indicator-target">{{getValue target2}}</span>
             <i class="scorecard-indicator-arrow {{getArrow arrow2}}"></i>
         </div>
         <div class="value-square-indicators">
             <span class="scorecard-indicator-date">{{date2}}</span>
             <span class="scorecard-separator">=</span>
-            <span class="scorecard-indicator-old">{{old2}}</span>
+            <span class="scorecard-indicator-old">{{getNA old2}}</span>
         </div>
         <div>
             <span>Likelihood</span>

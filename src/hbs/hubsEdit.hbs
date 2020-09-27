@@ -53,15 +53,15 @@
 						<p class="hub-indicator-title">WCA</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="wca-indicator-value hub-indicator-value">{{wca.value1}}</span>
+						<span class="wca-indicator-value hub-indicator-value">{{getDash wca.value1}}</span>
 						<span class="hub-separator">/</span>
-						<span class="wca-indicator-target hub-indicator-target">{{wca.target1}}</span>
+						<span class="wca-indicator-target hub-indicator-target">{{getValue wca.target1}}</span>
 						<i class="wca-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow wca.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
 						<span class="wca-indicator-date hub-indicator-date">{{wca.date1}}</span>
 						<span class="hub-separator">=</span>
-						<span class="wca-indicator-old">{{wca.old1}}</span>
+						<span class="wca-indicator-old">{{getNA wca.old1}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
@@ -102,20 +102,20 @@
 						<p class="hub-indicator-title">Abidjan</p>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control scorecard-indicator-value west-indicator-value input-number input-control" type="text" maxlength="5" value="{{coastal.value1}}">
+						<input class="form-control scorecard-indicator-value coastal-indicator-value input-number input-control" type="text" maxlength="5" value="{{coastal.value1}}">
 						<span class="hub-separator-edit">/</span>
-						<input class="form-control west-indicator-target input-number" type="text" maxlength="5" value="{{coastal.target1}}">
-						<i class="west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow coastal.arrow1}}"></i>
+						<input class="form-control coastal-indicator-target input-number" type="text" maxlength="5" value="{{coastal.target1}}">
+						<i class="coastal-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow coastal.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control west-indicator-date" type="text" value="{{coastal.date1}}">
+						<input class="form-control coastal-indicator-date" type="text" value="{{coastal.date1}}">
 						<span class="hub-separator-edit">=</span>
-						<input class="form-control scorecard-indicator-old west-indicator-old input-number input-control" type="text" maxlength="5" value="{{coastal.old1}}">
+						<input class="form-control scorecard-indicator-old coastal-indicator-old input-number input-control" type="text" maxlength="5" value="{{coastal.old1}}">
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<ul class="scorecard-indicator-likelihood">
-							<li class="west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood coastal.likelihood1}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+							<li class="coastal-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood coastal.likelihood1}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>
@@ -129,20 +129,20 @@
 						<p class="hub-indicator-title">Yaoundé</p>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control scorecard-indicator-value west-indicator-value input-number input-control" type="text" maxlength="5" value="{{central.value1}}">
+						<input class="form-control scorecard-indicator-value central-indicator-value input-number input-control" type="text" maxlength="5" value="{{central.value1}}">
 						<span class="hub-separator-edit">/</span>
-						<input class="form-control west-indicator-target input-number" type="text" maxlength="5" value="{{central.target1}}">
-						<i class="west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow central.arrow1}}"></i>
+						<input class="form-control central-indicator-target input-number" type="text" maxlength="5" value="{{central.target1}}">
+						<i class="central-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow central.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control west-indicator-date" type="text" value="{{central.date1}}">
+						<input class="form-control central-indicator-date" type="text" value="{{central.date1}}">
 						<span class="hub-separator-edit">=</span>
-						<input class="form-control scorecard-indicator-old west-indicator-old input-number input-control" type="text" maxlength="5" value="{{central.old1}}">
+						<input class="form-control scorecard-indicator-old central-indicator-old input-number input-control" type="text" maxlength="5" value="{{central.old1}}">
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<ul class="scorecard-indicator-likelihood">
-							<li class="west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood central.likelihood1}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+							<li class="central-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood central.likelihood1}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>
@@ -165,15 +165,15 @@
 						<p class="hub-indicator-title">WCA</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="wca-indicator-value hub-indicator-value">{{wca.value2}}</span>
+						<span class="wca-indicator-value hub-indicator-value">{{getDash wca.value2}}</span>
 						<span class="hub-separator">/</span>
-						<span class="wca-indicator-target hub-indicator-target">{{wca.target2}}</span>
+						<span class="wca-indicator-target hub-indicator-target">{{getValue wca.target2}}</span>
 						<i class="wca-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow wca.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
 						<span class="wca-indicator-date hub-indicator-date">{{wca.date2}}</span>
 						<span class="hub-separator">=</span>
-						<span class="wca-indicator-old">{{wca.old2}}</span>
+						<span class="wca-indicator-old">{{getNA wca.old2}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
@@ -214,20 +214,20 @@
 						<p class="hub-indicator-title">Abidjan</p>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control scorecard-indicator-value west-indicator-value input-number input-control" type="text" maxlength="5" value="{{coastal.value2}}">
+						<input class="form-control scorecard-indicator-value coastal-indicator-value input-number input-control" type="text" maxlength="5" value="{{coastal.value2}}">
 						<span class="hub-separator-edit">/</span>
-						<input class="form-control west-indicator-target input-number" type="text" maxlength="5" value="{{coastal.target2}}">
-						<i class="west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow coastal.arrow2}}"></i>
+						<input class="form-control coastal-indicator-target input-number" type="text" maxlength="5" value="{{coastal.target2}}">
+						<i class="coastal-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow coastal.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control west-indicator-date" type="text" value="{{coastal.date2}}">
+						<input class="form-control coastal-indicator-date" type="text" value="{{coastal.date2}}">
 						<span class="hub-separator-edit">=</span>
-						<input class="form-control scorecard-indicator-old west-indicator-old input-number input-control" type="text" maxlength="5" value="{{coastal.old2}}">
+						<input class="form-control scorecard-indicator-old coastal-indicator-old input-number input-control" type="text" maxlength="5" value="{{coastal.old2}}">
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<ul class="scorecard-indicator-likelihood">
-							<li class="west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood coastal.likelihood2}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+							<li class="coastal-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood coastal.likelihood2}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>
@@ -241,20 +241,20 @@
 						<p class="hub-indicator-title">Yaoundé</p>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control scorecard-indicator-value west-indicator-value input-number input-control" type="text" maxlength="5" value="{{central.value2}}">
+						<input class="form-control scorecard-indicator-value central-indicator-value input-number input-control" type="text" maxlength="5" value="{{central.value2}}">
 						<span class="hub-separator-edit">/</span>
-						<input class="form-control west-indicator-target input-number" type="text" maxlength="5" value="{{central.target2}}">
-						<i class="west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow central.arrow2}}"></i>
+						<input class="form-control central-indicator-target input-number" type="text" maxlength="5" value="{{central.target2}}">
+						<i class="central-indicator-arrow hub-arrow-edit scorecard-indicator-arrow {{getArrow central.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
-						<input class="form-control west-indicator-date" type="text" value="{{central.date2}}">
+						<input class="form-control central-indicator-date" type="text" value="{{central.date2}}">
 						<span class="hub-separator-edit">=</span>
-						<input class="form-control scorecard-indicator-old west-indicator-old input-number input-control" type="text" maxlength="5" value="{{central.old2}}">
+						<input class="form-control scorecard-indicator-old central-indicator-old input-number input-control" type="text" maxlength="5" value="{{central.old2}}">
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
 						<ul class="scorecard-indicator-likelihood">
-							<li class="west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood central.likelihood2}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
+							<li class="central-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown"><div class="line open-likelihood-dropdown {{getLikelihood central.likelihood2}}"></div><i class="likelihood-dropdown-icon open-likelihood-dropdown"></i></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood green-line"></div></li>
 							<li class="scorecard-likelihood-option select-likelihood vanish"><div class="line select-likelihood yellow-line"></div></li>

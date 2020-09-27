@@ -38,6 +38,27 @@ const toggleView = (e) => {
     location.hash = `${view}-${hash[1]}-${hash[2]}`;
 };
 
+const initHubsData = () => {
+    const hubs = ['west', 'coastal', 'central'];
+
+    app.settings.forEach( (i) => {
+        const code = i.Code;
+
+        const left = document.getElementById(`${code}-hub-row-left`);
+        const right = document.getElementById(`${code}-hub-row-right`);
+
+        hubs.forEach( (d) => {
+            left.querySelector(`.${d}-indicator-target`).value = i.Target1 ? i.Target1 : "TBD";
+            left.querySelector(`.${d}-indicator-date`).value = left.querySelector('.wca-indicator-date').innerText;
+            left.querySelector(`.${d}-indicator-old`).value = "N/A";
+
+            right.querySelector(`.${d}-indicator-target`).value = i.Target2 ? i.Target2 : "TBD";
+            right.querySelector(`.${d}-indicator-date`).value = right.querySelector('.wca-indicator-date').innerText;
+            right.querySelector(`.${d}-indicator-old`).value = "N/A";
+        });
+    });
+};
+
 const editScorecard = () => {
     const url = utilities.getItemURL();
 
@@ -61,6 +82,7 @@ const editScorecard = () => {
             const item = new HubsItem(scorecards);
 
             document.getElementById('hubs-content').innerHTML = HubsEdit(item);
+            utilities.isHubsDataEmpty() && initHubsData();
 
         } else if (target == "actions-content") {
             console.log('actions-content');

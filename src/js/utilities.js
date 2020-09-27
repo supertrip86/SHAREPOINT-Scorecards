@@ -7,6 +7,7 @@ module.exports = {
 	getMonths: getMonths,
 	getHeaderData: getHeaderData,
 	filterOut: filterOut,
+	isHubsDataEmpty: isHubsDataEmpty,
 	updateSPToken: updateSPToken,
 	startLoader: startLoader,
 	reload: reload,
@@ -58,20 +59,31 @@ function getMonths() {
 }
 
 function getHeaderData() {
-	const date = app.scorecards[0].scoredate.split('-');
-    const year = date[0];
-    const month = parseInt(date[1]) + 1;
-    const updatedMonth = month > 9 ?  month : `0${month}`;
+	const split = app.scorecards.length ? app.scorecards[0].scoredate.split('-') : [];
+
+	const year = split.length ? split[0] : new Date().getFullYear();
+	const month = split.length ? (parseInt(split[1]) + 1) : (new Date().getMonth() + 1);
+	const updatedMonth = month > 9 ?  month : `0${month}`;
+
+	const date = `${year}-${updatedMonth}`;
 
     return {
         scorecards: app.scorecards,
-		minDate: `${year}-${updatedMonth}`,
+		minDate: date,
 		isAdmin: app.admin
     };
 }
 
 function filterOut(value) {
 	return isNaN(parseInt(value)) ? "" : value;
+}
+
+function isHubsDataEmpty() {
+	const isWestEmpty = !app.current.westdata;
+	const isCoastalEmpty = !app.current.coastaldata;
+	const isCentralEmpty = !app.current.centraldata;
+
+	return isWestEmpty && isCoastalEmpty && isCentralEmpty;
 }
 
 function updateSPToken() {

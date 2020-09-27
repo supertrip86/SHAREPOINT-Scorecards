@@ -1,3 +1,3 @@
 module.exports = function(value) {
-    return value ? value : "TBD";
+    return value ? value : "N/A";
 };

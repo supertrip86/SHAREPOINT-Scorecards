@@ -50,7 +50,7 @@ span.scorecard-indicator-likelihood {display: flex;}
 .scorecard-indicator-likelihood .yellow-line {border: 2px solid #d9d900;}
 .scorecard-indicator-likelihood .orange-line {border: 2px solid #EA6B14;}
 .scorecard-indicator-likelihood .red-line {border: 2px solid red;}
-.scorecard-indicator-likelihood .likelihood-dropdown-icon {margin: auto 4px auto auto;}
+.scorecard-indicator-likelihood .likelihood-dropdown-icon {margin: auto 4px auto 0;}
 .scorecard-indicator-likelihood .likelihood-dropdown-icon::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMC42ZW0iIGhlaWdodD0iMC42ZW0iIHZpZXdCb3g9IjAgMCAxNiAxNiIgY2xhc3M9ImJpIGJpLWNoZXZyb24tZG93biIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjY0NiA0LjY0NmEuNS41IDAgMCAxIC43MDggMEw4IDEwLjI5M2w1LjY0Ni01LjY0N2EuNS41IDAgMCAxIC43MDguNzA4bC02IDZhLjUuNSAwIDAgMS0uNzA4IDBsLTYtNmEuNS41IDAgMCAxIDAtLjcwOHoiLz4NCjwvc3ZnPg==');}
 .comment-square {flex-grow: 1;min-height: 135px;position: relative;}
 .comment-square .ql-toolbar.ql-snow {background-color: #eee;padding: 4px;}

@@ -53,15 +53,15 @@
 						<p class="hub-indicator-title">WCA</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="wca-indicator-value hub-indicator-value">{{wca.value1}}</span>
+						<span class="wca-indicator-value hub-indicator-value">{{getDash wca.value1}}</span>
 						<span class="hub-separator">/</span>
-						<span class="wca-indicator-target hub-indicator-target">{{wca.target1}}</span>
+						<span class="wca-indicator-target hub-indicator-target">{{getValue wca.target1}}</span>
 						<i class="wca-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow wca.arrow1}}"></i>
 					</div>
 					<div class="hub-square-indicators">
 						<span class="wca-indicator-date hub-indicator-date">{{wca.date1}}</span>
 						<span class="hub-separator">=</span>
-						<span class="wca-indicator-old">{{wca.old1}}</span>
+						<span class="wca-indicator-old">{{getNA wca.old1}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>
@@ -150,15 +150,15 @@
 						<p class="hub-indicator-title">WCA</p>
 					</div>
 					<div class="hub-square-indicators">
-						<span class="wca-indicator-value hub-indicator-value">{{wca.value2}}</span>
+						<span class="wca-indicator-value hub-indicator-value">{{getDash wca.value2}}</span>
 						<span class="hub-separator">/</span>
-						<span class="wca-indicator-target hub-indicator-target">{{wca.target2}}</span>
+						<span class="wca-indicator-target hub-indicator-target">{{getValue wca.target2}}</span>
 						<i class="wca-indicator-arrow hub-arrow scorecard-indicator-arrow {{getArrow wca.arrow2}}"></i>
 					</div>
 					<div class="hub-square-indicators">
 						<span class="wca-indicator-date hub-indicator-date">{{wca.date2}}</span>
 						<span class="hub-separator">=</span>
-						<span class="wca-indicator-old">{{wca.old2}}</span>
+						<span class="wca-indicator-old">{{getNA wca.old2}}</span>
 					</div>
 					<div class="hub-square-likelihood">
 						<span>Likelihood</span>

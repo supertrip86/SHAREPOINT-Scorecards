@@ -1,8 +1,8 @@
 import utilities from "../js/utilities.js";
 import { display } from "./errors.js";
-import { ScoreCards } from "./scorecardsItem.js";
-import { ScoreCardItem } from "./scorecardsItemSP.js";
-import { SettingsItem } from "./settingsItemSP.js";
+import { ScoreCardsItem } from "./scorecardsItem.js";
+import { ScoreCardsItemSP } from "./scorecardsItemSP.js";
+import { SettingsItemSP } from "./settingsItemSP.js";
 
 const receiveData = async (url) => {
     const options = {
@@ -57,7 +57,7 @@ const modifySettings = () => {
     utilities.getNodes('.dialog-menu-item').forEach( (i, index) => {
         const id = i.dataset.id;
         const form = document.querySelector(`.dialog-form-item[data-id="${id}"]`);
-        const item = new SettingsItem(form, index);
+        const item = new SettingsItemSP(form, index);
 
         saveData("Settings", item, id, index);
     });
@@ -69,7 +69,7 @@ const modifyScorecards = () => {
     const createMode = target.classList.contains('create-mode');
 
     if (createMode) {
-        const item = new ScoreCardItem(null, null, context, createMode);
+        const item = new ScoreCardsItemSP(null, null, context, createMode);
 
         saveData('Scorecard', item);
 
@@ -77,12 +77,12 @@ const modifyScorecards = () => {
         const url = utilities.getItemURL();
 
         receiveData(url).then( (result) => {
-            const retrieved = new ScoreCards(result.d.results[0]);
+            const retrieved = new ScoreCardsItem(result.d.results[0]);
             const previous = app.current;
             const id = retrieved.Id;
 
             if (context == "wca-content") {
-                const data = new ScoreCardItem(retrieved, previous, context, createMode);
+                const data = new ScoreCardsItemSP(retrieved, previous, context, createMode);
 
                 saveData('Scorecard', data, id);
 

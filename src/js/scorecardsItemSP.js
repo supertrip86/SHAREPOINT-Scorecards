@@ -1,6 +1,6 @@
 import utilities from "./utilities";
 
-class ScoreCardItem {
+class ScoreCardsItemSP {
     constructor(retrieved, previous, context, createMode) {
         (context == "wca-content" && createMode) && ( this.Title = utilities.createScorecardTitle() );
         (context == "wca-content" && createMode) && ( this.scoredate = utilities.fromDateToSP() );
@@ -104,4 +104,4 @@ class ScoreCardItem {
     }
 }
 
-export { ScoreCardItem };
+export { ScoreCardsItemSP };
