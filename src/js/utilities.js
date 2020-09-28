@@ -17,9 +17,12 @@ module.exports = {
 	fromArrowToSP: fromArrowToSP,
 	fromLikelihoodToSP: fromLikelihoodToSP,
 	fromDateToSP: fromDateToSP,
+	formatLikelihood: formatLikelihood,
 	generateView: generateView,
 	generateHash: generateHash,
-	validateHash: validateHash
+	validateHash: validateHash,
+	highlightValues: highlightValues,
+	highlightLikelihood: highlightLikelihood
 };
 
 function on(selector, eventType, childSelector, eventHandler) {
@@ -175,6 +178,21 @@ function fromLikelihoodToSP(element) {
 	}
 }
 
+function formatLikelihood(value) {
+	switch (value) {
+        case 0:
+            return '';
+        case 1:
+            return 'green-line';
+        case 2:
+            return 'yellow-line';
+        case 3:
+            return 'orange-line';
+        case 4:
+            return 'red-line';
+    }
+}
+
 function fromDateToSP() {
 	const date = document.getElementById('date-button').value.split('-');
 
@@ -249,5 +267,32 @@ function validateHash() {
 		const minDate = nodes[nodes.length -1].dataset.date.split('-');
 
 		return new Date(maxDate[0], maxDate[1], 1) <= new Date(date[0], date[1], 1) <= new Date(minDate[0], minDate[1], 1);
+	}
+}
+
+function highlightValues(values, code, side) {
+	if (values.length > 0) {
+		const maxValue = Math.max.apply(null, values);
+		const row = document.querySelector(`.active-content .scorecard-row[data-code="${code}"]`);
+		const target = row.querySelector(`.scorecard-indicator-value-${side}`);
+		const wcaValue = target.value;
+
+		if (wcaValue) {
+			(parseFloat(wcaValue) > maxValue) && (target.style.backgroundColor = "#FFFF00");
+		}
+	}
+}
+
+function highlightLikelihood(likelihood, counter, code, side) {
+	if (counter != 0) {
+		const averageLikelihood = formatLikelihood(Math.round( likelihood / counter));
+		const row = document.querySelector(`.active-content .scorecard-row[data-code="${code}"]`);
+		const target = row.querySelector(`.scorecard-likelihood-${side} .line`);
+		const wcaLikelihood = formatLikelihood( fromLikelihoodToSP(target) );
+
+		if (wcaLikelihood != averageLikelihood) {
+			target.parentElement.style.borderColor = "#FF0000";
+			target.parentElement.style.borderWidth = "2px";
+		}
 	}
 }

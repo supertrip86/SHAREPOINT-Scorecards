@@ -59,6 +59,44 @@ const initHubsData = () => {
     });
 };
 
+const highlightCells = (a) => {
+    const data = [
+        a.westdata ? a.westdata : null, 
+        a.coastaldata ? a.coastaldata : null, 
+        a.centraldata ? a.centraldata : null
+    ];
+
+    app.settings.forEach( (i) => {
+        const code = i.Code;
+
+        let leftValues = [];
+        let rightValues = [];
+        let leftLikelihood = 0;
+        let rightLikelihood = 0;
+        let leftCounter = 0;
+        let rightCounter = 0;
+
+        data.forEach( (k) => {
+            leftValues.push( k[code]['value1'] ); // values are either parsable into integers, or empty strings. No need to skip NaNs
+            rightValues.push( k[code]['value2'] ); // values are either parsable into integers, or empty strings. No need to skip NaNs
+
+            if (k[code]['likelihood1']) {
+                leftLikelihood += k[code]['likelihood1'];
+                leftCounter += 1;
+            }
+            if (k[code]['likelihood2']) {
+                rightLikelihood += k[code]['likelihood2'];
+                rightCounter += 1;
+            }
+        });
+        utilities.highlightValues(leftValues, code, 1);
+        utilities.highlightValues(rightValues, code, 2);
+        // console.log(leftLikelihood, leftCounter)
+        utilities.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
+        utilities.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
+    });
+};
+
 const editScorecard = () => {
     const url = utilities.getItemURL();
 
@@ -77,6 +115,7 @@ const editScorecard = () => {
                 new Quill(i.querySelector('.comment-inner'), utilities.editorOptions());
                 i.querySelector('.ql-toolbar').classList.add('vanish');
             });
+            !utilities.isHubsDataEmpty() && highlightCells(scorecards);
 
         } else if (target == "hubs-content") {
             const item = new HubsItem(scorecards);

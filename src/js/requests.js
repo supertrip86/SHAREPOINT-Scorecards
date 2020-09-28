@@ -87,6 +87,9 @@ const modifyScorecards = () => {
                 saveData('Scorecard', data, id);
 
             } else if (context == "hubs-content") {
+                const data = new ScoreCardsItemSP(retrieved, previous, context, utilities.isHubsDataEmpty());
+
+                saveData('Scorecard', data, id);
 
             } else if (context == "actions-content") {
 
