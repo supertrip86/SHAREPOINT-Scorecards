@@ -2,7 +2,7 @@
 .scorecard-label .scorecard-title {color: #fff;margin: 0;text-align: center;width: 100%;}
 .scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}
 .scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
-.scorecard-main-comment {margin-bottom: 6px;position: relative;}
+.scorecard-main-comment {margin-bottom: 5px;position: relative;}
 .scorecard-main-comment .scorecard-main-summary {background-color: #eee;min-height: 100px;padding: 5px;font-size: 12px;}
 .scorecard-main-comment .ql-container {height: auto;}
 .scorecard-main-comment .ql-editor.ql-blank::before {left: 11px;font-style: normal;}
@@ -11,7 +11,7 @@
 .scorecard-comment-box .ql-editor ul, .scorecard-comment-box .ql-editor ol {padding-left: 0;}
 .scorecard-comment-box p {margin-bottom: .5rem;}
 
-.scorecard-row {margin-bottom: 6px;font-size: 12px;padding: 0;}
+.scorecard-row {margin-bottom: 5px;font-size: 12px;padding: 0;}
 .scorecard-row *::placeholder {font-weight: 400;color: grey;text-align: center;}
 .scorecard-row textarea, .scorecard-row input, .scorecard-motto {text-align: center;}
 .scorecard-row > div {padding: 5px;}

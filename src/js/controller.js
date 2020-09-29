@@ -10,6 +10,7 @@ import Hubs from "../hbs/hubs.hbs";
 import HubsEdit from "../hbs/hubsEdit.hbs";
 import CancelButton from "../hbs/partials/cancelButton.hbs";
 import EditButton from "../hbs/partials/editButton.hbs";
+import html2pdf from "html2pdf.js";
 import Quill from 'quill';
 import utilities from "./utilities.js";
 import dateUpdater from "../hbs/helpers/getDate.js";
@@ -21,7 +22,7 @@ const updateDates = () => {
     const wcaView = document.getElementById('wca-content');
 
     if (wcaView.classList.contains('create-mode')) {
-        wcaView.querySelector('.scorecard-title').innerText = `WCA SCORECARDS, ${utilities.createScorecardTitle()}`;
+        wcaView.querySelector('.scorecard-title').innerText = `${utilities.createScorecardTitle()}`;
 
         utilities.getNodes('.active-content .scorecard-indicator-date').forEach( (i) => {
             const date = i.dataset.date;
@@ -91,10 +92,27 @@ const highlightCells = (a) => {
         });
         utilities.highlightValues(leftValues, code, 1);
         utilities.highlightValues(rightValues, code, 2);
-        // console.log(leftLikelihood, leftCounter)
+
         utilities.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
         utilities.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
     });
+};
+
+const exportScorecard = () => {
+    const target = document.querySelector('.active-content');
+    const context = target.id;
+
+    const options = {
+        margin: [5, 5, 0, 5],
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "px", format: [2640, 1560], orientation: "portrait" }
+    };
+
+    if (context != "actions-content") {
+        target.classList.add('export-view');
+        html2pdf().set(options).from(target).save().then( () => target.classList.remove('export-view'));
+    }
 };
 
 const editScorecard = () => {
@@ -241,10 +259,7 @@ const appController = () => {
 
         document.getElementById(view).classList.add('active-content');
         document.getElementById(view).classList.remove('vanish');
-
-        // if (view == "actions-content") {
-        //     document.getElementById(target).classList.add('active-action');
-        // }
+        // (view == "actions-content") && document.getElementById(target).classList.add('active-action');
 
         loadScorecard(url);
 
@@ -267,6 +282,7 @@ const headerListeners = () => {
     utilities.on('#scorecards-header', 'click', '#save-button', modifyScorecards);
     utilities.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
     utilities.on('#scorecards-header', 'click', '#edit-button', editScorecard);
+    utilities.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
     utilities.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
     utilities.on('#scorecards-header', 'click', '.context-button', toggleView)
     utilities.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);

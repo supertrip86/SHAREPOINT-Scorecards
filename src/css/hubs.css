@@ -1,5 +1,5 @@
 .scorecard-label .scorecard-hubs-motto {width: 200px;margin: auto 15px auto auto;font-style: italic;text-align: center;font-size: 13px;color: #fff;}
-.scorecard-management {display: flex;justify-content: space-between;align-items: center;padding: 15px;font-size: 13px;min-height: 100px;background-color: #eee;margin-bottom: 6px;text-align: center;}
+.scorecard-management {display: flex;justify-content: space-between;align-items: center;padding: 15px;font-size: 13px;min-height: 100px;background-color: #eee;margin-bottom: 5px;text-align: center;}
 .scorecard-management .management-title {font-weight: 700;}
 .scorecard-management .management-title p {margin: 0;}
 .scorecard-management .management-element {width: 22%;}

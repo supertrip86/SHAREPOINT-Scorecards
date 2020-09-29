@@ -12,7 +12,7 @@ button > * {pointer-events: none;}
 .vanish {display: none!important;}
 .hidden {opacity: 0;}
 
-#scorecards-content {margin-bottom: 5rem;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#scorecards-content {margin-bottom: 6rem;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 #scorecards-content .scorecards-container {max-width: 1160px;margin: auto;}
 #scorecards-content input.form-control {overflow: hidden;}
 
@@ -45,6 +45,13 @@ select.form-control {text-overflow: ellipsis;}
 .select-pure__autocomplete {background:#f9f9f8;border-bottom:1px solid #e4e4e4;border-left:none;border-right:none;border-top:none;box-sizing:border-box;font-size:14px;outline:0;padding:10px;width:100%}
 .select-pure__placeholder {font-size: 12px;color: #808080;font-weight: 400;}
 .select-pure__placeholder--hidden {display: none;}
+
+/* export view */
+.export-view .scorecards-container,
+.export-view .scorecard-label, 
+.export-view .scorecard-main-comment,
+.export-view .scorecard-row,
+.export-view .scorecard-management {width: 1160!important;}
 
 /* loading Spinner */
 .spinner {position: absolute;left: 46%;top: 46%;height:60px;width:60px;-webkit-animation: rotation .6s infinite linear;-moz-animation: rotation .6s infinite linear;-o-animation: rotation .6s infinite linear;animation: rotation .6s infinite linear;border-left:4px solid rgba(0,174,239,.15);border-right:4px solid rgba(0,174,239,.15);border-bottom:4px solid rgba(0,174,239,.15);border-top:4px solid var(--main-dark-blue);border-radius:100%;z-index: 11000;}
@@ -1070,7 +1077,7 @@ select.form-control {text-overflow: ellipsis;}
 .scorecard-label .scorecard-title {color: #fff;margin: 0;text-align: center;width: 100%;}
 .scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}
 .scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
-.scorecard-main-comment {margin-bottom: 6px;position: relative;}
+.scorecard-main-comment {margin-bottom: 5px;position: relative;}
 .scorecard-main-comment .scorecard-main-summary {background-color: #eee;min-height: 100px;padding: 5px;font-size: 12px;}
 .scorecard-main-comment .ql-container {height: auto;}
 .scorecard-main-comment .ql-editor.ql-blank::before {left: 11px;font-style: normal;}
@@ -1079,7 +1086,7 @@ select.form-control {text-overflow: ellipsis;}
 .scorecard-comment-box .ql-editor ul, .scorecard-comment-box .ql-editor ol {padding-left: 0;}
 .scorecard-comment-box p {margin-bottom: .5rem;}
 
-.scorecard-row {margin-bottom: 6px;font-size: 12px;padding: 0;}
+.scorecard-row {margin-bottom: 5px;font-size: 12px;padding: 0;}
 .scorecard-row *::placeholder {font-weight: 400;color: grey;text-align: center;}
 .scorecard-row textarea, .scorecard-row input, .scorecard-motto {text-align: center;}
 .scorecard-row > div {padding: 5px;}
@@ -1149,7 +1156,7 @@ span.scorecard-indicator-likelihood {display: flex;}
     }
 }
 .scorecard-label .scorecard-hubs-motto {width: 200px;margin: auto 15px auto auto;font-style: italic;text-align: center;font-size: 13px;color: #fff;}
-.scorecard-management {display: flex;justify-content: space-between;align-items: center;padding: 15px;font-size: 13px;min-height: 100px;background-color: #eee;margin-bottom: 6px;text-align: center;}
+.scorecard-management {display: flex;justify-content: space-between;align-items: center;padding: 15px;font-size: 13px;min-height: 100px;background-color: #eee;margin-bottom: 5px;text-align: center;}
 .scorecard-management .management-title {font-weight: 700;}
 .scorecard-management .management-title p {margin: 0;}
 .scorecard-management .management-element {width: 22%;}

@@ -14,8 +14,8 @@ const toggleDashboard = (e) => {
 };
 
 const updateArrow = (e) => {
-    const currentValue = parseInt(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-value').value);
-    const pastValue = parseInt(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-old').value);
+    const currentValue = parseFloat(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-value').value);
+    const pastValue = parseFloat(e.target.closest('.bordered-square').querySelector('.scorecard-indicator-old').value);
     const arrow = e.target.closest('.bordered-square').querySelector('.scorecard-indicator-arrow');
 
     arrow.classList.remove('scorecard-indicator-arrow-up', 'scorecard-indicator-arrow-right', 'scorecard-indicator-arrow-down');

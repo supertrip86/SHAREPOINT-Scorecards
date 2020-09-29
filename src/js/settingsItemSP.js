@@ -1,4 +1,4 @@
-class SettingsItem {
+class SettingsItemSP {
     constructor(form, index) {
         this.Title = form.querySelector('.modal-edit-title').value.trim();
         this.Position = parseInt(index);
@@ -13,4 +13,4 @@ class SettingsItem {
     }
 }
 
-export { SettingsItem };
+export { SettingsItemSP };

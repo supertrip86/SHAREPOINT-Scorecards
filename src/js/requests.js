@@ -80,7 +80,7 @@ const modifyScorecards = () => {
             const retrieved = new ScoreCardsItem(result.d.results[0]);
             const previous = app.current;
             const id = retrieved.Id;
-
+            // maybe get rid of if else 
             if (context == "wca-content") {
                 const data = new ScoreCardsItemSP(retrieved, previous, context, createMode);
 
