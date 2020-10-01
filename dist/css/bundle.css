@@ -53,6 +53,9 @@ select.form-control {text-overflow: ellipsis;}
 .export-view .scorecard-row,
 .export-view .scorecard-management {width: 1160!important;}
 
+/* welcome message */
+.welcome::after {position: absolute;color: #fff;min-width: 250px;width: 40%;padding: 3vh;bottom: 18%;background: rgba(0, 0, 0, 0.75);font-size: 3.5vh;font-style: italic;border-top-right-radius: 12px;border-bottom-right-radius: 12px;content: 'Welcome! Create a new ScoreCard, or select an existing one from the Dropdown Menu.';}
+
 /* loading Spinner */
 .spinner {position: absolute;left: 46%;top: 46%;height:60px;width:60px;-webkit-animation: rotation .6s infinite linear;-moz-animation: rotation .6s infinite linear;-o-animation: rotation .6s infinite linear;animation: rotation .6s infinite linear;border-left:4px solid rgba(0,174,239,.15);border-right:4px solid rgba(0,174,239,.15);border-bottom:4px solid rgba(0,174,239,.15);border-top:4px solid var(--main-dark-blue);border-radius:100%;z-index: 11000;}
 @-webkit-keyframes rotation {from {-webkit-transform: rotate(0deg);} to {-webkit-transform: rotate(359deg);}}
@@ -1060,7 +1063,8 @@ select.form-control {text-overflow: ellipsis;}
 
 #scorecards-control {margin: 25px 0;justify-content: space-between;}
 #scorecards-control button {line-height: 1;font-size: 14px;display: flex;align-items: center;justify-content: center;min-width: 5rem;}
-#scorecards-control #left-buttons {width: 66%;margin-left: 20px;margin-bottom: 20px;}
+#scorecards-control button svg {margin-right: 4px;margin-top: 2px;}
+#scorecards-control #left-buttons {width: 66%;margin-left: 20px;}
 #scorecards-control #left-buttons > div {margin-right: 20px;}
 #scorecards-control #right-buttons {display: flex;flex-grow: 1;justify-content: space-around;}
 #scorecards-control #date-button {text-align: center;height: 32px;margin: auto 10px;}
@@ -1073,6 +1077,8 @@ select.form-control {text-overflow: ellipsis;}
         padding-top: 16px;
     }
 }
+.actions-header button {margin-right: 5px;}
+.actions-header button svg {margin-right: 2px;margin-top: -2px;width: 13px;}
 .scorecard-label {background-color: #333;display: flex;align-items: center;}
 .scorecard-label .scorecard-title {color: #fff;margin: 0;text-align: center;width: 100%;}
 .scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}

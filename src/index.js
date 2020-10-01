@@ -6,7 +6,7 @@ import { receiveData } from "./js/requests.js";
 import { App, Admin } from "./js/app.js";
 import { scorecardsListeners } from "./js/scorecards.js";
 import { Modal, modalListeners } from "./js/settings.js";
-import { Header, headerListeners, appController } from "./js/controller.js";
+import { Header, ActionsPanel, headerListeners, appController } from "./js/controller.js";
 
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 const scorecardsListColumns = ["scoredate", "Id", "Title"];
@@ -62,6 +62,7 @@ function initApp() {
     }
 
     document.getElementById("scorecards-header").innerHTML = Header( utilities.getHeaderData() );
+    document.getElementById("actions-content").innerHTML = ActionsPanel();
 
     utilities.updateSPToken();
 

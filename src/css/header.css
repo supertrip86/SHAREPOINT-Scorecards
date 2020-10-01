@@ -26,7 +26,8 @@
 
 #scorecards-control {margin: 25px 0;justify-content: space-between;}
 #scorecards-control button {line-height: 1;font-size: 14px;display: flex;align-items: center;justify-content: center;min-width: 5rem;}
-#scorecards-control #left-buttons {width: 66%;margin-left: 20px;margin-bottom: 20px;}
+#scorecards-control button svg {margin-right: 4px;margin-top: 2px;}
+#scorecards-control #left-buttons {width: 66%;margin-left: 20px;}
 #scorecards-control #left-buttons > div {margin-right: 20px;}
 #scorecards-control #right-buttons {display: flex;flex-grow: 1;justify-content: space-around;}
 #scorecards-control #date-button {text-align: center;height: 32px;margin: auto 10px;}

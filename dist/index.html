@@ -22,21 +22,22 @@
         <title>WCA ScoreCards</title>
     </head>
 
-    <body>
+    <body class="vanish welcome">
         <!-- <form class="vanish" runat="server">
             <SharePoint:FormDigest id="FormDigest1" runat="server"></SharePoint:FormDigest>
         </form> -->
 
         <header id="scorecards-header"></header>
 
-        <main id="scorecards-content" class="container">
-            <section id="wca-content" class="container scorecards-container active-content"></section>
-            <section id="hubs-content" class="container scorecards-container"></section>
-            <section id="actions-content" class="container scorecards-container"></section>
+        <main id="scorecards-content">
+            <section id="wca-content" class="scorecards-container vanish"></section>
+            <section id="hubs-content" class="scorecards-container vanish"></section>
+            <section id="actions-content" class="scorecards-container vanish"></section>
         </main>
 
         <div id="scorecards-dialog"></div>
 
+        <script src="js/customExcelWriter.js"></script>
         <script src="js/bundle.js"></script>
     </body>
 

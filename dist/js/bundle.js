@@ -46762,6 +46762,17 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/css/actions.css":
+/*!*****************************!*\
+  !*** ./src/css/actions.css ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./src/css/header.css":
 /*!****************************!*\
   !*** ./src/css/header.css ***!
@@ -46814,6 +46825,21 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/hbs/actionsPanel.hbs":
+/*!**********************************!*\
+  !*** ./src/hbs/actionsPanel.hbs ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"actions-header\">\r\n    <button id=\"west-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Dakar</span>\r\n    </button>\r\n    <button id=\"coastal-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Abidjan</span>\r\n    </button>\r\n    <button id=\"central-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Yaoundé</span>\r\n    </button>\r\n</div>\r\n<div id=\"actions-body\">\r\n    <div id=\"west-action\" class=\"container actions-container vanish\"></div>\r\n    <div id=\"coastal-action\" class=\"container actions-container vanish\"></div>\r\n    <div id=\"central-action\" class=\"container actions-container vanish\"></div>\r\n</div>";
+},"useData":true});
 
 /***/ }),
 
@@ -47839,6 +47865,7 @@ function initApp() {
   }
 
   document.getElementById("scorecards-header").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_8__["Header"])(_js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.getHeaderData());
+  document.getElementById("actions-content").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_8__["ActionsPanel"])();
   _js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.updateSPToken();
   Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_8__["headerListeners"])();
   Object(_js_scorecards_js__WEBPACK_IMPORTED_MODULE_6__["scorecardsListeners"])();
@@ -47900,7 +47927,7 @@ class Admin extends App {
 /*!******************************!*\
   !*** ./src/js/controller.js ***!
   \******************************/
-/*! exports provided: Header, headerListeners, appController */
+/*! exports provided: Header, ActionsPanel, headerListeners, appController */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47911,38 +47938,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/header.css */ "./src/css/header.css");
 /* harmony import */ var _css_header_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_header_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_wca_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/wca.css */ "./src/css/wca.css");
-/* harmony import */ var _css_wca_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_wca_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _css_hubs_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/hubs.css */ "./src/css/hubs.css");
-/* harmony import */ var _css_hubs_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_hubs_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _hbs_header_hbs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hbs/header.hbs */ "./src/hbs/header.hbs");
-/* harmony import */ var _hbs_header_hbs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hbs_header_hbs__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return _hbs_header_hbs__WEBPACK_IMPORTED_MODULE_4___default.a; });
-/* harmony import */ var _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hbs/wca.hbs */ "./src/hbs/wca.hbs");
-/* harmony import */ var _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hbs/wcaCreate.hbs */ "./src/hbs/wcaCreate.hbs");
-/* harmony import */ var _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../hbs/wcaEdit.hbs */ "./src/hbs/wcaEdit.hbs");
-/* harmony import */ var _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hbs/hubs.hbs */ "./src/hbs/hubs.hbs");
-/* harmony import */ var _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../hbs/hubsEdit.hbs */ "./src/hbs/hubsEdit.hbs");
-/* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! html2pdf.js */ "./node_modules/html2pdf.js/dist/html2pdf.js");
-/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(html2pdf_js__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
-/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
-/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+/* harmony import */ var _css_actions_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/actions.css */ "./src/css/actions.css");
+/* harmony import */ var _css_actions_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_actions_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _css_wca_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/wca.css */ "./src/css/wca.css");
+/* harmony import */ var _css_wca_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_wca_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _css_hubs_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/hubs.css */ "./src/css/hubs.css");
+/* harmony import */ var _css_hubs_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_css_hubs_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _hbs_header_hbs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hbs/header.hbs */ "./src/hbs/header.hbs");
+/* harmony import */ var _hbs_header_hbs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_hbs_header_hbs__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return _hbs_header_hbs__WEBPACK_IMPORTED_MODULE_5___default.a; });
+/* harmony import */ var _hbs_actionsPanel_hbs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hbs/actionsPanel.hbs */ "./src/hbs/actionsPanel.hbs");
+/* harmony import */ var _hbs_actionsPanel_hbs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_hbs_actionsPanel_hbs__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "ActionsPanel", function() { return _hbs_actionsPanel_hbs__WEBPACK_IMPORTED_MODULE_6___default.a; });
+/* harmony import */ var _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../hbs/wca.hbs */ "./src/hbs/wca.hbs");
+/* harmony import */ var _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hbs/wcaCreate.hbs */ "./src/hbs/wcaCreate.hbs");
+/* harmony import */ var _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../hbs/wcaEdit.hbs */ "./src/hbs/wcaEdit.hbs");
+/* harmony import */ var _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hbs/hubs.hbs */ "./src/hbs/hubs.hbs");
+/* harmony import */ var _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hbs/hubsEdit.hbs */ "./src/hbs/hubsEdit.hbs");
+/* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! html2pdf.js */ "./node_modules/html2pdf.js/dist/html2pdf.js");
+/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(html2pdf_js__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
+/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+
+
 
 
 
@@ -47967,16 +48001,19 @@ var updateDates = () => {
   var wcaView = document.getElementById('wca-content');
 
   if (wcaView.classList.contains('create-mode')) {
-    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.createScorecardTitle());
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
+    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.createScorecardTitle());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
       var date = i.dataset.date;
-      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_15___default()(date);
+      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17___default()(date);
     });
   }
 };
 
 var toggleView = e => {
-  var view = e.target.id.split('-')[0];
+  var context = e.target.id.split('-')[0];
+  var activeAction = document.querySelector('.active-action');
+  var selectedAction = activeAction ? activeAction.id.split('-')[0] : "west";
+  var view = context != "actions" ? context : selectedAction;
   var hash = location.hash.split('-');
   location.hash = "".concat(view, "-").concat(hash[1], "-").concat(hash[2]);
 };
@@ -48023,10 +48060,10 @@ var highlightCells = a => {
         rightCounter += 1;
       }
     });
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.highlightValues(leftValues, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.highlightValues(rightValues, code, 2);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightValues(leftValues, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightValues(rightValues, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
   });
 };
 
@@ -48051,30 +48088,30 @@ var exportScorecard = () => {
 
   if (context != "actions-content") {
     target.classList.add('export-view');
-    html2pdf_js__WEBPACK_IMPORTED_MODULE_12___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
+    html2pdf_js__WEBPACK_IMPORTED_MODULE_14___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
   }
 };
 
 var editScorecard = () => {
-  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getItemURL();
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_18__["receiveData"])(url).then(result => {
+  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getItemURL();
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_20__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content').id;
-    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_16__["ScoreCardsItem"](result.d.results[0]);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10___default()();
+    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__["ScoreCardsItem"](result.d.results[0]);
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12___default()();
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
 
     if (target == "wca-content") {
-      document.getElementById('wca-content').innerHTML = _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_7___default()(scorecards);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getNodes('.comment-wrapper').forEach(i => {
-        new quill__WEBPACK_IMPORTED_MODULE_13___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.editorOptions());
+      document.getElementById('wca-content').innerHTML = _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default()(scorecards);
+      _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.comment-wrapper').forEach(i => {
+        new quill__WEBPACK_IMPORTED_MODULE_15___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.editorOptions());
         i.querySelector('.ql-toolbar').classList.add('vanish');
       });
-      !_utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.isHubsDataEmpty() && highlightCells(scorecards);
+      !_utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.isHubsDataEmpty() && highlightCells(scorecards);
     } else if (target == "hubs-content") {
-      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_17__["HubsItem"](scorecards);
-      document.getElementById('hubs-content').innerHTML = _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default()(item);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.isHubsDataEmpty() && initHubsData();
+      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_19__["HubsItem"](scorecards);
+      document.getElementById('hubs-content').innerHTML = _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11___default()(item);
+      _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.isHubsDataEmpty() && initHubsData();
     } else if (target == "actions-content") {
       console.log('actions-content');
     }
@@ -48085,9 +48122,9 @@ var cancelEdit = () => {
   var target = document.querySelector('.active-content');
 
   if (target.classList.contains('create-mode')) {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.reload();
   } else {
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getItemURL();
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getItemURL();
     target.classList.remove('create-mode');
     loadScorecard(url);
   }
@@ -48099,98 +48136,118 @@ var startCreateMode = () => {
 
 var getScorecard = e => {
   var date = e.target.dataset.date;
-  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.generateHash(date);
+  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.generateHash(date);
   location.hash = newHash;
 };
 
 var loadScorecard = url => {
-  var target = document.querySelector('.active-content');
-  var main = document.getElementById('scorecards-content');
-  target.classList.remove('create-mode');
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_18__["receiveData"])(url).then(result => {
-    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_16__["ScoreCardsItem"](result.d.results[0]);
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_20__["receiveData"])(url).then(result => {
+    var target = document.querySelector('.active-content');
+    var main = document.getElementById('scorecards-content');
+    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__["ScoreCardsItem"](result.d.results[0]);
     app.current = selectedScorecard;
     main.setAttribute('data-date', selectedScorecard.scoredate);
     main.classList.remove('welcome');
     document.getElementById('right-buttons').classList.remove('vanish');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
 
     if (target.id == "wca-content") {
-      document.getElementById('wca-view').setAttribute('disabled', 'disabled');
-      document.getElementById('wca-content').innerHTML = _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_5___default()(selectedScorecard);
+      document.getElementById('wca-content').innerHTML = _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_7___default()(selectedScorecard);
     } else if (target.id == "hubs-content") {
-      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_17__["HubsItem"](selectedScorecard);
-      document.getElementById('hubs-view').setAttribute('disabled', 'disabled');
-      document.getElementById('hubs-content').innerHTML = _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_8___default()(hubsData);
-    } else {}
+      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_19__["HubsItem"](selectedScorecard);
+      document.getElementById('hubs-content').innerHTML = _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10___default()(hubsData);
+    } else {
+      var actions = document.querySelector('.active-action').id.split('-')[0];
+      var actionsCurrent = selectedScorecard["".concat(actions, "data")];
+      var actionsPrevious = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__["ScoreCardsItem"](result.d.results[1])["".concat(actions, "data")] : null;
+      console.log(actionsPrevious, actionsCurrent);
+    }
 
     if (app.admin) {
-      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_11___default()();
+      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13___default()();
       document.getElementById('date-button').classList.add('vanish');
       document.getElementById('edit-button').classList.remove('vanish');
       document.getElementById('save-button').classList.remove('vanish');
       document.getElementById('save-button').setAttribute('disabled', 'disabled');
     }
+
+    document.querySelector('body').removeAttribute('class');
   });
 };
 
 var createScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_18__["receiveData"])(app.storage.settingsURL).then(result => {
-    document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_6___default()(result.d.results);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_10___default()();
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_20__["receiveData"])(app.storage.settingsURL).then(result => {
+    document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8___default()(result.d.results);
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12___default()();
     document.getElementById('scorecards-content').classList.remove('welcome');
     document.getElementById('wca-content').classList.add('create-mode', 'active-content');
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('save-button').classList.remove('vanish');
     document.getElementById('date-button').classList.remove('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getNodes('.comment-wrapper').forEach(i => {
-      new quill__WEBPACK_IMPORTED_MODULE_13___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.editorOptions());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.comment-wrapper').forEach(i => {
+      new quill__WEBPACK_IMPORTED_MODULE_15___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.editorOptions());
       i.querySelector('.ql-toolbar').classList.add('vanish');
     });
   });
 };
 
 var appController = () => {
-  var hash = location.hash;
-  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.validateHash();
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getNodes('.scorecards-container').forEach(i => {
+  var hash = location.hash.replace('#', '');
+  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.validateHash();
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.scorecards-container').forEach(i => {
+    i.classList.remove('create-mode');
     i.classList.remove('active-content');
     i.classList.add('vanish');
-  }); // utilities.getNodes('.context-button').forEach( (i) => i.classList.remove('') ); // specify action-button's class
+  });
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.actions-container').forEach(i => {
+    i.classList.remove('active-action');
+    i.classList.add('vanish');
+  });
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.actions-button').forEach(i => i.removeAttribute('disabled'));
 
-  if (hash == "#create-mode") {
+  if (hash == "create-mode") {
     document.getElementById('wca-content').classList.add('active-content');
     document.getElementById('wca-content').classList.remove('vanish');
-    app.admin ? createScorecard() : location.href = "";
+    app.admin ? createScorecard() : _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.reload();
+    document.querySelector('body').removeAttribute('class');
   } else if (validateHash) {
     var target = hash.split('-')[0];
-    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.generateView(hash)[0];
-    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.generateView(hash)[1];
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.getItemURL(date);
+    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.generateView(hash)[0];
+    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.generateView(hash)[1];
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getItemURL(date);
     document.getElementById(view).classList.add('active-content');
-    document.getElementById(view).classList.remove('vanish'); // (view == "actions-content") && document.getElementById(target).classList.add('active-action');
+    document.getElementById(view).classList.remove('vanish');
+    document.getElementById("".concat(target, "-view")).setAttribute('disabled', 'disabled');
+
+    if (view == "actions-content") {
+      document.getElementById("".concat(target, "-action")).classList.add('active-action');
+      document.getElementById("".concat(target, "-action")).classList.remove('vanish');
+      document.getElementById('actions-view').setAttribute('disabled', 'disabled');
+    }
 
     loadScorecard(url);
   } else if (hash == "") {
     document.getElementById('wca-content').classList.add('active-content');
-    document.getElementById('wca-content').classList.remove('vanish'); // set back landing page
+    document.getElementById('wca-content').classList.remove('vanish');
+    document.querySelector('body').classList.add('welcome');
+    document.querySelector('body').classList.remove('vanish');
   } else {
-    location.href = "";
+    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.reload();
   }
 };
 
 var headerListeners = () => {
   window.addEventListener('hashchange', appController);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.preventDefault);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_18__["modifyScorecards"]);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_14___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.preventDefault);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_20__["modifyScorecards"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
 };
 
 
@@ -48887,7 +48944,14 @@ function getNodes(value, context) {
 
 function getItemURL(date) {
   var itemDate = date ? date : document.getElementById('scorecards-content').dataset.date;
-  return "".concat(app.storage.site, "/_api/web/lists/getbytitle('").concat(app.storage.scorecardsList, "')/items?$filter=(scoredate eq '").concat(itemDate, "')");
+  var previousDate = getPreviousDate(itemDate);
+  var isMinDate = itemDate == app.scorecards[app.scorecards.length - 1].scoredate;
+
+  if (isMinDate) {
+    return "".concat(app.storage.site, "/_api/web/lists/getbytitle('").concat(app.storage.scorecardsList, "')/items?$filter=(scoredate eq '").concat(itemDate, "')");
+  }
+
+  return "".concat(app.storage.site, "/_api/web/lists/getbytitle('").concat(app.storage.scorecardsList, "')/items?$filter=((scoredate eq '").concat(itemDate, "') or (scoredate eq '").concat(previousDate, "'))&$orderby=scoredate desc");
 }
 
 function getPreviousDate(date) {
@@ -49049,14 +49113,14 @@ function generateView(hash) {
   var months = getMonths().map(i => i.toLowerCase().slice(0, 3));
   var monthIndex = months.indexOf(month) + 1;
   var spMonth = monthIndex > 9 ? monthIndex : "0".concat(monthIndex);
-  var view = context == "#wca" ? "wca-content" : context == "#hubs" ? "hubs-content" : "actions-content";
+  var view = context == "wca" ? "wca-content" : context == "hubs" ? "hubs-content" : "actions-content";
   var date = "".concat(year, "-").concat(spMonth, "-15T00:00:00Z");
   return [view, date];
 }
 
 function generateHash(date) {
   var context = document.querySelector('.active-content').id;
-  var view = context == "wca-content" ? "wca" : context == "hubs-content" ? "hubs" : document.querySelector('.active-action').id;
+  var view = context == "wca-content" ? "wca" : context == "hubs-content" ? "hubs" : document.querySelector('.active-action').id.split('-')[0];
   var dateSplitted = date.split('-');
   var months = getMonths().map(i => i.toLowerCase().slice(0, 3));
   var month = months[parseInt(dateSplitted[1]) - 1];

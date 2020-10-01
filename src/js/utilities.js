@@ -45,8 +45,14 @@ function getNodes(value, context) {
 
 function getItemURL(date) {
 	const itemDate = date ? date : document.getElementById('scorecards-content').dataset.date;
+	const previousDate = getPreviousDate(itemDate);
+	const isMinDate = (itemDate == app.scorecards[app.scorecards.length -1].scoredate);
 
-	return `${app.storage.site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=(scoredate eq '${itemDate}')`;
+	if (isMinDate) {
+		return `${app.storage.site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=(scoredate eq '${itemDate}')`;
+	}
+
+	return `${app.storage.site}/_api/web/lists/getbytitle('${app.storage.scorecardsList}')/items?$filter=((scoredate eq '${itemDate}') or (scoredate eq '${previousDate}'))&$orderby=scoredate desc`;
 }
 
 function getPreviousDate(date) {
@@ -208,7 +214,7 @@ function generateView(hash) {
 	const monthIndex = months.indexOf(month) + 1;
 	const spMonth = (monthIndex > 9) ? monthIndex : `0${monthIndex}`;
 
-	const view = context == "#wca" ? "wca-content" : (context == "#hubs" ? "hubs-content" : "actions-content");
+	const view = context == "wca" ? "wca-content" : (context == "hubs" ? "hubs-content" : "actions-content");
 	const date = `${year}-${spMonth}-15T00:00:00Z`;
 
 	return [view, date];
@@ -216,7 +222,7 @@ function generateView(hash) {
 
 function generateHash(date) {
 	const context = document.querySelector('.active-content').id;
-	const view = context == "wca-content" ? "wca" : (context == "hubs-content" ? "hubs" : document.querySelector('.active-action').id);
+	const view = (context == "wca-content") ? "wca" : ( (context == "hubs-content") ? "hubs" : document.querySelector('.active-action').id.split('-')[0] );
 
 	const dateSplitted = date.split('-');
 	const months = getMonths().map( (i) => i.toLowerCase().slice(0,3) );
