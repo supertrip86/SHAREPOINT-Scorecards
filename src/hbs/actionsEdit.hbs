@@ -1,0 +1,17 @@
+{{#if current}}
+    {{#each current}}
+
+    {{/each}}
+{{else if previous}}
+    {{#each previous}}
+
+    {{/each}}
+{{else}}
+    {{#each settings}}
+    <div id="{{Code}}-header" data-row="{{@index}}" data-max="0" class="responsive-header">
+        <button class="add-action">Add</button>
+        <div class="action-title">{{Title}}</div>
+        <div class="action-elements"></div>
+    </div>
+    {{/each}}
+{{/if}}

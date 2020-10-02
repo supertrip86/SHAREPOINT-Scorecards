@@ -19,7 +19,7 @@ button > * {pointer-events: none;}
 /* bootstrap 4.5 custom */
 .btn {font-size: 12px;border-radius: 0;}
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {color:#fff;background-color: var(--main-bright-blue);border-color: var(--main-bright-blue);}
-.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {background-color: var(--main-dark-blue);border-color: var(--main-dark-blue);}
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {background-color: var(--main-bright-blue);border-color: var(--main-bright-blue);}
 .btn-secondary, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle, .btn-secondary:hover {color: #333;background-color: #fff;border-color: #fff;border: 1px solid #ccc;}
 .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto {padding-right: 8px;padding-left: 8px;}
 
@@ -1062,7 +1062,7 @@ select.form-control {text-overflow: ellipsis;}
 .ifad-bar .ifad-bar-apr {background-color: #df0221;}
 
 #scorecards-control {margin: 25px 0;justify-content: space-between;}
-#scorecards-control button {line-height: 1;font-size: 14px;display: flex;align-items: center;justify-content: center;min-width: 5rem;}
+#scorecards-control button {line-height: 1;font-size: 14px;display: flex;align-items: center;justify-content: center;min-width: 5rem;height: 28px;}
 #scorecards-control button svg {margin-right: 4px;margin-top: 2px;}
 #scorecards-control #left-buttons {width: 66%;margin-left: 20px;}
 #scorecards-control #left-buttons > div {margin-right: 20px;}
@@ -1077,8 +1077,35 @@ select.form-control {text-overflow: ellipsis;}
         padding-top: 16px;
     }
 }
-.actions-header button {margin-right: 5px;}
+.actions-header {height: 28px;}
+.actions-header button {line-height: 1;font-size: 13px;min-width: 5rem;height: 28px;}
 .actions-header button svg {margin-right: 2px;margin-top: -2px;width: 13px;}
+
+.actions-table-header {display: flex;font-size: 14px;letter-spacing: .03em;color: #fff;background-color: #587CA1;padding: 10px 20px;margin-bottom: 15px;}
+.actions-table-header .subtitle {font-size: 12px;font-style: italic;}
+
+/* #actions-date {background-color: #333;display: flex;justify-content: center;align-items: center;width: 200px;margin: auto;font-size: 16px;color: #fff;} */
+#send-actions {float: right;display: flex;align-items: center;}
+
+#actions-content .col {padding: 0;margin: 0 1vw;}
+#actions-content .column-1 {flex-basis: 8%;}
+#actions-content .column-2 {flex-basis: 8%;}
+#actions-content .column-3 {flex-basis: 8%;}
+#actions-content .column-4 {flex-basis: 22%;}
+#actions-content .column-5 {flex-basis: 7%;font-weight: bold;}
+#actions-content .column-6 {flex-basis: 22%;}
+#actions-content .column-7 {flex-basis: 12%;position: relative;}
+#actions-content .column-8 {flex-basis: 10%;}
+
+#actions-body .actions-container {padding: 0;font-size: 12px;}
+#actions-body .actions-container .responsive-header {position: relative;border-radius: 3px;padding: 0;margin: 15px 0;}
+#actions-body .actions-container .responsive-header button {position: absolute;left: -45px;top: 4px;width: 40px;height: 25px;outline: none;border: 1px solid #ddd;border-radius: 20px;background: linear-gradient(#fff,#e7e7e7);}
+#actions-body .actions-container .responsive-header .add-action {font-size: 11px;}
+#actions-body .actions-container .responsive-header .action-title {background-color: #d3d3d3;padding: 8px 30px;border-radius: 3px;display: inline-block;}
+#actions-body .actions-container .responsive-element {padding: 10px 20px;margin-bottom: 15px;position: relative;}
+#actions-body .actions-container .responsive-element .notify-action {left: 100%;}
+#actions-body .actions-container .responsive-element .notify-action::after {content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktZW52ZWxvcGUtZmlsbCIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICAgICAgICAgICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNLjA1IDMuNTU1QTIgMiAwIDAgMSAyIDJoMTJhMiAyIDAgMCAxIDEuOTUgMS41NTVMOCA4LjQxNC4wNSAzLjU1NXpNMCA0LjY5N3Y3LjEwNGw1LjgwMy0zLjU1OEwwIDQuNjk3ek02Ljc2MSA4LjgzbC02LjU3IDQuMDI3QTIgMiAwIDAgMCAyIDE0aDEyYTIgMiAwIDAgMCAxLjgwOC0xLjE0NGwtNi41Ny00LjAyN0w4IDkuNTg2bC0xLjIzOS0uNzU3em0zLjQzNi0uNTg2TDE2IDExLjgwMVY0LjY5N2wtNS44MDMgMy41NDZ6Ij48L3BhdGg+DQogICAgICAgIDwvc3ZnPg==");}
+#actions-body .actions-container .responsive-element .delete-action::after {content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktdHJhc2giIGZpbGw9ImN1cnJlbnRDb2xvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNS41IDUuNUEuNS41IDAgMDE2IDZ2NmEuNS41IDAgMDEtMSAwVjZhLjUuNSAwIDAxLjUtLjV6bTIuNSAwYS41LjUgMCAwMS41LjV2NmEuNS41IDAgMDEtMSAwVjZhLjUuNSAwIDAxLjUtLjV6bTMgLjVhLjUuNSAwIDAwLTEgMHY2YS41LjUgMCAwMDEgMFY2eiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTE0LjUgM2ExIDEgMCAwMS0xIDFIMTN2OWEyIDIgMCAwMS0yIDJINWEyIDIgMCAwMS0yLTJWNGgtLjVhMSAxIDAgMDEtMS0xVjJhMSAxIDAgMDExLTFINmExIDEgMCAwMTEtMWgyYTEgMSAwIDAxMSAxaDMuNWExIDEgMCAwMTEgMXYxek00LjExOCA0TDQgNC4wNTlWMTNhMSAxIDAgMDAxIDFoNmExIDEgMCAwMDEtMVY0LjA1OUwxMS44ODIgNEg0LjExOHpNMi41IDNWMmgxMXYxaC0xMXoiLz48L3N2Zz4=");}
 .scorecard-label {background-color: #333;display: flex;align-items: center;}
 .scorecard-label .scorecard-title {color: #fff;margin: 0;text-align: center;width: 100%;}
 .scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}

@@ -10,6 +10,9 @@ import wcaCreate from "../hbs/wcaCreate.hbs";
 import wcaEdit from "../hbs/wcaEdit.hbs";
 import Hubs from "../hbs/hubs.hbs";
 import HubsEdit from "../hbs/hubsEdit.hbs";
+import Actions from "../hbs/actions.hbs";
+import ActionsEdit from "../hbs/actionsEdit.hbs";
+import ActionsElement from "../hbs/partials/actionsElement.hbs";
 import CancelButton from "../hbs/partials/cancelButton.hbs";
 import EditButton from "../hbs/partials/editButton.hbs";
 import html2pdf from "html2pdf.js";
@@ -42,6 +45,19 @@ const toggleView = (e) => {
     const hash = location.hash.split('-');
 
     location.hash = `${view}-${hash[1]}-${hash[2]}`;
+};
+
+const toggleAction = (e) => {
+    const hash = location.hash.split('-');
+    const view = e.target.id.split('-')[0];
+
+    location.hash = `${view}-${hash[1]}-${hash[2]}`;
+};
+
+const addAction = (e) => {
+    const container = e.target.parentElement.querySelector('.action-elements');
+
+    container.insertAdjacentHTML( 'beforeend', ActionsElement() );
 };
 
 const initHubsData = () => {
@@ -129,7 +145,11 @@ const editScorecard = () => {
         const scorecards = new ScoreCardsItem(result.d.results[0]);
 
         document.getElementById('toggle-button').innerHTML = CancelButton();
+
         document.getElementById('right-buttons').classList.add('vanish');
+        document.getElementById('send-actions').classList.add('vanish');
+        utilities.getNodes('.actions-button:not(:disabled)').forEach( (i) => i.classList.add('invisible') );
+
         document.getElementById('save-button').removeAttribute('disabled');
 
         if (target == "wca-content") {
@@ -148,7 +168,11 @@ const editScorecard = () => {
             utilities.isHubsDataEmpty() && initHubsData();
 
         } else if (target == "actions-content") {
-            console.log('actions-content');
+            const actionsId = document.querySelector('.active-action').id;
+            const previousScorecard = result.d.results[1] ? new ScoreCardsItem(result.d.results[1]) : null;
+            const actionsData = utilities.getActionsData(actionsId, scorecards, previousScorecard);
+
+            document.getElementById(actionsId).innerHTML = ActionsEdit(actionsData);
         }
 
     });
@@ -191,6 +215,8 @@ const loadScorecard = (url) => {
         main.classList.remove('welcome');
 
         document.getElementById('right-buttons').classList.remove('vanish');
+        document.getElementById('send-actions').classList.remove('vanish');
+        utilities.getNodes('.actions-button:not(:disabled)').forEach( (i) => i.classList.remove('invisible') );
 
         if (target.id == "wca-content") {
             document.getElementById('wca-content').innerHTML = Wca(selectedScorecard);
@@ -200,11 +226,11 @@ const loadScorecard = (url) => {
 
             document.getElementById('hubs-content').innerHTML = Hubs(hubsData);
         } else {
-            const actions = document.querySelector('.active-action').id.split('-')[0];
-            const actionsCurrent = selectedScorecard[`${actions}data`];
-            const actionsPrevious = result.d.results[1] ? new ScoreCardsItem(result.d.results[1])[`${actions}data`] : null;
+            const actionsId = document.querySelector('.active-action').id;
+            const previousScorecard = result.d.results[1];
+            const actionsData = utilities.getActionsData(actionsId, selectedScorecard, previousScorecard);
 
-            console.log(actionsPrevious, actionsCurrent)
+            document.getElementById(actionsId).innerHTML = Actions(actionsData);
         }
 
         if (app.admin) {
@@ -306,8 +332,11 @@ const headerListeners = () => {
     utilities.on('#scorecards-header', 'click', '#edit-button', editScorecard);
     utilities.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
     utilities.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
-    utilities.on('#scorecards-header', 'click', '.context-button', toggleView)
+    utilities.on('#scorecards-header', 'click', '.context-button', toggleView);
     utilities.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
+
+    utilities.on('#scorecards-content', 'click', '.actions-button', toggleAction);
+    utilities.on('#scorecards-content', 'click', '.add-action', addAction);
 };
 
 export { Header, ActionsPanel, headerListeners, appController };

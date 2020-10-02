@@ -7,7 +7,7 @@ import { App, Admin } from "./js/app.js";
 import { scorecardsListeners } from "./js/scorecards.js";
 import { Modal, modalListeners } from "./js/settings.js";
 import { Header, ActionsPanel, headerListeners, appController } from "./js/controller.js";
-
+/* handle after sleep mode... refresh app */
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 const scorecardsListColumns = ["scoredate", "Id", "Title"];
 
@@ -19,10 +19,6 @@ const data = {
     settingsData: `${_spPageContextInfo.webServerRelativeUrl}/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=${settingsListColumns.join()}&$orderby=Position asc`,
     scorecardsData: `${_spPageContextInfo.webServerRelativeUrl}/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=${scorecardsListColumns.join()}&$orderby=scoredate desc`,
     scorecardsMetadata: `${_spPageContextInfo.webServerRelativeUrl}/_api/web/lists/getbytitle('scorecards-data-v2')`
-    // userData: '/api/user.json',
-    // settingsData: '/api/settings.json',
-    // scorecardsData: '/api/scorecards.json',
-    // scorecardsMetadata: '/api/scorecardsList.json'
 };
 
 receiveData(data.userData).then( (user) => {

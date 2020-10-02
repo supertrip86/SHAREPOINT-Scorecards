@@ -6,6 +6,7 @@ module.exports = {
 	getPreviousDate: getPreviousDate,
 	getMonths: getMonths,
 	getHeaderData: getHeaderData,
+	getActionsData: getActionsData,
 	filterOut: filterOut,
 	isHubsDataEmpty: isHubsDataEmpty,
 	updateSPToken: updateSPToken,
@@ -81,6 +82,15 @@ function getHeaderData() {
 		minDate: date,
 		isAdmin: app.admin
     };
+}
+
+function getActionsData(id, currentItem, previousItem) {
+	const actionsTarget = id.split('-')[0];
+	const actionsCurrent = currentItem[`${actionsTarget}action`];
+	const actionsPrevious = previousItem ? previousItem[`${actionsTarget}action`] : null;
+	const settings = app.settings;
+
+	return {current: actionsCurrent, previous: actionsPrevious, settings: settings};
 }
 
 function filterOut(value) {

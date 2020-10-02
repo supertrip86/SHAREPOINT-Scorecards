@@ -46828,6 +46828,105 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/hbs/actions.hbs":
+/*!*****************************!*\
+  !*** ./src/hbs/actions.hbs ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<ul class=\"responsive-table\">\r\n    "
+    + container.escapeExpression(lookupProperty(helpers,"log").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"log","hash":{},"data":data,"loc":{"start":{"line":2,"column":4},"end":{"line":2,"column":16}}}))
+    + "\r\n</ul>";
+},"useData":true});
+
+/***/ }),
+
+/***/ "./src/hbs/actionsEdit.hbs":
+/*!*********************************!*\
+  !*** ./src/hbs/actionsEdit.hbs ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":2,"column":4},"end":{"line":4,"column":13}}})) != null ? stack1 : "");
+},"2":function(container,depth0,helpers,partials,data) {
+    return "\r\n";
+},"4":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":5,"column":0},"end":{"line":17,"column":0}}})) != null ? stack1 : "");
+},"5":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":6,"column":4},"end":{"line":8,"column":13}}})) != null ? stack1 : "");
+},"7":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"settings") : depth0),{"name":"each","hash":{},"fn":container.program(8, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":10,"column":4},"end":{"line":16,"column":13}}})) != null ? stack1 : "");
+},"8":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "    <div id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"Code") || (depth0 != null ? lookupProperty(depth0,"Code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Code","hash":{},"data":data,"loc":{"start":{"line":11,"column":13},"end":{"line":11,"column":21}}}) : helper)))
+    + "-header\" data-row=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":11,"column":40},"end":{"line":11,"column":50}}}) : helper)))
+    + "\" data-max=\"0\" class=\"responsive-header\">\r\n        <button class=\"add-action\">Add</button>\r\n        <div class=\"action-title\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":13,"column":34},"end":{"line":13,"column":43}}}) : helper)))
+    + "</div>\r\n        <div class=\"action-elements\"></div>\r\n    </div>\r\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(4, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":17,"column":7}}})) != null ? stack1 : "");
+},"useData":true});
+
+/***/ }),
+
 /***/ "./src/hbs/actionsPanel.hbs":
 /*!**********************************!*\
   !*** ./src/hbs/actionsPanel.hbs ***!
@@ -46838,7 +46937,7 @@ module.exports = g;
 var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"actions-header\">\r\n    <button id=\"west-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Dakar</span>\r\n    </button>\r\n    <button id=\"coastal-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Abidjan</span>\r\n    </button>\r\n    <button id=\"central-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Yaoundé</span>\r\n    </button>\r\n</div>\r\n<div id=\"actions-body\">\r\n    <div id=\"west-action\" class=\"container actions-container vanish\"></div>\r\n    <div id=\"coastal-action\" class=\"container actions-container vanish\"></div>\r\n    <div id=\"central-action\" class=\"container actions-container vanish\"></div>\r\n</div>";
+    return "<div class=\"actions-header\">\r\n    <button id=\"west-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Dakar</span>\r\n    </button>\r\n    <button id=\"coastal-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Abidjan</span>\r\n    </button>\r\n    <button id=\"central-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Yaoundé</span>\r\n    </button>\r\n    <button id=\"send-actions\" class=\"btn btn-primary\">\r\n        <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-envelope-fill\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n            <path fill-rule=\"evenodd\" d=\"M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z\"/>\r\n        </svg>\r\n        <span>Submit</span>\r\n    </button>\r\n</div>\r\n<div class=\"actions-table-header\">\r\n    <div class=\"col column-1\">\r\n        <div>Project</div>\r\n        <div class=\"subtitle\">Where?</div>\r\n    </div>\r\n    <div class=\"col column-2\">Country</div>\r\n    <div class=\"col column-3\">Stage</div>\r\n    <div class=\"col column-4\">\r\n        <div>Action</div>\r\n        <div class=\"subtitle\">What?</div>\r\n    </div>\r\n    <div class=\"col column-5\">Status</div>\r\n    <div class=\"col column-6\">Updates</div>\r\n    <div class=\"col column-7\">\r\n        <div>Lead</div>\r\n        <div class=\"subtitle\">Who?</div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <div>Deadline</div>\r\n        <div class=\"subtitle\">When?</div>\r\n    </div>\r\n</div>\r\n<div id=\"actions-body\">\r\n    <div id=\"west-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"coastal-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"central-action\" class=\"actions-container vanish\"></div>\r\n</div>";
 },"useData":true});
 
 /***/ }),
@@ -47446,6 +47545,21 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 /***/ }),
 
+/***/ "./src/hbs/partials/actionsElement.hbs":
+/*!*********************************************!*\
+  !*** ./src/hbs/partials/actionsElement.hbs ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
+function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"responsive-element\">\r\n    <button class=\"delete-action\"></button>\r\n\r\n    <button class=\"notify-action\"></button>\r\n</div>";
+},"useData":true});
+
+/***/ }),
+
 /***/ "./src/hbs/partials/cancelButton.hbs":
 /*!*******************************************!*\
   !*** ./src/hbs/partials/cancelButton.hbs ***!
@@ -47820,6 +47934,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/* handle after sleep mode... refresh app */
+
 var settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 var scorecardsListColumns = ["scoredate", "Id", "Title"];
 var data = {
@@ -47829,11 +47945,7 @@ var data = {
   userData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/currentuser/?$expand=groups"),
   settingsData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=").concat(settingsListColumns.join(), "&$orderby=Position asc"),
   scorecardsData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=").concat(scorecardsListColumns.join(), "&$orderby=scoredate desc"),
-  scorecardsMetadata: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')") // userData: '/api/user.json',
-  // settingsData: '/api/settings.json',
-  // scorecardsData: '/api/scorecards.json',
-  // scorecardsMetadata: '/api/scorecardsList.json'
-
+  scorecardsMetadata: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')")
 };
 Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.userData).then(user => {
   data.isAdmin = !!user.d.Groups.results.filter(i => i.Title == "Tools Owners").length;
@@ -47960,21 +48072,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hbs/hubsEdit.hbs */ "./src/hbs/hubsEdit.hbs");
 /* harmony import */ var _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! html2pdf.js */ "./node_modules/html2pdf.js/dist/html2pdf.js");
-/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(html2pdf_js__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
-/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
-/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+/* harmony import */ var _hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../hbs/actions.hbs */ "./src/hbs/actions.hbs");
+/* harmony import */ var _hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../hbs/actionsEdit.hbs */ "./src/hbs/actionsEdit.hbs");
+/* harmony import */ var _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../hbs/partials/actionsElement.hbs */ "./src/hbs/partials/actionsElement.hbs");
+/* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! html2pdf.js */ "./node_modules/html2pdf.js/dist/html2pdf.js");
+/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(html2pdf_js__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
+/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+
+
+
 
 
 
@@ -48001,10 +48122,10 @@ var updateDates = () => {
   var wcaView = document.getElementById('wca-content');
 
   if (wcaView.classList.contains('create-mode')) {
-    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.createScorecardTitle());
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
+    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.createScorecardTitle());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
       var date = i.dataset.date;
-      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_17___default()(date);
+      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20___default()(date);
     });
   }
 };
@@ -48016,6 +48137,17 @@ var toggleView = e => {
   var view = context != "actions" ? context : selectedAction;
   var hash = location.hash.split('-');
   location.hash = "".concat(view, "-").concat(hash[1], "-").concat(hash[2]);
+};
+
+var toggleAction = e => {
+  var hash = location.hash.split('-');
+  var view = e.target.id.split('-')[0];
+  location.hash = "".concat(view, "-").concat(hash[1], "-").concat(hash[2]);
+};
+
+var addAction = e => {
+  var container = e.target.parentElement.querySelector('.action-elements');
+  container.insertAdjacentHTML('beforeend', _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14___default()());
 };
 
 var initHubsData = () => {
@@ -48060,10 +48192,10 @@ var highlightCells = a => {
         rightCounter += 1;
       }
     });
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightValues(leftValues, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightValues(rightValues, code, 2);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightValues(leftValues, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightValues(rightValues, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
   });
 };
 
@@ -48088,32 +48220,37 @@ var exportScorecard = () => {
 
   if (context != "actions-content") {
     target.classList.add('export-view');
-    html2pdf_js__WEBPACK_IMPORTED_MODULE_14___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
+    html2pdf_js__WEBPACK_IMPORTED_MODULE_17___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
   }
 };
 
 var editScorecard = () => {
-  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getItemURL();
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_20__["receiveData"])(url).then(result => {
+  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL();
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content').id;
-    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__["ScoreCardsItem"](result.d.results[0]);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12___default()();
+    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15___default()();
     document.getElementById('right-buttons').classList.add('vanish');
+    document.getElementById('send-actions').classList.add('vanish');
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.add('invisible'));
     document.getElementById('save-button').removeAttribute('disabled');
 
     if (target == "wca-content") {
       document.getElementById('wca-content').innerHTML = _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default()(scorecards);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.comment-wrapper').forEach(i => {
-        new quill__WEBPACK_IMPORTED_MODULE_15___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.editorOptions());
+      _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.comment-wrapper').forEach(i => {
+        new quill__WEBPACK_IMPORTED_MODULE_18___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.editorOptions());
         i.querySelector('.ql-toolbar').classList.add('vanish');
       });
-      !_utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.isHubsDataEmpty() && highlightCells(scorecards);
+      !_utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.isHubsDataEmpty() && highlightCells(scorecards);
     } else if (target == "hubs-content") {
-      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_19__["HubsItem"](scorecards);
+      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__["HubsItem"](scorecards);
       document.getElementById('hubs-content').innerHTML = _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11___default()(item);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.isHubsDataEmpty() && initHubsData();
+      _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.isHubsDataEmpty() && initHubsData();
     } else if (target == "actions-content") {
-      console.log('actions-content');
+      var actionsId = document.querySelector('.active-action').id;
+      var previousScorecard = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[1]) : null;
+      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, scorecards, previousScorecard);
+      document.getElementById(actionsId).innerHTML = _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13___default()(actionsData);
     }
   });
 };
@@ -48122,9 +48259,9 @@ var cancelEdit = () => {
   var target = document.querySelector('.active-content');
 
   if (target.classList.contains('create-mode')) {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
   } else {
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getItemURL();
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL();
     target.classList.remove('create-mode');
     loadScorecard(url);
   }
@@ -48136,34 +48273,36 @@ var startCreateMode = () => {
 
 var getScorecard = e => {
   var date = e.target.dataset.date;
-  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.generateHash(date);
+  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateHash(date);
   location.hash = newHash;
 };
 
 var loadScorecard = url => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_20__["receiveData"])(url).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content');
     var main = document.getElementById('scorecards-content');
-    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__["ScoreCardsItem"](result.d.results[0]);
+    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
     app.current = selectedScorecard;
     main.setAttribute('data-date', selectedScorecard.scoredate);
     main.classList.remove('welcome');
     document.getElementById('right-buttons').classList.remove('vanish');
+    document.getElementById('send-actions').classList.remove('vanish');
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.remove('invisible'));
 
     if (target.id == "wca-content") {
       document.getElementById('wca-content').innerHTML = _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_7___default()(selectedScorecard);
     } else if (target.id == "hubs-content") {
-      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_19__["HubsItem"](selectedScorecard);
+      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__["HubsItem"](selectedScorecard);
       document.getElementById('hubs-content').innerHTML = _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10___default()(hubsData);
     } else {
-      var actions = document.querySelector('.active-action').id.split('-')[0];
-      var actionsCurrent = selectedScorecard["".concat(actions, "data")];
-      var actionsPrevious = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_18__["ScoreCardsItem"](result.d.results[1])["".concat(actions, "data")] : null;
-      console.log(actionsPrevious, actionsCurrent);
+      var actionsId = document.querySelector('.active-action').id;
+      var previousScorecard = result.d.results[1];
+      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, selectedScorecard, previousScorecard);
+      document.getElementById(actionsId).innerHTML = _hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12___default()(actionsData);
     }
 
     if (app.admin) {
-      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_13___default()();
+      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16___default()();
       document.getElementById('date-button').classList.add('vanish');
       document.getElementById('edit-button').classList.remove('vanish');
       document.getElementById('save-button').classList.remove('vanish');
@@ -48175,17 +48314,17 @@ var loadScorecard = url => {
 };
 
 var createScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_20__["receiveData"])(app.storage.settingsURL).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(app.storage.settingsURL).then(result => {
     document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8___default()(result.d.results);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_12___default()();
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15___default()();
     document.getElementById('scorecards-content').classList.remove('welcome');
     document.getElementById('wca-content').classList.add('create-mode', 'active-content');
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('save-button').classList.remove('vanish');
     document.getElementById('date-button').classList.remove('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.comment-wrapper').forEach(i => {
-      new quill__WEBPACK_IMPORTED_MODULE_15___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.editorOptions());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.comment-wrapper').forEach(i => {
+      new quill__WEBPACK_IMPORTED_MODULE_18___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.editorOptions());
       i.querySelector('.ql-toolbar').classList.add('vanish');
     });
   });
@@ -48193,29 +48332,29 @@ var createScorecard = () => {
 
 var appController = () => {
   var hash = location.hash.replace('#', '');
-  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.validateHash();
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.scorecards-container').forEach(i => {
+  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.validateHash();
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.scorecards-container').forEach(i => {
     i.classList.remove('create-mode');
     i.classList.remove('active-content');
     i.classList.add('vanish');
   });
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.actions-container').forEach(i => {
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-container').forEach(i => {
     i.classList.remove('active-action');
     i.classList.add('vanish');
   });
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getNodes('.actions-button').forEach(i => i.removeAttribute('disabled'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button').forEach(i => i.removeAttribute('disabled'));
 
   if (hash == "create-mode") {
     document.getElementById('wca-content').classList.add('active-content');
     document.getElementById('wca-content').classList.remove('vanish');
-    app.admin ? createScorecard() : _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.reload();
+    app.admin ? createScorecard() : _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
     document.querySelector('body').removeAttribute('class');
   } else if (validateHash) {
     var target = hash.split('-')[0];
-    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.generateView(hash)[0];
-    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.generateView(hash)[1];
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.getItemURL(date);
+    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateView(hash)[0];
+    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateView(hash)[1];
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL(date);
     document.getElementById(view).classList.add('active-content');
     document.getElementById(view).classList.remove('vanish');
     document.getElementById("".concat(target, "-view")).setAttribute('disabled', 'disabled');
@@ -48233,21 +48372,23 @@ var appController = () => {
     document.querySelector('body').classList.add('welcome');
     document.querySelector('body').classList.remove('vanish');
   } else {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
   }
 };
 
 var headerListeners = () => {
   window.addEventListener('hashchange', appController);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.preventDefault);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_20__["modifyScorecards"]);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_16___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.preventDefault);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_23__["modifyScorecards"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-content', 'click', '.actions-button', toggleAction);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-content', 'click', '.add-action', addAction);
 };
 
 
@@ -48906,6 +49047,7 @@ module.exports = {
   getPreviousDate: getPreviousDate,
   getMonths: getMonths,
   getHeaderData: getHeaderData,
+  getActionsData: getActionsData,
   filterOut: filterOut,
   isHubsDataEmpty: isHubsDataEmpty,
   updateSPToken: updateSPToken,
@@ -48975,6 +49117,18 @@ function getHeaderData() {
     scorecards: app.scorecards,
     minDate: date,
     isAdmin: app.admin
+  };
+}
+
+function getActionsData(id, currentItem, previousItem) {
+  var actionsTarget = id.split('-')[0];
+  var actionsCurrent = currentItem["".concat(actionsTarget, "action")];
+  var actionsPrevious = previousItem ? previousItem["".concat(actionsTarget, "action")] : null;
+  var settings = app.settings;
+  return {
+    current: actionsCurrent,
+    previous: actionsPrevious,
+    settings: settings
   };
 }
 
