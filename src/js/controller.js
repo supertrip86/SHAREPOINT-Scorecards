@@ -12,7 +12,6 @@ import Hubs from "../hbs/hubs.hbs";
 import HubsEdit from "../hbs/hubsEdit.hbs";
 import Actions from "../hbs/actions.hbs";
 import ActionsEdit from "../hbs/actionsEdit.hbs";
-import ActionsElement from "../hbs/partials/actionsElement.hbs";
 import CancelButton from "../hbs/partials/cancelButton.hbs";
 import EditButton from "../hbs/partials/editButton.hbs";
 import html2pdf from "html2pdf.js";
@@ -45,19 +44,6 @@ const toggleView = (e) => {
     const hash = location.hash.split('-');
 
     location.hash = `${view}-${hash[1]}-${hash[2]}`;
-};
-
-const toggleAction = (e) => {
-    const hash = location.hash.split('-');
-    const view = e.target.id.split('-')[0];
-
-    location.hash = `${view}-${hash[1]}-${hash[2]}`;
-};
-
-const addAction = (e) => {
-    const container = e.target.parentElement.querySelector('.action-elements');
-
-    container.insertAdjacentHTML( 'beforeend', ActionsElement() );
 };
 
 const initHubsData = () => {
@@ -159,13 +145,13 @@ const editScorecard = () => {
                 new Quill(i.querySelector('.comment-inner'), utilities.editorOptions());
                 i.querySelector('.ql-toolbar').classList.add('vanish');
             });
-            !utilities.isHubsDataEmpty() && highlightCells(scorecards);
+            !utilities.areColumnsEmpty(scorecards, 'data') && highlightCells(scorecards);
 
         } else if (target == "hubs-content") {
             const item = new HubsItem(scorecards);
 
             document.getElementById('hubs-content').innerHTML = HubsEdit(item);
-            utilities.isHubsDataEmpty() && initHubsData();
+            utilities.areColumnsEmpty(scorecards, 'action') && initHubsData();
 
         } else if (target == "actions-content") {
             const actionsId = document.querySelector('.active-action').id;
@@ -334,9 +320,6 @@ const headerListeners = () => {
     utilities.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
     utilities.on('#scorecards-header', 'click', '.context-button', toggleView);
     utilities.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
-
-    utilities.on('#scorecards-content', 'click', '.actions-button', toggleAction);
-    utilities.on('#scorecards-content', 'click', '.add-action', addAction);
 };
 
 export { Header, ActionsPanel, headerListeners, appController };

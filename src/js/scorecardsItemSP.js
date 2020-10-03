@@ -2,23 +2,31 @@ import utilities from "./utilities";
 
 class ScoreCardsItemSP {
     constructor(retrieved, previous, context, createMode) {
-        (context == "wca-content" && createMode) && ( this.Title = utilities.createScorecardTitle() );
-        (context == "wca-content" && createMode) && ( this.scoredate = utilities.fromDateToSP() );
-        (context == "wca-content" && createMode) && ( this.motto = document.querySelector('.scorecard-motto').value );
-        (context == "wca-content" && createMode) && ( this.comment = document.querySelector('.scorecard-main-summary .ql-editor').innerHTML );
-        (context == "wca-content" && createMode) && ( this.wcadata = this.createWca() );
+        (context == "wca" && createMode) && ( this.Title = utilities.createScorecardTitle() );
+        (context == "wca" && createMode) && ( this.scoredate = utilities.fromDateToSP() );
+        (context == "wca" && createMode) && ( this.motto = document.querySelector('.scorecard-motto').value );
+        (context == "wca" && createMode) && ( this.comment = document.querySelector('.scorecard-main-summary .ql-editor').innerHTML );
+        (context == "wca" && createMode) && ( this.wcadata = this.createWca() );
 
-        (context == "wca-content" && !createMode) && ( this.motto = this.editMotto(retrieved, previous) );
-        (context == "wca-content" && !createMode) && ( this.comment = this.editComment(retrieved, previous) );
-        (context == "wca-content" && !createMode) && ( this.wcadata = this.editWca(retrieved, previous) );
+        (context == "wca" && !createMode) && ( this.motto = this.editMotto(retrieved, previous) );
+        (context == "wca" && !createMode) && ( this.comment = this.editComment(retrieved, previous) );
+        (context == "wca" && !createMode) && ( this.wcadata = this.editWca(retrieved, previous) );
 
-        (context == "hubs-content" && createMode) && ( this.westdata = this.createHubs('west') );
-        (context == "hubs-content" && createMode) && ( this.coastaldata = this.createHubs('coastal') );
-        (context == "hubs-content" && createMode) && ( this.centraldata = this.createHubs('central') );
+        (context == "hubs" && createMode) && ( this.westdata = this.createHubs('west') );
+        (context == "hubs" && createMode) && ( this.coastaldata = this.createHubs('coastal') );
+        (context == "hubs" && createMode) && ( this.centraldata = this.createHubs('central') );
 
-        (context == "hubs-content" && !createMode) && ( this.westdata = this.editHubs(retrieved, previous, 'west') );
-        (context == "hubs-content" && !createMode) && ( this.coastaldata = this.editHubs(retrieved, previous, 'coastal') );
-        (context == "hubs-content" && !createMode) && ( this.centraldata = this.editHubs(retrieved, previous, 'central') );
+        (context == "hubs" && !createMode) && ( this.westdata = this.editHubs(retrieved, previous, 'west') );
+        (context == "hubs" && !createMode) && ( this.coastaldata = this.editHubs(retrieved, previous, 'coastal') );
+        (context == "hubs" && !createMode) && ( this.centraldata = this.editHubs(retrieved, previous, 'central') );
+
+        (context == "actions" && createMode) && ( this.westdata = this.createActions('west') );
+        (context == "actions" && createMode) && ( this.coastaldata = this.createActions('coastal') );
+        (context == "actions" && createMode) && ( this.centraldata = this.createActions('central') );
+
+        (context == "actions" && !createMode) && ( this.westdata = this.createActions(retrieved, previous, 'west') );
+        (context == "actions" && !createMode) && ( this.coastaldata = this.createActions(retrieved, previous, 'coastal') );
+        (context == "actions" && !createMode) && ( this.centraldata = this.createActions(retrieved, previous, 'central') );
 
         this.__metadata = { type: app.storage.scorecardsType };
     }
@@ -26,7 +34,7 @@ class ScoreCardsItemSP {
     createWca() {
         let wca = {};
 
-        utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
+        utilities.getNodes('.active .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
 
             wca[code] = {};
@@ -59,10 +67,10 @@ class ScoreCardsItemSP {
         data[hub] = {};
 
         app.settings.forEach( (i) => {
-            const code = i.Code;
+            let code = i.Code;
 
-            const left = document.getElementById(`${code}-hub-row-left`);
-            const right = document.getElementById(`${code}-hub-row-right`);
+            let left = document.getElementById(`${code}-hub-row-left`);
+            let right = document.getElementById(`${code}-hub-row-right`);
 
             data[hub][code] = {};
 
@@ -84,10 +92,36 @@ class ScoreCardsItemSP {
         return JSON.stringify(data[hub]);
     }
 
+    createActions(action) {
+        let data = {};
+        data[action] = {};
+
+        utilities.getNodes('.active-action .responsive-header').forEach( (i) => {
+            let code = i.id.split('-')[0];
+            data[action][code] = {};
+
+            i.querySelectorAll('.responsive-element').forEach( (d) => {
+                let id = `${code}-${d.dataset.action}`;
+                data[action][code][id] = {};
+
+                data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
+                data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
+                data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value;
+                data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value;
+                data[action][code][id]['Status'] = d.querySelector('.column-5 select').value;
+                data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value;
+                data[action][code][id]['Lead']
+                data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value;
+            });
+        });
+
+        return JSON.stringify(data[action]);
+    }
+
     editWca(retrieved, previous) {
         let column = {};
     
-        utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
+        utilities.getNodes('.active .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
             let old = previous.wcadata[code];
     
@@ -123,7 +157,7 @@ class ScoreCardsItemSP {
     editHubs(retrieved, previous, hub) {
         let column = {};
 
-        utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
+        utilities.getNodes('.active .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
             let old = previous[`${hub}data`][code];
 

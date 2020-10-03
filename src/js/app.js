@@ -23,6 +23,7 @@ class Admin extends App {
         super(data);
 
         this.admin = true;
+        this.users = data.usersList;
     }
 };
 

@@ -5,10 +5,11 @@ module.exports = {
 	getItemURL: getItemURL,
 	getPreviousDate: getPreviousDate,
 	getMonths: getMonths,
+	getAllUsers: getAllUsers,
 	getHeaderData: getHeaderData,
 	getActionsData: getActionsData,
 	filterOut: filterOut,
-	isHubsDataEmpty: isHubsDataEmpty,
+	areColumnsEmpty: areColumnsEmpty,
 	updateSPToken: updateSPToken,
 	startLoader: startLoader,
 	reload: reload,
@@ -68,6 +69,22 @@ function getMonths() {
 	return [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 }
 
+function getAllUsers(data) {
+	let users = [];
+
+	data.forEach( (i) => {
+		if (i.Title.indexOf(", ") > -1 && i.Email.indexOf("@ifad.org") > -1) {
+			users.push({
+				label: i.Title,
+				value: i.Title,
+				email: i.Email
+			});
+		}
+	});
+
+	return users;
+}
+
 function getHeaderData() {
 	const split = app.scorecards.length ? app.scorecards[0].scoredate.split('-') : [];
 
@@ -97,10 +114,10 @@ function filterOut(value) {
 	return isNaN(parseInt(value)) ? "" : value;
 }
 
-function isHubsDataEmpty() {
-	const isWestEmpty = !app.current.westdata;
-	const isCoastalEmpty = !app.current.coastaldata;
-	const isCentralEmpty = !app.current.centraldata;
+function areColumnsEmpty(scorecards, context) {
+	const isWestEmpty = !scorecards[`west${context}`];
+	const isCoastalEmpty = !scorecards[`coastal${context}`];
+	const isCentralEmpty = !scorecards[`central${context}`];
 
 	return isWestEmpty && isCoastalEmpty && isCentralEmpty;
 }

@@ -42994,6 +42994,514 @@ module.exports = __webpack_require__(63);
 
 /***/ }),
 
+/***/ "./node_modules/select-pure/lib/components/Element.js":
+/*!************************************************************!*\
+  !*** ./node_modules/select-pure/lib/components/Element.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var allowedAttributes = {
+  value: "data-value",
+  disabled: "data-disabled",
+  "class": "class",
+  type: "type"
+};
+
+var Element = /*#__PURE__*/function () {
+  function Element(element) {
+    var attributes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var i18n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+    _classCallCheck(this, Element);
+
+    this._node = element instanceof HTMLElement ? element : document.createElement(element);
+    this._config = {
+      i18n: i18n
+    };
+
+    this._setAttributes(attributes);
+
+    if (attributes.textContent) {
+      this._setTextContent(attributes.textContent);
+    }
+
+    return this;
+  }
+
+  _createClass(Element, [{
+    key: "get",
+    value: function get() {
+      return this._node;
+    }
+  }, {
+    key: "append",
+    value: function append(element) {
+      this._node.appendChild(element);
+
+      return this;
+    }
+  }, {
+    key: "addClass",
+    value: function addClass(className) {
+      this._node.classList.add(className);
+
+      return this;
+    }
+  }, {
+    key: "removeClass",
+    value: function removeClass(className) {
+      this._node.classList.remove(className);
+
+      return this;
+    }
+  }, {
+    key: "toggleClass",
+    value: function toggleClass(className) {
+      this._node.classList.toggle(className);
+
+      return this;
+    }
+  }, {
+    key: "addEventListener",
+    value: function addEventListener(type, callback) {
+      this._node.addEventListener(type, callback);
+
+      return this;
+    }
+  }, {
+    key: "removeEventListener",
+    value: function removeEventListener(type, callback) {
+      this._node.removeEventListener(type, callback);
+
+      return this;
+    }
+  }, {
+    key: "setText",
+    value: function setText(text) {
+      this._setTextContent(text);
+
+      return this;
+    }
+  }, {
+    key: "getHeight",
+    value: function getHeight() {
+      return window.getComputedStyle(this._node).height;
+    }
+  }, {
+    key: "setTop",
+    value: function setTop(top) {
+      this._node.style.top = "".concat(top, "px");
+      return this;
+    }
+  }, {
+    key: "focus",
+    value: function focus() {
+      this._node.focus();
+
+      return this;
+    }
+  }, {
+    key: "_setTextContent",
+    value: function _setTextContent(textContent) {
+      this._node.textContent = textContent;
+    }
+  }, {
+    key: "_setAttributes",
+    value: function _setAttributes(attributes) {
+      for (var key in attributes) {
+        if (allowedAttributes[key] && attributes[key]) {
+          this._setAttribute(allowedAttributes[key], attributes[key]);
+        }
+      }
+    }
+  }, {
+    key: "_setAttribute",
+    value: function _setAttribute(key, value) {
+      this._node.setAttribute(key, value);
+    }
+  }]);
+
+  return Element;
+}();
+
+exports["default"] = Element;
+
+/***/ }),
+
+/***/ "./node_modules/select-pure/lib/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/select-pure/lib/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Element = __webpack_require__(/*! ./components/Element */ "./node_modules/select-pure/lib/components/Element.js");
+
+var _Element2 = _interopRequireDefault(_Element);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CLASSES = {
+  select: "select-pure__select",
+  dropdownShown: "select-pure__select--opened",
+  multiselect: "select-pure__select--multiple",
+  label: "select-pure__label",
+  placeholder: "select-pure__placeholder",
+  dropdown: "select-pure__options",
+  option: "select-pure__option",
+  optionDisabled: "select-pure__option--disabled",
+  autocompleteInput: "select-pure__autocomplete",
+  selectedLabel: "select-pure__selected-label",
+  selectedOption: "select-pure__option--selected",
+  placeholderHidden: "select-pure__placeholder--hidden",
+  optionHidden: "select-pure__option--hidden"
+};
+
+var SelectPure = /*#__PURE__*/function () {
+  function SelectPure(element, config) {
+    _classCallCheck(this, SelectPure);
+
+    this._config = _objectSpread({}, config, {
+      classNames: _objectSpread({}, CLASSES, {}, config.classNames),
+      disabledOptions: []
+    });
+    this._state = {
+      opened: false
+    };
+    this._icons = [];
+    this._boundHandleClick = this._handleClick.bind(this);
+    this._boundUnselectOption = this._unselectOption.bind(this);
+    this._boundSortOptions = this._sortOptions.bind(this);
+    this._body = new _Element2["default"](document.body);
+
+    this._create(element);
+
+    if (!this._config.value) {
+      return;
+    }
+
+    this._setValue();
+  } // Public API
+
+
+  _createClass(SelectPure, [{
+    key: "value",
+    value: function value() {
+      return this._config.value;
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      this._config.value = this._config.multiple ? [] : null;
+
+      this._setValue();
+    } // Private methods
+
+  }, {
+    key: "_create",
+    value: function _create(_element) {
+      var element = typeof _element === "string" ? document.querySelector(_element) : _element;
+      this._parent = new _Element2["default"](element);
+      this._select = new _Element2["default"]("div", {
+        "class": this._config.classNames.select
+      });
+      this._label = new _Element2["default"]("span", {
+        "class": this._config.classNames.label
+      });
+      this._optionsWrapper = new _Element2["default"]("div", {
+        "class": this._config.classNames.dropdown
+      });
+
+      if (this._config.multiple) {
+        this._select.addClass(this._config.classNames.multiselect);
+      }
+
+      this._options = this._generateOptions();
+
+      this._select.addEventListener("click", this._boundHandleClick);
+
+      this._select.append(this._label.get());
+
+      this._select.append(this._optionsWrapper.get());
+
+      this._parent.append(this._select.get());
+
+      this._placeholder = new _Element2["default"]("span", {
+        "class": this._config.classNames.placeholder,
+        textContent: this._config.placeholder
+      });
+
+      this._select.append(this._placeholder.get());
+    }
+  }, {
+    key: "_generateOptions",
+    value: function _generateOptions() {
+      var _this = this;
+
+      if (this._config.autocomplete) {
+        this._autocomplete = new _Element2["default"]("input", {
+          "class": this._config.classNames.autocompleteInput,
+          type: "text"
+        });
+
+        this._autocomplete.addEventListener("input", this._boundSortOptions);
+
+        this._optionsWrapper.append(this._autocomplete.get());
+      }
+
+      return this._config.options.map(function (_option) {
+        var option = new _Element2["default"]("div", {
+          "class": "".concat(_this._config.classNames.option).concat(_option.disabled ? " " + _this._config.classNames.optionDisabled : ""),
+          value: _option.value,
+          textContent: _option.label,
+          disabled: _option.disabled
+        });
+
+        if (_option.disabled) {
+          _this._config.disabledOptions.push(String(_option.value));
+        }
+
+        _this._optionsWrapper.append(option.get());
+
+        return option;
+      });
+    }
+  }, {
+    key: "_handleClick",
+    value: function _handleClick(event) {
+      event.stopPropagation();
+
+      if (event.target.className === this._config.classNames.autocompleteInput) {
+        return;
+      }
+
+      if (this._state.opened) {
+        var option = this._options.find(function (_option) {
+          return _option.get() === event.target;
+        });
+
+        if (option) {
+          this._setValue(option.get().getAttribute("data-value"), true);
+        }
+
+        this._select.removeClass(this._config.classNames.dropdownShown);
+
+        this._body.removeEventListener("click", this._boundHandleClick);
+
+        this._select.addEventListener("click", this._boundHandleClick);
+
+        this._state.opened = false;
+        return;
+      }
+
+      if (event.target.className === this._config.icon) {
+        return;
+      }
+
+      this._select.addClass(this._config.classNames.dropdownShown);
+
+      this._body.addEventListener("click", this._boundHandleClick);
+
+      this._select.removeEventListener("click", this._boundHandleClick);
+
+      this._state.opened = true;
+
+      if (this._autocomplete) {
+        this._autocomplete.focus();
+      }
+    }
+  }, {
+    key: "_setValue",
+    value: function _setValue(value, manual, unselected) {
+      var _this2 = this;
+
+      if (this._config.disabledOptions.indexOf(value) > -1) {
+        return;
+      }
+
+      if (value && !unselected) {
+        this._config.value = this._config.multiple ? [].concat(_toConsumableArray(this._config.value || []), [value]) : value;
+      }
+
+      if (value && unselected) {
+        this._config.value = value;
+      }
+
+      this._options.forEach(function (_option) {
+        _option.removeClass(_this2._config.classNames.selectedOption);
+      });
+
+      this._placeholder.removeClass(this._config.classNames.placeholderHidden);
+
+      if (this._config.multiple) {
+        var options = this._config.value.map(function (_value) {
+          var option = _this2._config.options.find(function (_option) {
+            return _option.value === _value;
+          });
+
+          var optionNode = _this2._options.find(function (_option) {
+            return _option.get().getAttribute("data-value") === option.value.toString();
+          });
+
+          optionNode.addClass(_this2._config.classNames.selectedOption);
+          return option;
+        });
+
+        if (options.length) {
+          this._placeholder.addClass(this._config.classNames.placeholderHidden);
+        }
+
+        this._selectOptions(options, manual);
+
+        return;
+      }
+
+      var option = this._config.value ? this._config.options.find(function (_option) {
+        return _option.value.toString() === _this2._config.value;
+      }) : this._config.options[0];
+
+      var optionNode = this._options.find(function (_option) {
+        return _option.get().getAttribute("data-value") === option.value.toString();
+      });
+
+      if (!this._config.value) {
+        this._label.setText("");
+
+        return;
+      }
+
+      optionNode.addClass(this._config.classNames.selectedOption);
+
+      this._placeholder.addClass(this._config.classNames.placeholderHidden);
+
+      this._selectOption(option, manual);
+    }
+  }, {
+    key: "_selectOption",
+    value: function _selectOption(option, manual) {
+      this._selectedOption = option;
+
+      this._label.setText(option.label);
+
+      if (this._config.onChange && manual) {
+        this._config.onChange(option.value);
+      }
+    }
+  }, {
+    key: "_selectOptions",
+    value: function _selectOptions(options, manual) {
+      var _this3 = this;
+
+      this._label.setText("");
+
+      this._icons = options.map(function (_option) {
+        var selectedLabel = new _Element2["default"]("span", {
+          "class": _this3._config.classNames.selectedLabel,
+          textContent: _option.label
+        });
+        var icon = new _Element2["default"](_this3._config.inlineIcon ? _this3._config.inlineIcon.cloneNode(true) : "i", {
+          "class": _this3._config.icon,
+          value: _option.value
+        });
+        icon.addEventListener("click", _this3._boundUnselectOption);
+        selectedLabel.append(icon.get());
+
+        _this3._label.append(selectedLabel.get());
+
+        return icon.get();
+      });
+
+      if (manual) {
+        // eslint-disable-next-line no-magic-numbers
+        this._optionsWrapper.setTop(Number(this._select.getHeight().split("px")[0]) + 5);
+      }
+
+      if (this._config.onChange && manual) {
+        this._config.onChange(this._config.value);
+      }
+    }
+  }, {
+    key: "_unselectOption",
+    value: function _unselectOption(event) {
+      var newValue = _toConsumableArray(this._config.value);
+
+      var index = newValue.indexOf(event.target.getAttribute("data-value")); // eslint-disable-next-line no-magic-numbers
+
+      if (index !== -1) {
+        newValue.splice(index, 1);
+      }
+
+      this._setValue(newValue, true, true);
+    }
+  }, {
+    key: "_sortOptions",
+    value: function _sortOptions(event) {
+      var _this4 = this;
+
+      this._options.forEach(function (_option) {
+        if (!_option.get().textContent.toLowerCase().startsWith(event.target.value.toLowerCase())) {
+          _option.addClass(_this4._config.classNames.optionHidden);
+
+          return;
+        }
+
+        _option.removeClass(_this4._config.classNames.optionHidden);
+      });
+    }
+  }]);
+
+  return SelectPure;
+}();
+
+exports["default"] = SelectPure;
+
+/***/ }),
+
 /***/ "./node_modules/sortablejs/modular/sortable.esm.js":
 /*!*********************************************************!*\
   !*** ./node_modules/sortablejs/modular/sortable.esm.js ***!
@@ -47535,8 +48043,8 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "<div class=\"scorecard-label\">\r\n    <h5 class=\"scorecard-title\">(by Hub), "
-    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":2,"column":42},"end":{"line":2,"column":51}}}) : helper)))
+  return "<div class=\"scorecard-label\">\r\n    <h5 class=\"scorecard-title\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":2,"column":32},"end":{"line":2,"column":41}}}) : helper)))
     + "</h5>\r\n    <span class=\"scorecard-motto d-none d-lg-block\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"motto") || (depth0 != null ? lookupProperty(depth0,"motto") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"motto","hash":{},"data":data,"loc":{"start":{"line":3,"column":52},"end":{"line":3,"column":61}}}) : helper)))
     + "</span>\r\n</div>\r\n<div class=\"scorecard-management\">\r\n    <div class=\"management-title d-none d-lg-block\">\r\n        <p>MANAGEMENT TEAM:</p>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/director.jpg\">\r\n        <div>\r\n            <p>Nadine Gbossa</p>\r\n            <p>Regional Director</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/west.jpg\">\r\n        <div>\r\n            <p>Benoit Thierry</p>\r\n            <p>Hub Head, West Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/coastal.jpg\">\r\n        <div>\r\n            <p>Abdul Barry</p>\r\n            <p>Hub Head, Coastal Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/central.jpg\">\r\n        <div>\r\n            <p>Abdelhaq Hanafi</p>\r\n            <p>Hub Head, Central Africa</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
@@ -47555,7 +48063,17 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"responsive-element\">\r\n    <button class=\"delete-action\"></button>\r\n\r\n    <button class=\"notify-action\"></button>\r\n</div>";
+    var alias1=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return alias1(lookupProperty(helpers,"log").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"log","hash":{},"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":1,"column":12}}}))
+    + "\r\n<div class=\"responsive-element\" data-action=\""
+    + alias1(container.lambda(depth0, depth0))
+    + "\">\r\n    <button class=\"delete-action\"></button>\r\n    <div class=\"col column-1\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-2\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-3\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-4\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-5\">\r\n        <select class=\"form-control\">\r\n            <option value=\"\"></option>\r\n            <option value=\"New Action\">New Action</option>\r\n            <option value=\"Ongoing\">Ongoing</option>\r\n            <option value=\"Completed\">Completed</option>\r\n        </select>\r\n    </div>\r\n    <div class=\"col column-6\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-7\">\r\n        <div class=\"action-lead\"></div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <button class=\"notify-action\"></button>\r\n</div>";
 },"useData":true});
 
 /***/ }),
@@ -47923,8 +48441,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_requests_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/requests.js */ "./src/js/requests.js");
 /* harmony import */ var _js_app_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/app.js */ "./src/js/app.js");
 /* harmony import */ var _js_scorecards_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/scorecards.js */ "./src/js/scorecards.js");
-/* harmony import */ var _js_settings_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/settings.js */ "./src/js/settings.js");
-/* harmony import */ var _js_controller_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/controller.js */ "./src/js/controller.js");
+/* harmony import */ var _js_actions_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/actions.js */ "./src/js/actions.js");
+/* harmony import */ var _js_settings_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/settings.js */ "./src/js/settings.js");
+/* harmony import */ var _js_controller_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/controller.js */ "./src/js/controller.js");
+
 
 
 
@@ -47941,11 +48461,12 @@ var scorecardsListColumns = ["scoredate", "Id", "Title"];
 var data = {
   settingsList: 'scorecards-settings-v2',
   scorecardsList: 'scorecards-data-v2',
-  site: _spPageContextInfo.webServerRelativeUrl,
-  userData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/currentuser/?$expand=groups"),
-  settingsData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=").concat(settingsListColumns.join(), "&$orderby=Position asc"),
-  scorecardsData: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=").concat(scorecardsListColumns.join(), "&$orderby=scoredate desc"),
-  scorecardsMetadata: "".concat(_spPageContextInfo.webServerRelativeUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')")
+  site: _spPageContextInfo.webAbsoluteUrl,
+  userData: "".concat(_spPageContextInfo.webAbsoluteUrl, "/_api/web/currentuser/?$expand=groups"),
+  allUsers: "".concat(_spPageContextInfo.webAbsoluteUrl, "/_api/web/siteusers?$select=Title,Email,LoginName"),
+  settingsData: "".concat(_spPageContextInfo.webAbsoluteUrl, "/_api/web/lists/getbytitle('scorecards-settings-v2')/items?$select=").concat(settingsListColumns.join(), "&$orderby=Position asc"),
+  scorecardsData: "".concat(_spPageContextInfo.webAbsoluteUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')/items?$select=").concat(scorecardsListColumns.join(), "&$orderby=scoredate desc"),
+  scorecardsMetadata: "".concat(_spPageContextInfo.webAbsoluteUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')")
 };
 Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.userData).then(user => {
   data.isAdmin = !!user.d.Groups.results.filter(i => i.Title == "Tools Owners").length;
@@ -47953,16 +48474,19 @@ Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.userDat
     data.settings = settingsResult.d.results;
     Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.scorecardsData).then(scorecardsResult => {
       data.scorecards = scorecardsResult.d.results;
+      Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.allUsers).then(allUsers => {
+        data.usersList = _js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.getAllUsers(allUsers.d.results);
 
-      if (!data.scorecards.length) {
-        Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.scorecardsMetadata).then(metadataResult => {
-          data.scorecardsType = metadataResult.d.ListItemEntityTypeFullName;
+        if (!data.scorecards.length) {
+          Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.scorecardsMetadata).then(metadataResult => {
+            data.scorecardsType = metadataResult.d.ListItemEntityTypeFullName;
+            initApp();
+          });
+        } else {
+          data.scorecardsType = data.scorecards[0].__metadata.type;
           initApp();
-        });
-      } else {
-        data.scorecardsType = data.scorecards[0].__metadata.type;
-        initApp();
-      }
+        }
+      });
     });
   });
 });
@@ -47970,21 +48494,80 @@ Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.userDat
 function initApp() {
   if (data.isAdmin) {
     window.app = new _js_app_js__WEBPACK_IMPORTED_MODULE_5__["Admin"](data);
-    document.getElementById("scorecards-dialog").innerHTML = Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_7__["Modal"])(data.settings);
-    Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_7__["modalListeners"])();
+    document.getElementById("scorecards-dialog").innerHTML = Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_8__["Modal"])(data.settings);
+    Object(_js_settings_js__WEBPACK_IMPORTED_MODULE_8__["modalListeners"])();
   } else {
     window.app = new _js_app_js__WEBPACK_IMPORTED_MODULE_5__["App"](data);
   }
 
-  document.getElementById("scorecards-header").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_8__["Header"])(_js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.getHeaderData());
-  document.getElementById("actions-content").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_8__["ActionsPanel"])();
+  document.getElementById("scorecards-header").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["Header"])(_js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.getHeaderData());
+  document.getElementById("actions-content").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["ActionsPanel"])();
   _js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.updateSPToken();
-  Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_8__["headerListeners"])();
+  Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["headerListeners"])();
   Object(_js_scorecards_js__WEBPACK_IMPORTED_MODULE_6__["scorecardsListeners"])();
-  Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_8__["appController"])();
+  Object(_js_actions_js__WEBPACK_IMPORTED_MODULE_7__["actionsListeners"])();
+  Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["appController"])();
 }
 
 ;
+
+/***/ }),
+
+/***/ "./src/js/actions.js":
+/*!***************************!*\
+  !*** ./src/js/actions.js ***!
+  \***************************/
+/*! exports provided: actionsListeners */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actionsListeners", function() { return actionsListeners; });
+/* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../hbs/partials/actionsElement.hbs */ "./src/hbs/partials/actionsElement.hbs");
+/* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var select_pure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! select-pure */ "./node_modules/select-pure/lib/index.js");
+/* harmony import */ var select_pure__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(select_pure__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities */ "./src/js/utilities.js");
+/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utilities__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var toggleAction = e => {
+  var hash = location.hash.split('-');
+  var view = e.target.id.split('-')[0];
+  location.hash = "".concat(view, "-").concat(hash[1], "-").concat(hash[2]);
+};
+
+var addAction = e => {
+  var target = e.target.parentElement;
+  var container = target.querySelector('.action-elements');
+  var max = parseInt(target.dataset.max) + 1;
+  target.dataset.max = max;
+  container.insertAdjacentHTML('beforeend', _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0___default()(max));
+};
+
+var removeAction = e => {
+  e.target.parentElement.remove();
+};
+
+var sendNotification = e => {
+  console.log(e.target.parentElement);
+};
+
+var sendActions = e => {
+  console.log(e.target);
+};
+
+var actionsListeners = () => {
+  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.add-action', addAction);
+  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.delete-action', removeAction);
+  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.notify-action', sendNotification);
+  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.actions-button', toggleAction);
+  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '#send-actions', sendActions);
+};
+
+
 
 /***/ }),
 
@@ -48026,6 +48609,7 @@ class Admin extends App {
   constructor(data) {
     super(data);
     this.admin = true;
+    this.users = data.usersList;
   }
 
 }
@@ -48076,24 +48660,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../hbs/actionsEdit.hbs */ "./src/hbs/actionsEdit.hbs");
 /* harmony import */ var _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../hbs/partials/actionsElement.hbs */ "./src/hbs/partials/actionsElement.hbs");
-/* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
-/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
-/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! html2pdf.js */ "./node_modules/html2pdf.js/dist/html2pdf.js");
-/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(html2pdf_js__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
-/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
-/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
-/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
-
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../hbs/partials/cancelButton.hbs */ "./src/hbs/partials/cancelButton.hbs");
+/* harmony import */ var _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../hbs/partials/editButton.hbs */ "./src/hbs/partials/editButton.hbs");
+/* harmony import */ var _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! html2pdf.js */ "./node_modules/html2pdf.js/dist/html2pdf.js");
+/* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(html2pdf_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
+/* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
+/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
 
 
 
@@ -48122,10 +48703,10 @@ var updateDates = () => {
   var wcaView = document.getElementById('wca-content');
 
   if (wcaView.classList.contains('create-mode')) {
-    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.createScorecardTitle());
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
+    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.createScorecardTitle());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
       var date = i.dataset.date;
-      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20___default()(date);
+      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19___default()(date);
     });
   }
 };
@@ -48137,17 +48718,6 @@ var toggleView = e => {
   var view = context != "actions" ? context : selectedAction;
   var hash = location.hash.split('-');
   location.hash = "".concat(view, "-").concat(hash[1], "-").concat(hash[2]);
-};
-
-var toggleAction = e => {
-  var hash = location.hash.split('-');
-  var view = e.target.id.split('-')[0];
-  location.hash = "".concat(view, "-").concat(hash[1], "-").concat(hash[2]);
-};
-
-var addAction = e => {
-  var container = e.target.parentElement.querySelector('.action-elements');
-  container.insertAdjacentHTML('beforeend', _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_14___default()());
 };
 
 var initHubsData = () => {
@@ -48192,10 +48762,10 @@ var highlightCells = a => {
         rightCounter += 1;
       }
     });
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightValues(leftValues, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightValues(rightValues, code, 2);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightValues(leftValues, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightValues(rightValues, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
   });
 };
 
@@ -48220,36 +48790,36 @@ var exportScorecard = () => {
 
   if (context != "actions-content") {
     target.classList.add('export-view');
-    html2pdf_js__WEBPACK_IMPORTED_MODULE_17___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
+    html2pdf_js__WEBPACK_IMPORTED_MODULE_16___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
   }
 };
 
 var editScorecard = () => {
-  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL();
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
+  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getItemURL();
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_22__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content').id;
-    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15___default()();
+    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__["ScoreCardsItem"](result.d.results[0]);
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default()();
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('send-actions').classList.add('vanish');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.add('invisible'));
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.add('invisible'));
     document.getElementById('save-button').removeAttribute('disabled');
 
     if (target == "wca-content") {
       document.getElementById('wca-content').innerHTML = _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default()(scorecards);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.comment-wrapper').forEach(i => {
-        new quill__WEBPACK_IMPORTED_MODULE_18___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.editorOptions());
+      _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.comment-wrapper').forEach(i => {
+        new quill__WEBPACK_IMPORTED_MODULE_17___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.editorOptions());
         i.querySelector('.ql-toolbar').classList.add('vanish');
       });
-      !_utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.isHubsDataEmpty() && highlightCells(scorecards);
+      !_utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.areColumnsEmpty(scorecards, 'data') && highlightCells(scorecards);
     } else if (target == "hubs-content") {
-      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__["HubsItem"](scorecards);
+      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_21__["HubsItem"](scorecards);
       document.getElementById('hubs-content').innerHTML = _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11___default()(item);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.isHubsDataEmpty() && initHubsData();
+      _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.areColumnsEmpty(scorecards, 'action') && initHubsData();
     } else if (target == "actions-content") {
       var actionsId = document.querySelector('.active-action').id;
-      var previousScorecard = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[1]) : null;
-      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, scorecards, previousScorecard);
+      var previousScorecard = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__["ScoreCardsItem"](result.d.results[1]) : null;
+      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getActionsData(actionsId, scorecards, previousScorecard);
       document.getElementById(actionsId).innerHTML = _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13___default()(actionsData);
     }
   });
@@ -48259,9 +48829,9 @@ var cancelEdit = () => {
   var target = document.querySelector('.active-content');
 
   if (target.classList.contains('create-mode')) {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.reload();
   } else {
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL();
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getItemURL();
     target.classList.remove('create-mode');
     loadScorecard(url);
   }
@@ -48273,36 +48843,36 @@ var startCreateMode = () => {
 
 var getScorecard = e => {
   var date = e.target.dataset.date;
-  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateHash(date);
+  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.generateHash(date);
   location.hash = newHash;
 };
 
 var loadScorecard = url => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_22__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content');
     var main = document.getElementById('scorecards-content');
-    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
+    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__["ScoreCardsItem"](result.d.results[0]);
     app.current = selectedScorecard;
     main.setAttribute('data-date', selectedScorecard.scoredate);
     main.classList.remove('welcome');
     document.getElementById('right-buttons').classList.remove('vanish');
     document.getElementById('send-actions').classList.remove('vanish');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.remove('invisible'));
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.remove('invisible'));
 
     if (target.id == "wca-content") {
       document.getElementById('wca-content').innerHTML = _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_7___default()(selectedScorecard);
     } else if (target.id == "hubs-content") {
-      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__["HubsItem"](selectedScorecard);
+      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_21__["HubsItem"](selectedScorecard);
       document.getElementById('hubs-content').innerHTML = _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10___default()(hubsData);
     } else {
       var actionsId = document.querySelector('.active-action').id;
       var previousScorecard = result.d.results[1];
-      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, selectedScorecard, previousScorecard);
+      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getActionsData(actionsId, selectedScorecard, previousScorecard);
       document.getElementById(actionsId).innerHTML = _hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12___default()(actionsData);
     }
 
     if (app.admin) {
-      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_16___default()();
+      document.getElementById('toggle-button').innerHTML = _hbs_partials_editButton_hbs__WEBPACK_IMPORTED_MODULE_15___default()();
       document.getElementById('date-button').classList.add('vanish');
       document.getElementById('edit-button').classList.remove('vanish');
       document.getElementById('save-button').classList.remove('vanish');
@@ -48314,17 +48884,17 @@ var loadScorecard = url => {
 };
 
 var createScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(app.storage.settingsURL).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_22__["receiveData"])(app.storage.settingsURL).then(result => {
     document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8___default()(result.d.results);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_15___default()();
+    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default()();
     document.getElementById('scorecards-content').classList.remove('welcome');
     document.getElementById('wca-content').classList.add('create-mode', 'active-content');
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('save-button').classList.remove('vanish');
     document.getElementById('date-button').classList.remove('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.comment-wrapper').forEach(i => {
-      new quill__WEBPACK_IMPORTED_MODULE_18___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.editorOptions());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.comment-wrapper').forEach(i => {
+      new quill__WEBPACK_IMPORTED_MODULE_17___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.editorOptions());
       i.querySelector('.ql-toolbar').classList.add('vanish');
     });
   });
@@ -48332,29 +48902,29 @@ var createScorecard = () => {
 
 var appController = () => {
   var hash = location.hash.replace('#', '');
-  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.validateHash();
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.scorecards-container').forEach(i => {
+  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.validateHash();
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.scorecards-container').forEach(i => {
     i.classList.remove('create-mode');
     i.classList.remove('active-content');
     i.classList.add('vanish');
   });
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-container').forEach(i => {
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-container').forEach(i => {
     i.classList.remove('active-action');
     i.classList.add('vanish');
   });
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button').forEach(i => i.removeAttribute('disabled'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-button').forEach(i => i.removeAttribute('disabled'));
 
   if (hash == "create-mode") {
     document.getElementById('wca-content').classList.add('active-content');
     document.getElementById('wca-content').classList.remove('vanish');
-    app.admin ? createScorecard() : _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
+    app.admin ? createScorecard() : _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.reload();
     document.querySelector('body').removeAttribute('class');
   } else if (validateHash) {
     var target = hash.split('-')[0];
-    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateView(hash)[0];
-    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateView(hash)[1];
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL(date);
+    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.generateView(hash)[0];
+    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.generateView(hash)[1];
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getItemURL(date);
     document.getElementById(view).classList.add('active-content');
     document.getElementById(view).classList.remove('vanish');
     document.getElementById("".concat(target, "-view")).setAttribute('disabled', 'disabled');
@@ -48372,23 +48942,21 @@ var appController = () => {
     document.querySelector('body').classList.add('welcome');
     document.querySelector('body').classList.remove('vanish');
   } else {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.reload();
   }
 };
 
 var headerListeners = () => {
   window.addEventListener('hashchange', appController);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.preventDefault);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_23__["modifyScorecards"]);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-content', 'click', '.actions-button', toggleAction);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-content', 'click', '.add-action', addAction);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.preventDefault);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_22__["modifyScorecards"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
 };
 
 
@@ -48582,7 +49150,7 @@ var modifySettings = () => {
 
 var modifyScorecards = () => {
   var target = document.querySelector('.active-content');
-  var context = target.id;
+  var context = target.id.split('-')[0];
   var createMode = target.classList.contains('create-mode');
 
   if (createMode) {
@@ -48595,14 +49163,18 @@ var modifyScorecards = () => {
       var previous = app.current;
       var id = retrieved.Id; // maybe get rid of if else 
 
-      if (context == "wca-content") {
+      if (context == "wca") {
         var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, createMode);
         saveData('Scorecard', data, id);
-      } else if (context == "hubs-content") {
-        var _data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.isHubsDataEmpty());
+      } else if (context == "hubs") {
+        var _data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.areColumnsEmpty(retrieved, 'data'));
 
         saveData('Scorecard', _data, id);
-      } else if (context == "actions-content") {}
+      } else if (context == "actions") {
+        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.areColumnsEmpty(retrieved, 'action'));
+
+        console.log(_data2); // saveData('Scorecard', data, id);
+      }
     });
   }
 };
@@ -48752,20 +49324,26 @@ __webpack_require__.r(__webpack_exports__);
 
 class ScoreCardsItemSP {
   constructor(retrieved, previous, context, createMode) {
-    context == "wca-content" && createMode && (this.Title = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.createScorecardTitle());
-    context == "wca-content" && createMode && (this.scoredate = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromDateToSP());
-    context == "wca-content" && createMode && (this.motto = document.querySelector('.scorecard-motto').value);
-    context == "wca-content" && createMode && (this.comment = document.querySelector('.scorecard-main-summary .ql-editor').innerHTML);
-    context == "wca-content" && createMode && (this.wcadata = this.createWca());
-    context == "wca-content" && !createMode && (this.motto = this.editMotto(retrieved, previous));
-    context == "wca-content" && !createMode && (this.comment = this.editComment(retrieved, previous));
-    context == "wca-content" && !createMode && (this.wcadata = this.editWca(retrieved, previous));
-    context == "hubs-content" && createMode && (this.westdata = this.createHubs('west'));
-    context == "hubs-content" && createMode && (this.coastaldata = this.createHubs('coastal'));
-    context == "hubs-content" && createMode && (this.centraldata = this.createHubs('central'));
-    context == "hubs-content" && !createMode && (this.westdata = this.editHubs(retrieved, previous, 'west'));
-    context == "hubs-content" && !createMode && (this.coastaldata = this.editHubs(retrieved, previous, 'coastal'));
-    context == "hubs-content" && !createMode && (this.centraldata = this.editHubs(retrieved, previous, 'central'));
+    context == "wca" && createMode && (this.Title = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.createScorecardTitle());
+    context == "wca" && createMode && (this.scoredate = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromDateToSP());
+    context == "wca" && createMode && (this.motto = document.querySelector('.scorecard-motto').value);
+    context == "wca" && createMode && (this.comment = document.querySelector('.scorecard-main-summary .ql-editor').innerHTML);
+    context == "wca" && createMode && (this.wcadata = this.createWca());
+    context == "wca" && !createMode && (this.motto = this.editMotto(retrieved, previous));
+    context == "wca" && !createMode && (this.comment = this.editComment(retrieved, previous));
+    context == "wca" && !createMode && (this.wcadata = this.editWca(retrieved, previous));
+    context == "hubs" && createMode && (this.westdata = this.createHubs('west'));
+    context == "hubs" && createMode && (this.coastaldata = this.createHubs('coastal'));
+    context == "hubs" && createMode && (this.centraldata = this.createHubs('central'));
+    context == "hubs" && !createMode && (this.westdata = this.editHubs(retrieved, previous, 'west'));
+    context == "hubs" && !createMode && (this.coastaldata = this.editHubs(retrieved, previous, 'coastal'));
+    context == "hubs" && !createMode && (this.centraldata = this.editHubs(retrieved, previous, 'central'));
+    context == "actions" && createMode && (this.westdata = this.createActions('west'));
+    context == "actions" && createMode && (this.coastaldata = this.createActions('coastal'));
+    context == "actions" && createMode && (this.centraldata = this.createActions('central'));
+    context == "actions" && !createMode && (this.westdata = this.createActions(retrieved, previous, 'west'));
+    context == "actions" && !createMode && (this.coastaldata = this.createActions(retrieved, previous, 'coastal'));
+    context == "actions" && !createMode && (this.centraldata = this.createActions(retrieved, previous, 'central'));
     this.__metadata = {
       type: app.storage.scorecardsType
     };
@@ -48773,7 +49351,7 @@ class ScoreCardsItemSP {
 
   createWca() {
     var wca = {};
-    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-content .scorecard-row').forEach(i => {
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active .scorecard-row').forEach(i => {
       var code = i.dataset.code;
       wca[code] = {};
       wca[code]['description'] = i.querySelector('.ql-editor').innerHTML;
@@ -48821,9 +49399,31 @@ class ScoreCardsItemSP {
     return JSON.stringify(data[hub]);
   }
 
+  createActions(action) {
+    var data = {};
+    data[action] = {};
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-action .responsive-header').forEach(i => {
+      var code = i.id.split('-')[0];
+      data[action][code] = {};
+      i.querySelectorAll('.responsive-element').forEach(d => {
+        var id = "".concat(code, "-").concat(d.dataset.action);
+        data[action][code][id] = {};
+        data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
+        data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
+        data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value;
+        data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value;
+        data[action][code][id]['Status'] = d.querySelector('.column-5 select').value;
+        data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value;
+        data[action][code][id]['Lead'];
+        data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value;
+      });
+    });
+    return JSON.stringify(data[action]);
+  }
+
   editWca(retrieved, previous) {
     var column = {};
-    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-content .scorecard-row').forEach(i => {
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active .scorecard-row').forEach(i => {
       var code = i.dataset.code;
       var old = previous.wcadata[code];
       column[code] = {};
@@ -48856,7 +49456,7 @@ class ScoreCardsItemSP {
 
   editHubs(retrieved, previous, hub) {
     var column = {};
-    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-content .scorecard-row').forEach(i => {
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active .scorecard-row').forEach(i => {
       var code = i.dataset.code;
       var old = previous["".concat(hub, "data")][code];
       var value1 = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector("#".concat(code, "-hub-row-left .").concat(hub, "-indicator-value")).value);
@@ -49046,10 +49646,11 @@ module.exports = {
   getItemURL: getItemURL,
   getPreviousDate: getPreviousDate,
   getMonths: getMonths,
+  getAllUsers: getAllUsers,
   getHeaderData: getHeaderData,
   getActionsData: getActionsData,
   filterOut: filterOut,
-  isHubsDataEmpty: isHubsDataEmpty,
+  areColumnsEmpty: areColumnsEmpty,
   updateSPToken: updateSPToken,
   startLoader: startLoader,
   reload: reload,
@@ -49107,6 +49708,20 @@ function getMonths() {
   return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 }
 
+function getAllUsers(data) {
+  var users = [];
+  data.forEach(i => {
+    if (i.Title.indexOf(", ") > -1 && i.Email.indexOf("@ifad.org") > -1) {
+      users.push({
+        label: i.Title,
+        value: i.Title,
+        email: i.Email
+      });
+    }
+  });
+  return users;
+}
+
 function getHeaderData() {
   var split = app.scorecards.length ? app.scorecards[0].scoredate.split('-') : [];
   var year = split.length ? split[0] : new Date().getFullYear();
@@ -49136,10 +49751,10 @@ function filterOut(value) {
   return isNaN(parseInt(value)) ? "" : value;
 }
 
-function isHubsDataEmpty() {
-  var isWestEmpty = !app.current.westdata;
-  var isCoastalEmpty = !app.current.coastaldata;
-  var isCentralEmpty = !app.current.centraldata;
+function areColumnsEmpty(scorecards, context) {
+  var isWestEmpty = !scorecards["west".concat(context)];
+  var isCoastalEmpty = !scorecards["coastal".concat(context)];
+  var isCentralEmpty = !scorecards["central".concat(context)];
   return isWestEmpty && isCoastalEmpty && isCentralEmpty;
 }
 

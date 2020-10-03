@@ -65,7 +65,7 @@ const modifySettings = () => {
 
 const modifyScorecards = () => {
     const target = document.querySelector('.active-content');
-    const context = target.id;
+    const context = target.id.split('-')[0];
     const createMode = target.classList.contains('create-mode');
 
     if (createMode) {
@@ -81,18 +81,20 @@ const modifyScorecards = () => {
             const previous = app.current;
             const id = retrieved.Id;
             // maybe get rid of if else 
-            if (context == "wca-content") {
+            if (context == "wca") {
                 const data = new ScoreCardsItemSP(retrieved, previous, context, createMode);
 
                 saveData('Scorecard', data, id);
 
-            } else if (context == "hubs-content") {
-                const data = new ScoreCardsItemSP(retrieved, previous, context, utilities.isHubsDataEmpty());
+            } else if (context == "hubs") {
+                const data = new ScoreCardsItemSP(retrieved, previous, context, utilities.areColumnsEmpty(retrieved, 'data'));
 
                 saveData('Scorecard', data, id);
 
-            } else if (context == "actions-content") {
-
+            } else if (context == "actions") {
+                const data = new ScoreCardsItemSP(retrieved, previous, context, utilities.areColumnsEmpty(retrieved, 'action'));
+                console.log(data);
+                // saveData('Scorecard', data, id);
             }
         });
     }
