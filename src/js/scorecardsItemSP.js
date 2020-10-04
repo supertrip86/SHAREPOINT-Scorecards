@@ -20,13 +20,13 @@ class ScoreCardsItemSP {
         (context == "hubs" && !createMode) && ( this.coastaldata = this.editHubs(retrieved, previous, 'coastal') );
         (context == "hubs" && !createMode) && ( this.centraldata = this.editHubs(retrieved, previous, 'central') );
 
-        (context == "actions" && createMode) && ( this.westdata = this.createActions('west') );
-        (context == "actions" && createMode) && ( this.coastaldata = this.createActions('coastal') );
-        (context == "actions" && createMode) && ( this.centraldata = this.createActions('central') );
+        (context == "west" && createMode) && ( this.westaction = this.createActions('west') );
+        (context == "coastal" && createMode) && ( this.coastalaction = this.createActions('coastal') );
+        (context == "central" && createMode) && ( this.centralaction = this.createActions('central') );
 
-        (context == "actions" && !createMode) && ( this.westdata = this.createActions(retrieved, previous, 'west') );
-        (context == "actions" && !createMode) && ( this.coastaldata = this.createActions(retrieved, previous, 'coastal') );
-        (context == "actions" && !createMode) && ( this.centraldata = this.createActions(retrieved, previous, 'central') );
+        // (context == "west" && !createMode) && ( this.westaction = this.createActions(retrieved, previous, 'west') );
+        // (context == "coastal" && !createMode) && ( this.coastalaction = this.createActions(retrieved, previous, 'coastal') );
+        // (context == "central" && !createMode) && ( this.centralaction = this.createActions(retrieved, previous, 'central') );
 
         this.__metadata = { type: app.storage.scorecardsType };
     }
@@ -104,13 +104,14 @@ class ScoreCardsItemSP {
                 let id = `${code}-${d.dataset.action}`;
                 data[action][code][id] = {};
 
+                data[action][code][id]['Index'] = d.dataset.action;
                 data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
                 data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
                 data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value;
                 data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value;
                 data[action][code][id]['Status'] = d.querySelector('.column-5 select').value;
                 data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value;
-                data[action][code][id]['Lead']
+                data[action][code][id]['Lead'] = d.querySelector('.column-7 .select-pure__label').innerText;
                 data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value;
             });
         });
@@ -198,6 +199,10 @@ class ScoreCardsItemSP {
         }
 
         return JSON.stringify(retrieved[`${hub}data`]);
+    }
+
+    editActions(retrieved, previous, action) {
+
     }
 
     editComment(retrieved, previous) {

@@ -47377,18 +47377,30 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":2,"column":4},"end":{"line":4,"column":13}}})) != null ? stack1 : "");
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":2,"column":4},"end":{"line":12,"column":13}}})) != null ? stack1 : "");
 },"2":function(container,depth0,helpers,partials,data) {
-    return "\r\n";
-},"4":function(container,depth0,helpers,partials,data) {
-    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":5,"column":0},"end":{"line":17,"column":0}}})) != null ? stack1 : "");
+  return "    <div id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"code") || (depth0 != null ? lookupProperty(depth0,"code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"code","hash":{},"data":data,"loc":{"start":{"line":3,"column":13},"end":{"line":3,"column":21}}}) : helper)))
+    + "-header\" data-row=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":3,"column":40},"end":{"line":3,"column":50}}}) : helper)))
+    + "\" data-max=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"max") || (depth0 != null ? lookupProperty(depth0,"max") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max","hash":{},"data":data,"loc":{"start":{"line":3,"column":62},"end":{"line":3,"column":69}}}) : helper)))
+    + "\" class=\"responsive-header\">\r\n        <button class=\"add-action\">Add</button>\r\n        <div class=\"action-title\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":5,"column":34},"end":{"line":5,"column":43}}}) : helper)))
+    + "</div>\r\n        <div class=\"action-elements\">\r\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"data") : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":7,"column":12},"end":{"line":9,"column":21}}})) != null ? stack1 : "")
+    + "        </div>\r\n    </div>\r\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = container.invokePartial(__webpack_require__(/*! ./partials/actionsElement.hbs */ "./src/hbs/partials/actionsElement.hbs"),depth0,{"name":"actionsElement","data":data,"indent":"            ","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
 },"5":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -47397,8 +47409,8 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":6,"column":4},"end":{"line":8,"column":13}}})) != null ? stack1 : "");
-},"7":function(container,depth0,helpers,partials,data) {
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.program(9, data, 0),"data":data,"loc":{"start":{"line":13,"column":0},"end":{"line":25,"column":0}}})) != null ? stack1 : "");
+},"6":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -47406,8 +47418,19 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"settings") : depth0),{"name":"each","hash":{},"fn":container.program(8, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":10,"column":4},"end":{"line":16,"column":13}}})) != null ? stack1 : "");
-},"8":function(container,depth0,helpers,partials,data) {
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"each","hash":{},"fn":container.program(7, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":14,"column":4},"end":{"line":16,"column":13}}})) != null ? stack1 : "");
+},"7":function(container,depth0,helpers,partials,data) {
+    return "\r\n";
+},"9":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"settings") : depth0),{"name":"each","hash":{},"fn":container.program(10, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":18,"column":4},"end":{"line":24,"column":13}}})) != null ? stack1 : "");
+},"10":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -47416,11 +47439,11 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "    <div id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"Code") || (depth0 != null ? lookupProperty(depth0,"Code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Code","hash":{},"data":data,"loc":{"start":{"line":11,"column":13},"end":{"line":11,"column":21}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"Code") || (depth0 != null ? lookupProperty(depth0,"Code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Code","hash":{},"data":data,"loc":{"start":{"line":19,"column":13},"end":{"line":19,"column":21}}}) : helper)))
     + "-header\" data-row=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":11,"column":40},"end":{"line":11,"column":50}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":19,"column":40},"end":{"line":19,"column":50}}}) : helper)))
     + "\" data-max=\"0\" class=\"responsive-header\">\r\n        <button class=\"add-action\">Add</button>\r\n        <div class=\"action-title\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":13,"column":34},"end":{"line":13,"column":43}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":21,"column":34},"end":{"line":21,"column":43}}}) : helper)))
     + "</div>\r\n        <div class=\"action-elements\"></div>\r\n    </div>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -47430,8 +47453,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(4, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":17,"column":7}}})) != null ? stack1 : "");
-},"useData":true});
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(5, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":25,"column":7}}})) != null ? stack1 : "")
+    + "\r\n\r\n";
+},"usePartial":true,"useData":true});
 
 /***/ }),
 
@@ -47948,37 +47972,37 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":69,"column":24},"end":{"line":69,"column":57}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Dakar</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
     + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
     + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":81,"column":78},"end":{"line":81,"column":102}}}))
     + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
     + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":91,"column":143},"end":{"line":91,"column":177}}}))
     + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Abidjan</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value coastal-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control coastal-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">/</span>\r\n						<input class=\"form-control coastal-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
     + "\">\r\n						<i class=\"coastal-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
     + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":108,"column":81},"end":{"line":108,"column":108}}}))
     + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control coastal-indicator-date\" type=\"text\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old coastal-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old coastal-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
     + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"coastal-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":118,"column":146},"end":{"line":118,"column":183}}}))
     + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Yaoundé</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value central-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"value1") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control central-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">/</span>\r\n						<input class=\"form-control central-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"target1") : stack1), depth0))
     + "\">\r\n						<i class=\"central-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
     + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"arrow1") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":135,"column":81},"end":{"line":135,"column":108}}}))
     + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control central-indicator-date\" type=\"text\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"date1") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old central-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old central-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"old1") : stack1), depth0))
     + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"central-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"likelihood1") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":145,"column":146},"end":{"line":145,"column":183}}}))
@@ -48000,37 +48024,37 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"wca") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":181,"column":24},"end":{"line":181,"column":57}}}))
     + "\"></div>\r\n						</span>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Dakar</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value west-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">/</span>\r\n						<input class=\"form-control west-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
     + "\">\r\n						<i class=\"west-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
     + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":193,"column":78},"end":{"line":193,"column":102}}}))
     + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control west-indicator-date\" type=\"text\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old west-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
     + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"west-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"west") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":203,"column":143},"end":{"line":203,"column":177}}}))
     + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Abidjan</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value coastal-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control coastal-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">/</span>\r\n						<input class=\"form-control coastal-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
     + "\">\r\n						<i class=\"coastal-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
     + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":220,"column":81},"end":{"line":220,"column":108}}}))
     + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control coastal-indicator-date\" type=\"text\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old coastal-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old coastal-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
     + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"coastal-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"coastal") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":230,"column":146},"end":{"line":230,"column":183}}}))
     + "\"></div><i class=\"likelihood-dropdown-icon open-likelihood-dropdown\"></i></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood green-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood yellow-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood orange-line\"></div></li>\r\n							<li class=\"scorecard-likelihood-option select-likelihood vanish\"><div class=\"line select-likelihood red-line\"></div></li>\r\n						</ul>\r\n					</div>\r\n				</div>\r\n				<div class=\"hub-square bordered-square col\">\r\n					<div>\r\n						<p class=\"hub-indicator-title\">Yaoundé</p>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control scorecard-indicator-value central-indicator-value input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"value2") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">/</span>\r\n						<input class=\"form-control central-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">/</span>\r\n						<input class=\"form-control central-indicator-target input-number\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"target2") : stack1), depth0))
     + "\">\r\n						<i class=\"central-indicator-arrow hub-arrow-edit scorecard-indicator-arrow "
     + alias4(__default(__webpack_require__(/*! ./helpers/getArrow.js */ "./src/hbs/helpers/getArrow.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"arrow2") : stack1),{"name":"getArrow","hash":{},"data":data,"loc":{"start":{"line":247,"column":81},"end":{"line":247,"column":108}}}))
     + "\"></i>\r\n					</div>\r\n					<div class=\"hub-square-indicators\">\r\n						<input class=\"form-control central-indicator-date\" type=\"text\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"date2") : stack1), depth0))
-    + "\">\r\n						<span class=\"hub-separator-edit\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old central-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
+    + "\">\r\n						<span class=\"hub-separator\">=</span>\r\n						<input class=\"form-control scorecard-indicator-old central-indicator-old input-number input-control\" type=\"text\" maxlength=\"5\" value=\""
     + alias4(alias5(((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"old2") : stack1), depth0))
     + "\">\r\n					</div>\r\n					<div class=\"hub-square-likelihood\">\r\n						<span>Likelihood</span>\r\n						<ul class=\"scorecard-indicator-likelihood\">\r\n							<li class=\"central-indicator-likelihood scorecard-likelihood-selection open-likelihood-dropdown\"><div class=\"line open-likelihood-dropdown "
     + alias4(__default(__webpack_require__(/*! ./helpers/getLikelihood.js */ "./src/hbs/helpers/getLikelihood.js")).call(alias1,((stack1 = (depth0 != null ? lookupProperty(depth0,"central") : depth0)) != null ? lookupProperty(stack1,"likelihood2") : stack1),{"name":"getLikelihood","hash":{},"data":data,"loc":{"start":{"line":257,"column":146},"end":{"line":257,"column":183}}}))
@@ -48062,18 +48086,60 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 var Handlebars = __webpack_require__(/*! ../../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var alias1=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    return " new-action";
+},"3":function(container,depth0,helpers,partials,data) {
+    return " disabled=\"disabled\"";
+},"5":function(container,depth0,helpers,partials,data) {
+    var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return alias1(lookupProperty(helpers,"log").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"log","hash":{},"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":1,"column":12}}}))
-    + "\r\n<div class=\"responsive-element\" data-action=\""
-    + alias1(container.lambda(depth0, depth0))
-    + "\">\r\n    <button class=\"delete-action\"></button>\r\n    <div class=\"col column-1\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-2\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-3\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-4\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-5\">\r\n        <select class=\"form-control\">\r\n            <option value=\"\"></option>\r\n            <option value=\"New Action\">New Action</option>\r\n            <option value=\"Ongoing\">Ongoing</option>\r\n            <option value=\"Completed\">Completed</option>\r\n        </select>\r\n    </div>\r\n    <div class=\"col column-6\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <div class=\"col column-7\">\r\n        <div class=\"action-lead\"></div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <textarea class=\"form-control\"></textarea>\r\n    </div>\r\n    <button class=\"notify-action\"></button>\r\n</div>";
+  return " data-lead=\""
+    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"Lead") || (depth0 != null ? lookupProperty(depth0,"Lead") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"Lead","hash":{},"data":data,"loc":{"start":{"line":27,"column":71},"end":{"line":27,"column":79}}}) : helper)))
+    + "\"";
+},"7":function(container,depth0,helpers,partials,data) {
+    return "<button class=\"notify-action\"></button>";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"responsive-element"
+    + ((stack1 = lookupProperty(helpers,"unless").call(alias1,(depth0 != null ? lookupProperty(depth0,"Project") : depth0),{"name":"unless","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":1,"column":30},"end":{"line":1,"column":71}}})) != null ? stack1 : "")
+    + "\" data-action=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"Index") || (depth0 != null ? lookupProperty(depth0,"Index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Index","hash":{},"data":data,"loc":{"start":{"line":1,"column":86},"end":{"line":1,"column":95}}}) : helper)))
+    + "\">\r\n    <button class=\"delete-action\"></button>\r\n    <div class=\"col column-1\">\r\n        <textarea class=\"form-control action-element\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Project") || (depth0 != null ? lookupProperty(depth0,"Project") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Project","hash":{},"data":data,"loc":{"start":{"line":4,"column":54},"end":{"line":4,"column":65}}}) : helper)))
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-2\">\r\n        <textarea class=\"form-control action-element\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Country") || (depth0 != null ? lookupProperty(depth0,"Country") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Country","hash":{},"data":data,"loc":{"start":{"line":7,"column":54},"end":{"line":7,"column":65}}}) : helper)))
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-3\">\r\n        <textarea class=\"form-control action-element\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Stage") || (depth0 != null ? lookupProperty(depth0,"Stage") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Stage","hash":{},"data":data,"loc":{"start":{"line":10,"column":54},"end":{"line":10,"column":63}}}) : helper)))
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-4\">\r\n        <textarea class=\"form-control action-element\""
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"Project") : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":13,"column":53},"end":{"line":13,"column":95}}})) != null ? stack1 : "")
+    + ">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Action") || (depth0 != null ? lookupProperty(depth0,"Action") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Action","hash":{},"data":data,"loc":{"start":{"line":13,"column":96},"end":{"line":13,"column":106}}}) : helper)))
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-5\">\r\n        <select class=\"form-control action-element\">\r\n            <option value=\"\"></option>\r\n            <option value=\"New Action\" "
+    + ((stack1 = __default(__webpack_require__(/*! ../helpers/selectOption.js */ "./src/hbs/helpers/selectOption.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Status") : depth0),"New Action",{"name":"selectOption","hash":{},"data":data,"loc":{"start":{"line":18,"column":39},"end":{"line":18,"column":77}}})) != null ? stack1 : "")
+    + ">New Action</option>\r\n            <option value=\"Ongoing\" "
+    + ((stack1 = __default(__webpack_require__(/*! ../helpers/selectOption.js */ "./src/hbs/helpers/selectOption.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Status") : depth0),"Ongoing",{"name":"selectOption","hash":{},"data":data,"loc":{"start":{"line":19,"column":36},"end":{"line":19,"column":71}}})) != null ? stack1 : "")
+    + ">Ongoing</option>\r\n            <option value=\"Completed\" "
+    + ((stack1 = __default(__webpack_require__(/*! ../helpers/selectOption.js */ "./src/hbs/helpers/selectOption.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Status") : depth0),"Completed",{"name":"selectOption","hash":{},"data":data,"loc":{"start":{"line":20,"column":38},"end":{"line":20,"column":75}}})) != null ? stack1 : "")
+    + ">Completed</option>\r\n        </select>\r\n    </div>\r\n    <div class=\"col column-6\">\r\n        <textarea class=\"form-control action-element\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Updates") || (depth0 != null ? lookupProperty(depth0,"Updates") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Updates","hash":{},"data":data,"loc":{"start":{"line":24,"column":54},"end":{"line":24,"column":65}}}) : helper)))
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-7\">\r\n        <div class=\"action-lead action-element\""
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"Lead") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":27,"column":47},"end":{"line":27,"column":87}}})) != null ? stack1 : "")
+    + "></div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <textarea class=\"form-control action-element\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Deadline") || (depth0 != null ? lookupProperty(depth0,"Deadline") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Deadline","hash":{},"data":data,"loc":{"start":{"line":30,"column":54},"end":{"line":30,"column":66}}}) : helper)))
+    + "</textarea>\r\n    </div>\r\n    "
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"Project") : depth0),{"name":"if","hash":{},"fn":container.program(7, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":32,"column":4},"end":{"line":32,"column":65}}})) != null ? stack1 : "")
+    + "\r\n</div>";
 },"useData":true});
 
 /***/ }),
@@ -48454,7 +48520,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* handle after sleep mode... refresh app */
+/* 
+    handle after sleep mode... refresh app 
+*/
 
 var settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 var scorecardsListColumns = ["scoredate", "Id", "Title"];
@@ -48533,6 +48601,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var clearStyle = e => {
+  e.target.removeAttribute('style');
+};
+
 var toggleAction = e => {
   var hash = location.hash.split('-');
   var view = e.target.id.split('-')[0];
@@ -48542,9 +48614,14 @@ var toggleAction = e => {
 var addAction = e => {
   var target = e.target.parentElement;
   var container = target.querySelector('.action-elements');
-  var max = parseInt(target.dataset.max) + 1;
-  target.dataset.max = max;
-  container.insertAdjacentHTML('beforeend', _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0___default()(max));
+  var index = parseInt(target.dataset.max) + 1;
+  var actionsData = {
+    Index: index
+  };
+  var options = _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.userSelectOptions(app.users);
+  target.dataset.max = index;
+  container.insertAdjacentHTML('beforeend', _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0___default()(actionsData));
+  new select_pure__WEBPACK_IMPORTED_MODULE_1___default.a(container.querySelector('.responsive-element:last-child .action-lead'), options);
 };
 
 var removeAction = e => {
@@ -48560,6 +48637,7 @@ var sendActions = e => {
 };
 
 var actionsListeners = () => {
+  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'input', '.form-control.action-element', clearStyle);
   _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.add-action', addAction);
   _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.delete-action', removeAction);
   _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.notify-action', sendNotification);
@@ -48668,13 +48746,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var html2pdf_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(html2pdf_js__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
 /* harmony import */ var quill__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(quill__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
-/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
-/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
-/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
-/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+/* harmony import */ var select_pure__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! select-pure */ "./node_modules/select-pure/lib/index.js");
+/* harmony import */ var select_pure__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(select_pure__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../hbs/helpers/getDate.js */ "./src/hbs/helpers/getDate.js");
+/* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
+/* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+
 
 
 
@@ -48703,10 +48784,10 @@ var updateDates = () => {
   var wcaView = document.getElementById('wca-content');
 
   if (wcaView.classList.contains('create-mode')) {
-    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.createScorecardTitle());
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
+    wcaView.querySelector('.scorecard-title').innerText = "".concat(_utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.createScorecardTitle());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.active-content .scorecard-indicator-date').forEach(i => {
       var date = i.dataset.date;
-      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_19___default()(date);
+      i.value = _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20___default()(date);
     });
   }
 };
@@ -48762,10 +48843,10 @@ var highlightCells = a => {
         rightCounter += 1;
       }
     });
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightValues(leftValues, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightValues(rightValues, code, 2);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightValues(leftValues, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightValues(rightValues, code, 2);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightLikelihood(leftLikelihood, leftCounter, code, 1);
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.highlightLikelihood(rightLikelihood, rightCounter, code, 2);
   });
 };
 
@@ -48795,32 +48876,35 @@ var exportScorecard = () => {
 };
 
 var editScorecard = () => {
-  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getItemURL();
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_22__["receiveData"])(url).then(result => {
+  var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL();
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content').id;
-    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__["ScoreCardsItem"](result.d.results[0]);
+    var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
     document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default()();
     document.getElementById('right-buttons').classList.add('vanish');
     document.getElementById('send-actions').classList.add('vanish');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.add('invisible'));
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.add('invisible'));
     document.getElementById('save-button').removeAttribute('disabled');
 
     if (target == "wca-content") {
       document.getElementById('wca-content').innerHTML = _hbs_wcaEdit_hbs__WEBPACK_IMPORTED_MODULE_9___default()(scorecards);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.comment-wrapper').forEach(i => {
-        new quill__WEBPACK_IMPORTED_MODULE_17___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.editorOptions());
+      _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.comment-wrapper').forEach(i => {
+        new quill__WEBPACK_IMPORTED_MODULE_17___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.editorOptions());
         i.querySelector('.ql-toolbar').classList.add('vanish');
       });
-      !_utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.areColumnsEmpty(scorecards, 'data') && highlightCells(scorecards);
+      !_utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.areHubsEmpty(scorecards, 'data') && highlightCells(scorecards);
     } else if (target == "hubs-content") {
-      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_21__["HubsItem"](scorecards);
+      var item = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__["HubsItem"](scorecards);
       document.getElementById('hubs-content').innerHTML = _hbs_hubsEdit_hbs__WEBPACK_IMPORTED_MODULE_11___default()(item);
-      _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.areColumnsEmpty(scorecards, 'action') && initHubsData();
+      _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.areHubsEmpty(scorecards, 'action') && initHubsData();
     } else if (target == "actions-content") {
       var actionsId = document.querySelector('.active-action').id;
-      var previousScorecard = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__["ScoreCardsItem"](result.d.results[1]) : null;
-      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getActionsData(actionsId, scorecards, previousScorecard);
+      var previousScorecard = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[1]) : null;
+      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, scorecards, previousScorecard);
       document.getElementById(actionsId).innerHTML = _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13___default()(actionsData);
+      _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.active-content .action-lead').forEach(i => {
+        new select_pure__WEBPACK_IMPORTED_MODULE_18___default.a(i, _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.userSelectOptions(app.users, i.dataset.lead));
+      });
     }
   });
 };
@@ -48829,9 +48913,9 @@ var cancelEdit = () => {
   var target = document.querySelector('.active-content');
 
   if (target.classList.contains('create-mode')) {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
   } else {
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getItemURL();
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL();
     target.classList.remove('create-mode');
     loadScorecard(url);
   }
@@ -48843,31 +48927,31 @@ var startCreateMode = () => {
 
 var getScorecard = e => {
   var date = e.target.dataset.date;
-  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.generateHash(date);
+  var newHash = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateHash(date);
   location.hash = newHash;
 };
 
 var loadScorecard = url => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_22__["receiveData"])(url).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content');
     var main = document.getElementById('scorecards-content');
-    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_20__["ScoreCardsItem"](result.d.results[0]);
+    var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
     app.current = selectedScorecard;
     main.setAttribute('data-date', selectedScorecard.scoredate);
     main.classList.remove('welcome');
     document.getElementById('right-buttons').classList.remove('vanish');
     document.getElementById('send-actions').classList.remove('vanish');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.remove('invisible'));
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.remove('invisible'));
 
     if (target.id == "wca-content") {
       document.getElementById('wca-content').innerHTML = _hbs_wca_hbs__WEBPACK_IMPORTED_MODULE_7___default()(selectedScorecard);
     } else if (target.id == "hubs-content") {
-      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_21__["HubsItem"](selectedScorecard);
+      var hubsData = new _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__["HubsItem"](selectedScorecard);
       document.getElementById('hubs-content').innerHTML = _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10___default()(hubsData);
     } else {
       var actionsId = document.querySelector('.active-action').id;
       var previousScorecard = result.d.results[1];
-      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getActionsData(actionsId, selectedScorecard, previousScorecard);
+      var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, selectedScorecard, previousScorecard);
       document.getElementById(actionsId).innerHTML = _hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12___default()(actionsData);
     }
 
@@ -48884,7 +48968,7 @@ var loadScorecard = url => {
 };
 
 var createScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_22__["receiveData"])(app.storage.settingsURL).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(app.storage.settingsURL).then(result => {
     document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8___default()(result.d.results);
     document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default()();
     document.getElementById('scorecards-content').classList.remove('welcome');
@@ -48893,8 +48977,8 @@ var createScorecard = () => {
     document.getElementById('save-button').classList.remove('vanish');
     document.getElementById('date-button').classList.remove('vanish');
     document.getElementById('save-button').removeAttribute('disabled');
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.comment-wrapper').forEach(i => {
-      new quill__WEBPACK_IMPORTED_MODULE_17___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.editorOptions());
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.comment-wrapper').forEach(i => {
+      new quill__WEBPACK_IMPORTED_MODULE_17___default.a(i.querySelector('.comment-inner'), _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.editorOptions());
       i.querySelector('.ql-toolbar').classList.add('vanish');
     });
   });
@@ -48902,29 +48986,29 @@ var createScorecard = () => {
 
 var appController = () => {
   var hash = location.hash.replace('#', '');
-  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.validateHash();
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.scorecards-container').forEach(i => {
+  var validateHash = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.validateHash();
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.scorecards-container').forEach(i => {
     i.classList.remove('create-mode');
     i.classList.remove('active-content');
     i.classList.add('vanish');
   });
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-container').forEach(i => {
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-container').forEach(i => {
     i.classList.remove('active-action');
     i.classList.add('vanish');
   });
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getNodes('.actions-button').forEach(i => i.removeAttribute('disabled'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.context-button').forEach(i => i.removeAttribute('disabled'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button').forEach(i => i.removeAttribute('disabled'));
 
   if (hash == "create-mode") {
     document.getElementById('wca-content').classList.add('active-content');
     document.getElementById('wca-content').classList.remove('vanish');
-    app.admin ? createScorecard() : _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.reload();
+    app.admin ? createScorecard() : _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
     document.querySelector('body').removeAttribute('class');
   } else if (validateHash) {
     var target = hash.split('-')[0];
-    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.generateView(hash)[0];
-    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.generateView(hash)[1];
-    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.getItemURL(date);
+    var view = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateView(hash)[0];
+    var date = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.generateView(hash)[1];
+    var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL(date);
     document.getElementById(view).classList.add('active-content');
     document.getElementById(view).classList.remove('vanish');
     document.getElementById("".concat(target, "-view")).setAttribute('disabled', 'disabled');
@@ -48942,21 +49026,21 @@ var appController = () => {
     document.querySelector('body').classList.add('welcome');
     document.querySelector('body').classList.remove('vanish');
   } else {
-    _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.reload();
+    _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.reload();
   }
 };
 
 var headerListeners = () => {
   window.addEventListener('hashchange', appController);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.preventDefault);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_22__["modifyScorecards"]);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_18___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.preventDefault);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_23__["modifyScorecards"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.create-scorecard', startCreateMode);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.context-button', toggleView);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '.dropdown-item-element', getScorecard);
 };
 
 
@@ -48981,20 +49065,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var errorList = {
   dataNotFound: 'Data not found in SharePoint List',
-  invalidFile: 'You can only upload Word, Powerpoint, Excel or PDF documents',
-  invalidFilename: 'The selected file has any of the following invalid characters:<br>~, #, %, & , *, {, }, \, :, <, >, ?, /, |, \', "',
-  invalidFileSize: 'The selected file exceeds the maximum limit of 20 Megabytes',
-  invalidTitle: 'This Resource exists already',
-  invalidInput: 'The maximum number of characters for each input field is 250',
-  invalidDescription: 'You exceeded the maximum number of characters of the Description field',
-  addFormInvalid: 'Missing or invalid information',
-  resourceNotFound: 'The changes you made cannot be saved.<br>This Resource has been deleted by another user while you were working on it.<br><br>Reload the Gapmap to update the list of available Resources',
-  resourceModified: 'The selected Resource has been modified by another user while you were working on it.<br><br>To prevent overriding changes, reload the Gapmap and access this Resource again.',
-  selectResource: 'Select a Resource from the menu',
-  saveResource: 'Are you sure you want to save?',
-  deleteResource: 'Are you sure you want to delete this Resource?',
-  deleteAttachment: 'Do you want to delete this Document?',
-  modifyParameters: 'You are about to modify the Gapmap core parameters. Do you want to proceed?'
+  missingData: 'Please insert all the required information'
 };
 
 var display = (value, confirm, callback, arg) => {
@@ -49139,6 +49210,22 @@ var saveData = (context, item, id, index) => {
   });
 };
 
+var validateActions = () => {
+  var proceed = true;
+  _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-action .action-element').forEach(i => {
+    var isLead = i.classList.contains('action-lead');
+
+    if (isLead && i.querySelector('.select-pure__label').innerText == "") {
+      i.querySelector('.select-pure__select').style.border = "1px solid red";
+      proceed = false;
+    } else if (!isLead && i.value == "") {
+      i.style.border = "1px solid red";
+      proceed = false;
+    }
+  });
+  return proceed;
+};
+
 var modifySettings = () => {
   _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.dialog-menu-item').forEach((i, index) => {
     var id = i.dataset.id;
@@ -49150,30 +49237,35 @@ var modifySettings = () => {
 
 var modifyScorecards = () => {
   var target = document.querySelector('.active-content');
-  var context = target.id.split('-')[0];
+  var view = target.id.split('-')[0];
+  var context = view != "actions" ? view : document.querySelector('.active-action').id.split('-')[0];
+  var proceed = view == "actions" && !validateActions();
   var createMode = target.classList.contains('create-mode');
 
-  if (createMode) {
-    var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](null, null, context, createMode);
+  if (proceed) {
+    return Object(_errors_js__WEBPACK_IMPORTED_MODULE_1__["display"])('missingData', false);
+  } else if (createMode) {
+    var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](null, null, context, true);
     saveData('Scorecard', item);
   } else {
     var url = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getItemURL();
     receiveData(url).then(result => {
       var retrieved = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_2__["ScoreCardsItem"](result.d.results[0]);
       var previous = app.current;
-      var id = retrieved.Id; // maybe get rid of if else 
+      var id = retrieved.Id;
+      var isCreate = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getSaveMode(context, retrieved);
 
-      if (context == "wca") {
-        var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, createMode);
+      if (view == "wca") {
+        var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
         saveData('Scorecard', data, id);
-      } else if (context == "hubs") {
-        var _data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.areColumnsEmpty(retrieved, 'data'));
+      } else if (view == "hubs") {
+        var _data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
 
         saveData('Scorecard', _data, id);
-      } else if (context == "actions") {
-        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.areColumnsEmpty(retrieved, 'action'));
+      } else if (view == "actions") {
+        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
 
-        console.log(_data2); // saveData('Scorecard', data, id);
+        saveData('Scorecard', _data2, id); // no need for if else
       }
     });
   }
@@ -49338,12 +49430,12 @@ class ScoreCardsItemSP {
     context == "hubs" && !createMode && (this.westdata = this.editHubs(retrieved, previous, 'west'));
     context == "hubs" && !createMode && (this.coastaldata = this.editHubs(retrieved, previous, 'coastal'));
     context == "hubs" && !createMode && (this.centraldata = this.editHubs(retrieved, previous, 'central'));
-    context == "actions" && createMode && (this.westdata = this.createActions('west'));
-    context == "actions" && createMode && (this.coastaldata = this.createActions('coastal'));
-    context == "actions" && createMode && (this.centraldata = this.createActions('central'));
-    context == "actions" && !createMode && (this.westdata = this.createActions(retrieved, previous, 'west'));
-    context == "actions" && !createMode && (this.coastaldata = this.createActions(retrieved, previous, 'coastal'));
-    context == "actions" && !createMode && (this.centraldata = this.createActions(retrieved, previous, 'central'));
+    context == "west" && createMode && (this.westaction = this.createActions('west'));
+    context == "coastal" && createMode && (this.coastalaction = this.createActions('coastal'));
+    context == "central" && createMode && (this.centralaction = this.createActions('central')); // (context == "west" && !createMode) && ( this.westaction = this.createActions(retrieved, previous, 'west') );
+    // (context == "coastal" && !createMode) && ( this.coastalaction = this.createActions(retrieved, previous, 'coastal') );
+    // (context == "central" && !createMode) && ( this.centralaction = this.createActions(retrieved, previous, 'central') );
+
     this.__metadata = {
       type: app.storage.scorecardsType
     };
@@ -49408,13 +49500,14 @@ class ScoreCardsItemSP {
       i.querySelectorAll('.responsive-element').forEach(d => {
         var id = "".concat(code, "-").concat(d.dataset.action);
         data[action][code][id] = {};
+        data[action][code][id]['Index'] = d.dataset.action;
         data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
         data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
         data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value;
         data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value;
         data[action][code][id]['Status'] = d.querySelector('.column-5 select').value;
         data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value;
-        data[action][code][id]['Lead'];
+        data[action][code][id]['Lead'] = d.querySelector('.column-7 .select-pure__label').innerText;
         data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value;
       });
     });
@@ -49494,6 +49587,8 @@ class ScoreCardsItemSP {
 
     return JSON.stringify(retrieved["".concat(hub, "data")]);
   }
+
+  editActions(retrieved, previous, action) {}
 
   editComment(retrieved, previous) {
     var old = previous.comment;
@@ -49649,18 +49744,22 @@ module.exports = {
   getAllUsers: getAllUsers,
   getHeaderData: getHeaderData,
   getActionsData: getActionsData,
+  getSaveMode: getSaveMode,
   filterOut: filterOut,
-  areColumnsEmpty: areColumnsEmpty,
+  areHubsEmpty: areHubsEmpty,
+  isColumnEmpty: isColumnEmpty,
   updateSPToken: updateSPToken,
   startLoader: startLoader,
   reload: reload,
   editorOptions: editorOptions,
+  userSelectOptions: userSelectOptions,
   limitIndicatorValues: limitIndicatorValues,
   createScorecardTitle: createScorecardTitle,
   fromArrowToSP: fromArrowToSP,
   fromLikelihoodToSP: fromLikelihoodToSP,
   fromDateToSP: fromDateToSP,
   formatLikelihood: formatLikelihood,
+  formatActions: formatActions,
   generateView: generateView,
   generateHash: generateHash,
   validateHash: validateHash,
@@ -49737,8 +49836,8 @@ function getHeaderData() {
 
 function getActionsData(id, currentItem, previousItem) {
   var actionsTarget = id.split('-')[0];
-  var actionsCurrent = currentItem["".concat(actionsTarget, "action")];
-  var actionsPrevious = previousItem ? previousItem["".concat(actionsTarget, "action")] : null;
+  var actionsCurrent = formatActions(currentItem, actionsTarget);
+  var actionsPrevious = formatActions(previousItem, actionsTarget);
   var settings = app.settings;
   return {
     current: actionsCurrent,
@@ -49747,15 +49846,38 @@ function getActionsData(id, currentItem, previousItem) {
   };
 }
 
+function getSaveMode(context, retrieved) {
+  switch (context) {
+    case "wca":
+      return false;
+
+    case "hubs":
+      return areHubsEmpty(retrieved, 'data');
+
+    case "west":
+      return isColumnEmpty(retrieved, 'west', 'action');
+
+    case "coastal":
+      return isColumnEmpty(retrieved, 'coastal', 'action');
+
+    case "central":
+      return isColumnEmpty(retrieved, 'central', 'action');
+  }
+}
+
 function filterOut(value) {
   return isNaN(parseInt(value)) ? "" : value;
 }
 
-function areColumnsEmpty(scorecards, context) {
+function areHubsEmpty(scorecards, context) {
   var isWestEmpty = !scorecards["west".concat(context)];
   var isCoastalEmpty = !scorecards["coastal".concat(context)];
   var isCentralEmpty = !scorecards["central".concat(context)];
   return isWestEmpty && isCoastalEmpty && isCentralEmpty;
+}
+
+function isColumnEmpty(scorecards, column, context) {
+  return !scorecards["".concat(column).concat(context)];
 }
 
 function updateSPToken() {
@@ -49811,6 +49933,22 @@ function editorOptions() {
   };
 }
 
+function userSelectOptions(list, value) {
+  return {
+    options: list,
+    value: value,
+    placeholder: "Select a Lead",
+    autocomplete: true,
+    multiple: false,
+    icon: "remove-user",
+    onChange: () => getNodes('.select-pure__select').forEach(i => {
+      if (i.querySelector('.select-pure__label').innerText != "") {
+        i.removeAttribute('style');
+      }
+    })
+  };
+}
+
 function limitIndicatorValues(e) {
   if (e.charCode < 46 || e.charCode > 57 || e.charCode === 47 || e.charCode === 46 && e.target.value.indexOf('.') !== -1) {
     e.preventDefault();
@@ -49851,6 +49989,11 @@ function fromLikelihoodToSP(element) {
   }
 }
 
+function fromDateToSP() {
+  var date = document.getElementById('date-button').value.split('-');
+  return "".concat(date[0], "-").concat(date[1], "-15T00:00:00Z");
+}
+
 function formatLikelihood(value) {
   switch (value) {
     case 0:
@@ -49870,9 +50013,31 @@ function formatLikelihood(value) {
   }
 }
 
-function fromDateToSP() {
-  var date = document.getElementById('date-button').value.split('-');
-  return "".concat(date[0], "-").concat(date[1], "-15T00:00:00Z");
+function formatActions(item, action) {
+  var element = item ? item["".concat(action, "action")] : null;
+  var settings = app.settings;
+
+  if (element) {
+    var data = [];
+    Object.keys(element).forEach(i => {
+      var title = settings.filter(d => d.Code == i)[0].Title;
+      var indexes = Object.values(element[i]).length ? Object.values(element[i]).map(d => parseInt(d.Index)) : [];
+      var max = indexes.length ? Math.max(...indexes) : 0;
+      var actions = {};
+      Object.keys(element[i]).forEach(d => {
+        actions[d] = element[i][d];
+      });
+      data.push({
+        code: i,
+        title: title,
+        max: max,
+        data: actions
+      });
+    });
+    return data;
+  }
+
+  return null;
 }
 
 function generateView(hash) {

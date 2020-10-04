@@ -53,6 +53,25 @@ const saveData = (context, item, id, index) => {
     });
 };
 
+const validateActions = () => {
+    let proceed = true;
+
+    utilities.getNodes('.active-action .action-element').forEach( (i) => {
+        const isLead = i.classList.contains('action-lead');
+
+        if ( isLead && i.querySelector('.select-pure__label').innerText == "" ) {
+            i.querySelector('.select-pure__select').style.border = "1px solid red";
+            proceed = false;
+
+        } else if ( !isLead && i.value == "" ) {
+            i.style.border = "1px solid red";
+            proceed = false;
+        }
+    });
+
+    return proceed;
+};
+
 const modifySettings = () => {
     utilities.getNodes('.dialog-menu-item').forEach( (i, index) => {
         const id = i.dataset.id;
@@ -65,11 +84,16 @@ const modifySettings = () => {
 
 const modifyScorecards = () => {
     const target = document.querySelector('.active-content');
-    const context = target.id.split('-')[0];
+    const view = target.id.split('-')[0];
+    const context = (view != "actions") ? view : document.querySelector('.active-action').id.split('-')[0];
+    const proceed = (view == "actions") && !validateActions();
     const createMode = target.classList.contains('create-mode');
 
-    if (createMode) {
-        const item = new ScoreCardsItemSP(null, null, context, createMode);
+    if (proceed) {
+        return display('missingData', false);
+
+    } else if (createMode) {
+        const item = new ScoreCardsItemSP(null, null, context, true);
 
         saveData('Scorecard', item);
 
@@ -80,21 +104,22 @@ const modifyScorecards = () => {
             const retrieved = new ScoreCardsItem(result.d.results[0]);
             const previous = app.current;
             const id = retrieved.Id;
-            // maybe get rid of if else 
-            if (context == "wca") {
-                const data = new ScoreCardsItemSP(retrieved, previous, context, createMode);
+            const isCreate = utilities.getSaveMode(context, retrieved);
+
+            if (view == "wca") {
+                const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
 
                 saveData('Scorecard', data, id);
 
-            } else if (context == "hubs") {
-                const data = new ScoreCardsItemSP(retrieved, previous, context, utilities.areColumnsEmpty(retrieved, 'data'));
+            } else if (view == "hubs") {
+                const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
 
                 saveData('Scorecard', data, id);
 
-            } else if (context == "actions") {
-                const data = new ScoreCardsItemSP(retrieved, previous, context, utilities.areColumnsEmpty(retrieved, 'action'));
-                console.log(data);
-                // saveData('Scorecard', data, id);
+            } else if (view == "actions") {
+                const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
+
+                saveData('Scorecard', data, id); // no need for if else
             }
         });
     }

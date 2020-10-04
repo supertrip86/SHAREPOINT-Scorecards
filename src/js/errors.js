@@ -3,20 +3,7 @@ import "sweetalert2/dist/sweetalert2.min.css";
 
 const errorList = {
     dataNotFound: 'Data not found in SharePoint List',
-    invalidFile: 'You can only upload Word, Powerpoint, Excel or PDF documents',
-    invalidFilename: 'The selected file has any of the following invalid characters:<br>~, #, %, & , *, {, }, \, :, <, >, ?, /, |, \', "',
-    invalidFileSize: 'The selected file exceeds the maximum limit of 20 Megabytes',
-    invalidTitle: 'This Resource exists already',
-    invalidInput: 'The maximum number of characters for each input field is 250',
-    invalidDescription: 'You exceeded the maximum number of characters of the Description field',
-    addFormInvalid: 'Missing or invalid information',
-    resourceNotFound: 'The changes you made cannot be saved.<br>This Resource has been deleted by another user while you were working on it.<br><br>Reload the Gapmap to update the list of available Resources',
-    resourceModified: 'The selected Resource has been modified by another user while you were working on it.<br><br>To prevent overriding changes, reload the Gapmap and access this Resource again.',
-    selectResource: 'Select a Resource from the menu',
-    saveResource: 'Are you sure you want to save?',
-    deleteResource: 'Are you sure you want to delete this Resource?',
-    deleteAttachment: 'Do you want to delete this Document?',
-    modifyParameters: 'You are about to modify the Gapmap core parameters. Do you want to proceed?',
+    missingData: 'Please insert all the required information',
 };
 
 const display = (value, confirm, callback, arg) => {

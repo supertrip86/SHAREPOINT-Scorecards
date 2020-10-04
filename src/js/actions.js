@@ -2,6 +2,10 @@ import ActionsElement from "../hbs/partials/actionsElement.hbs";
 import SelectPure from "select-pure";
 import utilities from "./utilities";
 
+const clearStyle = (e) => {
+    e.target.removeAttribute('style');
+};
+
 const toggleAction = (e) => {
     const hash = location.hash.split('-');
     const view = e.target.id.split('-')[0];
@@ -12,22 +16,14 @@ const toggleAction = (e) => {
 const addAction = (e) => {
     const target = e.target.parentElement;
     const container = target.querySelector('.action-elements');
-    const max = parseInt(target.dataset.max) + 1;
-    
-    target.dataset.max = max;
-    container.insertAdjacentHTML( 'beforeend', ActionsElement(max) );
+    const index = parseInt(target.dataset.max) + 1;
+    const actionsData = {Index: index};
+    const options = utilities.userSelectOptions(app.users);
 
-    // new SelectPure(container.querySelector('.responsive-element:last-child'), incomeOptions);
+    target.dataset.max = index;
+    container.insertAdjacentHTML( 'beforeend', ActionsElement(actionsData) );
 
-    // return {
-	// 	options: list,
-	// 	placeholder: placeholder,
-	// 	autocomplete: auto,
-	// 	multiple: multiple,
-	// 	value: value,
-	// 	icon: "remove-country",
-	// 	onChange: () => getNodeList('.select-pure__select').forEach( (i) => i.style = "" )
-	// };
+    new SelectPure(container.querySelector('.responsive-element:last-child .action-lead'), options);
 };
 
 const removeAction = (e) => {
@@ -43,6 +39,7 @@ const sendActions = (e) => {
 };
 
 const actionsListeners = () => {
+    utilities.on('#scorecards-content', 'input', '.form-control.action-element', clearStyle);
     utilities.on('#scorecards-content', 'click', '.add-action', addAction);
     utilities.on('#scorecards-content', 'click', '.delete-action', removeAction);
     utilities.on('#scorecards-content', 'click', '.notify-action', sendNotification);

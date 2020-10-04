@@ -9,7 +9,9 @@ import { actionsListeners } from "./js/actions.js";
 import { Modal, modalListeners } from "./js/settings.js";
 import { Header, ActionsPanel, headerListeners, appController } from "./js/controller.js";
 
-/* handle after sleep mode... refresh app */
+/* 
+    handle after sleep mode... refresh app 
+*/
 
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 const scorecardsListColumns = ["scoredate", "Id", "Title"];

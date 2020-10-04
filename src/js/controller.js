@@ -16,6 +16,7 @@ import CancelButton from "../hbs/partials/cancelButton.hbs";
 import EditButton from "../hbs/partials/editButton.hbs";
 import html2pdf from "html2pdf.js";
 import Quill from 'quill';
+import SelectPure from "select-pure";
 import utilities from "./utilities.js";
 import dateUpdater from "../hbs/helpers/getDate.js";
 import { ScoreCardsItem } from "./scorecardsItem.js";
@@ -145,13 +146,13 @@ const editScorecard = () => {
                 new Quill(i.querySelector('.comment-inner'), utilities.editorOptions());
                 i.querySelector('.ql-toolbar').classList.add('vanish');
             });
-            !utilities.areColumnsEmpty(scorecards, 'data') && highlightCells(scorecards);
+            !utilities.areHubsEmpty(scorecards, 'data') && highlightCells(scorecards);
 
         } else if (target == "hubs-content") {
             const item = new HubsItem(scorecards);
 
             document.getElementById('hubs-content').innerHTML = HubsEdit(item);
-            utilities.areColumnsEmpty(scorecards, 'action') && initHubsData();
+            utilities.areHubsEmpty(scorecards, 'action') && initHubsData();
 
         } else if (target == "actions-content") {
             const actionsId = document.querySelector('.active-action').id;
@@ -159,6 +160,10 @@ const editScorecard = () => {
             const actionsData = utilities.getActionsData(actionsId, scorecards, previousScorecard);
 
             document.getElementById(actionsId).innerHTML = ActionsEdit(actionsData);
+
+            utilities.getNodes('.active-content .action-lead').forEach( (i) => {
+                new SelectPure(i, utilities.userSelectOptions(app.users, i.dataset.lead));
+            });
         }
 
     });

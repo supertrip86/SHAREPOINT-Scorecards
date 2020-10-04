@@ -8,18 +8,22 @@ module.exports = {
 	getAllUsers: getAllUsers,
 	getHeaderData: getHeaderData,
 	getActionsData: getActionsData,
+	getSaveMode: getSaveMode,
 	filterOut: filterOut,
-	areColumnsEmpty: areColumnsEmpty,
+	areHubsEmpty: areHubsEmpty,
+	isColumnEmpty: isColumnEmpty,
 	updateSPToken: updateSPToken,
 	startLoader: startLoader,
 	reload: reload,
 	editorOptions: editorOptions,
+	userSelectOptions: userSelectOptions,
 	limitIndicatorValues: limitIndicatorValues,
 	createScorecardTitle: createScorecardTitle,
 	fromArrowToSP: fromArrowToSP,
 	fromLikelihoodToSP: fromLikelihoodToSP,
 	fromDateToSP: fromDateToSP,
 	formatLikelihood: formatLikelihood,
+	formatActions: formatActions,
 	generateView: generateView,
 	generateHash: generateHash,
 	validateHash: validateHash,
@@ -103,23 +107,46 @@ function getHeaderData() {
 
 function getActionsData(id, currentItem, previousItem) {
 	const actionsTarget = id.split('-')[0];
-	const actionsCurrent = currentItem[`${actionsTarget}action`];
-	const actionsPrevious = previousItem ? previousItem[`${actionsTarget}action`] : null;
+	const actionsCurrent = formatActions(currentItem, actionsTarget);
+	const actionsPrevious = formatActions(previousItem, actionsTarget);
 	const settings = app.settings;
 
 	return {current: actionsCurrent, previous: actionsPrevious, settings: settings};
+}
+
+function getSaveMode(context, retrieved) {
+	switch (context) {
+		case "wca":
+			return false;
+
+		case "hubs":
+			return areHubsEmpty(retrieved, 'data');
+
+		case "west":
+			return isColumnEmpty(retrieved, 'west', 'action');
+
+		case "coastal":
+			return isColumnEmpty(retrieved, 'coastal', 'action');
+
+		case "central":
+			return isColumnEmpty(retrieved, 'central', 'action');
+	}
 }
 
 function filterOut(value) {
 	return isNaN(parseInt(value)) ? "" : value;
 }
 
-function areColumnsEmpty(scorecards, context) {
+function areHubsEmpty(scorecards, context) {
 	const isWestEmpty = !scorecards[`west${context}`];
 	const isCoastalEmpty = !scorecards[`coastal${context}`];
 	const isCentralEmpty = !scorecards[`central${context}`];
 
 	return isWestEmpty && isCoastalEmpty && isCentralEmpty;
+}
+
+function isColumnEmpty(scorecards, column, context) {
+	return !scorecards[`${column}${context}`];
 }
 
 function updateSPToken() {
@@ -160,6 +187,22 @@ function editorOptions() {
 		},
 		placeholder: 'Insert a description',
 		theme: 'snow'
+	};
+}
+
+function userSelectOptions(list, value) {
+	return {
+		options: list,
+		value: value,
+		placeholder: "Select a Lead",
+		autocomplete: true,
+		multiple: false,
+		icon: "remove-user",
+		onChange: () => getNodes('.select-pure__select').forEach( (i) => {
+			if (i.querySelector('.select-pure__label').innerText != "") {
+				i.removeAttribute('style');
+			}
+		})
 	};
 }
 
@@ -211,6 +254,12 @@ function fromLikelihoodToSP(element) {
 	}
 }
 
+function fromDateToSP() {
+	const date = document.getElementById('date-button').value.split('-');
+
+	return `${date[0]}-${date[1]}-15T00:00:00Z`;
+}
+
 function formatLikelihood(value) {
 	switch (value) {
         case 0:
@@ -226,10 +275,35 @@ function formatLikelihood(value) {
     }
 }
 
-function fromDateToSP() {
-	const date = document.getElementById('date-button').value.split('-');
+function formatActions(item, action) {
+	const element = item ? item[`${action}action`] : null;
+	const settings = app.settings;
 
-	return `${date[0]}-${date[1]}-15T00:00:00Z`;
+	if (element) {
+		let data = [];
+
+		Object.keys(element).forEach( (i) => {
+			let title = settings.filter( (d) => (d.Code == i) )[0].Title;
+			let indexes = Object.values( element[i] ).length ? Object.values( element[i] ).map( (d) => parseInt(d.Index)) : [];
+			let max = indexes.length ? Math.max(...indexes) : 0;
+			let actions = {};
+
+			Object.keys( element[i] ).forEach( (d) => {
+				actions[d] = element[i][d];
+			});
+
+			data.push({
+				code: i,
+				title: title,
+				max: max,
+				data: actions
+			});
+		});
+
+		return data;
+	}
+
+	return null;
 }
 
 function generateView(hash) {
