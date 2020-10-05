@@ -1,5 +1,5 @@
 import utilities from "../js/utilities.js";
-import { display } from "./errors.js";
+import { display } from "./alert.js";
 import { ScoreCardsItem } from "./scorecardsItem.js";
 import { ScoreCardsItemSP } from "./scorecardsItemSP.js";
 import { SettingsItemSP } from "./settingsItemSP.js";
@@ -119,7 +119,7 @@ const modifyScorecards = () => {
             } else if (view == "actions") {
                 const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
 
-                saveData('Scorecard', data, id); // no need for if else
+                // saveData('Scorecard', data, id); // no need for if else
             }
         });
     }

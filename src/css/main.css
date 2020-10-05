@@ -5,8 +5,8 @@ button > * {pointer-events: none;}
 .vanish {display: none!important;}
 .hidden {opacity: 0;}
 
-#scorecards-content {margin-bottom: 6rem;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
-#scorecards-content .scorecards-container {max-width: 1160px;margin: auto;}
+#scorecards-content {margin: auto auto 6rem auto;max-width: 1200px;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#scorecards-content .scorecards-container {max-width: 1160px;margin: auto 20px;}
 #scorecards-content input.form-control {overflow: hidden;}
 
 /* bootstrap 4.5 custom */

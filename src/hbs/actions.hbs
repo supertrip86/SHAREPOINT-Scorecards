@@ -1,3 +1,23 @@
-<ul class="responsive-table">
-    {{log this}}
-</ul>
+{{#if current}}
+    {{#each current}}
+        {{#if max}}
+        <div id="{{code}}-header" data-row="{{@index}}" data-max="{{max}}" class="responsive-header">
+            <div class="action-title">{{title}}</div>
+            <ul class="action-elements">
+                {{#each data}}
+                <li class="responsive-element" data-action="{{Index}}">
+                    <div class="col column-1" data-label="Project">{{Project}}</div>
+                    <div class="col column-2" data-label="Country">{{Country}}</div>
+                    <div class="col column-3" data-label="Stage">{{Stage}}</div>
+                    <div class="col column-4" data-label="Action">{{Action}}</div>
+                    <div class="col column-5" data-label="Status">{{Status}}</div>
+                    <div class="col column-6" data-label="Updates">{{Updates}}</div>
+                    <div class="col column-7" data-label="Lead">{{Lead}}</div>
+                    <div class="col column-8" data-label="Deadline">{{Deadline}}</div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+    {{/each}}
+{{/if}}

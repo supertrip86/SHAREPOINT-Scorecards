@@ -131,10 +131,11 @@ const editScorecard = () => {
         const target = document.querySelector('.active-content').id;
         const scorecards = new ScoreCardsItem(result.d.results[0]);
 
-        document.getElementById('toggle-button').innerHTML = CancelButton();
+        app.current = scorecards;
+        app.admin && ( document.getElementById('toggle-button').innerHTML = CancelButton() );
+        app.owner && document.getElementById('send-actions').classList.add('vanish');
 
         document.getElementById('right-buttons').classList.add('vanish');
-        document.getElementById('send-actions').classList.add('vanish');
         utilities.getNodes('.actions-button:not(:disabled)').forEach( (i) => i.classList.add('invisible') );
 
         document.getElementById('save-button').removeAttribute('disabled');
@@ -165,7 +166,6 @@ const editScorecard = () => {
                 new SelectPure(i, utilities.userSelectOptions(app.users, i.dataset.lead));
             });
         }
-
     });
 };
 
@@ -206,7 +206,6 @@ const loadScorecard = (url) => {
         main.classList.remove('welcome');
 
         document.getElementById('right-buttons').classList.remove('vanish');
-        document.getElementById('send-actions').classList.remove('vanish');
         utilities.getNodes('.actions-button:not(:disabled)').forEach( (i) => i.classList.remove('invisible') );
 
         if (target.id == "wca-content") {
@@ -230,6 +229,12 @@ const loadScorecard = (url) => {
             document.getElementById('edit-button').classList.remove('vanish');
             document.getElementById('save-button').classList.remove('vanish');
             document.getElementById('save-button').setAttribute('disabled', 'disabled');
+
+            app.deletedActions.length = 0;
+        }
+
+        if (app.owner) {
+            document.getElementById('send-actions').classList.remove('vanish');
         }
 
         document.querySelector('body').removeAttribute('class');

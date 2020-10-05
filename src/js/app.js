@@ -23,7 +23,10 @@ class Admin extends App {
         super(data);
 
         this.admin = true;
+        this.owner = data.isOwner;
+        this.person = data.person;
         this.users = data.usersList;
+        this.deletedActions = [];
     }
 };
 

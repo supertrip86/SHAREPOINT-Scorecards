@@ -1,5 +1,24 @@
 import utilities from "./utilities";
 
+/* 
+    To prevent Users from overriding each other's edits while working at the same time on the ScoreCards Sharepoint List, 
+    every time a User saves any modification, the algorithm checks which data have been modified from their original state by comparing the information found 
+    in the "previous" parameter and the ones that are being currently saved by the User (the data retrieved from the HTML form).
+    In the "Edit Actions" scenario, newly created actions (marked with class "new-action") are not yet considered, and therefore not taken from the HTML form.
+
+    Every modification is then stored in the "column" object. ONLY MODIFICATIONS ARE INSERTED.
+    In the "Edit Actions" scenario, during each User's session, all the IDs of the deleted actions are stored in the "deletedActions" array. Those Ids are now used to remove from the "retrieved" parameter all the deleted actions.
+    The "retrieved" parameter gets at this point updated with the modifications found in the "column" object.
+    
+    All the newly created actions are now taken from the HTML form and inserted in the "retrieved" object.
+
+    Finally, "retrieved" is sent to Sharepoint via REST API and replaces the old information in the Sharepoint List.
+
+    A perfect example of each step is in the editActions() method of the Class below.
+
+    IMPORTANT: every action has a unique ID. A unique ID is crucial for this method to work.
+*/
+
 class ScoreCardsItemSP {
     constructor(retrieved, previous, context, createMode) {
         (context == "wca" && createMode) && ( this.Title = utilities.createScorecardTitle() );
@@ -24,9 +43,9 @@ class ScoreCardsItemSP {
         (context == "coastal" && createMode) && ( this.coastalaction = this.createActions('coastal') );
         (context == "central" && createMode) && ( this.centralaction = this.createActions('central') );
 
-        // (context == "west" && !createMode) && ( this.westaction = this.createActions(retrieved, previous, 'west') );
-        // (context == "coastal" && !createMode) && ( this.coastalaction = this.createActions(retrieved, previous, 'coastal') );
-        // (context == "central" && !createMode) && ( this.centralaction = this.createActions(retrieved, previous, 'central') );
+        (context == "west" && !createMode) && ( this.westaction = this.editActions(retrieved, previous, 'west') );
+        (context == "coastal" && !createMode) && ( this.coastalaction = this.editActions(retrieved, previous, 'coastal') );
+        (context == "central" && !createMode) && ( this.centralaction = this.editActions(retrieved, previous, 'central') );
 
         this.__metadata = { type: app.storage.scorecardsType };
     }
@@ -104,6 +123,7 @@ class ScoreCardsItemSP {
                 let id = `${code}-${d.dataset.action}`;
                 data[action][code][id] = {};
 
+                data[action][code][id]['Code'] = code;
                 data[action][code][id]['Index'] = d.dataset.action;
                 data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
                 data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
@@ -202,7 +222,55 @@ class ScoreCardsItemSP {
     }
 
     editActions(retrieved, previous, action) {
+        let column = {};
 
+        utilities.getNodes('.active-action .responsive-element:not(.new-action)').forEach( (i) => {
+            let id = i.dataset.code;
+            let code = id.split('-')[0];
+            let old = previous[`${action}action`][code][id];
+
+            let project = i.querySelector('.column-1 textarea').value;
+            let country = i.querySelector('.column-2 textarea').value;
+            let stage = i.querySelector('.column-3 textarea').value;
+            let act = i.querySelector('.column-4 textarea').value;
+            let status = i.querySelector('.column-5 select').value;
+            let updates = i.querySelector('.column-6 textarea').value;
+            let lead = i.querySelector('.column-7 .select-pure__label').innerText;
+            let deadline = i.querySelector('.column-8 textarea').value;
+
+            !column[code] && ( column[code] = {} );
+            column[code][id] = {};
+
+            project != old.Project && (column[code][id]['Project'] = project);
+            country != old.Country && (column[code][id]['Country'] = country);
+            stage != old.Stage && (column[code][id]['Stage'] = stage);
+            act != old.Action && (column[code][id]['Action'] = act);
+            status != old.Status && (column[code][id]['Status'] = status);
+            updates != old.Updates && (column[code][id]['Updates'] = updates);
+            lead != old.Lead && (column[code][id]['Lead'] = lead);
+            deadline != old.Deadline && (column[code][id]['Deadline'] = deadline);
+        });
+
+        app.deletedActions.forEach( (d) => {
+            let code = d.split('-')[0];
+
+            delete retrieved[`${action}action`][code][d];
+        });
+
+        for (element in column) {
+            Object.keys(column[element]).forEach( (i) => {
+                Object.keys(column[element][i]).forEach( (d) => {
+                    retrieved[`${action}action`][element][i][d] = column[element][i][d];
+                });
+            });
+        }
+        
+        utilities.getNodes('.active-action .new-action').forEach( (c) => {
+            let id = c.dataset.code;
+            // add newly created actions to retrieved
+        });
+
+        return JSON.stringify(retrieved[`${action}action`]);
     }
 
     editComment(retrieved, previous) {

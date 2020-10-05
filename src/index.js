@@ -10,7 +10,7 @@ import { Modal, modalListeners } from "./js/settings.js";
 import { Header, ActionsPanel, headerListeners, appController } from "./js/controller.js";
 
 /* 
-    handle after sleep mode... refresh app 
+    handle after sleep mode... reload app?
 */
 
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
@@ -28,6 +28,8 @@ const data = {
 };
 
 receiveData(data.userData).then( (user) => {
+    data.person = user.d.Title;
+    data.isOwner = (data.person == "Leguia Alegria, Juan Jose" || data.person == "Giunta, Giovanni") ? true : false;
     data.isAdmin = !!user.d.Groups.results.filter( (i) => (i.Title == "Tools Owners")).length;
 
     receiveData(data.settingsData).then( (settingsResult) => {
@@ -68,7 +70,7 @@ function initApp() {
     }
 
     document.getElementById("scorecards-header").innerHTML = Header( utilities.getHeaderData() );
-    document.getElementById("actions-content").innerHTML = ActionsPanel();
+    document.getElementById("actions-content").innerHTML = ActionsPanel(app.owner);
 
     utilities.updateSPToken();
 

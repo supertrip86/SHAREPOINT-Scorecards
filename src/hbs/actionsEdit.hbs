@@ -3,11 +3,11 @@
     <div id="{{code}}-header" data-row="{{@index}}" data-max="{{max}}" class="responsive-header">
         <button class="add-action">Add</button>
         <div class="action-title">{{title}}</div>
-        <div class="action-elements">
+        <ul class="action-elements">
             {{#each data}}
             {{> actionsElement this}}
             {{/each}}
-        </div>
+        </ul>
     </div>
     {{/each}}
 {{else if previous}}
@@ -19,44 +19,7 @@
     <div id="{{Code}}-header" data-row="{{@index}}" data-max="0" class="responsive-header">
         <button class="add-action">Add</button>
         <div class="action-title">{{Title}}</div>
-        <div class="action-elements"></div>
+        <ul class="action-elements"></ul>
     </div>
     {{/each}}
 {{/if}}
-
-{{!-- {{
-    create actionsItem.js
-
-    {
-        code: code,
-        title: title,
-        max: max,
-        data: {
-            code-x: {
-                index: x //max
-                data: {
-                    
-                }
-            }
-        }
-    }
-}} --}}
-
-{{!-- {{#each settings}}
-<div id="{{Code}}-header" data-row="{{@index}}" data-max="0" class="responsive-header">
-    <button class="add-action">Add</button>
-    <div class="action-title">{{Title}}</div>
-    <div class="action-elements">
-        {{#if ../current}}
-            {{#each getAction ../current Code}}
-            <p>{{@key}}</p>
-            {{/each}}
-        {{/if}}
-        {{#if current}}
-        
-        {{else if previous}}
-
-        {{/if}}
-    </div>
-</div>
-{{/each}} --}}

@@ -4,7 +4,7 @@ import Settings from "../hbs/partials/settingsComponents.hbs";
 import $ from "jquery";
 import Sortable from 'sortablejs';
 import { receiveData, modifySettings } from "../js/requests.js";
-import utilities from "./utilities";
+import utilities from "./utilities.js";
 
 const switchCard = (e) => {
     const menuItem = e.target;

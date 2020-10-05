@@ -1,18 +1,18 @@
-<div class="responsive-element{{#unless Project}} new-action{{/unless}}" data-action="{{Index}}">
+<li class="responsive-element{{#unless Project}} new-action{{/unless}}" data-action="{{Index}}" data-code="{{Code}}-{{Index}}">
     <button class="delete-action"></button>
-    <div class="col column-1">
+    <div class="col column-1" data-label="Project">
         <textarea class="form-control action-element">{{Project}}</textarea>
     </div>
-    <div class="col column-2">
+    <div class="col column-2" data-label="Country">
         <textarea class="form-control action-element">{{Country}}</textarea>
     </div>
-    <div class="col column-3">
+    <div class="col column-3" data-label="Stage">
         <textarea class="form-control action-element">{{Stage}}</textarea>
     </div>
-    <div class="col column-4">
+    <div class="col column-4" data-label="Action">
         <textarea class="form-control action-element"{{#if Project}} disabled="disabled"{{/if}}>{{Action}}</textarea>
     </div>
-    <div class="col column-5">
+    <div class="col column-5" data-label="Status">
         <select class="form-control action-element">
             <option value=""></option>
             <option value="New Action" {{{selectOption Status 'New Action'}}}>New Action</option>
@@ -20,14 +20,14 @@
             <option value="Completed" {{{selectOption Status 'Completed'}}}>Completed</option>
         </select>
     </div>
-    <div class="col column-6">
+    <div class="col column-6" data-label="Updates">
         <textarea class="form-control action-element">{{Updates}}</textarea>
     </div>
-    <div class="col column-7">
+    <div class="col column-7" data-label="Lead">
         <div class="action-lead action-element"{{#if Lead}} data-lead="{{Lead}}"{{/if}}></div>
     </div>
-    <div class="col column-8">
+    <div class="col column-8" data-label="Deadline">
         <textarea class="form-control action-element">{{Deadline}}</textarea>
     </div>
     {{#if Project}}<button class="notify-action"></button>{{/if}}
-</div>
+</li>

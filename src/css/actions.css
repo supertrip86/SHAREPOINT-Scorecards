@@ -25,6 +25,7 @@
 #actions-body .actions-container .responsive-header button {position: absolute;top: 4px;width: 40px;height: 25px;outline: none;border: 1px solid #ddd;border-radius: 20px;background: linear-gradient(#fff,#e7e7e7);}
 #actions-body .actions-container .responsive-header .add-action {font-size: 11px;left: -45px;}
 #actions-body .actions-container .responsive-header .action-title {background-color: #d3d3d3;padding: 8px 30px;border-radius: 3px;display: inline-block;margin-bottom: 15px;}
+#actions-body .actions-container .responsive-header .action-elements {padding: 0;}
 #actions-body .actions-container .responsive-element {padding: 10px;margin-bottom: 15px;position: relative;display: flex;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,0.1);min-height: 140px;border-radius: 3px;}
 #actions-body .actions-container .responsive-element .notify-action {right: -45px;}
 #actions-body .actions-container .responsive-element .notify-action::after {content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktZW52ZWxvcGUtZmlsbCIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICAgICAgICAgICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNLjA1IDMuNTU1QTIgMiAwIDAgMSAyIDJoMTJhMiAyIDAgMCAxIDEuOTUgMS41NTVMOCA4LjQxNC4wNSAzLjU1NXpNMCA0LjY5N3Y3LjEwNGw1LjgwMy0zLjU1OEwwIDQuNjk3ek02Ljc2MSA4LjgzbC02LjU3IDQuMDI3QTIgMiAwIDAgMCAyIDE0aDEyYTIgMiAwIDAgMCAxLjgwOC0xLjE0NGwtNi41Ny00LjAyN0w4IDkuNTg2bC0xLjIzOS0uNzU3em0zLjQzNi0uNTg2TDE2IDExLjgwMVY0LjY5N2wtNS44MDMgMy41NDZ6Ij48L3BhdGg+DQogICAgICAgIDwvc3ZnPg==");}
@@ -49,3 +50,11 @@
 .select-pure__autocomplete {background:#f9f9f8;border-bottom:1px solid #e4e4e4;border-left:none;border-right:none;border-top:none;box-sizing:border-box;font-size:14px;outline:0;padding:10px;width:100%}
 .select-pure__placeholder {font-size: 12px;color: #808080;font-weight: 400;}
 .select-pure__placeholder--hidden {display: none;}
+
+@media all and (max-width: 767px) {
+    #actions-body .actions-container .responsive-header button, .actions-table-header {display: none;}
+    #actions-body .actions-container .responsive-header .action-elements li {display: block;}
+    #actions-body .actions-container .responsive-header .action-elements .col {flex-basis: 100%;}
+    #actions-body .actions-container .responsive-header .action-elements .col {display: flex;}
+    #actions-body .actions-container .responsive-header .action-elements .col:before {color: #6C7A89;padding-right: 10px;content: attr(data-label);flex-basis: 50%;text-align: right;}
+}

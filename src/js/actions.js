@@ -1,6 +1,7 @@
 import ActionsElement from "../hbs/partials/actionsElement.hbs";
 import SelectPure from "select-pure";
-import utilities from "./utilities";
+import utilities from "./utilities.js";
+import { display } from "./alert.js";
 
 const clearStyle = (e) => {
     e.target.removeAttribute('style');
@@ -16,8 +17,9 @@ const toggleAction = (e) => {
 const addAction = (e) => {
     const target = e.target.parentElement;
     const container = target.querySelector('.action-elements');
+    const code = target.id.split('-')[0];
     const index = parseInt(target.dataset.max) + 1;
-    const actionsData = {Index: index};
+    const actionsData = {Index: index, Code: code};
     const options = utilities.userSelectOptions(app.users);
 
     target.dataset.max = index;
@@ -27,15 +29,22 @@ const addAction = (e) => {
 };
 
 const removeAction = (e) => {
-    e.target.parentElement.remove();
+    const target = e.target.parentElement;
+    const id = target.dataset.code;
+
+    id && app.deletedActions.push(id);
+    target.remove();
 };
 
 const sendNotification = (e) => {
-    console.log(e.target.parentElement);
+
+    return display('sendNotification', true);
 };
 
 const sendActions = (e) => {
-    console.log(e.target);
+    const validateSend = document.querySelectorAll('.active-action .responsive-element').length > 0;
+
+    validateSend && display('sendActions', true);
 };
 
 const actionsListeners = () => {

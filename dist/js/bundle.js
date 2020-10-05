@@ -47345,17 +47345,79 @@ module.exports = g;
 
 var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var lookupProperty = container.lookupProperty || function(parent, propertyName) {
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return "<ul class=\"responsive-table\">\r\n    "
-    + container.escapeExpression(lookupProperty(helpers,"log").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"log","hash":{},"data":data,"loc":{"start":{"line":2,"column":4},"end":{"line":2,"column":16}}}))
-    + "\r\n</ul>";
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":2,"column":4},"end":{"line":22,"column":13}}})) != null ? stack1 : "");
+},"2":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"max") : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":3,"column":8},"end":{"line":21,"column":15}}})) != null ? stack1 : "");
+},"3":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "        <div id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"code") || (depth0 != null ? lookupProperty(depth0,"code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"code","hash":{},"data":data,"loc":{"start":{"line":4,"column":17},"end":{"line":4,"column":25}}}) : helper)))
+    + "-header\" data-row=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":4,"column":44},"end":{"line":4,"column":54}}}) : helper)))
+    + "\" data-max=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"max") || (depth0 != null ? lookupProperty(depth0,"max") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max","hash":{},"data":data,"loc":{"start":{"line":4,"column":66},"end":{"line":4,"column":73}}}) : helper)))
+    + "\" class=\"responsive-header\">\r\n            <div class=\"action-title\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":5,"column":38},"end":{"line":5,"column":47}}}) : helper)))
+    + "</div>\r\n            <ul class=\"action-elements\">\r\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"data") : depth0),{"name":"each","hash":{},"fn":container.program(4, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":7,"column":16},"end":{"line":18,"column":25}}})) != null ? stack1 : "")
+    + "            </ul>\r\n        </div>\r\n";
+},"4":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "                <li class=\"responsive-element\" data-action=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"Index") || (depth0 != null ? lookupProperty(depth0,"Index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Index","hash":{},"data":data,"loc":{"start":{"line":8,"column":60},"end":{"line":8,"column":69}}}) : helper)))
+    + "\">\r\n                    <div class=\"col column-1\" data-label=\"Project\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Project") || (depth0 != null ? lookupProperty(depth0,"Project") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Project","hash":{},"data":data,"loc":{"start":{"line":9,"column":67},"end":{"line":9,"column":78}}}) : helper)))
+    + "</div>\r\n                    <div class=\"col column-2\" data-label=\"Country\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Country") || (depth0 != null ? lookupProperty(depth0,"Country") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Country","hash":{},"data":data,"loc":{"start":{"line":10,"column":67},"end":{"line":10,"column":78}}}) : helper)))
+    + "</div>\r\n                    <div class=\"col column-3\" data-label=\"Stage\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Stage") || (depth0 != null ? lookupProperty(depth0,"Stage") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Stage","hash":{},"data":data,"loc":{"start":{"line":11,"column":65},"end":{"line":11,"column":74}}}) : helper)))
+    + "</div>\r\n                    <div class=\"col column-4\" data-label=\"Action\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Action") || (depth0 != null ? lookupProperty(depth0,"Action") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Action","hash":{},"data":data,"loc":{"start":{"line":12,"column":66},"end":{"line":12,"column":76}}}) : helper)))
+    + "</div>\r\n                    <div class=\"col column-5\" data-label=\"Status\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Status") || (depth0 != null ? lookupProperty(depth0,"Status") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Status","hash":{},"data":data,"loc":{"start":{"line":13,"column":66},"end":{"line":13,"column":76}}}) : helper)))
+    + "</div>\r\n                    <div class=\"col column-6\" data-label=\"Updates\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Updates") || (depth0 != null ? lookupProperty(depth0,"Updates") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Updates","hash":{},"data":data,"loc":{"start":{"line":14,"column":67},"end":{"line":14,"column":78}}}) : helper)))
+    + "</div>\r\n                    <div class=\"col column-7\" data-label=\"Lead\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Lead") || (depth0 != null ? lookupProperty(depth0,"Lead") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Lead","hash":{},"data":data,"loc":{"start":{"line":15,"column":64},"end":{"line":15,"column":72}}}) : helper)))
+    + "</div>\r\n                    <div class=\"col column-8\" data-label=\"Deadline\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Deadline") || (depth0 != null ? lookupProperty(depth0,"Deadline") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Deadline","hash":{},"data":data,"loc":{"start":{"line":16,"column":68},"end":{"line":16,"column":80}}}) : helper)))
+    + "</div>\r\n                </li>\r\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":23,"column":7}}})) != null ? stack1 : "");
 },"useData":true});
 
 /***/ }),
@@ -47394,9 +47456,9 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(((helper = (helper = lookupProperty(helpers,"max") || (depth0 != null ? lookupProperty(depth0,"max") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"max","hash":{},"data":data,"loc":{"start":{"line":3,"column":62},"end":{"line":3,"column":69}}}) : helper)))
     + "\" class=\"responsive-header\">\r\n        <button class=\"add-action\">Add</button>\r\n        <div class=\"action-title\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":5,"column":34},"end":{"line":5,"column":43}}}) : helper)))
-    + "</div>\r\n        <div class=\"action-elements\">\r\n"
+    + "</div>\r\n        <ul class=\"action-elements\">\r\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"data") : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":7,"column":12},"end":{"line":9,"column":21}}})) != null ? stack1 : "")
-    + "        </div>\r\n    </div>\r\n";
+    + "        </ul>\r\n    </div>\r\n";
 },"3":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -47444,7 +47506,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":19,"column":40},"end":{"line":19,"column":50}}}) : helper)))
     + "\" data-max=\"0\" class=\"responsive-header\">\r\n        <button class=\"add-action\">Add</button>\r\n        <div class=\"action-title\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":21,"column":34},"end":{"line":21,"column":43}}}) : helper)))
-    + "</div>\r\n        <div class=\"action-elements\"></div>\r\n    </div>\r\n";
+    + "</div>\r\n        <ul class=\"action-elements\"></ul>\r\n    </div>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -47453,8 +47515,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(5, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":25,"column":7}}})) != null ? stack1 : "")
-    + "\r\n\r\n";
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(5, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":25,"column":7}}})) != null ? stack1 : "");
 },"usePartial":true,"useData":true});
 
 /***/ }),
@@ -47468,8 +47529,19 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
 var Handlebars = __webpack_require__(/*! ../../node_modules/handlebars/runtime.js */ "./node_modules/handlebars/runtime.js");
 function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"actions-header\">\r\n    <button id=\"west-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Dakar</span>\r\n    </button>\r\n    <button id=\"coastal-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Abidjan</span>\r\n    </button>\r\n    <button id=\"central-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Yaoundé</span>\r\n    </button>\r\n    <button id=\"send-actions\" class=\"btn btn-primary\">\r\n        <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-envelope-fill\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n            <path fill-rule=\"evenodd\" d=\"M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z\"/>\r\n        </svg>\r\n        <span>Submit</span>\r\n    </button>\r\n</div>\r\n<div class=\"actions-table-header\">\r\n    <div class=\"col column-1\">\r\n        <div>Project</div>\r\n        <div class=\"subtitle\">Where?</div>\r\n    </div>\r\n    <div class=\"col column-2\">Country</div>\r\n    <div class=\"col column-3\">Stage</div>\r\n    <div class=\"col column-4\">\r\n        <div>Action</div>\r\n        <div class=\"subtitle\">What?</div>\r\n    </div>\r\n    <div class=\"col column-5\">Status</div>\r\n    <div class=\"col column-6\">Updates</div>\r\n    <div class=\"col column-7\">\r\n        <div>Lead</div>\r\n        <div class=\"subtitle\">Who?</div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <div>Deadline</div>\r\n        <div class=\"subtitle\">When?</div>\r\n    </div>\r\n</div>\r\n<div id=\"actions-body\">\r\n    <div id=\"west-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"coastal-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"central-action\" class=\"actions-container vanish\"></div>\r\n</div>";
+module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+    return "    <button id=\"send-actions\" class=\"btn btn-primary d-none d-lg-flex\">\r\n        <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-envelope-fill\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n            <path fill-rule=\"evenodd\" d=\"M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z\"/>\r\n        </svg>\r\n        <span>Submit</span>\r\n    </button>\r\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"actions-header\">\r\n    <button id=\"west-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Dakar</span>\r\n    </button>\r\n    <button id=\"coastal-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Abidjan</span>\r\n    </button>\r\n    <button id=\"central-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Yaoundé</span>\r\n    </button>\r\n"
+    + ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":20,"column":4},"end":{"line":27,"column":11}}})) != null ? stack1 : "")
+    + "</div>\r\n<div class=\"actions-table-header\">\r\n    <div class=\"col column-1\">\r\n        <div>Project</div>\r\n        <div class=\"subtitle\">Where?</div>\r\n    </div>\r\n    <div class=\"col column-2\">Country</div>\r\n    <div class=\"col column-3\">Stage</div>\r\n    <div class=\"col column-4\">\r\n        <div>Action</div>\r\n        <div class=\"subtitle\">What?</div>\r\n    </div>\r\n    <div class=\"col column-5\">Status</div>\r\n    <div class=\"col column-6\">Updates</div>\r\n    <div class=\"col column-7\">\r\n        <div>Lead</div>\r\n        <div class=\"subtitle\">Who?</div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <div>Deadline</div>\r\n        <div class=\"subtitle\">When?</div>\r\n    </div>\r\n</div>\r\n<div id=\"actions-body\">\r\n    <div id=\"west-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"coastal-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"central-action\" class=\"actions-container vanish\"></div>\r\n</div>";
 },"useData":true});
 
 /***/ }),
@@ -48111,35 +48183,39 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "<div class=\"responsive-element"
-    + ((stack1 = lookupProperty(helpers,"unless").call(alias1,(depth0 != null ? lookupProperty(depth0,"Project") : depth0),{"name":"unless","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":1,"column":30},"end":{"line":1,"column":71}}})) != null ? stack1 : "")
+  return "<li class=\"responsive-element"
+    + ((stack1 = lookupProperty(helpers,"unless").call(alias1,(depth0 != null ? lookupProperty(depth0,"Project") : depth0),{"name":"unless","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":1,"column":29},"end":{"line":1,"column":70}}})) != null ? stack1 : "")
     + "\" data-action=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"Index") || (depth0 != null ? lookupProperty(depth0,"Index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Index","hash":{},"data":data,"loc":{"start":{"line":1,"column":86},"end":{"line":1,"column":95}}}) : helper)))
-    + "\">\r\n    <button class=\"delete-action\"></button>\r\n    <div class=\"col column-1\">\r\n        <textarea class=\"form-control action-element\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Index") || (depth0 != null ? lookupProperty(depth0,"Index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Index","hash":{},"data":data,"loc":{"start":{"line":1,"column":85},"end":{"line":1,"column":94}}}) : helper)))
+    + "\" data-code=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"Code") || (depth0 != null ? lookupProperty(depth0,"Code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Code","hash":{},"data":data,"loc":{"start":{"line":1,"column":107},"end":{"line":1,"column":115}}}) : helper)))
+    + "-"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Index") || (depth0 != null ? lookupProperty(depth0,"Index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Index","hash":{},"data":data,"loc":{"start":{"line":1,"column":116},"end":{"line":1,"column":125}}}) : helper)))
+    + "\">\r\n    <button class=\"delete-action\"></button>\r\n    <div class=\"col column-1\" data-label=\"Project\">\r\n        <textarea class=\"form-control action-element\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Project") || (depth0 != null ? lookupProperty(depth0,"Project") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Project","hash":{},"data":data,"loc":{"start":{"line":4,"column":54},"end":{"line":4,"column":65}}}) : helper)))
-    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-2\">\r\n        <textarea class=\"form-control action-element\">"
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-2\" data-label=\"Country\">\r\n        <textarea class=\"form-control action-element\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Country") || (depth0 != null ? lookupProperty(depth0,"Country") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Country","hash":{},"data":data,"loc":{"start":{"line":7,"column":54},"end":{"line":7,"column":65}}}) : helper)))
-    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-3\">\r\n        <textarea class=\"form-control action-element\">"
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-3\" data-label=\"Stage\">\r\n        <textarea class=\"form-control action-element\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Stage") || (depth0 != null ? lookupProperty(depth0,"Stage") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Stage","hash":{},"data":data,"loc":{"start":{"line":10,"column":54},"end":{"line":10,"column":63}}}) : helper)))
-    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-4\">\r\n        <textarea class=\"form-control action-element\""
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-4\" data-label=\"Action\">\r\n        <textarea class=\"form-control action-element\""
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"Project") : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":13,"column":53},"end":{"line":13,"column":95}}})) != null ? stack1 : "")
     + ">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Action") || (depth0 != null ? lookupProperty(depth0,"Action") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Action","hash":{},"data":data,"loc":{"start":{"line":13,"column":96},"end":{"line":13,"column":106}}}) : helper)))
-    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-5\">\r\n        <select class=\"form-control action-element\">\r\n            <option value=\"\"></option>\r\n            <option value=\"New Action\" "
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-5\" data-label=\"Status\">\r\n        <select class=\"form-control action-element\">\r\n            <option value=\"\"></option>\r\n            <option value=\"New Action\" "
     + ((stack1 = __default(__webpack_require__(/*! ../helpers/selectOption.js */ "./src/hbs/helpers/selectOption.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Status") : depth0),"New Action",{"name":"selectOption","hash":{},"data":data,"loc":{"start":{"line":18,"column":39},"end":{"line":18,"column":77}}})) != null ? stack1 : "")
     + ">New Action</option>\r\n            <option value=\"Ongoing\" "
     + ((stack1 = __default(__webpack_require__(/*! ../helpers/selectOption.js */ "./src/hbs/helpers/selectOption.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Status") : depth0),"Ongoing",{"name":"selectOption","hash":{},"data":data,"loc":{"start":{"line":19,"column":36},"end":{"line":19,"column":71}}})) != null ? stack1 : "")
     + ">Ongoing</option>\r\n            <option value=\"Completed\" "
     + ((stack1 = __default(__webpack_require__(/*! ../helpers/selectOption.js */ "./src/hbs/helpers/selectOption.js")).call(alias1,(depth0 != null ? lookupProperty(depth0,"Status") : depth0),"Completed",{"name":"selectOption","hash":{},"data":data,"loc":{"start":{"line":20,"column":38},"end":{"line":20,"column":75}}})) != null ? stack1 : "")
-    + ">Completed</option>\r\n        </select>\r\n    </div>\r\n    <div class=\"col column-6\">\r\n        <textarea class=\"form-control action-element\">"
+    + ">Completed</option>\r\n        </select>\r\n    </div>\r\n    <div class=\"col column-6\" data-label=\"Updates\">\r\n        <textarea class=\"form-control action-element\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Updates") || (depth0 != null ? lookupProperty(depth0,"Updates") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Updates","hash":{},"data":data,"loc":{"start":{"line":24,"column":54},"end":{"line":24,"column":65}}}) : helper)))
-    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-7\">\r\n        <div class=\"action-lead action-element\""
+    + "</textarea>\r\n    </div>\r\n    <div class=\"col column-7\" data-label=\"Lead\">\r\n        <div class=\"action-lead action-element\""
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"Lead") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":27,"column":47},"end":{"line":27,"column":87}}})) != null ? stack1 : "")
-    + "></div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <textarea class=\"form-control action-element\">"
+    + "></div>\r\n    </div>\r\n    <div class=\"col column-8\" data-label=\"Deadline\">\r\n        <textarea class=\"form-control action-element\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Deadline") || (depth0 != null ? lookupProperty(depth0,"Deadline") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Deadline","hash":{},"data":data,"loc":{"start":{"line":30,"column":54},"end":{"line":30,"column":66}}}) : helper)))
     + "</textarea>\r\n    </div>\r\n    "
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"Project") : depth0),{"name":"if","hash":{},"fn":container.program(7, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":32,"column":4},"end":{"line":32,"column":65}}})) != null ? stack1 : "")
-    + "\r\n</div>";
+    + "\r\n</li>";
 },"useData":true});
 
 /***/ }),
@@ -48521,7 +48597,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* 
-    handle after sleep mode... refresh app 
+    handle after sleep mode... reload app?
 */
 
 var settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
@@ -48537,6 +48613,8 @@ var data = {
   scorecardsMetadata: "".concat(_spPageContextInfo.webAbsoluteUrl, "/_api/web/lists/getbytitle('scorecards-data-v2')")
 };
 Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.userData).then(user => {
+  data.person = user.d.Title;
+  data.isOwner = data.person == "Leguia Alegria, Juan Jose" || data.person == "Giunta, Giovanni" ? true : false;
   data.isAdmin = !!user.d.Groups.results.filter(i => i.Title == "Tools Owners").length;
   Object(_js_requests_js__WEBPACK_IMPORTED_MODULE_4__["receiveData"])(data.settingsData).then(settingsResult => {
     data.settings = settingsResult.d.results;
@@ -48569,7 +48647,7 @@ function initApp() {
   }
 
   document.getElementById("scorecards-header").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["Header"])(_js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.getHeaderData());
-  document.getElementById("actions-content").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["ActionsPanel"])();
+  document.getElementById("actions-content").innerHTML = Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["ActionsPanel"])(app.owner);
   _js_utilities__WEBPACK_IMPORTED_MODULE_3___default.a.updateSPToken();
   Object(_js_controller_js__WEBPACK_IMPORTED_MODULE_9__["headerListeners"])();
   Object(_js_scorecards_js__WEBPACK_IMPORTED_MODULE_6__["scorecardsListeners"])();
@@ -48595,8 +48673,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var select_pure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! select-pure */ "./node_modules/select-pure/lib/index.js");
 /* harmony import */ var select_pure__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(select_pure__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities */ "./src/js/utilities.js");
-/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utilities__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _alert_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./alert.js */ "./src/js/alert.js");
+
 
 
 
@@ -48614,37 +48694,92 @@ var toggleAction = e => {
 var addAction = e => {
   var target = e.target.parentElement;
   var container = target.querySelector('.action-elements');
+  var code = target.id.split('-')[0];
   var index = parseInt(target.dataset.max) + 1;
   var actionsData = {
-    Index: index
+    Index: index,
+    Code: code
   };
-  var options = _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.userSelectOptions(app.users);
+  var options = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.userSelectOptions(app.users);
   target.dataset.max = index;
   container.insertAdjacentHTML('beforeend', _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0___default()(actionsData));
   new select_pure__WEBPACK_IMPORTED_MODULE_1___default.a(container.querySelector('.responsive-element:last-child .action-lead'), options);
 };
 
 var removeAction = e => {
-  e.target.parentElement.remove();
+  var target = e.target.parentElement;
+  var id = target.dataset.code;
+  id && app.deletedActions.push(id);
+  target.remove();
 };
 
 var sendNotification = e => {
-  console.log(e.target.parentElement);
+  return Object(_alert_js__WEBPACK_IMPORTED_MODULE_3__["display"])('sendNotification', true);
 };
 
 var sendActions = e => {
-  console.log(e.target);
+  var validateSend = document.querySelectorAll('.active-action .responsive-element').length > 0;
+  validateSend && Object(_alert_js__WEBPACK_IMPORTED_MODULE_3__["display"])('sendActions', true);
 };
 
 var actionsListeners = () => {
-  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'input', '.form-control.action-element', clearStyle);
-  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.add-action', addAction);
-  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.delete-action', removeAction);
-  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.notify-action', sendNotification);
-  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.actions-button', toggleAction);
-  _utilities__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '#send-actions', sendActions);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'input', '.form-control.action-element', clearStyle);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.add-action', addAction);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.delete-action', removeAction);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.notify-action', sendNotification);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '.actions-button', toggleAction);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.on('#scorecards-content', 'click', '#send-actions', sendActions);
 };
 
+
+
+/***/ }),
+
+/***/ "./src/js/alert.js":
+/*!*************************!*\
+  !*** ./src/js/alert.js ***!
+  \*************************/
+/*! exports provided: display */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "display", function() { return display; });
+/* harmony import */ var sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.min.js */ "./node_modules/sweetalert2/dist/sweetalert2.min.js");
+/* harmony import */ var sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.min.css */ "./node_modules/sweetalert2/dist/sweetalert2.min.css");
+/* harmony import */ var sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var errorList = {
+  dataNotFound: 'Data not found in SharePoint List',
+  missingData: 'Please insert all the required information',
+  sendNotification: 'Do you want to notify the Project Lead about this Action?',
+  sendActions: 'Do you want to send a notification to all the Project Leads?'
+};
+
+var display = (value, confirm, callback, arg) => {
+  sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0___default.a.fire(new ModalError(value, confirm)).then(result => {
+    if (result.value && callback) {
+      return callback(arg);
+    }
+  });
+};
+
+class ModalError {
+  constructor(value, confirm) {
+    this.title = confirm ? 'Wait' : 'Warning';
+    this.icon = confirm ? 'question' : 'warning';
+    this.heightAuto = false;
+    this.showCancelButton = confirm ? true : false;
+    this.confirmButtonColor = '#003870';
+    this.confirmButtonText = 'Yes';
+    this.html = "<div><p>".concat(errorList[value], "</p></div>");
+  }
+
+}
+
+;
 
 
 /***/ }),
@@ -48687,7 +48822,10 @@ class Admin extends App {
   constructor(data) {
     super(data);
     this.admin = true;
+    this.owner = data.isOwner;
+    this.person = data.person;
     this.users = data.usersList;
+    this.deletedActions = [];
   }
 
 }
@@ -48880,9 +49018,10 @@ var editScorecard = () => {
   Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content').id;
     var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
-    document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default()();
+    app.current = scorecards;
+    app.admin && (document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default()());
+    app.owner && document.getElementById('send-actions').classList.add('vanish');
     document.getElementById('right-buttons').classList.add('vanish');
-    document.getElementById('send-actions').classList.add('vanish');
     _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.add('invisible'));
     document.getElementById('save-button').removeAttribute('disabled');
 
@@ -48940,7 +49079,6 @@ var loadScorecard = url => {
     main.setAttribute('data-date', selectedScorecard.scoredate);
     main.classList.remove('welcome');
     document.getElementById('right-buttons').classList.remove('vanish');
-    document.getElementById('send-actions').classList.remove('vanish');
     _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.actions-button:not(:disabled)').forEach(i => i.classList.remove('invisible'));
 
     if (target.id == "wca-content") {
@@ -48961,6 +49099,11 @@ var loadScorecard = url => {
       document.getElementById('edit-button').classList.remove('vanish');
       document.getElementById('save-button').classList.remove('vanish');
       document.getElementById('save-button').setAttribute('disabled', 'disabled');
+      app.deletedActions.length = 0;
+    }
+
+    if (app.owner) {
+      document.getElementById('send-actions').classList.remove('vanish');
     }
 
     document.querySelector('body').removeAttribute('class');
@@ -49047,53 +49190,6 @@ var headerListeners = () => {
 
 /***/ }),
 
-/***/ "./src/js/errors.js":
-/*!**************************!*\
-  !*** ./src/js/errors.js ***!
-  \**************************/
-/*! exports provided: display */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "display", function() { return display; });
-/* harmony import */ var sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.min.js */ "./node_modules/sweetalert2/dist/sweetalert2.min.js");
-/* harmony import */ var sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert2/dist/sweetalert2.min.css */ "./node_modules/sweetalert2/dist/sweetalert2.min.css");
-/* harmony import */ var sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_min_css__WEBPACK_IMPORTED_MODULE_1__);
-
-
-var errorList = {
-  dataNotFound: 'Data not found in SharePoint List',
-  missingData: 'Please insert all the required information'
-};
-
-var display = (value, confirm, callback, arg) => {
-  sweetalert2_dist_sweetalert2_min_js__WEBPACK_IMPORTED_MODULE_0___default.a.fire(new ModalError(value, confirm)).then(result => {
-    if (result.value && callback) {
-      return callback(arg);
-    }
-  });
-};
-
-class ModalError {
-  constructor(value, confirm) {
-    this.title = confirm ? 'Wait' : 'Warning';
-    this.icon = confirm ? 'question' : 'warning';
-    this.heightAuto = false;
-    this.showCancelButton = confirm ? true : false;
-    this.confirmButtonColor = '#003870';
-    this.confirmButtonText = 'Yes';
-    this.html = "<div><p>".concat(errorList[value], "</p></div>");
-  }
-
-}
-
-;
-
-
-/***/ }),
-
 /***/ "./src/js/hubsItem.js":
 /*!****************************!*\
   !*** ./src/js/hubsItem.js ***!
@@ -49143,7 +49239,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modifyScorecards", function() { return modifyScorecards; });
 /* harmony import */ var _js_utilities_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/utilities.js */ "./src/js/utilities.js");
 /* harmony import */ var _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_utilities_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _errors_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./errors.js */ "./src/js/errors.js");
+/* harmony import */ var _alert_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./alert.js */ "./src/js/alert.js");
 /* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
 /* harmony import */ var _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scorecardsItemSP.js */ "./src/js/scorecardsItemSP.js");
 /* harmony import */ var _settingsItemSP_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./settingsItemSP.js */ "./src/js/settingsItemSP.js");
@@ -49169,7 +49265,7 @@ var receiveData = /*#__PURE__*/function () {
     var response = yield fetch(url, options);
 
     if (response.status == 404) {
-      return Object(_errors_js__WEBPACK_IMPORTED_MODULE_1__["display"])('dataNotFound', false);
+      return Object(_alert_js__WEBPACK_IMPORTED_MODULE_1__["display"])('dataNotFound', false);
     }
 
     return yield response.json();
@@ -49243,7 +49339,7 @@ var modifyScorecards = () => {
   var createMode = target.classList.contains('create-mode');
 
   if (proceed) {
-    return Object(_errors_js__WEBPACK_IMPORTED_MODULE_1__["display"])('missingData', false);
+    return Object(_alert_js__WEBPACK_IMPORTED_MODULE_1__["display"])('missingData', false);
   } else if (createMode) {
     var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](null, null, context, true);
     saveData('Scorecard', item);
@@ -49263,9 +49359,8 @@ var modifyScorecards = () => {
 
         saveData('Scorecard', _data, id);
       } else if (view == "actions") {
-        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
+        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate); // saveData('Scorecard', data, id); // no need for if else
 
-        saveData('Scorecard', _data2, id); // no need for if else
       }
     });
   }
@@ -49377,6 +49472,7 @@ class ScoreCardsItem {
     this.comment = sharepointItem.comment;
     this.motto = sharepointItem.motto;
     this.scoredate = sharepointItem.scoredate;
+    this.actionsNotified = sharepointItem.NotificationSent == "true" ? true : false;
     this.wcadata = this.formatJSON(sharepointItem.wcadata);
     this.westdata = this.formatJSON(sharepointItem.westdata);
     this.coastaldata = this.formatJSON(sharepointItem.coastaldata);
@@ -49413,6 +49509,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utilities */ "./src/js/utilities.js");
 /* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utilities__WEBPACK_IMPORTED_MODULE_0__);
 
+/* 
+    To prevent Users from overriding each other's edits while working at the same time on the ScoreCards Sharepoint List, 
+    every time a User saves any modification, the algorithm checks which data have been modified from their original state by comparing the information found 
+    in the "previous" parameter and the ones that are being currently saved by the User (the data retrieved from the HTML form).
+    In the "Edit Actions" scenario, newly created actions (marked with class "new-action") are not yet considered, and therefore not taken from the HTML form.
+
+    Every modification is then stored in the "column" object. ONLY MODIFICATIONS ARE INSERTED.
+    In the "Edit Actions" scenario, during each User's session, all the IDs of the deleted actions are stored in the "deletedActions" array. Those Ids are now used to remove from the "retrieved" parameter all the deleted actions.
+    The "retrieved" parameter gets at this point updated with the modifications found in the "column" object.
+    
+    All the newly created actions are now taken from the HTML form and inserted in the "retrieved" object.
+
+    Finally, "retrieved" is sent to Sharepoint via REST API and replaces the old information in the Sharepoint List.
+
+    A perfect example of each step is in the editActions() method of the Class below.
+
+    IMPORTANT: every action has a unique ID. A unique ID is crucial for this method to work.
+*/
 
 class ScoreCardsItemSP {
   constructor(retrieved, previous, context, createMode) {
@@ -49432,10 +49546,10 @@ class ScoreCardsItemSP {
     context == "hubs" && !createMode && (this.centraldata = this.editHubs(retrieved, previous, 'central'));
     context == "west" && createMode && (this.westaction = this.createActions('west'));
     context == "coastal" && createMode && (this.coastalaction = this.createActions('coastal'));
-    context == "central" && createMode && (this.centralaction = this.createActions('central')); // (context == "west" && !createMode) && ( this.westaction = this.createActions(retrieved, previous, 'west') );
-    // (context == "coastal" && !createMode) && ( this.coastalaction = this.createActions(retrieved, previous, 'coastal') );
-    // (context == "central" && !createMode) && ( this.centralaction = this.createActions(retrieved, previous, 'central') );
-
+    context == "central" && createMode && (this.centralaction = this.createActions('central'));
+    context == "west" && !createMode && (this.westaction = this.editActions(retrieved, previous, 'west'));
+    context == "coastal" && !createMode && (this.coastalaction = this.editActions(retrieved, previous, 'coastal'));
+    context == "central" && !createMode && (this.centralaction = this.editActions(retrieved, previous, 'central'));
     this.__metadata = {
       type: app.storage.scorecardsType
     };
@@ -49500,6 +49614,7 @@ class ScoreCardsItemSP {
       i.querySelectorAll('.responsive-element').forEach(d => {
         var id = "".concat(code, "-").concat(d.dataset.action);
         data[action][code][id] = {};
+        data[action][code][id]['Code'] = code;
         data[action][code][id]['Index'] = d.dataset.action;
         data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
         data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
@@ -49588,7 +49703,49 @@ class ScoreCardsItemSP {
     return JSON.stringify(retrieved["".concat(hub, "data")]);
   }
 
-  editActions(retrieved, previous, action) {}
+  editActions(retrieved, previous, action) {
+    var column = {};
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-action .responsive-element:not(.new-action)').forEach(i => {
+      var id = i.dataset.code;
+      var code = id.split('-')[0];
+      var old = previous["".concat(action, "action")][code][id];
+      var project = i.querySelector('.column-1 textarea').value;
+      var country = i.querySelector('.column-2 textarea').value;
+      var stage = i.querySelector('.column-3 textarea').value;
+      var act = i.querySelector('.column-4 textarea').value;
+      var status = i.querySelector('.column-5 select').value;
+      var updates = i.querySelector('.column-6 textarea').value;
+      var lead = i.querySelector('.column-7 .select-pure__label').innerText;
+      var deadline = i.querySelector('.column-8 textarea').value;
+      !column[code] && (column[code] = {});
+      column[code][id] = {};
+      project != old.Project && (column[code][id]['Project'] = project);
+      country != old.Country && (column[code][id]['Country'] = country);
+      stage != old.Stage && (column[code][id]['Stage'] = stage);
+      act != old.Action && (column[code][id]['Action'] = act);
+      status != old.Status && (column[code][id]['Status'] = status);
+      updates != old.Updates && (column[code][id]['Updates'] = updates);
+      lead != old.Lead && (column[code][id]['Lead'] = lead);
+      deadline != old.Deadline && (column[code][id]['Deadline'] = deadline);
+    });
+    app.deletedActions.forEach(d => {
+      var code = d.split('-')[0];
+      delete retrieved["".concat(action, "action")][code][d];
+    });
+
+    for (element in column) {
+      Object.keys(column[element]).forEach(i => {
+        Object.keys(column[element][i]).forEach(d => {
+          retrieved["".concat(action, "action")][element][i][d] = column[element][i][d];
+        });
+      });
+    }
+
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-action .new-action').forEach(c => {
+      var id = c.dataset.code; // add newly created actions to retrieved
+    });
+    return JSON.stringify(retrieved["".concat(action, "action")]);
+  }
 
   editComment(retrieved, previous) {
     var old = previous.comment;
@@ -49639,8 +49796,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var sortablejs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sortablejs */ "./node_modules/sortablejs/modular/sortable.esm.js");
 /* harmony import */ var _js_requests_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../js/requests.js */ "./src/js/requests.js");
-/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utilities */ "./src/js/utilities.js");
-/* harmony import */ var _utilities__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_utilities__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utilities.js */ "./src/js/utilities.js");
+/* harmony import */ var _utilities_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_utilities_js__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -49652,8 +49809,8 @@ __webpack_require__.r(__webpack_exports__);
 var switchCard = e => {
   var menuItem = e.target;
   var dialogForm = document.querySelector(".dialog-form-item[data-id=\"".concat(menuItem.dataset.id, "\"]"));
-  _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.getNodes('.dialog-menu-item').forEach(i => i.classList.remove('active'));
-  _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.getNodes('.dialog-form-item').forEach(i => i.classList.add('vanish'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.getNodes('.dialog-menu-item').forEach(i => i.classList.remove('active'));
+  _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.getNodes('.dialog-form-item').forEach(i => i.classList.add('vanish'));
   dialogForm.classList.remove('vanish');
   menuItem.classList.add('active');
 };
@@ -49684,11 +49841,11 @@ var updateTitle = e => {
 var modalListeners = () => {
   jquery__WEBPACK_IMPORTED_MODULE_3___default()('#settingsMenu').on('show.bs.modal', callSettings);
   jquery__WEBPACK_IMPORTED_MODULE_3___default()('#settingsMenu').on('hidden.bs.modal', resetSettings);
-  _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'paste', '.input-number', _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.preventDefault);
-  _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'keypress', '.input-number', _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.limitIndicatorValues);
-  _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'input', '.modal-edit-title', updateTitle);
-  _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'click', '.dialog-menu-item', switchCard);
-  _utilities__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'click', '#save-settings', _js_requests_js__WEBPACK_IMPORTED_MODULE_5__["modifySettings"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'paste', '.input-number', _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.preventDefault);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'keypress', '.input-number', _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.limitIndicatorValues);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'input', '.modal-edit-title', updateTitle);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'click', '.dialog-menu-item', switchCard);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_6___default.a.on('#scorecards-dialog', 'click', '#save-settings', _js_requests_js__WEBPACK_IMPORTED_MODULE_5__["modifySettings"]);
 };
 
 

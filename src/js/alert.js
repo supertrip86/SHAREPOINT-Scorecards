@@ -4,6 +4,8 @@ import "sweetalert2/dist/sweetalert2.min.css";
 const errorList = {
     dataNotFound: 'Data not found in SharePoint List',
     missingData: 'Please insert all the required information',
+    sendNotification: 'Do you want to notify the Project Lead about this Action?',
+    sendActions: 'Do you want to send a notification to all the Project Leads?'
 };
 
 const display = (value, confirm, callback, arg) => {
