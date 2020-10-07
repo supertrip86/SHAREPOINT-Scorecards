@@ -17,6 +17,7 @@
 #actions-content .column-6 {flex-basis: 20%;}
 #actions-content .column-7 {flex-basis: 12%;position: relative;}
 #actions-content .column-8 {flex-basis: 10%;}
+#actions-content .scorecard-label {background-color: transparent;color: #333;}
 #actions-content select {font-weight: bold;}
 #actions-content textarea.form-control {height: 100%;}
 

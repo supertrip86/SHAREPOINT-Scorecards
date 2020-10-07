@@ -5,6 +5,7 @@ module.exports = {
 	getItemURL: getItemURL,
 	getPreviousDate: getPreviousDate,
 	getMonths: getMonths,
+	getActionFields: getActionFields,
 	getAllUsers: getAllUsers,
 	getHeaderData: getHeaderData,
 	getActionsData: getActionsData,
@@ -17,6 +18,7 @@ module.exports = {
 	reload: reload,
 	editorOptions: editorOptions,
 	userSelectOptions: userSelectOptions,
+	excelStyleOptions: excelStyleOptions,
 	limitIndicatorValues: limitIndicatorValues,
 	createScorecardTitle: createScorecardTitle,
 	fromArrowToSP: fromArrowToSP,
@@ -71,6 +73,10 @@ function getPreviousDate(date) {
 
 function getMonths() {
 	return [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+}
+
+function getActionFields() {
+	return ["Project", "Country", "Stage", "Action", "Status", "Updates", "Lead", "Deadline"];
 }
 
 function getAllUsers(data) {
@@ -203,6 +209,64 @@ function userSelectOptions(list, value) {
 				i.removeAttribute('style');
 			}
 		})
+	};
+}
+
+function excelStyleOptions() {
+	return {
+		rowWidth: [{"hpx": 26},{"hpx": 12}],
+		rowHeight: [{"wch": 20},{"wch": 13},{"wch": 8},{"wch": 50},{"wch": 8},{"wch": 50},{"wch": 15},{"wch": 20}],
+		firstRow: {
+			alignment: { wrapText: true, horizontal: "left", vertical: "top" },
+			font: {
+				name: "Helvetica",
+				sz: 8,
+				bold: true,
+				color: {
+					rgb: "000000"
+				}
+			}
+		},
+		header: {
+			alignment: {horizontal: "center", vertical: "center"},
+			font: {
+				name: "Helvetica",
+				sz: 8,
+				bold: true,
+				color: {rgb: "ffffff"}
+			},
+			fill: {
+				fgColor: {rgb: "808080"}
+			}, 
+			border: {
+				top: {style: 'dotted'}, 
+				left: {style: 'dotted'}, 
+				right: {style: 'dotted'}, 
+				bottom: {style: 'dotted'}
+			}
+		},
+		subHeader: {
+			font: {name: "Helvetica", sz: 8, bold: true},
+			fill: {
+				fgColor: {rgb: "99FFDF"}
+			},
+			border: {
+				top: {style: 'dotted'},
+				left: {style: 'dotted'},
+				right: {style: 'dotted'},
+				bottom: {style: 'dotted'}
+			}
+		},
+		row: {
+			alignment: {wrapText: true, vertical: "top"},
+			font: {name: "Helvetica", sz: 8},
+			border: {
+				top: {style: 'dotted'},
+				left: {style: 'dotted'},
+				right: {style: 'dotted'},
+				bottom: {style: 'dotted'}
+			}
+		}
 	};
 }
 

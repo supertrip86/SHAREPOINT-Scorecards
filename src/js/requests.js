@@ -119,7 +119,7 @@ const modifyScorecards = () => {
             } else if (view == "actions") {
                 const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
 
-                // saveData('Scorecard', data, id); // no need for if else
+                saveData('Scorecard', data, id); // no need for if else
             }
         });
     }

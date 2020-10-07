@@ -47392,6 +47392,10 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
 
   return "                <li class=\"responsive-element\" data-action=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"Index") || (depth0 != null ? lookupProperty(depth0,"Index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Index","hash":{},"data":data,"loc":{"start":{"line":8,"column":60},"end":{"line":8,"column":69}}}) : helper)))
+    + "\" data-code=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"Code") || (depth0 != null ? lookupProperty(depth0,"Code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Code","hash":{},"data":data,"loc":{"start":{"line":8,"column":82},"end":{"line":8,"column":90}}}) : helper)))
+    + "-"
+    + alias4(((helper = (helper = lookupProperty(helpers,"Index") || (depth0 != null ? lookupProperty(depth0,"Index") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Index","hash":{},"data":data,"loc":{"start":{"line":8,"column":91},"end":{"line":8,"column":100}}}) : helper)))
     + "\">\r\n                    <div class=\"col column-1\" data-label=\"Project\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Project") || (depth0 != null ? lookupProperty(depth0,"Project") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Project","hash":{},"data":data,"loc":{"start":{"line":9,"column":67},"end":{"line":9,"column":78}}}) : helper)))
     + "</div>\r\n                    <div class=\"col column-2\" data-label=\"Country\">"
@@ -47409,6 +47413,24 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + "</div>\r\n                    <div class=\"col column-8\" data-label=\"Deadline\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"Deadline") || (depth0 != null ? lookupProperty(depth0,"Deadline") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Deadline","hash":{},"data":data,"loc":{"start":{"line":16,"column":68},"end":{"line":16,"column":80}}}) : helper)))
     + "</div>\r\n                </li>\r\n";
+},"6":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"if","hash":{},"fn":container.program(7, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":23,"column":0},"end":{"line":45,"column":0}}})) != null ? stack1 : "");
+},"7":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":24,"column":4},"end":{"line":44,"column":13}}})) != null ? stack1 : "");
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -47417,7 +47439,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":23,"column":7}}})) != null ? stack1 : "");
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(6, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":45,"column":7}}})) != null ? stack1 : "");
 },"useData":true});
 
 /***/ }),
@@ -47471,7 +47493,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.program(9, data, 0),"data":data,"loc":{"start":{"line":13,"column":0},"end":{"line":25,"column":0}}})) != null ? stack1 : "");
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.program(8, data, 0),"data":data,"loc":{"start":{"line":13,"column":0},"end":{"line":33,"column":0}}})) != null ? stack1 : "");
 },"6":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -47480,10 +47502,8 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"each","hash":{},"fn":container.program(7, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":14,"column":4},"end":{"line":16,"column":13}}})) != null ? stack1 : "");
-},"7":function(container,depth0,helpers,partials,data) {
-    return "\r\n";
-},"9":function(container,depth0,helpers,partials,data) {
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"previous") : depth0),{"name":"each","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":14,"column":4},"end":{"line":24,"column":13}}})) != null ? stack1 : "");
+},"8":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -47491,8 +47511,8 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"settings") : depth0),{"name":"each","hash":{},"fn":container.program(10, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":18,"column":4},"end":{"line":24,"column":13}}})) != null ? stack1 : "");
-},"10":function(container,depth0,helpers,partials,data) {
+  return ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"settings") : depth0),{"name":"each","hash":{},"fn":container.program(9, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":26,"column":4},"end":{"line":32,"column":13}}})) != null ? stack1 : "");
+},"9":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
@@ -47501,11 +47521,11 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     };
 
   return "    <div id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"Code") || (depth0 != null ? lookupProperty(depth0,"Code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Code","hash":{},"data":data,"loc":{"start":{"line":19,"column":13},"end":{"line":19,"column":21}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"Code") || (depth0 != null ? lookupProperty(depth0,"Code") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Code","hash":{},"data":data,"loc":{"start":{"line":27,"column":13},"end":{"line":27,"column":21}}}) : helper)))
     + "-header\" data-row=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":19,"column":40},"end":{"line":19,"column":50}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"index") || (data && lookupProperty(data,"index"))) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":27,"column":40},"end":{"line":27,"column":50}}}) : helper)))
     + "\" data-max=\"0\" class=\"responsive-header\">\r\n        <button class=\"add-action\">Add</button>\r\n        <div class=\"action-title\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":21,"column":34},"end":{"line":21,"column":43}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":29,"column":34},"end":{"line":29,"column":43}}}) : helper)))
     + "</div>\r\n        <ul class=\"action-elements\"></ul>\r\n    </div>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -47515,7 +47535,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(5, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":25,"column":7}}})) != null ? stack1 : "");
+  return ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"current") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(5, data, 0),"data":data,"loc":{"start":{"line":1,"column":0},"end":{"line":33,"column":7}}})) != null ? stack1 : "");
 },"usePartial":true,"useData":true});
 
 /***/ }),
@@ -47539,8 +47559,8 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
         return undefined
     };
 
-  return "<div class=\"actions-header\">\r\n    <button id=\"west-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Dakar</span>\r\n    </button>\r\n    <button id=\"coastal-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Abidjan</span>\r\n    </button>\r\n    <button id=\"central-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Yaoundé</span>\r\n    </button>\r\n"
-    + ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":20,"column":4},"end":{"line":27,"column":11}}})) != null ? stack1 : "")
+  return "<div class=\"scorecard-label\">\r\n    <h5 class=\"scorecard-title\"></h5>\r\n</div>\r\n<div class=\"actions-header\">\r\n    <button id=\"west-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Dakar</span>\r\n    </button>\r\n    <button id=\"coastal-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Abidjan</span>\r\n    </button>\r\n    <button id=\"central-view\" class=\"btn btn-primary actions-button\">\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path fill=\"#fff\" d=\"M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z\"/>\r\n        </svg>\r\n        <span>Yaoundé</span>\r\n    </button>\r\n"
+    + ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),depth0,{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":23,"column":4},"end":{"line":30,"column":11}}})) != null ? stack1 : "")
     + "</div>\r\n<div class=\"actions-table-header\">\r\n    <div class=\"col column-1\">\r\n        <div>Project</div>\r\n        <div class=\"subtitle\">Where?</div>\r\n    </div>\r\n    <div class=\"col column-2\">Country</div>\r\n    <div class=\"col column-3\">Stage</div>\r\n    <div class=\"col column-4\">\r\n        <div>Action</div>\r\n        <div class=\"subtitle\">What?</div>\r\n    </div>\r\n    <div class=\"col column-5\">Status</div>\r\n    <div class=\"col column-6\">Updates</div>\r\n    <div class=\"col column-7\">\r\n        <div>Lead</div>\r\n        <div class=\"subtitle\">Who?</div>\r\n    </div>\r\n    <div class=\"col column-8\">\r\n        <div>Deadline</div>\r\n        <div class=\"subtitle\">When?</div>\r\n    </div>\r\n</div>\r\n<div id=\"actions-body\">\r\n    <div id=\"west-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"coastal-action\" class=\"actions-container vanish\"></div>\r\n    <div id=\"central-action\" class=\"actions-container vanish\"></div>\r\n</div>";
 },"useData":true});
 
@@ -48663,12 +48683,13 @@ function initApp() {
 /*!***************************!*\
   !*** ./src/js/actions.js ***!
   \***************************/
-/*! exports provided: actionsListeners */
+/*! exports provided: actionsListeners, exportToExcel */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actionsListeners", function() { return actionsListeners; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "exportToExcel", function() { return exportToExcel; });
 /* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../hbs/partials/actionsElement.hbs */ "./src/hbs/partials/actionsElement.hbs");
 /* harmony import */ var _hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hbs_partials_actionsElement_hbs__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var select_pure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! select-pure */ "./node_modules/select-pure/lib/index.js");
@@ -48709,7 +48730,7 @@ var addAction = e => {
 var removeAction = e => {
   var target = e.target.parentElement;
   var id = target.dataset.code;
-  id && app.deletedActions.push(id);
+  !target.classList.contains('new-action') && app.deletedActions.push(id);
   target.remove();
 };
 
@@ -48717,9 +48738,99 @@ var sendNotification = e => {
   return Object(_alert_js__WEBPACK_IMPORTED_MODULE_3__["display"])('sendNotification', true);
 };
 
-var sendActions = e => {
+var sendActions = () => {
   var validateSend = document.querySelectorAll('.active-action .responsive-element').length > 0;
   validateSend && Object(_alert_js__WEBPACK_IMPORTED_MODULE_3__["display"])('sendActions', true);
+};
+
+var createExcelSheet = (wb, actionObj, sheetName) => {
+  // excel file constructor global variables in /dist/excelWriter.js
+  var ws = {};
+  var rowCounter = 3;
+  var actionFields = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.getActionFields();
+  var rowWidth = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.excelStyleOptions()["rowWidth"];
+  var rowHeight = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.excelStyleOptions()["rowHeight"];
+  var firstRow = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.excelStyleOptions()["firstRow"];
+  var header = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.excelStyleOptions()["header"];
+  var subHeader = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.excelStyleOptions()["subHeader"];
+  var row = _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.excelStyleOptions()["row"];
+  mergeCells(ws, "A1", String.fromCharCode(96 + actionFields.length).toUpperCase() + "1");
+  fillCellByAddress(wb, ws, sheetName, "Project-level assesment", createObjectRowCol(1, 1), firstRow, 'string');
+
+  for (var c = 1; c <= actionFields.length; c++) {
+    fillCellByAddress(wb, ws, sheetName, actionFields[c - 1], createObjectRowCol(2, c), header, 'string');
+  }
+
+  for (var d = 0; d < Object.keys(actionObj).length; d++) {
+    var itemTitle = Object.keys(actionObj)[d];
+    var rowNumber = Object.values(actionObj[itemTitle]).length;
+    fillCellByAddress(wb, ws, sheetName, itemTitle, createObjectRowCol(rowCounter, 1), subHeader, 'string');
+    rowWidth.push({
+      "hpx": 12
+    });
+
+    for (var _c = 2; _c < actionFields.length + 1; _c++) {
+      fillCellByAddress(wb, ws, sheetName, "", createObjectRowCol(rowCounter, _c), subHeader, 'string');
+    }
+
+    for (var i = 1; i <= rowNumber; i++) {
+      rowWidth.push({
+        "hpx": 24
+      });
+
+      for (var k = 1; k <= actionFields.length; k++) {
+        var data = Object.values(actionObj[itemTitle])[i - 1][actionFields[k - 1]];
+        fillCellByAddress(wb, ws, sheetName, data, createObjectRowCol(rowCounter + i, k), row, 'string');
+      }
+    }
+
+    rowCounter = rowCounter + rowNumber + 1;
+  }
+
+  setColsWidth(ws, rowHeight);
+  setRowsHeight(ws, rowWidth);
+  ws['!pageSetup'] = {
+    scale: '90',
+    orientation: 'landscape'
+  };
+};
+
+var exportToExcel = () => {
+  // excel file constructor global variables in /dist/excelWriter.js
+  var wb = new Workbook();
+  var wopts = setWopts();
+  var proceed = !!document.querySelector('.responsive-element');
+  var date = document.querySelector('.active-content .scorecard-title').innerText;
+  var fileName = "ScoreCards Actions, ".concat(date, ".xlsx");
+  var actions = {};
+  _utilities_js__WEBPACK_IMPORTED_MODULE_2___default.a.getNodes('.actions-container').forEach(i => {
+    var action = i.id.replace('-', '');
+    actions[action] = {};
+    i.querySelectorAll('.responsive-header').forEach(d => {
+      var title = d.querySelector('.action-title').innerText;
+      actions[action][title] = {};
+      d.querySelectorAll('.responsive-element').forEach((c, f) => {
+        var id = c.dataset.code;
+        actions[action][title][f] = {};
+        actions[action][title][f]['Id'] = id;
+        actions[action][title][f]['Project'] = c.querySelector('.column-1').innerText;
+        actions[action][title][f]['Country'] = c.querySelector('.column-2').innerText;
+        actions[action][title][f]['Stage'] = c.querySelector('.column-3').innerText;
+        actions[action][title][f]['Action'] = c.querySelector('.column-4').innerText;
+        actions[action][title][f]['Status'] = c.querySelector('.column-5').innerText;
+        actions[action][title][f]['Updates'] = c.querySelector('.column-6').innerText;
+        actions[action][title][f]['Lead'] = c.querySelector('.column-7').innerText;
+        actions[action][title][f]['Deadline'] = c.querySelector('.column-8').innerText;
+      });
+    });
+  });
+
+  if (proceed) {
+    createExcelSheet(wb, actions["westaction"], "West-Africa");
+    createExcelSheet(wb, actions["coastalaction"], "Coastal-Africa");
+    createExcelSheet(wb, actions["centralaction"], "Central-Africa");
+    saveFile(wb, wopts, fileName);
+  }
 };
 
 var actionsListeners = () => {
@@ -48892,7 +49003,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_hbs_helpers_getDate_js__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./scorecardsItem.js */ "./src/js/scorecardsItem.js");
 /* harmony import */ var _hubsItem_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./hubsItem.js */ "./src/js/hubsItem.js");
-/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+/* harmony import */ var _actions_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./actions.js */ "./src/js/actions.js");
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./requests.js */ "./src/js/requests.js");
+
 
 
 
@@ -48991,31 +49104,38 @@ var highlightCells = a => {
 var exportScorecard = () => {
   var target = document.querySelector('.active-content');
   var context = target.id;
+  var width = target.offsetWidth * 1.345;
+  var height = target.offsetHeight * 1.345;
+  var fileName = context == "wca-content" ? "WCA Scorecards," : "WCA Scorecards by Hub,";
+  var date = target.querySelector('.scorecard-title').innerText;
   var options = {
-    margin: [5, 5, 0, 5],
+    margin: 5,
+    filename: "".concat(fileName, " ").concat(date),
     image: {
       type: 'jpeg',
       quality: 1
     },
     html2canvas: {
-      scale: 2
+      scale: 3
     },
     jsPDF: {
       unit: "px",
-      format: [2640, 1560],
+      format: [width, height],
       orientation: "portrait"
     }
   };
 
   if (context != "actions-content") {
     target.classList.add('export-view');
-    html2pdf_js__WEBPACK_IMPORTED_MODULE_16___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
+    return html2pdf_js__WEBPACK_IMPORTED_MODULE_16___default()().set(options).from(target).save().then(() => target.classList.remove('export-view'));
   }
+
+  return Object(_actions_js__WEBPACK_IMPORTED_MODULE_23__["exportToExcel"])();
 };
 
 var editScorecard = () => {
   var url = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getItemURL();
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_24__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content').id;
     var scorecards = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
     app.current = scorecards;
@@ -49071,7 +49191,7 @@ var getScorecard = e => {
 };
 
 var loadScorecard = url => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(url).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_24__["receiveData"])(url).then(result => {
     var target = document.querySelector('.active-content');
     var main = document.getElementById('scorecards-content');
     var selectedScorecard = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[0]);
@@ -49088,8 +49208,9 @@ var loadScorecard = url => {
       document.getElementById('hubs-content').innerHTML = _hbs_hubs_hbs__WEBPACK_IMPORTED_MODULE_10___default()(hubsData);
     } else {
       var actionsId = document.querySelector('.active-action').id;
-      var previousScorecard = result.d.results[1];
+      var previousScorecard = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_21__["ScoreCardsItem"](result.d.results[1]) : null;
       var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, selectedScorecard, previousScorecard);
+      target.querySelector('.scorecard-title').innerText = selectedScorecard.Title;
       document.getElementById(actionsId).innerHTML = _hbs_actions_hbs__WEBPACK_IMPORTED_MODULE_12___default()(actionsData);
     }
 
@@ -49111,7 +49232,7 @@ var loadScorecard = url => {
 };
 
 var createScorecard = () => {
-  Object(_requests_js__WEBPACK_IMPORTED_MODULE_23__["receiveData"])(app.storage.settingsURL).then(result => {
+  Object(_requests_js__WEBPACK_IMPORTED_MODULE_24__["receiveData"])(app.storage.settingsURL).then(result => {
     document.getElementById('wca-content').innerHTML = _hbs_wcaCreate_hbs__WEBPACK_IMPORTED_MODULE_8___default()(result.d.results);
     document.getElementById('toggle-button').innerHTML = _hbs_partials_cancelButton_hbs__WEBPACK_IMPORTED_MODULE_14___default()();
     document.getElementById('scorecards-content').classList.remove('welcome');
@@ -49177,7 +49298,7 @@ var headerListeners = () => {
   window.addEventListener('hashchange', appController);
   _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'keydown', '#date-button', _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.preventDefault);
   _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'change', '#date-button', updateDates);
-  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_23__["modifyScorecards"]);
+  _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#save-button', _requests_js__WEBPACK_IMPORTED_MODULE_24__["modifyScorecards"]);
   _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#cancel-button', cancelEdit);
   _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#edit-button', editScorecard);
   _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.on('#scorecards-header', 'click', '#export-scorecards', exportScorecard);
@@ -49359,8 +49480,9 @@ var modifyScorecards = () => {
 
         saveData('Scorecard', _data, id);
       } else if (view == "actions") {
-        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate); // saveData('Scorecard', data, id); // no need for if else
+        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
 
+        saveData('Scorecard', _data2, id); // no need for if else
       }
     });
   }
@@ -49513,10 +49635,12 @@ __webpack_require__.r(__webpack_exports__);
     To prevent Users from overriding each other's edits while working at the same time on the ScoreCards Sharepoint List, 
     every time a User saves any modification, the algorithm checks which data have been modified from their original state by comparing the information found 
     in the "previous" parameter and the ones that are being currently saved by the User (the data retrieved from the HTML form).
+
+    In the "Edit Actions" scenario, during each User's session, all the IDs of the deleted actions are stored in the "deletedActions" array. Those Ids are now used to remove from the "retrieved" parameter all the deleted actions.
     In the "Edit Actions" scenario, newly created actions (marked with class "new-action") are not yet considered, and therefore not taken from the HTML form.
 
     Every modification is then stored in the "column" object. ONLY MODIFICATIONS ARE INSERTED.
-    In the "Edit Actions" scenario, during each User's session, all the IDs of the deleted actions are stored in the "deletedActions" array. Those Ids are now used to remove from the "retrieved" parameter all the deleted actions.
+    
     The "retrieved" parameter gets at this point updated with the modifications found in the "column" object.
     
     All the newly created actions are now taken from the HTML form and inserted in the "retrieved" object.
@@ -49616,14 +49740,14 @@ class ScoreCardsItemSP {
         data[action][code][id] = {};
         data[action][code][id]['Code'] = code;
         data[action][code][id]['Index'] = d.dataset.action;
-        data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
-        data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
-        data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value;
-        data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value;
+        data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value.trim();
+        data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value.trim();
+        data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value.trim();
+        data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value.trim();
         data[action][code][id]['Status'] = d.querySelector('.column-5 select').value;
-        data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value;
+        data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value.trim();
         data[action][code][id]['Lead'] = d.querySelector('.column-7 .select-pure__label').innerText;
-        data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value;
+        data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value.trim();
       });
     });
     return JSON.stringify(data[action]);
@@ -49705,18 +49829,24 @@ class ScoreCardsItemSP {
 
   editActions(retrieved, previous, action) {
     var column = {};
+    var maxIndexes = {};
+    var spColumn = "".concat(action, "action");
+    app.deletedActions.forEach(d => {
+      var code = d.split('-')[0];
+      delete retrieved[spColumn][code][d]; // if target action has already been deleted by another user, it is ignored
+    });
     _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-action .responsive-element:not(.new-action)').forEach(i => {
       var id = i.dataset.code;
       var code = id.split('-')[0];
-      var old = previous["".concat(action, "action")][code][id];
-      var project = i.querySelector('.column-1 textarea').value;
-      var country = i.querySelector('.column-2 textarea').value;
-      var stage = i.querySelector('.column-3 textarea').value;
-      var act = i.querySelector('.column-4 textarea').value;
+      var old = previous[spColumn][code][id];
+      var project = i.querySelector('.column-1 textarea').value.trim();
+      var country = i.querySelector('.column-2 textarea').value.trim();
+      var stage = i.querySelector('.column-3 textarea').value.trim();
+      var act = i.querySelector('.column-4 textarea').value.trim();
       var status = i.querySelector('.column-5 select').value;
-      var updates = i.querySelector('.column-6 textarea').value;
+      var updates = i.querySelector('.column-6 textarea').value.trim();
       var lead = i.querySelector('.column-7 .select-pure__label').innerText;
-      var deadline = i.querySelector('.column-8 textarea').value;
+      var deadline = i.querySelector('.column-8 textarea').value.trim();
       !column[code] && (column[code] = {});
       column[code][id] = {};
       project != old.Project && (column[code][id]['Project'] = project);
@@ -49728,23 +49858,52 @@ class ScoreCardsItemSP {
       lead != old.Lead && (column[code][id]['Lead'] = lead);
       deadline != old.Deadline && (column[code][id]['Deadline'] = deadline);
     });
-    app.deletedActions.forEach(d => {
-      var code = d.split('-')[0];
-      delete retrieved["".concat(action, "action")][code][d];
-    });
 
     for (element in column) {
       Object.keys(column[element]).forEach(i => {
         Object.keys(column[element][i]).forEach(d => {
-          retrieved["".concat(action, "action")][element][i][d] = column[element][i][d];
+          var target = retrieved[spColumn][element][i];
+          !!target && (target[d] = column[element][i][d]); // ignores deleted actions
         });
       });
     }
 
     _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-action .new-action').forEach(c => {
-      var id = c.dataset.code; // add newly created actions to retrieved
+      var id = c.dataset.code;
+      var code = id.split('-')[0];
+      var exists = !!retrieved[spColumn][code][id];
+      var retrievedIndexes, absoluteMax, index, newId, target;
+
+      if (exists) {
+        retrievedIndexes = Object.values(retrieved[spColumn][code]).map(d => parseInt(d.Index));
+        absoluteMax = Math.max(...retrievedIndexes);
+        !maxIndexes[code] && (maxIndexes[code] = {
+          Max: absoluteMax
+        }); // only initialized when the first concurrent action for each Category is found
+
+        maxIndexes[code]['Max'] += 1;
+        index = maxIndexes[code]['Max'];
+        newId = "".concat(code, "-").concat(index);
+        retrieved[spColumn][code][newId] = {};
+        target = retrieved[spColumn][code][newId];
+      } else {
+        index = id.split('-')[1];
+        retrieved[spColumn][code][id] = {};
+        target = retrieved[spColumn][code][id];
+      }
+
+      target['Code'] = code;
+      target['Index'] = index;
+      target['Project'] = c.querySelector('.column-1 textarea').value.trim();
+      target['Country'] = c.querySelector('.column-2 textarea').value.trim();
+      target['Stage'] = c.querySelector('.column-3 textarea').value.trim();
+      target['Action'] = c.querySelector('.column-4 textarea').value.trim();
+      target['Status'] = c.querySelector('.column-5 select').value;
+      target['Updates'] = c.querySelector('.column-6 textarea').value.trim();
+      target['Lead'] = c.querySelector('.column-7 .select-pure__label').innerText;
+      target['Deadline'] = c.querySelector('.column-8 textarea').value.trim();
     });
-    return JSON.stringify(retrieved["".concat(action, "action")]);
+    return JSON.stringify(retrieved[spColumn]);
   }
 
   editComment(retrieved, previous) {
@@ -49898,6 +50057,7 @@ module.exports = {
   getItemURL: getItemURL,
   getPreviousDate: getPreviousDate,
   getMonths: getMonths,
+  getActionFields: getActionFields,
   getAllUsers: getAllUsers,
   getHeaderData: getHeaderData,
   getActionsData: getActionsData,
@@ -49910,6 +50070,7 @@ module.exports = {
   reload: reload,
   editorOptions: editorOptions,
   userSelectOptions: userSelectOptions,
+  excelStyleOptions: excelStyleOptions,
   limitIndicatorValues: limitIndicatorValues,
   createScorecardTitle: createScorecardTitle,
   fromArrowToSP: fromArrowToSP,
@@ -49962,6 +50123,10 @@ function getPreviousDate(date) {
 
 function getMonths() {
   return ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+}
+
+function getActionFields() {
+  return ["Project", "Country", "Stage", "Action", "Status", "Updates", "Lead", "Deadline"];
 }
 
 function getAllUsers(data) {
@@ -50103,6 +50268,131 @@ function userSelectOptions(list, value) {
         i.removeAttribute('style');
       }
     })
+  };
+}
+
+function excelStyleOptions() {
+  return {
+    rowWidth: [{
+      "hpx": 26
+    }, {
+      "hpx": 12
+    }],
+    rowHeight: [{
+      "wch": 20
+    }, {
+      "wch": 13
+    }, {
+      "wch": 8
+    }, {
+      "wch": 50
+    }, {
+      "wch": 8
+    }, {
+      "wch": 50
+    }, {
+      "wch": 15
+    }, {
+      "wch": 20
+    }],
+    firstRow: {
+      alignment: {
+        wrapText: true,
+        horizontal: "left",
+        vertical: "top"
+      },
+      font: {
+        name: "Helvetica",
+        sz: 8,
+        bold: true,
+        color: {
+          rgb: "000000"
+        }
+      }
+    },
+    header: {
+      alignment: {
+        horizontal: "center",
+        vertical: "center"
+      },
+      font: {
+        name: "Helvetica",
+        sz: 8,
+        bold: true,
+        color: {
+          rgb: "ffffff"
+        }
+      },
+      fill: {
+        fgColor: {
+          rgb: "808080"
+        }
+      },
+      border: {
+        top: {
+          style: 'dotted'
+        },
+        left: {
+          style: 'dotted'
+        },
+        right: {
+          style: 'dotted'
+        },
+        bottom: {
+          style: 'dotted'
+        }
+      }
+    },
+    subHeader: {
+      font: {
+        name: "Helvetica",
+        sz: 8,
+        bold: true
+      },
+      fill: {
+        fgColor: {
+          rgb: "99FFDF"
+        }
+      },
+      border: {
+        top: {
+          style: 'dotted'
+        },
+        left: {
+          style: 'dotted'
+        },
+        right: {
+          style: 'dotted'
+        },
+        bottom: {
+          style: 'dotted'
+        }
+      }
+    },
+    row: {
+      alignment: {
+        wrapText: true,
+        vertical: "top"
+      },
+      font: {
+        name: "Helvetica",
+        sz: 8
+      },
+      border: {
+        top: {
+          style: 'dotted'
+        },
+        left: {
+          style: 'dotted'
+        },
+        right: {
+          style: 'dotted'
+        },
+        bottom: {
+          style: 'dotted'
+        }
+      }
+    }
   };
 }
 

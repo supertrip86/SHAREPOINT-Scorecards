@@ -1,5 +1,5 @@
-.scorecard-label {background-color: #333;display: flex;align-items: center;}
-.scorecard-label .scorecard-title {color: #fff;margin: 0;text-align: center;width: 100%;}
+.scorecard-label {background-color: #333;color: #fff;display: flex;align-items: center;}
+.scorecard-label .scorecard-title {margin: 0;text-align: center;width: 100%;}
 .scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}
 .scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
 .scorecard-main-comment {margin-bottom: 5px;position: relative;}

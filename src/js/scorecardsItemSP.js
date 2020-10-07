@@ -4,10 +4,12 @@ import utilities from "./utilities";
     To prevent Users from overriding each other's edits while working at the same time on the ScoreCards Sharepoint List, 
     every time a User saves any modification, the algorithm checks which data have been modified from their original state by comparing the information found 
     in the "previous" parameter and the ones that are being currently saved by the User (the data retrieved from the HTML form).
+
+    In the "Edit Actions" scenario, during each User's session, all the IDs of the deleted actions are stored in the "deletedActions" array. Those Ids are now used to remove from the "retrieved" parameter all the deleted actions.
     In the "Edit Actions" scenario, newly created actions (marked with class "new-action") are not yet considered, and therefore not taken from the HTML form.
 
     Every modification is then stored in the "column" object. ONLY MODIFICATIONS ARE INSERTED.
-    In the "Edit Actions" scenario, during each User's session, all the IDs of the deleted actions are stored in the "deletedActions" array. Those Ids are now used to remove from the "retrieved" parameter all the deleted actions.
+    
     The "retrieved" parameter gets at this point updated with the modifications found in the "column" object.
     
     All the newly created actions are now taken from the HTML form and inserted in the "retrieved" object.
@@ -125,14 +127,14 @@ class ScoreCardsItemSP {
 
                 data[action][code][id]['Code'] = code;
                 data[action][code][id]['Index'] = d.dataset.action;
-                data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value;
-                data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value;
-                data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value;
-                data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value;
+                data[action][code][id]['Project'] = d.querySelector('.column-1 textarea').value.trim();
+                data[action][code][id]['Country'] = d.querySelector('.column-2 textarea').value.trim();
+                data[action][code][id]['Stage'] = d.querySelector('.column-3 textarea').value.trim();
+                data[action][code][id]['Action'] = d.querySelector('.column-4 textarea').value.trim();
                 data[action][code][id]['Status'] = d.querySelector('.column-5 select').value;
-                data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value;
+                data[action][code][id]['Updates'] = d.querySelector('.column-6 textarea').value.trim();
                 data[action][code][id]['Lead'] = d.querySelector('.column-7 .select-pure__label').innerText;
-                data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value;
+                data[action][code][id]['Deadline'] = d.querySelector('.column-8 textarea').value.trim();
             });
         });
 
@@ -223,20 +225,28 @@ class ScoreCardsItemSP {
 
     editActions(retrieved, previous, action) {
         let column = {};
+        let maxIndexes = {};
+        let spColumn = `${action}action`;
+
+        app.deletedActions.forEach( (d) => {
+            let code = d.split('-')[0];
+
+            delete retrieved[spColumn][code][d]; // if target action has already been deleted by another user, it is ignored
+        });
 
         utilities.getNodes('.active-action .responsive-element:not(.new-action)').forEach( (i) => {
             let id = i.dataset.code;
             let code = id.split('-')[0];
-            let old = previous[`${action}action`][code][id];
+            let old = previous[spColumn][code][id];
 
-            let project = i.querySelector('.column-1 textarea').value;
-            let country = i.querySelector('.column-2 textarea').value;
-            let stage = i.querySelector('.column-3 textarea').value;
-            let act = i.querySelector('.column-4 textarea').value;
+            let project = i.querySelector('.column-1 textarea').value.trim();
+            let country = i.querySelector('.column-2 textarea').value.trim();
+            let stage = i.querySelector('.column-3 textarea').value.trim();
+            let act = i.querySelector('.column-4 textarea').value.trim();
             let status = i.querySelector('.column-5 select').value;
-            let updates = i.querySelector('.column-6 textarea').value;
+            let updates = i.querySelector('.column-6 textarea').value.trim();
             let lead = i.querySelector('.column-7 .select-pure__label').innerText;
-            let deadline = i.querySelector('.column-8 textarea').value;
+            let deadline = i.querySelector('.column-8 textarea').value.trim();
 
             !column[code] && ( column[code] = {} );
             column[code][id] = {};
@@ -251,26 +261,52 @@ class ScoreCardsItemSP {
             deadline != old.Deadline && (column[code][id]['Deadline'] = deadline);
         });
 
-        app.deletedActions.forEach( (d) => {
-            let code = d.split('-')[0];
-
-            delete retrieved[`${action}action`][code][d];
-        });
-
         for (element in column) {
             Object.keys(column[element]).forEach( (i) => {
                 Object.keys(column[element][i]).forEach( (d) => {
-                    retrieved[`${action}action`][element][i][d] = column[element][i][d];
+                    let target = retrieved[spColumn][element][i];
+
+                    !!target && (target[d] = column[element][i][d]); // ignores deleted actions
                 });
             });
         }
-        
+
         utilities.getNodes('.active-action .new-action').forEach( (c) => {
             let id = c.dataset.code;
-            // add newly created actions to retrieved
+            let code = id.split('-')[0];
+            let exists = !!retrieved[spColumn][code][id];
+            let retrievedIndexes, absoluteMax, index, newId, target;
+
+            if (exists) {
+                retrievedIndexes = Object.values(retrieved[spColumn][code]).map( (d) => parseInt(d.Index));
+                absoluteMax = Math.max(...retrievedIndexes);
+                !maxIndexes[code] && ( maxIndexes[code] = {Max: absoluteMax} ); // only initialized when the first concurrent action for each Category is found
+
+                maxIndexes[code]['Max'] += 1;
+                index = maxIndexes[code]['Max'];
+                newId = `${code}-${index}`;
+                retrieved[spColumn][code][newId] = {};
+                target = retrieved[spColumn][code][newId];
+
+            } else {
+                index = id.split('-')[1];
+                retrieved[spColumn][code][id] = {};
+                target = retrieved[spColumn][code][id];
+            }
+
+            target['Code'] = code;
+            target['Index'] = index;
+            target['Project'] = c.querySelector('.column-1 textarea').value.trim();
+            target['Country'] = c.querySelector('.column-2 textarea').value.trim();
+            target['Stage'] = c.querySelector('.column-3 textarea').value.trim();
+            target['Action'] = c.querySelector('.column-4 textarea').value.trim();
+            target['Status'] = c.querySelector('.column-5 select').value;
+            target['Updates'] = c.querySelector('.column-6 textarea').value.trim();
+            target['Lead'] = c.querySelector('.column-7 .select-pure__label').innerText;
+            target['Deadline'] = c.querySelector('.column-8 textarea').value.trim();
         });
 
-        return JSON.stringify(retrieved[`${action}action`]);
+        return JSON.stringify(retrieved[spColumn]);
     }
 
     editComment(retrieved, previous) {

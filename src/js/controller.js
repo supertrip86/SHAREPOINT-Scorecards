@@ -21,6 +21,7 @@ import utilities from "./utilities.js";
 import dateUpdater from "../hbs/helpers/getDate.js";
 import { ScoreCardsItem } from "./scorecardsItem.js";
 import { HubsItem } from "./hubsItem.js";
+import { exportToExcel } from "./actions.js";
 import { receiveData, modifyScorecards } from "./requests.js";
 
 const updateDates = () => {
@@ -109,19 +110,26 @@ const highlightCells = (a) => {
 const exportScorecard = () => {
     const target = document.querySelector('.active-content');
     const context = target.id;
+    const width = target.offsetWidth * 1.345;
+    const height = target.offsetHeight * 1.345;
+    const fileName = (context == "wca-content") ? "WCA Scorecards," : "WCA Scorecards by Hub,";
+    const date = target.querySelector('.scorecard-title').innerText;
 
     const options = {
-        margin: [5, 5, 0, 5],
+        margin: 5,
+        filename: `${fileName} ${date}`,
         image: { type: 'jpeg', quality: 1 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "px", format: [2640, 1560], orientation: "portrait" }
+        html2canvas: { scale: 3 },
+        jsPDF: { unit: "px", format: [width, height], orientation: "portrait" }
     };
 
     if (context != "actions-content") {
         target.classList.add('export-view');
 
-        html2pdf().set(options).from(target).save().then( () => target.classList.remove('export-view'));
+        return html2pdf().set(options).from(target).save().then( () => target.classList.remove('export-view'));
     }
+
+    return exportToExcel();
 };
 
 const editScorecard = () => {
@@ -217,9 +225,10 @@ const loadScorecard = (url) => {
             document.getElementById('hubs-content').innerHTML = Hubs(hubsData);
         } else {
             const actionsId = document.querySelector('.active-action').id;
-            const previousScorecard = result.d.results[1];
+            const previousScorecard = result.d.results[1] ? new ScoreCardsItem(result.d.results[1]) : null;
             const actionsData = utilities.getActionsData(actionsId, selectedScorecard, previousScorecard);
 
+            target.querySelector('.scorecard-title').innerText = selectedScorecard.Title;
             document.getElementById(actionsId).innerHTML = Actions(actionsData);
         }
 

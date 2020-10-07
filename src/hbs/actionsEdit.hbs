@@ -12,7 +12,15 @@
     {{/each}}
 {{else if previous}}
     {{#each previous}}
-
+    <div id="{{code}}-header" data-row="{{@index}}" data-max="{{max}}" class="responsive-header">
+        <button class="add-action">Add</button>
+        <div class="action-title">{{title}}</div>
+        <ul class="action-elements">
+            {{#each data}}
+            {{> actionsElement this}}
+            {{/each}}
+        </ul>
+    </div>
     {{/each}}
 {{else}}
     {{#each settings}}

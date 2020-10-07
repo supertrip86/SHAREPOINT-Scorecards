@@ -1078,6 +1078,7 @@ select.form-control {text-overflow: ellipsis;}
 #actions-content .column-6 {flex-basis: 20%;}
 #actions-content .column-7 {flex-basis: 12%;position: relative;}
 #actions-content .column-8 {flex-basis: 10%;}
+#actions-content .scorecard-label {background-color: transparent;color: #333;}
 #actions-content select {font-weight: bold;}
 #actions-content textarea.form-control {height: 100%;}
 
@@ -1119,8 +1120,8 @@ select.form-control {text-overflow: ellipsis;}
     #actions-body .actions-container .responsive-header .action-elements .col {display: flex;}
     #actions-body .actions-container .responsive-header .action-elements .col:before {color: #6C7A89;padding-right: 10px;content: attr(data-label);flex-basis: 50%;text-align: right;}
 }
-.scorecard-label {background-color: #333;display: flex;align-items: center;}
-.scorecard-label .scorecard-title {color: #fff;margin: 0;text-align: center;width: 100%;}
+.scorecard-label {background-color: #333;color: #fff;display: flex;align-items: center;}
+.scorecard-label .scorecard-title {margin: 0;text-align: center;width: 100%;}
 .scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}
 .scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
 .scorecard-main-comment {margin-bottom: 5px;position: relative;}
