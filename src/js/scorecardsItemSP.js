@@ -22,7 +22,7 @@ import utilities from "./utilities";
 */
 
 class ScoreCardsItemSP {
-    constructor(retrieved, previous, context, createMode) {
+    constructor(retrieved, previous, previousOld, context, createMode) {
         (context == "wca" && createMode) && ( this.Title = utilities.createScorecardTitle() );
         (context == "wca" && createMode) && ( this.scoredate = utilities.fromDateToSP() );
         (context == "wca" && createMode) && ( this.motto = document.querySelector('.scorecard-motto').value );
@@ -45,9 +45,9 @@ class ScoreCardsItemSP {
         (context == "coastal" && createMode) && ( this.coastalaction = this.createActions('coastal') );
         (context == "central" && createMode) && ( this.centralaction = this.createActions('central') );
 
-        (context == "west" && !createMode) && ( this.westaction = this.editActions(retrieved, previous, 'west') );
-        (context == "coastal" && !createMode) && ( this.coastalaction = this.editActions(retrieved, previous, 'coastal') );
-        (context == "central" && !createMode) && ( this.centralaction = this.editActions(retrieved, previous, 'central') );
+        (context == "west" && !createMode) && ( this.westaction = this.editActions(retrieved, previous, previousOld, 'west') );
+        (context == "coastal" && !createMode) && ( this.coastalaction = this.editActions(retrieved, previous, previousOld, 'coastal') );
+        (context == "central" && !createMode) && ( this.centralaction = this.editActions(retrieved, previous, previousOld, 'central') );
 
         this.__metadata = { type: app.storage.scorecardsType };
     }
@@ -223,7 +223,7 @@ class ScoreCardsItemSP {
         return JSON.stringify(retrieved[`${hub}data`]);
     }
 
-    editActions(retrieved, previous, action) {
+    editActions(retrieved, previous, previousOld, action) {
         let column = {};
         let maxIndexes = {};
         let spColumn = `${action}action`;
@@ -235,9 +235,10 @@ class ScoreCardsItemSP {
         });
 
         utilities.getNodes('.active-action .responsive-element:not(.new-action)').forEach( (i) => {
+            // if the item has been concurrently deleted while User is modifying it, it will result in that specific Action not being saved
             let id = i.dataset.code;
             let code = id.split('-')[0];
-            let old = previous[spColumn][code][id];
+            let old = previous[spColumn] ? previous[spColumn][code][id] : previousOld[spColumn][code][id];
 
             let project = i.querySelector('.column-1 textarea').value.trim();
             let country = i.querySelector('.column-2 textarea').value.trim();

@@ -90,10 +90,10 @@ const modifyScorecards = () => {
     const createMode = target.classList.contains('create-mode');
 
     if (proceed) {
-        return display('missingData', false);
+        display('missingData', false);
 
     } else if (createMode) {
-        const item = new ScoreCardsItemSP(null, null, context, true);
+        const item = new ScoreCardsItemSP(null, null, null, context, true);
 
         saveData('Scorecard', item);
 
@@ -103,22 +103,18 @@ const modifyScorecards = () => {
         receiveData(url).then( (result) => {
             const retrieved = new ScoreCardsItem(result.d.results[0]);
             const previous = app.current;
+            const previousOld = result.d.results[1] ? new ScoreCardsItem(result.d.results[1]) : null;
             const id = retrieved.Id;
             const isCreate = utilities.getSaveMode(context, retrieved);
+            const data = new ScoreCardsItemSP(retrieved, previous, previousOld, context, isCreate);
 
             if (view == "wca") {
-                const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
-
                 saveData('Scorecard', data, id);
 
             } else if (view == "hubs") {
-                const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
-
                 saveData('Scorecard', data, id);
 
             } else if (view == "actions") {
-                const data = new ScoreCardsItemSP(retrieved, previous, context, isCreate);
-
                 saveData('Scorecard', data, id); // no need for if else
             }
         });

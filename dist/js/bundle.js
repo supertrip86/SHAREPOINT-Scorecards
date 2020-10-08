@@ -47625,7 +47625,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"isAdmin") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":36,"column":12},"end":{"line":42,"column":19}}})) != null ? stack1 : "")
     + "        </div>\r\n    </div>\r\n</nav>\r\n<div class=\"ifad-bar\">\r\n    <div class=\"ifad-bar-nen\"></div>\r\n    <div class=\"ifad-bar-lac\"></div>\r\n    <div class=\"ifad-bar-esa\"></div>\r\n    <div class=\"ifad-bar-wca\"></div>\r\n    <div class=\"ifad-bar-apr\"></div>\r\n</div>\r\n<nav id=\"scorecards-control\" class=\"navbar navbar-expand-lg\">\r\n"
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"isAdmin") : depth0),{"name":"if","hash":{},"fn":container.program(7, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":54,"column":4},"end":{"line":72,"column":11}}})) != null ? stack1 : "")
-    + "    <div id=\"right-buttons\" class=\"vanish\">\r\n        <div>\r\n            <button id=\"wca-view\" class=\"btn btn-primary context-button\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 17 17\" class=\"bi bi-columns-gap\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z\"/>\r\n                </svg>\r\n                <span>WCA</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"hubs-view\" class=\"btn btn-primary context-button\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 1 16 16\" class=\"bi bi-grid\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z\"/>\r\n                </svg>\r\n                <span>Hubs</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"actions-view\" class=\"btn btn-primary context-button\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 18 18\" class=\"bi bi-x-diamond\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z\"/>\r\n                </svg>\r\n                <span>Actions</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"export-scorecards\" class=\"btn btn-primary\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 2 16 16\" class=\"bi bi-download\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z\"/>\r\n                </svg>\r\n                <span>Export</span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</nav>";
+    + "    <div id=\"right-buttons\" class=\"vanish\">\r\n        <div>\r\n            <button id=\"wca-view\" class=\"btn btn-primary context-button\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 17 17\" class=\"bi bi-columns-gap\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6 1H1v3h5V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12h-5v3h5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8H1v7h5V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6h-5v7h5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z\"/>\r\n                </svg>\r\n                <span>WCA</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"hubs-view\" class=\"btn btn-primary context-button\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 1 16 16\" class=\"bi bi-grid\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z\"/>\r\n                </svg>\r\n                <span>Hubs</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"actions-view\" class=\"btn btn-primary context-button\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 18 18\" class=\"bi bi-x-diamond\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z\"/>\r\n                </svg>\r\n                <span>Actions</span>\r\n            </button>\r\n        </div>\r\n        <div>\r\n            <button id=\"export-scorecards\" class=\"btn btn-primary d-none d-lg-flex\">\r\n                <svg width=\"1em\" height=\"1em\" viewBox=\"0 2 16 16\" class=\"bi bi-download\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path fill-rule=\"evenodd\" d=\"M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z\"/>\r\n                    <path fill-rule=\"evenodd\" d=\"M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z\"/>\r\n                </svg>\r\n                <span>Export</span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</nav>";
 },"usePartial":true,"useData":true});
 
 /***/ }),
@@ -49460,29 +49460,26 @@ var modifyScorecards = () => {
   var createMode = target.classList.contains('create-mode');
 
   if (proceed) {
-    return Object(_alert_js__WEBPACK_IMPORTED_MODULE_1__["display"])('missingData', false);
+    Object(_alert_js__WEBPACK_IMPORTED_MODULE_1__["display"])('missingData', false);
   } else if (createMode) {
-    var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](null, null, context, true);
+    var item = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](null, null, null, context, true);
     saveData('Scorecard', item);
   } else {
     var url = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getItemURL();
     receiveData(url).then(result => {
       var retrieved = new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_2__["ScoreCardsItem"](result.d.results[0]);
       var previous = app.current;
+      var previousOld = result.d.results[1] ? new _scorecardsItem_js__WEBPACK_IMPORTED_MODULE_2__["ScoreCardsItem"](result.d.results[1]) : null;
       var id = retrieved.Id;
       var isCreate = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getSaveMode(context, retrieved);
+      var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, previousOld, context, isCreate);
 
       if (view == "wca") {
-        var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
         saveData('Scorecard', data, id);
       } else if (view == "hubs") {
-        var _data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
-
-        saveData('Scorecard', _data, id);
+        saveData('Scorecard', data, id);
       } else if (view == "actions") {
-        var _data2 = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, context, isCreate);
-
-        saveData('Scorecard', _data2, id); // no need for if else
+        saveData('Scorecard', data, id); // no need for if else
       }
     });
   }
@@ -49653,7 +49650,7 @@ __webpack_require__.r(__webpack_exports__);
 */
 
 class ScoreCardsItemSP {
-  constructor(retrieved, previous, context, createMode) {
+  constructor(retrieved, previous, previousOld, context, createMode) {
     context == "wca" && createMode && (this.Title = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.createScorecardTitle());
     context == "wca" && createMode && (this.scoredate = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.fromDateToSP());
     context == "wca" && createMode && (this.motto = document.querySelector('.scorecard-motto').value);
@@ -49671,9 +49668,9 @@ class ScoreCardsItemSP {
     context == "west" && createMode && (this.westaction = this.createActions('west'));
     context == "coastal" && createMode && (this.coastalaction = this.createActions('coastal'));
     context == "central" && createMode && (this.centralaction = this.createActions('central'));
-    context == "west" && !createMode && (this.westaction = this.editActions(retrieved, previous, 'west'));
-    context == "coastal" && !createMode && (this.coastalaction = this.editActions(retrieved, previous, 'coastal'));
-    context == "central" && !createMode && (this.centralaction = this.editActions(retrieved, previous, 'central'));
+    context == "west" && !createMode && (this.westaction = this.editActions(retrieved, previous, previousOld, 'west'));
+    context == "coastal" && !createMode && (this.coastalaction = this.editActions(retrieved, previous, previousOld, 'coastal'));
+    context == "central" && !createMode && (this.centralaction = this.editActions(retrieved, previous, previousOld, 'central'));
     this.__metadata = {
       type: app.storage.scorecardsType
     };
@@ -49827,7 +49824,7 @@ class ScoreCardsItemSP {
     return JSON.stringify(retrieved["".concat(hub, "data")]);
   }
 
-  editActions(retrieved, previous, action) {
+  editActions(retrieved, previous, previousOld, action) {
     var column = {};
     var maxIndexes = {};
     var spColumn = "".concat(action, "action");
@@ -49836,9 +49833,10 @@ class ScoreCardsItemSP {
       delete retrieved[spColumn][code][d]; // if target action has already been deleted by another user, it is ignored
     });
     _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-action .responsive-element:not(.new-action)').forEach(i => {
+      // if the item has been concurrently deleted while User is modifying it, it will result in that specific Action not being saved
       var id = i.dataset.code;
       var code = id.split('-')[0];
-      var old = previous[spColumn][code][id];
+      var old = previous[spColumn] ? previous[spColumn][code][id] : previousOld[spColumn][code][id];
       var project = i.querySelector('.column-1 textarea').value.trim();
       var country = i.querySelector('.column-2 textarea').value.trim();
       var stage = i.querySelector('.column-3 textarea').value.trim();
