@@ -127,9 +127,26 @@ const exportScorecard = () => {
         target.classList.add('export-view');
 
         return html2pdf().set(options).from(target).save().then( () => target.classList.remove('export-view'));
+
+    } else {
+        const date = document.getElementById('scorecards-content').dataset.date;
+        const url = utilities.getItemURL(date);
+
+        receiveData(url).then( (result) => {
+            const selectedScorecard = new ScoreCardsItem(result.d.results[0]);
+            const previousScorecard = result.d.results[1] ? new ScoreCardsItem(result.d.results[1]) : null;
+
+            utilities.getNodes('.actions-container').forEach( (i) => {
+                const actionsId = i.id;
+                const actionsData = utilities.getActionsData(actionsId, selectedScorecard, previousScorecard);
+
+                document.getElementById(actionsId).innerHTML = Actions(actionsData);
+            });
+
+            return exportToExcel();
+        });
     }
 
-    return exportToExcel();
 };
 
 const editScorecard = () => {
@@ -215,6 +232,7 @@ const loadScorecard = (url) => {
 
         document.getElementById('right-buttons').classList.remove('vanish');
         utilities.getNodes('.actions-button:not(:disabled)').forEach( (i) => i.classList.remove('invisible') );
+        utilities.getNodes('.actions-container').forEach( (i) => i.innerHTML = "");
 
         if (target.id == "wca-content") {
             document.getElementById('wca-content').innerHTML = Wca(selectedScorecard);

@@ -1,6 +1,6 @@
-.scorecard-label {background-color: #333;color: #fff;display: flex;align-items: center;}
+.scorecard-label {background-color: #333;color: #fff;display: flex;align-items: center;position: relative;}
 .scorecard-label .scorecard-title {margin: 0;text-align: center;width: 100%;}
-.scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}
+.scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 15px;height: 18px;}
 .scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
 .scorecard-main-comment {margin-bottom: 5px;position: relative;}
 .scorecard-main-comment .scorecard-main-summary {background-color: #eee;min-height: 100px;padding: 5px;font-size: 12px;}

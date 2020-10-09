@@ -5,7 +5,6 @@ class ScoreCardsItem {
 		this.comment = sharepointItem.comment;
 		this.motto = sharepointItem.motto;
 		this.scoredate = sharepointItem.scoredate;
-		this.actionsNotified = (sharepointItem.NotificationSent == "true") ? true : false;
 		this.wcadata = this.formatJSON(sharepointItem.wcadata);
 		this.westdata = this.formatJSON(sharepointItem.westdata);
 		this.coastaldata = this.formatJSON(sharepointItem.coastaldata);

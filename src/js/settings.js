@@ -2,7 +2,6 @@ import "../css/settings.css";
 import Modal from "../hbs/settings.hbs";
 import Settings from "../hbs/partials/settingsComponents.hbs";
 import $ from "jquery";
-import Sortable from 'sortablejs';
 import { receiveData, modifySettings } from "../js/requests.js";
 import utilities from "./utilities.js";
 
@@ -27,8 +26,6 @@ const callSettings = () => {
 
         document.querySelector('.modal-body').innerHTML = Settings(settings);
         document.querySelector('.dialog-menu-item').click();
-
-        new Sortable(document.querySelector('.dialog-menu-list'), {animation: 150, direction: 'vertical', dataIdAttr: 'data-order'});
     });
 };
 

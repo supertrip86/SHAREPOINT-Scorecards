@@ -29,7 +29,7 @@
 #actions-body .actions-container .responsive-header .add-action {font-size: 11px;left: -45px;}
 #actions-body .actions-container .responsive-header .action-title {background-color: #d3d3d3;padding: 8px 30px;border-radius: 3px;display: inline-block;margin-bottom: 15px;}
 #actions-body .actions-container .responsive-header .action-elements {padding: 0;}
-#actions-body .actions-container .responsive-element {padding: 10px;margin-bottom: 15px;position: relative;display: flex;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,0.1);min-height: 140px;border-radius: 3px;}
+#actions-body .actions-container .responsive-element {padding: 10px;margin-bottom: 15px;position: relative;display: flex;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,0.1);min-height: 100px;border-radius: 3px;}
 #actions-body .actions-container .responsive-element .notify-action {right: -45px;}
 #actions-body .actions-container .responsive-element .notify-action::after {content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktZW52ZWxvcGUtZmlsbCIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICAgICAgICAgICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNLjA1IDMuNTU1QTIgMiAwIDAgMSAyIDJoMTJhMiAyIDAgMCAxIDEuOTUgMS41NTVMOCA4LjQxNC4wNSAzLjU1NXpNMCA0LjY5N3Y3LjEwNGw1LjgwMy0zLjU1OEwwIDQuNjk3ek02Ljc2MSA4LjgzbC02LjU3IDQuMDI3QTIgMiAwIDAgMCAyIDE0aDEyYTIgMiAwIDAgMCAxLjgwOC0xLjE0NGwtNi41Ny00LjAyN0w4IDkuNTg2bC0xLjIzOS0uNzU3em0zLjQzNi0uNTg2TDE2IDExLjgwMVY0LjY5N2wtNS44MDMgMy41NDZ6Ij48L3BhdGg+DQogICAgICAgIDwvc3ZnPg==");}
 #actions-body .actions-container .responsive-element .delete-action {left: -45px;}

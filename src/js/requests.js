@@ -14,13 +14,13 @@ const receiveData = async (url) => {
     const response = await fetch(url, options);
 
     if (response.status == 404) {
-        return display('dataNotFound', false);
+        return display({value: 'dataNotFound', title: 'Data not found!', icon: 'error', confirm: false});
     }
 
     return await response.json();
 };
 
-const saveData = (context, item, id, index) => {
+const saveData = (context, item, id, index, createMode) => {
     const list = (context == "Scorecard") ? app.storage.scorecardsList : app.storage.settingsList;
     const url = `${app.storage.site}/_api/web/lists/GetByTitle('${list}')/items${id ? `(${id})` : ``}`;
 
@@ -45,11 +45,44 @@ const saveData = (context, item, id, index) => {
     fetch(url, options).then( () => {
         if (context == "Settings") {
             const threshold = document.querySelectorAll('.dialog-menu-item').length -1;
-            index == threshold && utilities.reload();
+            (index == threshold) && location.reload();
 
         } else {
-            utilities.reload();
+            createMode ? utilities.reload() : location.reload();
         }
+    });
+};
+
+const sendEmail = (data) => {
+    const url = `${app.storage.site}/_api/SP.Utilities.Utility.SendEmail`;
+    const item = {
+        'properties': {
+            '__metadata': {
+                'type': 'SP.Utilities.EmailProperties'
+            },
+            'From': 'wcascorecards_team@ifad.org',
+            'To': {
+                'results': data.to
+            },
+            'Body': data.body,
+            'Subject': data.subject
+        }
+    };
+    const options = {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+            "Accept": "application/json;odata=verbose",
+            "content-type": "application/json;odata=verbose",
+            "X-RequestDigest": document.getElementById('__REQUESTDIGEST').value
+        },
+        body: JSON.stringify(item)
+    };
+
+    utilities.startLoader();
+
+    fetch(url, options).then( () => {
+        !data.counter && location.reload();
     });
 };
 
@@ -90,12 +123,12 @@ const modifyScorecards = () => {
     const createMode = target.classList.contains('create-mode');
 
     if (proceed) {
-        display('missingData', false);
+        display({value: 'missingData', title: 'Warning', icon: 'warning', confirm: false});
 
     } else if (createMode) {
         const item = new ScoreCardsItemSP(null, null, null, context, true);
 
-        saveData('Scorecard', item);
+        saveData('Scorecard', item, null, null, createMode);
 
     } else {
         const url = utilities.getItemURL();
@@ -121,4 +154,4 @@ const modifyScorecards = () => {
     }
 };
 
-export { receiveData, modifySettings, modifyScorecards };
+export { receiveData, modifySettings, modifyScorecards, sendEmail };

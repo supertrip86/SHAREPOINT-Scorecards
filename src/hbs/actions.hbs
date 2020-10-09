@@ -27,16 +27,18 @@
             <div class="action-title">{{title}}</div>
             <ul class="action-elements">
                 {{#each data}}
+                {{#filterOldActions Status}}
                 <li class="responsive-element" data-action="{{Index}}" data-code="{{Code}}-{{Index}}">
                     <div class="col column-1" data-label="Project">{{Project}}</div>
                     <div class="col column-2" data-label="Country">{{Country}}</div>
                     <div class="col column-3" data-label="Stage">{{Stage}}</div>
                     <div class="col column-4" data-label="Action">{{Action}}</div>
-                    <div class="col column-5" data-label="Status">{{Status}}</div>
+                    <div class="col column-5" data-label="Status">Ongoing</div>
                     <div class="col column-6" data-label="Updates">{{Updates}}</div>
                     <div class="col column-7" data-label="Lead">{{Lead}}</div>
                     <div class="col column-8" data-label="Deadline">{{Deadline}}</div>
                 </li>
+                {{/filterOldActions}}
                 {{/each}}
             </ul>
         </div>

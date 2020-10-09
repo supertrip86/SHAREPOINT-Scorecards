@@ -8,9 +8,9 @@ const errorList = {
     sendActions: 'Do you want to send a notification to all the Project Leads?'
 };
 
-const display = (value, confirm, callback, arg) => {
+const display = (data, callback, arg) => {
     Swal.fire(
-        new ModalError(value, confirm)
+        new ModalError(data)
     ).then( (result) => {
         if (result.value && callback) {
             return callback(arg);
@@ -19,14 +19,14 @@ const display = (value, confirm, callback, arg) => {
 };
 
 class ModalError {
-    constructor(value, confirm) {
-        this.title = confirm ? 'Wait' : 'Warning';
-        this.icon = confirm ? 'question' : 'warning';
+    constructor(data) {
+        this.title = data.title;
+        this.icon = data.icon;
         this.heightAuto = false;
-        this.showCancelButton = confirm ? true : false;
+        this.showCancelButton = data.confirm;
         this.confirmButtonColor = '#003870';
         this.confirmButtonText = 'Yes';
-        this.html = `<div><p>${errorList[value]}</p></div>`;
+        this.html = `<div><p>${errorList[data.value]}</p></div>`;
     }
 };
 

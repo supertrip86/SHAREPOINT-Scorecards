@@ -29,8 +29,8 @@ const data = {
 
 receiveData(data.userData).then( (user) => {
     data.person = user.d.Title;
-    data.isOwner = (data.person == "Leguia Alegria, Juan Jose" || data.person == "Giunta, Giovanni") ? true : false;
     data.isAdmin = !!user.d.Groups.results.filter( (i) => (i.Title == "Tools Owners")).length;
+    data.isOwner = (data.isAdmin && (data.person == "Leguia Alegria, Juan Jose" || data.person == "Giunta, Giovanni")) ? true : false;
 
     receiveData(data.settingsData).then( (settingsResult) => {
         data.settings = settingsResult.d.results;
@@ -47,7 +47,7 @@ receiveData(data.userData).then( (user) => {
     
                         initApp();
                     });
-    
+
                 } else {
                     data.scorecardsType = data.scorecards[0].__metadata.type;
     

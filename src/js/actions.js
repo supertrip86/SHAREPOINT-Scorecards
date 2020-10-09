@@ -1,7 +1,9 @@
 import ActionsElement from "../hbs/partials/actionsElement.hbs";
+import ActionsEmail from "../hbs/partials/actionsEmail.hbs";
 import SelectPure from "select-pure";
 import utilities from "./utilities.js";
 import { display } from "./alert.js";
+import { sendEmail } from "./requests.js";
 
 const clearStyle = (e) => {
     e.target.removeAttribute('style');
@@ -37,14 +39,69 @@ const removeAction = (e) => {
 };
 
 const sendNotification = (e) => {
+    const element = e.target.parentElement;
+    const action = [{
+        Project: element.querySelector('.column-1 textarea').value,
+        Country: element.querySelector('.column-2 textarea').value,
+        Stage: element.querySelector('.column-3 textarea').value,
+        Action: element.querySelector('.column-4 textarea').value,
+        Status: element.querySelector('.column-5 select').value,
+        Updates: element.querySelector('.column-6 textarea').value,
+        Lead: element.querySelector('.column-7 .select-pure__label').innerText,
+        Deadline: element.querySelector('.column-8 textarea').value
+    }];
+    const lead = action[0].Lead;
+    const leadName = lead.split(', ')[1];
+    const email = app.users.filter( (i) => (i.label == lead) )[0].email;
+    const templateData = { lead: leadName, all: false, actions: action };
 
-    return display('sendNotification', true);
+    const actionsEmail = ActionsEmail(templateData);
+    const emailSubject = 'ScoreCards Action Required';
+    const emailData = {to: [ email ], subject: emailSubject, body: actionsEmail, counter: 0};
+    const displayData = {value: 'sendNotification', title: 'Send Notification?', icon: 'question', confirm: true};
+
+    display(displayData, sendEmail, emailData);
 };
 
 const sendActions = () => {
-    const validateSend = document.querySelectorAll('.active-action .responsive-element').length > 0;
+    const emailSubject = 'ScoreCards Action Required';
+    const leads = utilities.getNodes('.responsive-element').map( (i) => i.querySelector('.column-7').innerText );
+    const leadsWithoutDuplicates = Array.from( new Set(leads) );
 
-    validateSend && display('sendActions', true);
+    let counter = leadsWithoutDuplicates.length;
+
+    leadsWithoutDuplicates.forEach( (i) => {
+        counter -= 1;
+
+        const lead = i;
+        const leadName = i.split(', ')[1];
+        const email = app.users.filter( (d) => (d.label == lead) )[0].email;
+        const actions = utilities.getNodes('.responsive-element').filter( (d) => ( d.querySelector('.column-7').innerText == i ) );
+        const actionsData = actions.map( (c) => {
+            return {
+                Project: c.querySelector('.column-1').innerText,
+                Country: c.querySelector('.column-2').innerText,
+                Stage: c.querySelector('.column-3').innerText,
+                Action: c.querySelector('.column-4').innerText,
+                Status: c.querySelector('.column-5').innerText,
+                Updates: c.querySelector('.column-6').innerText,
+                Lead: c.querySelector('.column-7').innerText,
+                Deadline: c.querySelector('.column-8').innerText
+            };
+        });
+        const templateData = { lead: leadName, all: true, actions: actionsData };
+        const actionsEmail = ActionsEmail(templateData);
+        const emailData = {to: [ email ], subject: emailSubject, body: actionsEmail, counter: counter};
+
+        sendEmail(emailData);
+    });
+};
+
+const validateSendActions = () => {
+    const validateSend = document.querySelectorAll('.active-action .responsive-element').length > 0;
+    const displayData = {value: 'sendActions', title: 'Send Notifications?', icon: 'question', confirm: true};
+
+    validateSend && display(displayData, sendActions);
 };
 
 const createExcelSheet = (wb, actionObj, sheetName) => {
@@ -141,7 +198,7 @@ const actionsListeners = () => {
     utilities.on('#scorecards-content', 'click', '.delete-action', removeAction);
     utilities.on('#scorecards-content', 'click', '.notify-action', sendNotification);
     utilities.on('#scorecards-content', 'click', '.actions-button', toggleAction);
-    utilities.on('#scorecards-content', 'click', '#send-actions', sendActions);
+    utilities.on('#scorecards-content', 'click', '#send-actions', validateSendActions);
 };
 
 export { actionsListeners, exportToExcel };

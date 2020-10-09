@@ -55,7 +55,7 @@ class ScoreCardsItemSP {
     createWca() {
         let wca = {};
 
-        utilities.getNodes('.active .scorecard-row').forEach( (i) =>  {
+        utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
 
             wca[code] = {};
@@ -144,7 +144,7 @@ class ScoreCardsItemSP {
     editWca(retrieved, previous) {
         let column = {};
     
-        utilities.getNodes('.active .scorecard-row').forEach( (i) =>  {
+        utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
             let old = previous.wcadata[code];
     

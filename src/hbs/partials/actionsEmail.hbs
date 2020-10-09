@@ -1,0 +1,41 @@
+<div style="font-family:Calibri,sans-serif">
+    <p>Dear {{lead}},</p>
+    {{#if all}}
+    <p>The following table shows all active actions in WCA&#39;s Scorecards under your lead as of {{getCurrentDate}}.</p>
+    {{else}}
+    <p>The Regional Director requests immediate updates on the following Scorecard action:</p>
+    {{/if}}
+    <table>
+        <tbody>
+            <tr style="background-color: #587CA1;color: #fff;height: 40px;">
+                <td style="width: 100px;padding: 0 5px">Project</td>
+                <td style="width: 100px;padding: 0 5px">Country</td>
+                <td style="width: 100px;padding: 0 5px">Stage</td>
+                <td style="width: 100px;padding: 0 5px">Action</td>
+                <td style="width: 100px;padding: 0 5px">Status</td>
+                <td style="width: 100px;padding: 0 5px">Updates</td>
+                <td style="width: 100px;padding: 0 5px">Lead</td>
+                <td style="width: 100px;padding: 0 5px">Deadline</td>
+            </tr>
+            {{#each actions}}
+            <tr style="background-color: #f2f2f2;">
+                <td style="width: 100px;padding: 10px 5px">{{Project}}</td>
+                <td style="width: 100px;padding: 10px 5px">{{Country}}</td>
+                <td style="width: 100px;padding: 10px 5px">{{Stage}}</td>
+                <td style="width: 100px;padding: 10px 5px">{{Action}}</td>
+                <td style="width: 100px;padding: 10px 5px">{{Status}}</td>
+                <td style="width: 100px;padding: 10px 5px">{{Updates}}</td>
+                <td style="width: 100px;padding: 10px 5px">{{Lead}}</td>
+                <td style="width: 100px;padding: 10px 5px">{{Deadline}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#if all}}
+    <p>Please, reply to this email if you have any updates. WCA&#39;s Regional team is committed to help you with hands-on support to complete these actions on time, if needed.</p>
+    {{else}}
+    <p>Please, contact him directly as soon as possible.</p>
+    {{/if}}
+    <p>Regards,</p>
+    <p>WCA Regional Team</p>
+</div>

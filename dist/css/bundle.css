@@ -38,7 +38,7 @@ select.form-control {text-overflow: ellipsis;}
 .welcome::after {position: absolute;color: #fff;min-width: 250px;width: 40%;padding: 3vh;bottom: 18%;background: rgba(0, 0, 0, 0.75);font-size: 3.5vh;font-style: italic;border-top-right-radius: 12px;border-bottom-right-radius: 12px;content: 'Welcome! Create a new ScoreCard, or select an existing one from the Dropdown Menu.';}
 
 /* loading Spinner */
-.spinner {position: absolute;left: 46%;top: 46%;height:60px;width:60px;-webkit-animation: rotation .6s infinite linear;-moz-animation: rotation .6s infinite linear;-o-animation: rotation .6s infinite linear;animation: rotation .6s infinite linear;border-left:4px solid rgba(0,174,239,.15);border-right:4px solid rgba(0,174,239,.15);border-bottom:4px solid rgba(0,174,239,.15);border-top:4px solid var(--main-dark-blue);border-radius:100%;z-index: 11000;}
+.spinner {position: absolute;left: 46%;top: 46%;height:60px;width:60px;-webkit-animation: rotation .6s infinite linear;-moz-animation: rotation .6s infinite linear;-o-animation: rotation .6s infinite linear;animation: rotation .6s infinite linear;border-left:4px solid rgba(0,174,239,.15);border-right:4px solid rgba(0,174,239,.15);border-bottom:4px solid rgba(0,174,239,.15);border-top:4px solid #fff;border-radius:100%;z-index: 11000;}
 @-webkit-keyframes rotation {from {-webkit-transform: rotate(0deg);} to {-webkit-transform: rotate(359deg);}}
 @-moz-keyframes rotation {from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(359deg);}}
 @-o-keyframes rotation {from {-o-transform: rotate(0deg);} to {-o-transform: rotate(359deg);}}
@@ -1089,7 +1089,7 @@ select.form-control {text-overflow: ellipsis;}
 #actions-body .actions-container .responsive-header .add-action {font-size: 11px;left: -45px;}
 #actions-body .actions-container .responsive-header .action-title {background-color: #d3d3d3;padding: 8px 30px;border-radius: 3px;display: inline-block;margin-bottom: 15px;}
 #actions-body .actions-container .responsive-header .action-elements {padding: 0;}
-#actions-body .actions-container .responsive-element {padding: 10px;margin-bottom: 15px;position: relative;display: flex;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,0.1);min-height: 140px;border-radius: 3px;}
+#actions-body .actions-container .responsive-element {padding: 10px;margin-bottom: 15px;position: relative;display: flex;background-color: #fff;box-shadow: 0 0 9px 0 rgba(0,0,0,0.1);min-height: 100px;border-radius: 3px;}
 #actions-body .actions-container .responsive-element .notify-action {right: -45px;}
 #actions-body .actions-container .responsive-element .notify-action::after {content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktZW52ZWxvcGUtZmlsbCIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICAgICAgICAgICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNLjA1IDMuNTU1QTIgMiAwIDAgMSAyIDJoMTJhMiAyIDAgMCAxIDEuOTUgMS41NTVMOCA4LjQxNC4wNSAzLjU1NXpNMCA0LjY5N3Y3LjEwNGw1LjgwMy0zLjU1OEwwIDQuNjk3ek02Ljc2MSA4LjgzbC02LjU3IDQuMDI3QTIgMiAwIDAgMCAyIDE0aDEyYTIgMiAwIDAgMCAxLjgwOC0xLjE0NGwtNi41Ny00LjAyN0w4IDkuNTg2bC0xLjIzOS0uNzU3em0zLjQzNi0uNTg2TDE2IDExLjgwMVY0LjY5N2wtNS44MDMgMy41NDZ6Ij48L3BhdGg+DQogICAgICAgIDwvc3ZnPg==");}
 #actions-body .actions-container .responsive-element .delete-action {left: -45px;}
@@ -1121,9 +1121,9 @@ select.form-control {text-overflow: ellipsis;}
     #actions-body .actions-container .responsive-header .action-elements .col {display: flex;}
     #actions-body .actions-container .responsive-header .action-elements .col:before {color: #6C7A89;padding-right: 10px;content: attr(data-label);flex-basis: 50%;text-align: right;}
 }
-.scorecard-label {background-color: #333;color: #fff;display: flex;align-items: center;}
+.scorecard-label {background-color: #333;color: #fff;display: flex;align-items: center;position: relative;}
 .scorecard-label .scorecard-title {margin: 0;text-align: center;width: 100%;}
-.scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 80px;height: 18px;}
+.scorecard-label .scorecard-motto {width: 260px;font-style: italic;position: absolute;right: 15px;height: 18px;}
 .scorecard-label span.scorecard-motto {font-size: 13px;color: #fff;}
 .scorecard-main-comment {margin-bottom: 5px;position: relative;}
 .scorecard-main-comment .scorecard-main-summary {background-color: #eee;min-height: 100px;padding: 5px;font-size: 12px;}

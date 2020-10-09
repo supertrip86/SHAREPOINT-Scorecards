@@ -15,6 +15,7 @@ module.exports = {
 	isColumnEmpty: isColumnEmpty,
 	updateSPToken: updateSPToken,
 	startLoader: startLoader,
+	removeLoader: removeLoader,
 	reload: reload,
 	editorOptions: editorOptions,
 	userSelectOptions: userSelectOptions,
@@ -163,14 +164,26 @@ function updateSPToken() {
 
 function startLoader() {
 	const body = document.getElementsByTagName('body')[0];
-	const dialog = document.getElementById('settingsMenu');
-	const settingsIcon = document.querySelector('.settings-link');
+	const main = document.getElementById('scorecards-content')
+	const header = document.getElementById('scorecards-header')
 	const spinner = '<div class="spinner"></div>';
 
-	dialog.setAttribute('style', 'display: none;');
-	settingsIcon.setAttribute('style', 'display: none;');
-	body.setAttribute('style', 'user-select: none; overflow: hidden;')
+	main.style.display = "none";
+	header.style.display = "none";
+	body.style.backgroundColor = "#003870";
 	body.insertAdjacentHTML('beforeend', spinner);
+}
+
+function removeLoader() {
+	const body = document.getElementsByTagName('body')[0];
+	const main = document.getElementById('scorecards-content')
+	const header = document.getElementById('scorecards-header')
+	const spinner = document.querySelector('.spinner');
+
+	main.removeAttribute('style');
+	header.removeAttribute('style');
+	body.removeAttribute('style');
+	spinner.remove();
 }
 
 function reload() {

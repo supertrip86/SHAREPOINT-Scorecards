@@ -31,7 +31,7 @@ select.form-control {text-overflow: ellipsis;}
 .welcome::after {position: absolute;color: #fff;min-width: 250px;width: 40%;padding: 3vh;bottom: 18%;background: rgba(0, 0, 0, 0.75);font-size: 3.5vh;font-style: italic;border-top-right-radius: 12px;border-bottom-right-radius: 12px;content: 'Welcome! Create a new ScoreCard, or select an existing one from the Dropdown Menu.';}
 
 /* loading Spinner */
-.spinner {position: absolute;left: 46%;top: 46%;height:60px;width:60px;-webkit-animation: rotation .6s infinite linear;-moz-animation: rotation .6s infinite linear;-o-animation: rotation .6s infinite linear;animation: rotation .6s infinite linear;border-left:4px solid rgba(0,174,239,.15);border-right:4px solid rgba(0,174,239,.15);border-bottom:4px solid rgba(0,174,239,.15);border-top:4px solid var(--main-dark-blue);border-radius:100%;z-index: 11000;}
+.spinner {position: absolute;left: 46%;top: 46%;height:60px;width:60px;-webkit-animation: rotation .6s infinite linear;-moz-animation: rotation .6s infinite linear;-o-animation: rotation .6s infinite linear;animation: rotation .6s infinite linear;border-left:4px solid rgba(0,174,239,.15);border-right:4px solid rgba(0,174,239,.15);border-bottom:4px solid rgba(0,174,239,.15);border-top:4px solid #fff;border-radius:100%;z-index: 11000;}
 @-webkit-keyframes rotation {from {-webkit-transform: rotate(0deg);} to {-webkit-transform: rotate(359deg);}}
 @-moz-keyframes rotation {from {-moz-transform: rotate(0deg);} to {-moz-transform: rotate(359deg);}}
 @-o-keyframes rotation {from {-o-transform: rotate(0deg);} to {-o-transform: rotate(359deg);}}
