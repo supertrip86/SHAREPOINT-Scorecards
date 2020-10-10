@@ -7,6 +7,7 @@ module.exports = {
 	getMonths: getMonths,
 	getActionFields: getActionFields,
 	getAllUsers: getAllUsers,
+	getManagement: getManagement,
 	getHeaderData: getHeaderData,
 	getActionsData: getActionsData,
 	getSaveMode: getSaveMode,
@@ -15,7 +16,6 @@ module.exports = {
 	isColumnEmpty: isColumnEmpty,
 	updateSPToken: updateSPToken,
 	startLoader: startLoader,
-	removeLoader: removeLoader,
 	reload: reload,
 	editorOptions: editorOptions,
 	userSelectOptions: userSelectOptions,
@@ -96,6 +96,25 @@ function getAllUsers(data) {
 	return users;
 }
 
+function getManagement(data) {
+	let management = {};
+
+	data.forEach( (i) => {
+		let a = i.FileLeafRef.slice(0, i.FileLeafRef.lastIndexOf('.'));
+
+		if (a == "director" || a == "west-hub" || a == "coastal-hub" || a == "central-hub") {
+			let code = a.split('-')[0];
+
+			management[code] = {};
+			management[code].Picture = i.FileRef,
+			management[code].Title = i.Title,
+			management[code].Name = i.Full_x0020_Name
+		}
+	});
+
+	return management;
+}
+
 function getHeaderData() {
 	const split = app.scorecards.length ? app.scorecards[0].scoredate.split('-') : [];
 
@@ -172,18 +191,6 @@ function startLoader() {
 	header.style.display = "none";
 	body.style.backgroundColor = "#003870";
 	body.insertAdjacentHTML('beforeend', spinner);
-}
-
-function removeLoader() {
-	const body = document.getElementsByTagName('body')[0];
-	const main = document.getElementById('scorecards-content')
-	const header = document.getElementById('scorecards-header')
-	const spinner = document.querySelector('.spinner');
-
-	main.removeAttribute('style');
-	header.removeAttribute('style');
-	body.removeAttribute('style');
-	spinner.remove();
 }
 
 function reload() {

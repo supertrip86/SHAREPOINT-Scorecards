@@ -2,6 +2,7 @@ class HubsItem {
     constructor(item) {
         this.Title = item.Title;
         this.motto = item.motto;
+        this.management = app.management;
         this.data = this.getData(item);
     }
 

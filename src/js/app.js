@@ -2,6 +2,7 @@ class App {
     constructor(data) {
         this.settings = data.settings;
         this.scorecards = data.scorecards;
+        this.management = data.management;
         this.storage = this.createStorage(data);
     }
 
@@ -13,7 +14,8 @@ class App {
             settingsURL: data.settingsData,
             scorecardsList: data.scorecardsList,
             scorecardsType: data.scorecardsType,
-            scorecardsURL: data.scorecardsData
+            scorecardsURL: data.scorecardsData,
+            managementList: data.managementList
         };
     }
 };
