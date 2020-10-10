@@ -180,7 +180,7 @@ class ScoreCardsItemSP {
     editHubs(retrieved, previous, hub) {
         let column = {};
 
-        utilities.getNodes('.active .scorecard-row').forEach( (i) =>  {
+        utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
             let old = previous[`${hub}data`][code];
 

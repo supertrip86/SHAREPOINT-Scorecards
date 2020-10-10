@@ -188,7 +188,9 @@ const editScorecard = () => {
             document.getElementById(actionsId).innerHTML = ActionsEdit(actionsData);
 
             utilities.getNodes('.active-content .action-lead').forEach( (i) => {
-                new SelectPure(i, utilities.userSelectOptions(app.users, i.dataset.lead));
+                const lead = !!app.users.filter( (d) => d.value == i.dataset.lead).length ? i.dataset.lead : null;
+
+                new SelectPure(i, utilities.userSelectOptions(app.users, lead));
             });
         }
     });

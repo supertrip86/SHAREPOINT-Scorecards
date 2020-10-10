@@ -44480,7 +44480,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(((helper = (helper = lookupProperty(helpers,"Title") || (depth0 != null ? lookupProperty(depth0,"Title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Title","hash":{},"data":data,"loc":{"start":{"line":2,"column":32},"end":{"line":2,"column":41}}}) : helper)))
     + "</h5>\r\n    <span class=\"scorecard-motto d-none d-lg-block\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"motto") || (depth0 != null ? lookupProperty(depth0,"motto") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"motto","hash":{},"data":data,"loc":{"start":{"line":3,"column":52},"end":{"line":3,"column":61}}}) : helper)))
-    + "</span>\r\n</div>\r\n<div class=\"scorecard-management\">\r\n    <div class=\"management-title d-none d-lg-block\">\r\n        <p>MANAGEMENT TEAM:</p>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/director.jpg\">\r\n        <div>\r\n            <p>Nadine Gbossa</p>\r\n            <p>Regional Director</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/west.jpg\">\r\n        <div>\r\n            <p>Benoit Thierry</p>\r\n            <p>Hub Head, West Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/coastal.jpg\">\r\n        <div>\r\n            <p>Abdul Barry</p>\r\n            <p>Hub Head, Coastal Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/v2/img/hubs/central.jpg\">\r\n        <div>\r\n            <p>Abdelhaq Hanafi</p>\r\n            <p>Hub Head, Central Africa</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+    + "</span>\r\n</div>\r\n<div class=\"scorecard-management\">\r\n    <div class=\"management-title d-none d-lg-block\">\r\n        <p>MANAGEMENT TEAM:</p>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/scorecards/img/director.jpg\">\r\n        <div>\r\n            <p>Nadine Gbossa</p>\r\n            <p>Regional Director</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/scorecards/img/west.jpg\">\r\n        <div>\r\n            <p>Benoit Thierry</p>\r\n            <p>Hub Head, West Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/scorecards/img/coastal.jpg\">\r\n        <div>\r\n            <p>Abdul Barry</p>\r\n            <p>Hub Head, Coastal Africa</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"management-element d-lg-flex\">\r\n        <img src=\"/sites/pa/tools/scorecards/img/central.jpg\">\r\n        <div>\r\n            <p>Abdelhaq Hanafi</p>\r\n            <p>Hub Head, Central Africa</p>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"data") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":38,"column":0},"end":{"line":240,"column":9}}})) != null ? stack1 : "");
 },"useData":true});
 
@@ -45784,7 +45784,8 @@ var editScorecard = () => {
       var actionsData = _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getActionsData(actionsId, scorecards, previousScorecard);
       document.getElementById(actionsId).innerHTML = _hbs_actionsEdit_hbs__WEBPACK_IMPORTED_MODULE_13___default()(actionsData);
       _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.getNodes('.active-content .action-lead').forEach(i => {
-        new select_pure__WEBPACK_IMPORTED_MODULE_18___default.a(i, _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.userSelectOptions(app.users, i.dataset.lead));
+        var lead = !!app.users.filter(d => d.value == i.dataset.lead).length ? i.dataset.lead : null;
+        new select_pure__WEBPACK_IMPORTED_MODULE_18___default.a(i, _utilities_js__WEBPACK_IMPORTED_MODULE_19___default.a.userSelectOptions(app.users, lead));
       });
     }
   });
@@ -46138,14 +46139,7 @@ var modifyScorecards = () => {
       var id = retrieved.Id;
       var isCreate = _js_utilities_js__WEBPACK_IMPORTED_MODULE_0___default.a.getSaveMode(context, retrieved);
       var data = new _scorecardsItemSP_js__WEBPACK_IMPORTED_MODULE_3__["ScoreCardsItemSP"](retrieved, previous, previousOld, context, isCreate);
-
-      if (view == "wca") {
-        saveData('Scorecard', data, id);
-      } else if (view == "hubs") {
-        saveData('Scorecard', data, id);
-      } else if (view == "actions") {
-        saveData('Scorecard', data, id); // no need for if else
-      }
+      saveData('Scorecard', data, id);
     });
   }
 };
@@ -46449,7 +46443,7 @@ class ScoreCardsItemSP {
 
   editHubs(retrieved, previous, hub) {
     var column = {};
-    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active .scorecard-row').forEach(i => {
+    _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.getNodes('.active-content .scorecard-row').forEach(i => {
       var code = i.dataset.code;
       var old = previous["".concat(hub, "data")][code];
       var value1 = _utilities__WEBPACK_IMPORTED_MODULE_0___default.a.filterOut(i.querySelector("#".concat(code, "-hub-row-left .").concat(hub, "-indicator-value")).value);

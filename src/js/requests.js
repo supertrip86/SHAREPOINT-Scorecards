@@ -141,15 +141,7 @@ const modifyScorecards = () => {
             const isCreate = utilities.getSaveMode(context, retrieved);
             const data = new ScoreCardsItemSP(retrieved, previous, previousOld, context, isCreate);
 
-            if (view == "wca") {
-                saveData('Scorecard', data, id);
-
-            } else if (view == "hubs") {
-                saveData('Scorecard', data, id);
-
-            } else if (view == "actions") {
-                saveData('Scorecard', data, id); // no need for if else
-            }
+            saveData('Scorecard', data, id);
         });
     }
 };
