@@ -31,11 +31,11 @@
 .scorecard-row .value-square .value-square-indicators {justify-content: center;}
 .scorecard-row .value-square .value-square-indicators-edit {margin-left: 5px;}
 .scorecard-row .value-square input {width: 55px;height: 22px;}
-.scorecard-row .value-square span.scorecard-indicator-value {font-size: 20px;font-weight: 700;}
-.scorecard-row .value-square span.scorecard-indicator-target {font-size: 14px;}
-.scorecard-row .value-square .scorecard-separator {width: 20px;text-align: center;}
+.scorecard-row .value-square span.scorecard-indicator-value {font-size: 20px;font-weight: 700;width: 40%;text-align: right;}
+.scorecard-row .value-square span.scorecard-indicator-target {font-size: 14px;width: 30%;}
+.scorecard-row .value-square .scorecard-separator {width: 10%;text-align: center;}
+.scorecard-row .scorecard-comment {line-height: 1.3;}
 
-.scorecard-indicator-arrow {position: absolute;right: 8px;}
 .scorecard-indicator-arrow-down::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktY2FyZXQtZG93bi1maWxsIiBmaWxsPSJjdXJyZW50Q29sb3IiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwYXRoIGQ9Ik03LjI0NyAxMS4xNEwyLjQ1MSA1LjY1OEMxLjg4NSA1LjAxMyAyLjM0NSA0IDMuMjA0IDRoOS41OTJhMSAxIDAgMCAxIC43NTMgMS42NTlsLTQuNzk2IDUuNDhhMSAxIDAgMCAxLTEuNTA2IDB6Ii8+DQo8L3N2Zz4=');}
 .scorecard-indicator-arrow-right::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktY2FyZXQtcmlnaHQtZmlsbCIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNMTIuMTQgOC43NTNsLTUuNDgyIDQuNzk2Yy0uNjQ2LjU2Ni0xLjY1OC4xMDYtMS42NTgtLjc1M1YzLjIwNGExIDEgMCAwIDEgMS42NTktLjc1M2w1LjQ4IDQuNzk2YTEgMSAwIDAgMSAwIDEuNTA2eiIvPg0KPC9zdmc+');}
 .scorecard-indicator-arrow-up::after {content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktY2FyZXQtdXAtZmlsbCIgZmlsbD0iY3VycmVudENvbG9yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBkPSJNNy4yNDcgNC44NmwtNC43OTYgNS40ODFjLS41NjYuNjQ3LS4xMDYgMS42NTkuNzUzIDEuNjU5aDkuNTkyYTEgMSAwIDAgMCAuNzUzLTEuNjU5bC00Ljc5Ni01LjQ4YTEgMSAwIDAgMC0xLjUwNiAweiIvPg0KPC9zdmc+');}

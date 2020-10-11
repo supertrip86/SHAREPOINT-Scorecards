@@ -17,13 +17,11 @@
 .scorecard-row .hub-indicator-title {text-align: center;font-weight: 700;margin: 6px 0;}
 .scorecard-row .hub-square-indicators {display: flex;align-items: center;justify-content: center;height: 27px;}
 .scorecard-row .hub-square-indicators input.form-control {padding: 0;height: 18px;width: 45px;font-size: 11px;}
-.scorecard-row .hub-indicator-value {font-size: 18px;font-weight: 700;text-align: right;}
+.scorecard-row .hub-indicator-value {font-size: 18px;font-weight: 700;text-align: right;width: 40%;}
 .scorecard-row .hub-indicator-date {text-align: right;}
-.scorecard-row .hub-separator {width: 12px;text-align: center;}
-.scorecard-row .hub-indicator-target {font-size: 15px;}
+.scorecard-row .hub-separator {width: 10%;text-align: center;}
+.scorecard-row .hub-indicator-target {font-size: 15px;width: 35%;}
 .scorecard-row .hub-square-likelihood {display: flex;justify-content: space-between;margin: 7px 0;}
 .scorecard-row .hub-square-likelihood .scorecard-indicator-likelihood {width: 60px;}
 .scorecard-row .hub-square-likelihood .scorecard-indicator-likelihood li {height: 18px;}
 .scorecard-row .hub-square-likelihood .scorecard-indicator-likelihood li .line {width: 30px;}
-.scorecard-row .hub-arrow {width: 12px;}
-.scorecard-row .hub-arrow-edit {position: static;width: 12px;}

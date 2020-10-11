@@ -119,10 +119,11 @@ function getHeaderData() {
 	const split = app.scorecards.length ? app.scorecards[0].scoredate.split('-') : [];
 
 	const year = split.length ? split[0] : new Date().getFullYear();
-	const month = split.length ? (parseInt(split[1]) + 1) : (new Date().getMonth() + 1);
-	const updatedMonth = month > 9 ?  month : `0${month}`;
-
-	const date = `${year}-${updatedMonth}`;
+	const rawMonth = split.length ? (parseInt(split[1]) + 1) : (new Date().getMonth() + 1);
+	const updatedYear = (rawMonth > 12) ? (parseInt(year) + 1) : year;
+	const month = (rawMonth > 12) ? 1 : rawMonth;
+	const updatedMonth = (month > 9) ?  month : `0${month}`;
+	const date = `${updatedYear}-${updatedMonth}`;
 
     return {
         scorecards: app.scorecards,
@@ -146,7 +147,7 @@ function getSaveMode(context, retrieved) {
 			return false;
 
 		case "hubs":
-			return areHubsEmpty(retrieved, 'data');
+			return areHubsEmpty(retrieved);
 
 		case "west":
 			return isColumnEmpty(retrieved, 'west', 'action');
@@ -163,10 +164,10 @@ function filterOut(value) {
 	return isNaN(parseInt(value)) ? "" : value;
 }
 
-function areHubsEmpty(scorecards, context) {
-	const isWestEmpty = !scorecards[`west${context}`];
-	const isCoastalEmpty = !scorecards[`coastal${context}`];
-	const isCentralEmpty = !scorecards[`central${context}`];
+function areHubsEmpty(scorecards) {
+	const isWestEmpty = !scorecards[`westdata`];
+	const isCoastalEmpty = !scorecards[`coastaldata`];
+	const isCentralEmpty = !scorecards[`centraldata`];
 
 	return isWestEmpty && isCoastalEmpty && isCentralEmpty;
 }

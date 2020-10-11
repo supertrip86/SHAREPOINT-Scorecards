@@ -172,13 +172,13 @@ const editScorecard = () => {
                 new Quill(i.querySelector('.comment-inner'), utilities.editorOptions());
                 i.querySelector('.ql-toolbar').classList.add('vanish');
             });
-            !utilities.areHubsEmpty(scorecards, 'data') && highlightCells(scorecards);
+            !utilities.areHubsEmpty(scorecards) && highlightCells(scorecards);
 
         } else if (target == "hubs-content") {
             const item = new HubsItem(scorecards);
 
             document.getElementById('hubs-content').innerHTML = HubsEdit(item);
-            utilities.areHubsEmpty(scorecards, 'action') && initHubsData();
+            utilities.areHubsEmpty(scorecards) && initHubsData();
 
         } else if (target == "actions-content") {
             const actionsId = document.querySelector('.active-action').id;
