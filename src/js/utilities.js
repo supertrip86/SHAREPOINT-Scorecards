@@ -11,6 +11,8 @@ module.exports = {
 	getHeaderData: getHeaderData,
 	getActionsData: getActionsData,
 	getSaveMode: getSaveMode,
+	getDate: getDate,
+	getHubRowInitialState: getHubRowInitialState,
 	filterOut: filterOut,
 	areHubsEmpty: areHubsEmpty,
 	isColumnEmpty: isColumnEmpty,
@@ -158,6 +160,63 @@ function getSaveMode(context, retrieved) {
 		case "central":
 			return isColumnEmpty(retrieved, 'central', 'action');
 	}
+}
+
+function getDate(date) {
+	const months = getMonths().map( (i) => i.toUpperCase().slice(0,3) );;
+    const startDate = new Date(document.getElementById('scorecards-content').dataset.date);
+    const year = startDate.getFullYear();
+    const month = startDate.getMonth();
+
+    switch (date) {
+        case "Monthly":
+            return formatDate(new Date(year, month -1, 15));
+
+        case "Quarterly":
+            return formatDate(new Date(year, month -3, 15));
+
+        case "Yearly":
+            return formatDate(new Date(year -1, month, 15));
+
+        case "All Previous Year":
+            return formatDate(new Date(year -1, 0, 15));
+
+        case "Last Three Years":
+            return formatDate(new Date(year -3, month, 15));
+
+        case "RIDE":
+            const newDate = new Date(year -1, month, 15);
+            return `RIDE ${String(newDate.getFullYear()).substr(2)}’`;
+
+        default:
+            return "N/A";
+    }
+
+    function formatDate(newDate) {
+        const newMonth = months[newDate.getMonth()];
+        const newYear = String(newDate.getFullYear()).substr(2);
+    
+        return `${newMonth} ${newYear}’`;
+    }
+}
+
+function getHubRowInitialState(code) {
+	const item = app.settings.filter( (i) => (i.Code == code) )[0];
+
+	return {
+		arrow1: 0,
+		arrow2: 0,
+		date1: getDate(item.Range1),
+		date2: getDate(item.Range2),
+		likelihood1: 0,
+		likelihood2: 0,
+		old1: "",
+		old2: "",
+		target1: item.Target1,
+		target2: item.Target2,
+		value1: "",
+		value2: "",
+	};
 }
 
 function filterOut(value) {

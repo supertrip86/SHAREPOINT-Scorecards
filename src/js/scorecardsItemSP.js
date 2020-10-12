@@ -100,14 +100,14 @@ class ScoreCardsItemSP {
             data[hub][code]['date1'] = left.querySelector(`.${hub}-indicator-date`).value;
             data[hub][code]['old1'] = utilities.filterOut(left.querySelector(`.${hub}-indicator-old`).value);
             data[hub][code]['arrow1'] = utilities.fromArrowToSP(left.querySelector(`.${hub}-indicator-arrow`));
-            data[hub][code]['likelihood1'] = utilities.fromLikelihoodToSP(left.querySelector(`.${hub}-indicator-likelihood`));
+            data[hub][code]['likelihood1'] = utilities.fromLikelihoodToSP(left.querySelector(`.${hub}-indicator-likelihood .line`));
 
             data[hub][code]['value2'] = utilities.filterOut(right.querySelector(`.${hub}-indicator-value`).value);
             data[hub][code]['target2'] = utilities.filterOut(right.querySelector(`.${hub}-indicator-target`).value);
             data[hub][code]['date2'] = right.querySelector(`.${hub}-indicator-date`).value;
             data[hub][code]['old2'] = utilities.filterOut(right.querySelector(`.${hub}-indicator-old`).value);
             data[hub][code]['arrow2'] = utilities.fromArrowToSP(right.querySelector(`.${hub}-indicator-arrow`));
-            data[hub][code]['likelihood2'] = utilities.fromLikelihoodToSP(right.querySelector(`.${hub}-indicator-likelihood`));
+            data[hub][code]['likelihood2'] = utilities.fromLikelihoodToSP(right.querySelector(`.${hub}-indicator-likelihood .line`));
         });
 
         return JSON.stringify(data[hub]);
@@ -182,7 +182,7 @@ class ScoreCardsItemSP {
 
         utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
-            let old = previous[`${hub}data`][code];
+            let old = previous[`${hub}data`] ? previous[`${hub}data`][code] : utilities.getHubRowInitialState(code);
 
             let value1 = utilities.filterOut( i.querySelector(`#${code}-hub-row-left .${hub}-indicator-value`).value );
             let target1 = utilities.filterOut( i.querySelector(`#${code}-hub-row-left .${hub}-indicator-target`).value );

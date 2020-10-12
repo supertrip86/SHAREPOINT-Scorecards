@@ -11,8 +11,8 @@ import { Header, ActionsPanel, headerListeners, appController } from "./js/contr
 
 const settingsListColumns = ["Position", "Color", "Code", "Id", "Title", "Value1", "Value2", "Target1", "Target2", "Range1", "Range2"];
 const scorecardsListColumns = ["scoredate", "Id", "Title"];
-const scorecardsSettings = 'scorecards-settings-v2';
-const scorecardsData = 'scorecards-data-v2';
+const scorecardsSettings = 'scorecards-settings';
+const scorecardsData = 'scorecards-data';
 const scorecardsManagement = 'scorecards-management';
 
 const data = {
