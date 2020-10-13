@@ -182,6 +182,12 @@ class ScoreCardsItemSP {
 
         utilities.getNodes('.active-content .scorecard-row').forEach( (i) =>  {
             let code = i.dataset.code;
+
+            /* 
+                in case another User has created the first Hubs Data in the SP list WHILE current user was in Edit Mode,
+                an initial state is created for the Hubs object, so the algorithm can understand which data has been modified
+                during the current session (see line below)
+            */
             let old = previous[`${hub}data`] ? previous[`${hub}data`][code] : utilities.getHubRowInitialState(code);
 
             let value1 = utilities.filterOut( i.querySelector(`#${code}-hub-row-left .${hub}-indicator-value`).value );

@@ -128,10 +128,13 @@ const modifyScorecards = () => {
     } else if (createMode) {
         const item = new ScoreCardsItemSP(null, null, null, context, true);
 
+        document.getElementById('save-button').setAttribute('disabled', 'disabled');
         saveData('Scorecard', item, null, null, createMode);
 
     } else {
         const url = utilities.getItemURL();
+
+        document.getElementById('save-button').setAttribute('disabled', 'disabled');
 
         receiveData(url).then( (result) => {
             const retrieved = new ScoreCardsItem(result.d.results[0]);
