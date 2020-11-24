@@ -1,6 +1,6 @@
 ## WCA ScoreCards
 
-WCA online tool for creating monthly ScoreCards reports
+WCA online tool for creating monthly ScoreCards reports.
 [WCA ScoreCards](https://xdesk.ifad.org/sites/pa/tools/scorecards/index.aspx)
 
 ### Install
@@ -11,7 +11,6 @@ WCA online tool for creating monthly ScoreCards reports
 ```
 
 ### Usage
-```
 This web application ONLY leverages SharePoint lists and libraries in its own site collection via REST API.
 
 For development and testing outside SharePoint: 
