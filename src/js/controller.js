@@ -338,7 +338,11 @@ const appController = () => {
 
     } else if (hash == "") {
         document.getElementById('wca-content').classList.add('active-content');
-        document.getElementById('wca-content').classList.remove('vanish');
+        document.getElementById('wca-content').classList.add('vanish');
+        document.getElementById('right-buttons').classList.add('vanish');
+        document.getElementById('edit-button').classList.add('vanish');
+        document.getElementById('save-button').classList.add('vanish');
+        document.getElementById('date-button').classList.add('vanish');
         document.querySelector('body').classList.add('welcome');
         document.querySelector('body').classList.remove('vanish');
 
